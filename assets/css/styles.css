@@ -99,9 +99,10 @@ a{color:inherit;text-decoration:none}
 .site-footer{margin-top:40px;padding:30px 24px;color:var(--muted)}
 .site-footer .container{display:flex;align-items:center;justify-content:space-between}
 .socials{display:flex;gap:10px}
-.socials .icon{display:inline-flex;width:36px;height:36px;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.8);box-shadow:var(--shadow),0 0 0 1px rgba(57,255,136,.25),0 8px 26px rgba(57,255,136,.35),0 0 52px rgba(167,139,250,.25);animation:pulse-glow 3s ease-in-out infinite alternate}
+/* Make social icons simple links without button styling */
+.socials .icon{display:inline-flex;align-items:center;justify-content:center;padding:0;background:transparent;border-radius:0;box-shadow:none;width:auto;height:auto;animation:none;transition:opacity .15s ease}
 .socials .icon img{width:22px;height:22px;display:block}
-.socials .icon:hover{transform:translateY(-2px) scale(1.03)}
+.socials .icon:hover{opacity:.8;transform:none}
 .site-nav.open{box-shadow:var(--shadow),0 0 0 1px rgba(57,255,136,.2),0 10px 30px rgba(57,255,136,.25),0 0 50px rgba(167,139,250,.22)}
 
 .btn:focus-visible{outline:2px solid var(--primary); outline-offset:2px; box-shadow:0 0 0 3px rgba(57,255,136,.3),0 0 30px rgba(167,139,250,.25)}
