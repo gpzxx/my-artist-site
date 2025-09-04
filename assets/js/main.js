@@ -48,6 +48,54 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Local video sliders
+  document.querySelectorAll('[data-video-slider]').forEach((slider) => {
+    const slides = Array.from(slider.querySelectorAll('.slide'));
+    const prev = slider.querySelector('[data-prev]');
+    const next = slider.querySelector('[data-next]');
+    const dotsWrap = slider.querySelector('[data-dots]');
+    let i = slides.findIndex(s => s.classList.contains('active'));
+    if (i < 0) i = 0;
+
+    const pauseAll = () => slides.forEach(v => { try { v.pause(); } catch(e){} });
+    const show = (idx) => {
+      i = (idx + slides.length) % slides.length;
+      slides.forEach((s, j) => s.classList.toggle('active', j === i));
+      if (dotsWrap) dotsWrap.querySelectorAll('button').forEach((d, j) => d.setAttribute('aria-current', j === i ? 'true':'false'));
+      pauseAll();
+    };
+
+    // Dots
+    if (dotsWrap) {
+      dotsWrap.innerHTML = '';
+      slides.forEach((_, j) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('aria-label', `Go to video ${j+1}`);
+        if (j === i) b.setAttribute('aria-current','true');
+        b.addEventListener('click', () => show(j));
+        dotsWrap.appendChild(b);
+      });
+    }
+
+    prev && prev.addEventListener('click', () => show(i - 1));
+    next && next.addEventListener('click', () => show(i + 1));
+
+    // Keyboard
+    slider.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') show(i - 1);
+      if (e.key === 'ArrowRight') show(i + 1);
+    });
+
+    // Swipe
+    let sx = null;
+    slider.addEventListener('pointerdown', (e) => { sx = e.clientX; });
+    slider.addEventListener('pointerup', (e) => {
+      if (sx == null) return; const dx = e.clientX - sx; sx = null;
+      if (Math.abs(dx) > 30) { if (dx < 0) show(i+1); else show(i-1); }
+    });
+  });
+
   // Scroll reveal
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!prefersReduced && 'IntersectionObserver' in window) {
