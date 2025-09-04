@@ -43,14 +43,26 @@
         <figure class="gallery-item tilt">
           <img src="assets/img/placeholders/photo3.svg" alt="Portrait" data-full="assets/img/placeholders/photo3.svg" />
         </figure>
-        <figure class="gallery-item video reveal">
-          <div class="video-frame" data-video>
-            <iframe title="YouTube video"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-          </div>
-        </figure>
+      </section>
+
+      <section class="video-slider reveal" data-video-slider>
+        <div class="video-stage">
+          <video class="slide active" controls preload="metadata" poster="assets/img/placeholders/photo1.svg">
+            <source src="assets/videos/video1.mp4" type="video/mp4" />
+          </video>
+          <video class="slide" controls preload="metadata" poster="assets/img/placeholders/photo2.svg">
+            <source src="assets/videos/video2.mp4" type="video/mp4" />
+          </video>
+          <video class="slide" controls preload="metadata" poster="assets/img/placeholders/photo3.svg">
+            <source src="assets/videos/video3.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="video-controls">
+          <button class="btn small" data-prev aria-label="Previous">&#10094;</button>
+          <div class="video-dots" data-dots></div>
+          <button class="btn small" data-next aria-label="Next">&#10095;</button>
+        </div>
+        <p class="muted" style="margin-top:8px">Place MP4 files in <code>assets/videos/</code> and update sources above.</p>
       </section>
     </main>
 
@@ -62,10 +74,12 @@
     <footer class="site-footer">
       <div class="container">
         <div class="socials">
-          <a href="#" aria-label="Instagram">IG</a>
-          <a href="#" aria-label="YouTube">YT</a>
-          <a href="#" aria-label="Spotify">SP</a>
-          <a href="#" aria-label="SoundCloud">SC</a>
+          <a href="#" aria-label="Instagram" class="icon"><img src="assets/icons/instagram.svg" alt="" /></a>
+          <a href="#" aria-label="YouTube" class="icon"><img src="assets/icons/youtube.svg" alt="" /></a>
+          <a href="#" aria-label="Spotify" class="icon"><img src="assets/icons/spotify.svg" alt="" /></a>
+          <a href="#" aria-label="SoundCloud" class="icon"><img src="assets/icons/soundcloud.svg" alt="" /></a>
+          <a href="#" aria-label="TikTok" class="icon"><img src="assets/icons/tiktok.svg" alt="" /></a>
+          <a href="#" aria-label="Resident Advisor" class="icon"><img src="assets/icons/ra.svg" alt="" /></a>
         </div>
         <div class="credit">© <span data-year></span> Your Artist Name</div>
       </div>
