@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Artist Portfolio — Rider</title>
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body class="theme-cute">
+    <div class="bg-scene">
+      <div class="blob b1"></div>
+      <div class="blob b2"></div>
+      <div class="sparkles" aria-hidden="true"></div>
+    </div>
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <img src="assets/icons/heart.svg" alt="" class="brand-mark" />
+        <span class="brand-name">Your Artist Name</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="site-nav" data-nav>
+        <a href="biography.html">Biography</a>
+        <a href="media.html">Photos & Videos</a>
+        <a href="releases.html">Releases</a>
+        <a class="btn ghost active" href="rider.html">Rider (PDF)</a>
+      </nav>
+    </header>
+
+    <main class="container page">
+      <section class="page-header reveal">
+        <h1>Technical & Hospitality Rider</h1>
+        <p>Download or view the latest PDF rider below.</p>
+        <div class="hero-actions" style="margin-top:12px">
+          <a class="btn primary" href="assets/docs/rider.pdf" download>Download Rider</a>
+          <a class="btn" href="assets/docs/rider.pdf" target="_blank" rel="noopener">Open in new tab</a>
+        </div>
+      </section>
+
+      <section class="reveal" style="margin-top:18px">
+        <div class="pdf-frame">
+          <object data="assets/docs/rider.pdf#view=FitH" type="application/pdf" width="100%" height="820">
+            <p>PDF preview unavailable. <a href="assets/docs/rider.pdf">Download the rider</a>.</p>
+          </object>
+        </div>
+        <p class="muted" style="margin-top:10px">Replace the file at <code>assets/docs/rider.pdf</code> with your latest version.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="socials">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="YouTube">YT</a>
+          <a href="#" aria-label="Spotify">SP</a>
+          <a href="#" aria-label="SoundCloud">SC</a>
+        </div>
+        <div class="credit">© <span data-year></span> Your Artist Name</div>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+  </html>
+
