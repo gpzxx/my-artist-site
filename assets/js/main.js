@@ -1,16 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const root = document.documentElement;
-  const themeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-  const setTheme = (isDark) => {
-    root.dataset.theme = isDark ? 'dark' : 'light';
-  };
-  setTheme(themeQuery.matches);
-  if (typeof themeQuery.addEventListener === 'function') {
-    themeQuery.addEventListener('change', (event) => setTheme(event.matches));
-  } else if (typeof themeQuery.addListener === 'function') {
-    themeQuery.addListener((event) => setTheme(event.matches));
-  }
-
   // Update year stamp
   const yearEl = document.querySelector('[data-year]');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
