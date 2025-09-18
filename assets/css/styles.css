@@ -306,21 +306,18 @@ a:focus-visible {
   font-size: 10px;
 }
 
-/* Hero */
+/* Home intro */
 .home {
   position: relative;
-  background:
-    linear-gradient(130deg, rgba(10, 10, 12, 0.82), rgba(5, 5, 6, 0.92)),
-    url('../img/hero-kizu.jpg') center/cover no-repeat;
+  min-height: 100vh;
+  background: url('../img/hero-kizu.jpg') center/cover no-repeat;
 }
 
-.home::before,
-.home::after {
+.home::before {
   content: '';
   position: absolute;
   inset: 0;
-  pointer-events: none;
-  z-index: 0;
+  background: linear-gradient(125deg, rgba(6, 6, 8, 0.45), rgba(6, 6, 8, 0.2) 48%, rgba(6, 6, 8, 0.55));
 }
 
 .home > * {
@@ -328,98 +325,79 @@ a:focus-visible {
   z-index: 1;
 }
 
-.home::before {
-  background: radial-gradient(80% 80% at 20% 20%, rgba(var(--accent-rgb), 0.24), transparent 65%);
-  mix-blend-mode: screen;
-  opacity: 0.65;
-}
-
-.home::after {
-  background: linear-gradient(180deg, rgba(3, 3, 4, 0.38) 0%, rgba(3, 3, 4, 0.78) 65%, rgba(3, 3, 4, 0.9) 100%);
-}
-
-.hero {
-  position: relative;
-  padding: 160px 0 140px;
-  overflow: hidden;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
+.intro {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: clamp(140px, 18vw, 320px);
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  color: rgba(var(--ink-rgb), 0.05);
-  text-transform: uppercase;
-  pointer-events: none;
+  min-height: min(88vh, 820px);
+  padding: clamp(110px, 18vh, 200px) 0 160px;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 1;
+.intro-content {
+  width: min(100% - 48px, var(--container));
+  margin: 0 auto;
+}
+
+.intro-panel {
+  max-width: 620px;
+  padding: 44px clamp(32px, 5vw, 52px);
+  border-radius: 26px;
+  background: rgba(10, 10, 12, 0.48);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(var(--ink-rgb), 0.1);
+  box-shadow: 0 38px 80px rgba(0, 0, 0, 0.45);
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  max-width: 680px;
+  gap: 26px;
 }
 
-.hero-text {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.hero-eyebrow {
+.intro-eyebrow {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.34em;
-  color: var(--ink-faint);
+  color: rgba(255, 255, 255, 0.72);
 }
 
-.hero h1 {
+.intro-panel h1 {
   margin: 0;
-  font-size: clamp(36px, 4.2vw, 60px);
-  line-height: 1.18;
+  font-size: clamp(40px, 5vw, 68px);
+  line-height: 1.02;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: #ffffff;
 }
 
-.hero p {
+.intro-panel p {
   margin: 0;
   font-size: 18px;
   line-height: 1.8;
-  max-width: 540px;
-  color: var(--ink-soft);
+  color: rgba(255, 255, 255, 0.82);
 }
 
-.hero-actions {
+.intro-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
 }
 
-.hero-tags {
+.intro-tags {
   display: flex;
-  gap: 10px;
+  gap: 12px;
+  flex-wrap: wrap;
   list-style: none;
   padding: 0;
-  margin: 12px 0 0;
+  margin: 6px 0 0;
   text-transform: uppercase;
   letter-spacing: 0.26em;
   font-size: 11px;
-  color: var(--ink-subtle);
+  color: rgba(255, 255, 255, 0.75);
 }
 
-.hero-tags li {
+.intro-tags li {
   padding: 10px 18px;
   border-radius: 999px;
-  border: 1px solid rgba(var(--ink-rgb), 0.22);
-  background: rgba(var(--bg-rgb), 0.6);
-  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
 }
 
 /* Spotlight cards */
@@ -963,12 +941,12 @@ a:focus-visible {
     gap: 24px;
   }
 
-  .hero {
-    padding: 140px 0 110px;
+  .intro {
+    padding: 120px 0 120px;
   }
 
-  .hero-content {
-    max-width: 760px;
+  .intro-panel {
+    max-width: 560px;
   }
 
   .bio-stats {
@@ -1033,21 +1011,27 @@ a:focus-visible {
     padding: 14px 28px;
   }
 
-  .hero {
-    padding: 110px 0 72px;
+  .intro {
+    min-height: auto;
+    padding: 110px 0 110px;
   }
 
-  .hero-overlay {
-    font-size: clamp(110px, 32vw, 200px);
-    opacity: 0.12;
+  .intro-panel {
+    padding: 36px 26px;
+    gap: 22px;
   }
 
-  .hero-tags {
+  .intro-panel h1 {
+    font-size: clamp(34px, 9vw, 48px);
+  }
+
+  .intro-panel p {
+    font-size: 16px;
+  }
+
+  .intro-tags {
+    justify-content: flex-start;
     flex-wrap: wrap;
-  }
-
-  .hero p {
-    max-width: none;
   }
 
   .bio-stats {
