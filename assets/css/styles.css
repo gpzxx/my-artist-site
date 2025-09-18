@@ -194,12 +194,12 @@ a:focus-visible {
 }
 
 .nav-cta {
-  padding: 12px 22px;
+  padding: 16px 36px;
   border-radius: 999px;
   border: 1px solid var(--border);
   text-transform: uppercase;
   letter-spacing: 0.34em;
-  font-size: 11px;
+  font-size: 13px;
   background: linear-gradient(140deg, rgba(var(--accent-rgb), 0.22), rgba(var(--surface-rgb), 0.9));
   color: var(--ink);
   transition: border-color .3s ease, transform .3s var(--transition), background .3s ease;
@@ -925,6 +925,8 @@ a:focus-visible {
   .nav-cta {
     width: 100%;
     margin-top: 12px;
+    font-size: 12px;
+    padding: 14px 28px;
   }
 
   .hero {
