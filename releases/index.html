@@ -34,10 +34,11 @@
         <button class="pill" data-filter="track">Tracks</button>
         <button class="pill" data-filter="podcast">Podcasts</button>
         <button class="pill" data-filter="mix">Mixes</button>
+        <button class="pill" data-filter="labels">Labels</button>
       </section>
 
       <section class="release-grid" data-releases>
-        <article class="release-card reveal" data-type="track">
+        <article class="release-card filter-item reveal" data-type="track">
           <img class="cover" src="../assets/img/placeholders/photo3.svg" alt="Cover art" />
           <div class="release-body">
             <div class="release-top">
@@ -53,7 +54,7 @@
           </div>
         </article>
 
-        <article class="release-card reveal" data-type="podcast">
+        <article class="release-card filter-item reveal" data-type="podcast">
           <img class="cover" src="../assets/img/placeholders/photo2.svg" alt="Cover art" />
           <div class="release-body">
             <div class="release-top">
@@ -69,7 +70,7 @@
           </div>
         </article>
 
-        <article class="release-card reveal" data-type="mix">
+        <article class="release-card filter-item reveal" data-type="mix">
           <img class="cover" src="../assets/img/placeholders/photo1.svg" alt="Cover art" />
           <div class="release-body">
             <div class="release-top">
@@ -82,6 +83,19 @@
               <a href="#">YouTube</a>
             </div>
           </div>
+        </article>
+        <article class="label-card filter-item reveal" data-type="labels">
+          <div>
+            <h3>Label Highlights</h3>
+            <p>Swap each square with the logo of an imprint you have released on.</p>
+          </div>
+          <div class="label-logos">
+            <div class="label-logo">Label 1</div>
+            <div class="label-logo">Label 2</div>
+            <div class="label-logo">Label 3</div>
+            <div class="label-logo">Label 4</div>
+          </div>
+          <p class="muted">Replace the placeholder text with uploaded logo images (PNG/SVG) sized to a square.</p>
         </article>
       </section>
     </main>
