@@ -58,9 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
       filters.querySelectorAll('.pill').forEach((pill) => {
         pill.classList.toggle('active', pill === control);
       });
-      grid.querySelectorAll('.release-card').forEach((card) => {
-        const match = type === 'all' || card.dataset.type === type;
-        card.style.display = match ? '' : 'none';
+      grid.querySelectorAll('[data-type]').forEach((item) => {
+        const match = type === 'all' || item.dataset.type === type;
+        item.style.display = match ? '' : 'none';
       });
     });
   }
