@@ -307,33 +307,41 @@ a:focus-visible {
 }
 
 /* Hero */
-.hero {
+.home {
   position: relative;
-  padding: 160px 0 140px;
-  overflow: hidden;
   background:
-    linear-gradient(130deg, rgba(10, 10, 12, 0.78), rgba(5, 5, 6, 0.9)),
+    linear-gradient(130deg, rgba(10, 10, 12, 0.82), rgba(5, 5, 6, 0.92)),
     url('../img/hero-kizu.jpg') center/cover no-repeat;
 }
 
-.hero::before,
-.hero::after {
+.home::before,
+.home::after {
   content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
+  z-index: 0;
 }
 
-.hero::before {
+.home > * {
+  position: relative;
+  z-index: 1;
+}
+
+.home::before {
   background: radial-gradient(80% 80% at 20% 20%, rgba(var(--accent-rgb), 0.24), transparent 65%);
   mix-blend-mode: screen;
-  opacity: 0.7;
-  z-index: 0;
+  opacity: 0.65;
 }
 
-.hero::after {
-  background: linear-gradient(180deg, rgba(3, 3, 4, 0.35) 0%, rgba(3, 3, 4, 0.7) 65%, rgba(3, 3, 4, 0.85) 100%);
-  z-index: 0;
+.home::after {
+  background: linear-gradient(180deg, rgba(3, 3, 4, 0.38) 0%, rgba(3, 3, 4, 0.78) 65%, rgba(3, 3, 4, 0.9) 100%);
+}
+
+.hero {
+  position: relative;
+  padding: 160px 0 140px;
+  overflow: hidden;
 }
 
 .hero-overlay {
@@ -545,10 +553,11 @@ a:focus-visible {
 }
 
 .bio-stats {
-  margin: 80px 0 0;
+  margin: 80px auto 0;
   padding-top: 32px;
   border-top: 1px solid var(--border);
   text-align: center;
+  max-width: 900px;
 }
 
 .bio-stats-grid {
