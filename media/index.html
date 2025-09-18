@@ -29,36 +29,31 @@
         <p>Snapshots and clips from the journey.</p>
       </section>
 
-      <section class="gallery reveal" data-gallery>
-        <figure class="gallery-item">
-          <img src="../assets/img/Kizu-5.jpg" alt="Live show" data-full="../assets/img/Kizu-5.jpg" />
-        </figure>
-        <figure class="gallery-item">
-          <img src="../assets/img/DSC02938.jpg" alt="Studio session" data-full="../assets/img/DSC02938.jpg" />
-        </figure>
-        <figure class="gallery-item">
-          <img src="../assets/img/Kizu-3.jpg" alt="Portrait" data-full="../assets/img/Kizu-3.jpg" />
-        </figure>
+      <section class="media-slideshow reveal" data-gallery data-gallery-slider>
+        <div class="media-slides">
+          <figure class="media-slide active" data-full="../assets/img/Kizu-5.jpg">
+            <img src="../assets/img/Kizu-5.jpg" alt="Live show" data-full="../assets/img/Kizu-5.jpg" />
+          </figure>
+          <figure class="media-slide" data-full="../assets/img/DSC02938.jpg">
+            <img src="../assets/img/DSC02938.jpg" alt="Studio session" data-full="../assets/img/DSC02938.jpg" />
+          </figure>
+          <figure class="media-slide" data-full="../assets/img/Kizu-3.jpg">
+            <img src="../assets/img/Kizu-3.jpg" alt="Portrait" data-full="../assets/img/Kizu-3.jpg" />
+          </figure>
+        </div>
+        <div class="media-controls">
+          <button class="media-arrow" type="button" data-gallery-prev aria-label="Previous">&#10094;</button>
+          <div class="media-dots" data-gallery-dots></div>
+          <button class="media-arrow" type="button" data-gallery-next aria-label="Next">&#10095;</button>
+        </div>
       </section>
 
-      <section class="video-slider reveal" data-video-slider>
-        <div class="video-stage">
-          <video class="slide active" controls preload="metadata" poster="../assets/videos/kizu1.mp4">
-            <source src="../assets/videos/kizu1.mp4" type="video/mp4" />
-          </video>
-          <video class="slide" controls preload="metadata" poster="../assets/videos/kizu2.mp4">
-            <source src="../assets/videos/kizu2.mp4" type="video/mp4" />
-          </video>
-          <video class="slide" controls preload="metadata" poster="../assets/videos/kizu3.mp4">
-            <source src="../assets/videos/kizu3.mp4" type="video/mp4" />
-          </video>
+      <section class="video-grid reveal" data-youtube-gallery>
+        <div class="video-embed" data-youtube="VIDEO_ID_1">
+          <p class="muted">Replace <code>VIDEO_ID_1</code> with a YouTube ID.</p>
         </div>
-        <div class="video-controls">
-          <button class="btn small" data-prev aria-label="Previous">&#10094;</button>
-          <div class="video-dots" data-dots></div>
-          <button class="btn small" data-next aria-label="Next">&#10095;</button>
-        </div>
-        <p class="muted" style="margin-top:8px">Place MP4 files in <code>assets/videos/</code> and update sources above.</p>
+        <div class="video-embed" data-youtube="VIDEO_ID_2"></div>
+        <div class="video-embed" data-youtube="VIDEO_ID_3"></div>
       </section>
     </main>
 
