@@ -373,9 +373,16 @@ a:focus-visible {
 
 .intro-tags li {
   padding: 10px 18px;
-  border-radius: 0;
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  border: none;
   background: rgba(0, 0, 0, 0.4);
+  transition: transform .35s var(--transition), background .35s ease, color .35s ease;
+}
+
+.intro-tags li:hover,
+.intro-tags li:focus-visible {
+  transform: translateY(-2px);
+  background: rgba(var(--accent-rgb), 0.25);
+  color: var(--accent);
 }
 
 /* Spotlight cards */
@@ -464,10 +471,15 @@ a:focus-visible {
 }
 
 .bio-media img {
-  border-radius: 0;
-  border: 1px solid var(--border);
-  background: var(--surface-card);
-  box-shadow: var(--shadow-soft);
+  border: none;
+  background: none;
+  box-shadow: none;
+  animation: photoFloat 16s ease-in-out infinite;
+  transition: transform .6s var(--transition);
+}
+
+.bio-media img:hover {
+  transform: scale(1.02);
 }
 
 .bio-text h2,
@@ -1102,5 +1114,73 @@ a:focus-visible {
 
   .nav-bar {
     padding: 18px 0;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background: var(--bg);
+    color: var(--ink);
+  }
+
+  .intro::before {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.65) 55%, rgba(255, 255, 255, 0) 90%);
+  }
+
+  .intro-panel h1 {
+    color: rgba(10, 10, 12, 0.95);
+  }
+
+  .intro-panel p {
+    color: rgba(20, 20, 24, 0.78);
+  }
+
+  .intro-tags li {
+    background: rgba(235, 235, 245, 0.9);
+    color: rgba(32, 32, 48, 0.8);
+  }
+
+  .spotlight-card,
+  .label-card,
+  .release-card,
+  .media-slides,
+  .video-embed,
+  .audio-embed {
+    background: rgba(250, 250, 255, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: rgba(32, 32, 48, 0.9);
+  }
+
+  .spotlight-card .spotlight-label,
+  .label-card p,
+  .release-top p {
+    color: rgba(32, 32, 48, 0.65);
+  }
+
+  .spotlight-link,
+  .actions a,
+  .label-logo,
+  .intro-tags li:hover,
+  .intro-tags li:focus-visible {
+    color: var(--accent);
+  }
+
+  .media-arrow {
+    border-color: rgba(32, 32, 48, 0.25);
+    color: rgba(32, 32, 48, 0.75);
+  }
+
+  .media-arrow:hover,
+  .media-arrow:focus-visible {
+    border-color: rgba(var(--accent-rgb), 0.5);
+    color: var(--accent);
+  }
+
+  .media-dots button {
+    border-color: rgba(32, 32, 48, 0.25);
+  }
+
+  .audio-embed {
+    background: rgba(246, 246, 253, 0.9);
   }
 }
