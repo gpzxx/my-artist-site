@@ -16,6 +16,7 @@ Static, responsive artist portfolio with a pastel, playful theme.
 - Brand/name: change top-left brand text in each HTML file (`home/`, `biography/`, `media/`, `releases/`, `booking/`).
 - Social links: edit footer links on each page.
 - Colors/theme: tweak CSS variables in `assets/css/styles.css` (top of file).
+- Hero photo: replace `assets/img/hero-kizu.jpg` with your own background image (used on the home hero).
 - Photos: replace files in `assets/img/` and update `media/index.html` image tags.
 - Videos: swap the video sources in `media/index.html`.
 - Releases: edit cards in `releases/index.html` and set `data-type` (`track|podcast|mix`).
