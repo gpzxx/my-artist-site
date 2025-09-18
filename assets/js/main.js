@@ -47,6 +47,75 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Media slideshow
+  const gallerySlider = document.querySelector('[data-gallery-slider]');
+  if (gallerySlider) {
+    const slides = Array.from(gallerySlider.querySelectorAll('.media-slide'));
+    const prev = gallerySlider.querySelector('[data-gallery-prev]');
+    const next = gallerySlider.querySelector('[data-gallery-next]');
+    const dotsWrap = gallerySlider.querySelector('[data-gallery-dots]');
+    let index = slides.findIndex((slide) => slide.classList.contains('active'));
+    if (index < 0) index = 0;
+    let timerId;
+
+    const activate = (i) => {
+      index = (i + slides.length) % slides.length;
+      slides.forEach((slide, idx) => {
+        slide.classList.toggle('active', idx === index);
+      });
+      if (dotsWrap) {
+        dotsWrap.querySelectorAll('button').forEach((dot, idx) => {
+          dot.setAttribute('aria-current', idx === index ? 'true' : 'false');
+        });
+      }
+    };
+
+    const stopAuto = () => {
+      if (timerId) {
+        clearInterval(timerId);
+        timerId = null;
+      }
+    };
+
+    const startAuto = () => {
+      stopAuto();
+      timerId = setInterval(() => activate(index + 1), 6000);
+    };
+
+    if (dotsWrap) {
+      dotsWrap.innerHTML = '';
+      slides.forEach((_, idx) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.setAttribute('aria-label', `Go to image ${idx + 1}`);
+        if (idx === index) dot.setAttribute('aria-current', 'true');
+        dot.addEventListener('click', () => {
+          activate(idx);
+          startAuto();
+        });
+        dotsWrap.append(dot);
+      });
+    }
+
+    activate(index);
+
+    prev?.addEventListener('click', () => {
+      activate(index - 1);
+      startAuto();
+    });
+
+    next?.addEventListener('click', () => {
+      activate(index + 1);
+      startAuto();
+    });
+
+    gallerySlider.addEventListener('pointerdown', () => stopAuto());
+    gallerySlider.addEventListener('pointerup', () => startAuto());
+    gallerySlider.addEventListener('pointerleave', () => startAuto());
+
+    startAuto();
+  }
+
   // Release filters
   const filters = document.querySelector('.filters');
   const grid = document.querySelector('[data-releases]');
@@ -65,69 +134,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Video sliders
-  document.querySelectorAll('[data-video-slider]').forEach((slider) => {
-    const slides = Array.from(slider.querySelectorAll('.slide'));
-    const prev = slider.querySelector('[data-prev]');
-    const next = slider.querySelector('[data-next]');
-    const dotsWrap = slider.querySelector('[data-dots]');
-    let index = slides.findIndex((slide) => slide.classList.contains('active'));
-    if (index < 0) index = 0;
-
-    const pauseAll = () => slides.forEach((slide) => {
-      try {
-        slide.pause();
-      } catch (error) {
-        /* ignore */
-      }
-    });
-
-    const show = (nextIndex) => {
-      index = (nextIndex + slides.length) % slides.length;
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-      });
-      if (dotsWrap) {
-        dotsWrap.querySelectorAll('button').forEach((dot, i) => {
-          dot.setAttribute('aria-current', i === index ? 'true' : 'false');
-        });
-      }
-      pauseAll();
-    };
-
-    if (dotsWrap) {
-      dotsWrap.innerHTML = '';
-      slides.forEach((_, i) => {
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.setAttribute('aria-label', `Go to video ${i + 1}`);
-        if (i === index) button.setAttribute('aria-current', 'true');
-        button.addEventListener('click', () => show(i));
-        dotsWrap.appendChild(button);
-      });
+  // YouTube embeds
+  document.querySelectorAll('[data-youtube]').forEach((container) => {
+    const id = (container.dataset.youtube || '').trim();
+    if (!id || id.toUpperCase().startsWith('VIDEO_ID')) {
+      const placeholder = document.createElement('div');
+      placeholder.className = 'embed-placeholder';
+      placeholder.innerHTML = 'Add a YouTube ID to <code>data-youtube</code> to show an embedded player.';
+      container.innerHTML = '';
+      container.appendChild(placeholder);
+      return;
     }
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube.com/embed/${id}?rel=0`;
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen = true;
+    iframe.loading = 'lazy';
+    container.innerHTML = '';
+    container.appendChild(iframe);
+  });
 
-    prev?.addEventListener('click', () => show(index - 1));
-    next?.addEventListener('click', () => show(index + 1));
-
-    slider.addEventListener('keydown', (event) => {
-      if (event.key === 'ArrowLeft') show(index - 1);
-      if (event.key === 'ArrowRight') show(index + 1);
-    });
-
-    let startX = null;
-    slider.addEventListener('pointerdown', (event) => {
-      startX = event.clientX;
-    });
-    slider.addEventListener('pointerup', (event) => {
-      if (startX == null) return;
-      const deltaX = event.clientX - startX;
-      startX = null;
-      if (Math.abs(deltaX) > 30) {
-        if (deltaX < 0) show(index + 1);
-        else show(index - 1);
-      }
-    });
+  // SoundCloud embeds
+  document.querySelectorAll('[data-soundcloud]').forEach((container) => {
+    const url = (container.dataset.soundcloud || '').trim();
+    if (!url || url.toLowerCase().includes('replace')) {
+      container.innerHTML = '<div class="embed-placeholder">Paste a SoundCloud track or mix URL in <code>data-soundcloud</code>.</div>';
+      return;
+    }
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(url)}&color=%23b7a6ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true`;
+    iframe.allow = 'autoplay';
+    iframe.loading = 'lazy';
+    container.innerHTML = '';
+    container.appendChild(iframe);
   });
 
   // Scroll reveal
