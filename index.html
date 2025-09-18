@@ -8,58 +8,92 @@
     <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
-  <body class="theme-cute">
-    <div class="bg-scene">
-      <div class="blob b1"></div>
-      <div class="blob b2"></div>
-      <div class="sparkles" aria-hidden="true"></div>
-    </div>
-
+  <body class="theme-dark">
     <header class="site-header">
-      <a class="brand" href="index.html">
-        <img src="assets/icons/heart.svg" alt="" class="brand-mark" />
-        <span class="brand-name">KIZU - Artist Portfolio</span>
-      </a>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
-      <nav class="site-nav" data-nav>
-        <a href="biography.html">Biography</a>
-        <a href="media.html">Photos & Videos</a>
-        <a href="releases.html">Releases</a>
-        <a class="btn ghost" href="rider.html">Rider (PDF)</a>
-      </nav>
+      <div class="container nav-bar">
+        <a class="brand" href="index.html">
+          <span class="brand-name">KIZU</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+        <nav class="site-nav" data-nav>
+          <a href="biography.html">Biography</a>
+          <a href="media.html">Media</a>
+          <a href="releases.html">Releases</a>
+          <a class="nav-cta" href="rider.html">Booking</a>
+        </nav>
+      </div>
     </header>
 
-    <main class="container home">
-      <section class="hero reveal">
-        <div class="hero-copy reveal">
-          <h1>Music with a sparkle</h1>
-          <p>Producer, DJ, and storyteller. Dive into my world of falling into the trance.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="releases.html">Listen to Releases</a>
-            <a class="btn ghost" href="media.html">See Photos & Videos</a>
+    <main class="home">
+      <section class="hero">
+        <div class="hero-overlay" aria-hidden="true">KIZU</div>
+        <div class="container hero-content">
+          <div class="hero-text reveal">
+            <span class="hero-eyebrow">Producer & DJ</span>
+            <h1>Immersive club journeys built on hypnotic rhythm and emotional release.</h1>
+            <p>Berlin-based artist shaping techno, trance, and ambient textures into high-intensity live sets and mindful listening experiences.</p>
+            <div class="hero-actions">
+              <a class="btn primary" href="rider.html">Request a Booking</a>
+              <a class="btn outline" href="releases.html">Listen to Releases</a>
+            </div>
           </div>
-        </div>
-        <div class="hero-art tilt reveal">
-          <img src="assets/img/placeholders/photo1.svg" alt="Artist portrait stylized" />
+          <div class="hero-visual reveal">
+            <div class="hero-frame">
+              <img src="assets/img/placeholders/photo1.svg" alt="Stylized portrait of KIZU" />
+            </div>
+            <ul class="hero-tags" aria-label="Sounds and moods">
+              <li>Techno</li>
+              <li>Trance</li>
+              <li>Ambient</li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      <section class="promo-grid reveal">
-        <a class="promo-card tilt reveal" href="biography.html">
-          <img src="assets/icons/star.svg" alt="" />
-          <h3>Biography</h3>
-          <p>Get to know my journey, influences, and upcoming shows.</p>
-        </a>
-        <a class="promo-card tilt reveal" href="media.html">
-          <img src="assets/icons/camera.svg" alt="" />
-          <h3>Photos & Videos</h3>
-          <p>Highlights from gigs, sessions, and behind-the-scenes moments.</p>
-        </a>
-        <a class="promo-card tilt reveal" href="releases.html">
-          <img src="assets/icons/music.svg" alt="" />
-          <h3>Releases</h3>
-          <p>Tracks, podcasts, and mixes - all in one place.</p>
-        </a>
+      <section class="metrics reveal">
+        <div class="container metrics-grid">
+          <div class="metric">
+            <span class="metric-value">5</span>
+            <span class="metric-label">Years performing</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">18</span>
+            <span class="metric-label">Original releases</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">25</span>
+            <span class="metric-label">Cities played</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="spotlight reveal">
+        <div class="container spotlight-grid">
+          <a class="spotlight-card" href="biography.html">
+            <div>
+              <span class="spotlight-label">Story</span>
+              <h3>Biography</h3>
+              <p>Origins, influences, and the creative process behind every set.</p>
+            </div>
+            <span class="spotlight-link">Explore →</span>
+          </a>
+          <a class="spotlight-card" href="media.html">
+            <div>
+              <span class="spotlight-label">Visuals</span>
+              <h3>Media</h3>
+              <p>High contrast imagery, live captures, and press-approved assets.</p>
+            </div>
+            <span class="spotlight-link">View →</span>
+          </a>
+          <a class="spotlight-card" href="releases.html">
+            <div>
+              <span class="spotlight-label">Catalogue</span>
+              <h3>Releases</h3>
+              <p>Singles, podcasts, and mixes curated for late-night momentum.</p>
+            </div>
+            <span class="spotlight-link">Listen →</span>
+          </a>
+        </div>
       </section>
     </main>
 
@@ -73,11 +107,10 @@
           <a href="#" aria-label="TikTok" class="icon"><img src="assets/icons/tiktok.svg" alt="" /></a>
           <a href="#" aria-label="Resident Advisor" class="icon"><img src="assets/icons/ra.svg" alt="" /></a>
         </div>
-        <div class="credit">&copy; <span data-year></span> Your Artist Name</div>
+        <div class="credit">&copy; <span data-year></span> KIZU</div>
       </div>
     </footer>
 
     <script src="assets/js/main.js"></script>
   </body>
   </html>
-
