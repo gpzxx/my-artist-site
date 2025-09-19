@@ -138,6 +138,67 @@ document.addEventListener('DOMContentLoaded', () => {
     startAuto();
   }
 
+  // Release cards flip interactions
+  const releaseCards = document.querySelectorAll('[data-release-card]');
+  if (releaseCards.length) {
+    const hoverMedia = window.matchMedia('(hover: hover)');
+    releaseCards.forEach((card) => {
+      const front = card.querySelector('.release-front');
+      const closeBtn = card.querySelector('[data-release-close]');
+      if (!front) return;
+
+      const setFlipped = (value) => {
+        card.classList.toggle('is-flipped', value);
+        front.setAttribute('aria-expanded', value ? 'true' : 'false');
+      };
+
+      const flipOpen = () => setFlipped(true);
+      const flipClose = () => setFlipped(false);
+
+      front.addEventListener('click', (event) => {
+        if (hoverMedia.matches) return;
+        event.preventDefault();
+        flipOpen();
+      });
+
+      front.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          flipOpen();
+        }
+      });
+
+      closeBtn?.addEventListener('click', (event) => {
+        event.preventDefault();
+        flipClose();
+        if (typeof front.focus === 'function') {
+          front.focus({ preventScroll: true });
+        }
+      });
+
+      card.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && card.classList.contains('is-flipped')) {
+          flipClose();
+          if (typeof front.focus === 'function') {
+            front.focus({ preventScroll: true });
+          }
+        }
+      });
+
+      card.addEventListener('mouseleave', () => {
+        if (hoverMedia.matches && !card.contains(document.activeElement)) {
+          flipClose();
+        }
+      });
+
+      hoverMedia.addEventListener?.('change', (event) => {
+        if (event.matches) {
+          flipClose();
+        }
+      });
+    });
+  }
+
   // Release filters
   const filters = document.querySelector('.filters');
   const grid = document.querySelector('[data-releases]');
