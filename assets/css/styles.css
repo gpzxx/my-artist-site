@@ -591,19 +591,25 @@ a:focus-visible {
   margin-bottom: 80px;
 }
 
+
 .media-slides {
   position: relative;
+  display: flex;
   overflow: hidden;
-  border: 1px solid var(--border);
-  background: rgba(10, 10, 12, 0.55);
+  border: 0;
+  background: transparent;
+  scroll-behavior: smooth;
 }
 
 .media-slide {
-  display: none;
+  flex: 0 0 100%;
+  margin: 0;
+  opacity: 0.5;
+  transition: opacity .45s ease;
 }
 
 .media-slide.active {
-  display: block;
+  opacity: 1;
 }
 
 .media-slide img {
