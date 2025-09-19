@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const gallerySlider = document.querySelector('[data-gallery-slider]');
   if (gallerySlider) {
     const slides = Array.from(gallerySlider.querySelectorAll('.media-slide'));
+    const slideTrack = gallerySlider.querySelector('.media-slides');
     const prev = gallerySlider.querySelector('[data-gallery-prev]');
     const next = gallerySlider.querySelector('[data-gallery-next]');
     const dotsWrap = gallerySlider.querySelector('[data-gallery-dots]');
@@ -58,7 +59,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (index < 0) index = 0;
     let timerId;
 
-    const activate = (i) => {
+    const scrollToIndex = (smooth = true) => {
+      if (!slideTrack) return;
+      const offset = slideTrack.clientWidth * index;
+      const behavior = smooth ? 'smooth' : 'auto';
+      if (typeof slideTrack.scrollTo === 'function') {
+        slideTrack.scrollTo({ left: offset, behavior });
+      } else {
+        slideTrack.scrollLeft = offset;
+      }
+    };
+
+    const activate = (i, { smooth = true } = {}) => {
       index = (i + slides.length) % slides.length;
       slides.forEach((slide, idx) => {
         slide.classList.toggle('active', idx === index);
@@ -68,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
           dot.setAttribute('aria-current', idx === index ? 'true' : 'false');
         });
       }
+      scrollToIndex(smooth);
     };
 
     const stopAuto = () => {
@@ -97,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    activate(index);
+    activate(index, { smooth: false });
 
     prev?.addEventListener('click', () => {
       activate(index - 1);
@@ -112,6 +125,8 @@ document.addEventListener('DOMContentLoaded', () => {
     gallerySlider.addEventListener('pointerdown', () => stopAuto());
     gallerySlider.addEventListener('pointerup', () => startAuto());
     gallerySlider.addEventListener('pointerleave', () => startAuto());
+
+    window.addEventListener('resize', () => scrollToIndex(false));
 
     startAuto();
   }
