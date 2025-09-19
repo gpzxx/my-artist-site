@@ -716,10 +716,10 @@ a:focus-visible {
 
 .release-card {
   position: relative;
-  grid-column: span 6;
+  grid-column: span 3;
   perspective: 1400px;
   aspect-ratio: 1;
-  min-height: 320px;
+  min-height: 260px;
   transition: transform .45s var(--transition), box-shadow .45s ease;
   will-change: transform;
 }
@@ -1150,9 +1150,9 @@ a:focus-visible {
   }
 
   .release-card {
-    grid-column: span 12;
+    grid-column: span 6;
     aspect-ratio: 1;
-    min-height: 300px;
+    min-height: 280px;
   }
 
   .release-back {
@@ -1254,6 +1254,7 @@ a:focus-visible {
   }
 
   .release-card {
+    grid-column: span 12;
     aspect-ratio: 1;
     min-height: 280px;
   }
