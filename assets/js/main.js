@@ -59,14 +59,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (index < 0) index = 0;
     let timerId;
 
-    const scrollToIndex = (smooth = true) => {
+    const setTransform = (smooth = true) => {
       if (!slideTrack) return;
-      const offset = slideTrack.clientWidth * index;
-      const behavior = smooth ? 'smooth' : 'auto';
-      if (typeof slideTrack.scrollTo === 'function') {
-        slideTrack.scrollTo({ left: offset, behavior });
+      if (!smooth) {
+        slideTrack.classList.add('no-animate');
       } else {
-        slideTrack.scrollLeft = offset;
+        slideTrack.classList.remove('no-animate');
+      }
+      slideTrack.style.transform = `translateX(-${index * 100}%)`;
+      if (!smooth) {
+        const restore = () => slideTrack.classList.remove('no-animate');
+        if (typeof requestAnimationFrame === 'function') {
+          requestAnimationFrame(restore);
+        } else {
+          setTimeout(restore, 16);
+        }
       }
     };
 
@@ -80,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
           dot.setAttribute('aria-current', idx === index ? 'true' : 'false');
         });
       }
-      scrollToIndex(smooth);
+      setTransform(smooth);
     };
 
     const stopAuto = () => {
@@ -126,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gallerySlider.addEventListener('pointerup', () => startAuto());
     gallerySlider.addEventListener('pointerleave', () => startAuto());
 
-    window.addEventListener('resize', () => scrollToIndex(false));
+    window.addEventListener('resize', () => setTransform(false));
 
     startAuto();
   }
