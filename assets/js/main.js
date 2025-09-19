@@ -244,10 +244,41 @@ document.addEventListener('DOMContentLoaded', () => {
       container.innerHTML = '<div class="embed-placeholder">Paste a SoundCloud track or mix URL in <code>data-soundcloud</code>.</div>';
       return;
     }
+    const truthy = (value, fallback) => {
+      if (value === undefined || value === '') return fallback;
+      const normalized = value.toString().toLowerCase();
+      return !['false', '0', 'no', 'off'].includes(normalized);
+    };
     const iframe = document.createElement('iframe');
-    iframe.src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(url)}&color=%23b7a6ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true`;
+    const color = container.dataset.soundcloudColor || '#b7a6ff';
+    const params = new URLSearchParams();
+    params.set('url', url);
+    params.set('color', color);
+    params.set('auto_play', truthy(container.dataset.soundcloudAutoplay, false) ? 'true' : 'false');
+    params.set('hide_related', truthy(container.dataset.soundcloudHideRelated, false) ? 'true' : 'false');
+    params.set('show_comments', truthy(container.dataset.soundcloudComments, true) ? 'true' : 'false');
+    params.set('show_user', truthy(container.dataset.soundcloudUser, true) ? 'true' : 'false');
+    params.set('show_reposts', truthy(container.dataset.soundcloudReposts, false) ? 'true' : 'false');
+    params.set('show_teaser', truthy(container.dataset.soundcloudTeaser, false) ? 'true' : 'false');
+    const visual = truthy(container.dataset.soundcloudVisual, true);
+    params.set('visual', visual ? 'true' : 'false');
+    if (!visual) {
+      params.set('show_artwork', truthy(container.dataset.soundcloudArtwork, true) ? 'true' : 'false');
+      params.set('sharing', truthy(container.dataset.soundcloudSharing, true) ? 'true' : 'false');
+      params.set('buying', truthy(container.dataset.soundcloudBuying, false) ? 'true' : 'false');
+    }
+    iframe.src = `https://w.soundcloud.com/player/?${params.toString()}`;
     iframe.allow = 'autoplay';
     iframe.loading = 'lazy';
+    iframe.title = 'SoundCloud audio player';
+    const desiredHeight = container.dataset.soundcloudHeight;
+    if (desiredHeight) {
+      const normalizedHeight = /px$|%$/.test(desiredHeight) ? desiredHeight : `${desiredHeight}px`;
+      iframe.height = normalizedHeight;
+      iframe.style.minHeight = normalizedHeight;
+      container.style.minHeight = normalizedHeight;
+      container.style.setProperty('--audio-embed-min', normalizedHeight);
+    }
     container.innerHTML = '';
     container.appendChild(iframe);
   });
