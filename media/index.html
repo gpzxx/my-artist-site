@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>KIZU - Photos & Videos</title>
-    <link rel="icon" href="../assets/icons/Kizu_Logo_1.png" type="image/svg+xml" />
+    <link rel="icon" href="../assets/icons/Kizu_Logo_1.png" type="image/png" />
     <link rel="stylesheet" href="../assets/css/styles.css" />
   </head>
   <body>
@@ -33,14 +33,23 @@
 
       <section class="media-slideshow reveal" data-gallery data-gallery-slider>
         <div class="media-slides">
-          <figure class="media-slide active" data-full="../assets/img/Kizu-5.jpg">
-            <img src="../assets/img/Kizu-5.jpg" alt="Live show" data-full="../assets/img/Kizu-5.jpg" />
+          <figure class="media-slide active">
+            <picture>
+              <source srcset="../assets/img/Kizu-5.webp" type="image/webp" />
+              <img src="../assets/img/Kizu-5.jpg" alt="Live show" data-full="../assets/img/Kizu-5.jpg" data-full-webp="../assets/img/Kizu-5.webp" fetchpriority="high" decoding="async" />
+            </picture>
           </figure>
-          <figure class="media-slide" data-full="../assets/img/DSC02938.jpg">
-            <img src="../assets/img/Kizu-14.jpg" alt="Studio session" data-full="../assets/img/DSC02938.jpg" />
+          <figure class="media-slide">
+            <picture>
+              <source srcset="../assets/img/Kizu-14.webp" type="image/webp" />
+              <img src="../assets/img/Kizu-14.jpg" alt="Studio session" data-full="../assets/img/Kizu-14.jpg" data-full-webp="../assets/img/Kizu-14.webp" loading="lazy" decoding="async" />
+            </picture>
           </figure>
-          <figure class="media-slide" data-full="../assets/img/Kizu-3.jpg">
-            <img src="../assets/img/Kizu-3.jpg" alt="Portrait" data-full="../assets/img/Kizu-3.jpg" />
+          <figure class="media-slide">
+            <picture>
+              <source srcset="../assets/img/Kizu-3.webp" type="image/webp" />
+              <img src="../assets/img/Kizu-3.jpg" alt="Portrait" data-full="../assets/img/Kizu-3.jpg" data-full-webp="../assets/img/Kizu-3.webp" loading="lazy" decoding="async" />
+            </picture>
           </figure>
         </div>
         <div class="media-controls">
@@ -67,17 +76,17 @@
     <footer class="site-footer">
       <div class="container">
         <div class="socials">
-          <a href="https://www.instagram.com/lc.kizu" aria-label="Instagram" class="icon"><img src="../assets/icons/instagram.svg" alt="" /></a>
-          <a href="https://www.youtube.com/channel/UC4hUXw89qZt6hiZt9q2-dcQ" aria-label="YouTube" class="icon"><img src="../assets/icons/youtube.svg" alt="" /></a>
-          <a href="https://open.spotify.com/intl-de/artist/2xyVS681aStt1edfMGddLY?si=kkeLyo2MT7W85uNhAmZccQ" aria-label="Spotify" class="icon"><img src="../assets/icons/spotify.svg" alt="" /></a>
-          <a href="https://www.soundcloud.com/kizuloge" aria-label="SoundCloud" class="icon"><img src="../assets/icons/soundcloud.svg" alt="" /></a>
-          <a href="https://www.tiktok.com/@lc.kizu" aria-label="TikTok" class="icon"><img src="../assets/icons/tiktok.svg" alt="" /></a>
-          <a href="https://de.ra.co/dj/kizu" aria-label="Resident Advisor" class="icon"><img src="../assets/icons/ra.png" alt="" /></a>
+          <a href="https://www.instagram.com/lc.kizu" aria-label="Instagram" class="icon"><img src="../assets/icons/instagram.svg" alt="" loading="lazy" decoding="async" /></a>
+          <a href="https://www.youtube.com/channel/UC4hUXw89qZt6hiZt9q2-dcQ" aria-label="YouTube" class="icon"><img src="../assets/icons/youtube.svg" alt="" loading="lazy" decoding="async" /></a>
+          <a href="https://open.spotify.com/intl-de/artist/2xyVS681aStt1edfMGddLY?si=kkeLyo2MT7W85uNhAmZccQ" aria-label="Spotify" class="icon"><img src="../assets/icons/spotify.svg" alt="" loading="lazy" decoding="async" /></a>
+          <a href="https://www.soundcloud.com/kizuloge" aria-label="SoundCloud" class="icon"><img src="../assets/icons/soundcloud.svg" alt="" loading="lazy" decoding="async" /></a>
+          <a href="https://www.tiktok.com/@lc.kizu" aria-label="TikTok" class="icon"><img src="../assets/icons/tiktok.svg" alt="" loading="lazy" decoding="async" /></a>
+          <a href="https://de.ra.co/dj/kizu" aria-label="Resident Advisor" class="icon"><img src="../assets/icons/ra.png" alt="" loading="lazy" decoding="async" /></a>
         </div>
         <div class="credit">&copy; <span data-year></span> KIZU</div>
       </div>
     </footer>
 
-    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/main.js" defer></script>
   </body>
   </html>

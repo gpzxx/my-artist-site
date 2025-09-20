@@ -28,13 +28,26 @@ document.addEventListener('DOMContentLoaded', () => {
   if (gallery && lightbox && lightboxImg && lightboxClose) {
     const closeLightbox = () => {
       lightbox.hidden = true;
-      lightboxImg.src = '';
+      lightboxImg.removeAttribute('src');
+      lightboxImg.removeAttribute('srcset');
+      lightboxImg.onerror = null;
     };
 
     gallery.addEventListener('click', (event) => {
       const img = event.target.closest('img[data-full]');
       if (!img) return;
-      lightboxImg.src = img.dataset.full;
+      const fallbackSrc = img.dataset.full || '';
+      const candidate = img.dataset.fullWebp || fallbackSrc || img.currentSrc;
+      lightboxImg.decoding = 'async';
+      if (fallbackSrc && fallbackSrc !== candidate) {
+        lightboxImg.onerror = () => {
+          lightboxImg.onerror = null;
+          lightboxImg.src = fallbackSrc;
+        };
+      } else {
+        lightboxImg.onerror = null;
+      }
+      lightboxImg.src = candidate;
       lightbox.hidden = false;
     });
 
