@@ -318,7 +318,15 @@ a:focus-visible {
 .home {
   position: relative;
   min-height: 100vh;
-  background: url('../img/hero-kizu.jpg') center/cover no-repeat;
+  background-color: rgb(var(--bg-rgb));
+  background-image: url('../img/hero-kizu.jpg');
+  background-image: image-set(
+    url('../img/hero-kizu.webp') type('image/webp'),
+    url('../img/hero-kizu.jpg') type('image/jpeg')
+  );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .intro {
@@ -1140,6 +1148,20 @@ a:focus-visible {
   padding: 16px;
   background: linear-gradient(150deg, rgba(var(--surface-rgb), 0.9), rgba(var(--surface-rgb), 0.94));
   box-shadow: var(--shadow-soft);
+}
+
+.pdf-frame iframe {
+  display: block;
+  width: 100%;
+  min-height: clamp(480px, 70vh, 820px);
+  border: 0;
+  background: var(--surface);
+}
+
+.pdf-fallback {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--muted);
 }
 
 .muted {
