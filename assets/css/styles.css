@@ -1312,7 +1312,7 @@ a:focus-visible {
   }
 
   .intro::before {
-    background: linear-gradient(180deg, rgba(6, 6, 8, 0.92) 0%, rgba(6, 6, 8, 0.78) 55%, rgba(6, 6, 8, 0.32) 100%);
+    background: var(--hero-overlay) !important;
   }
 
   .intro-content {
@@ -1320,21 +1320,24 @@ a:focus-visible {
   }
 
   .intro-panel {
-    padding: 28px 22px;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
     gap: 22px;
-    background: rgba(6, 6, 8, 0.72);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: var(--shadow-soft);
-    backdrop-filter: blur(12px);
   }
 
   .intro-panel h1 {
     font-size: clamp(32px, 8vw, 46px);
+    color: var(--hero-h1);
   }
 
   .intro-panel p {
     font-size: 16px;
+    color: var(--hero-body);
   }
+
 
   .intro-actions,
   .hero-actions {
