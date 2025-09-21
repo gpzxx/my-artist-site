@@ -296,6 +296,43 @@ document.addEventListener('DOMContentLoaded', () => {
     container.appendChild(iframe);
   });
 
+  // Contact form mailto handling
+  const contactForm = document.querySelector('[data-contact-form]');
+  if (contactForm) {
+    const statusEl = contactForm.querySelector('[data-contact-status]');
+    contactForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      const data = new FormData(form);
+      const name = (data.get('name') || '').toString().trim();
+      const email = (data.get('email') || '').toString().trim();
+      const subjectValue = (data.get('subject') || '').toString().trim();
+      const message = (data.get('message') || '').toString().trim();
+      const subject = subjectValue || 'Kontaktanfrage';
+      const bodyLines = [
+        `Name: ${name || 'N/A'}`,
+        `E-Mail: ${email || 'N/A'}`,
+        '',
+        'Nachricht:',
+        message || 'N/A',
+      ];
+      const body = bodyLines.join('\n');
+      const mailto = `mailto:bookings@kizuloge.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+      if (statusEl) {
+        statusEl.textContent = 'Dein E-Mail-Programm wurde geöffnet. Bitte prüfe die Angaben und sende die Nachricht dort ab.';
+        statusEl.hidden = false;
+      }
+      window.setTimeout(() => {
+        try {
+          form.reset();
+        } catch (error) {
+          console.error(error);
+        }
+      }, 300);
+    });
+  }
+
   // Scroll reveal
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!prefersReducedMotion && 'IntersectionObserver' in window) {
