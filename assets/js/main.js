@@ -308,19 +308,19 @@ document.addEventListener('DOMContentLoaded', () => {
       const email = (data.get('email') || '').toString().trim();
       const subjectValue = (data.get('subject') || '').toString().trim();
       const message = (data.get('message') || '').toString().trim();
-      const subject = subjectValue || 'Kontaktanfrage';
+      const subject = subjectValue || 'Contact request';
       const bodyLines = [
         `Name: ${name || 'N/A'}`,
-        `E-Mail: ${email || 'N/A'}`,
+        `Email: ${email || 'N/A'}`,
         '',
-        'Nachricht:',
+        'Message:',
         message || 'N/A',
       ];
       const body = bodyLines.join('\n');
       const mailto = `mailto:bookings@kizuloge.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       window.location.href = mailto;
       if (statusEl) {
-        statusEl.textContent = 'Dein E-Mail-Programm wurde geöffnet. Bitte prüfe die Angaben und sende die Nachricht dort ab.';
+        statusEl.textContent = 'Your email application opened. Please review the details and send the message there.';
         statusEl.hidden = false;
       }
       window.setTimeout(() => {
