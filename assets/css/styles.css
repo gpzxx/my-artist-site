@@ -778,18 +778,14 @@ a:focus-visible {
 
 .media-item {
   margin: 0;
-}
-
-.media-item picture {
   position: relative;
   overflow: hidden;
-  display: block;
 }
 
 .media-item img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
   transition: transform .45s var(--transition), filter .45s ease;
 }
 
