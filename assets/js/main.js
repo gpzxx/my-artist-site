@@ -60,6 +60,165 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Media slider
+  const mediaSlider = document.querySelector('[data-media-slider]');
+  if (mediaSlider) {
+    const track = mediaSlider.querySelector('[data-media-track]');
+    const slides = track ? Array.from(track.querySelectorAll('.media-slide')) : [];
+    const prev = mediaSlider.querySelector('[data-media-prev]');
+    const next = mediaSlider.querySelector('[data-media-next]');
+    const dotsWrap = mediaSlider.querySelector('[data-media-dots]');
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let index = 0;
+    let autoTimer = null;
+    const autoDelay = 7000;
+
+    if (slides.length) {
+      const initialIndex = slides.findIndex((slide) => slide.classList.contains('is-active'));
+      if (initialIndex >= 0) {
+        index = initialIndex;
+      } else {
+        slides[0].classList.add('is-active');
+      }
+    }
+
+    const applyTransform = (immediate) => {
+      if (!track) return;
+      if (immediate) {
+        track.classList.add('is-immediate');
+      } else {
+        track.classList.remove('is-immediate');
+      }
+      track.style.transform = `translateX(-${index * 100}%)`;
+      if (immediate) {
+        const restore = () => track.classList.remove('is-immediate');
+        if (typeof window.requestAnimationFrame === 'function') {
+          window.requestAnimationFrame(restore);
+        } else {
+          setTimeout(restore, 16);
+        }
+      }
+    };
+
+    const updateActiveStates = () => {
+      slides.forEach((slide, idx) => {
+        slide.classList.toggle('is-active', idx === index);
+      });
+      if (dotsWrap) {
+        const dots = dotsWrap.querySelectorAll('button');
+        dots.forEach((dot, idx) => {
+          dot.setAttribute('aria-current', idx === index ? 'true' : 'false');
+        });
+      }
+    };
+
+    const goTo = (target, options) => {
+      if (!slides.length) return;
+      const immediate = options && options.immediate;
+      index = (target + slides.length) % slides.length;
+      updateActiveStates();
+      applyTransform(immediate);
+    };
+
+    const stopAuto = () => {
+      if (autoTimer) {
+        clearTimeout(autoTimer);
+        autoTimer = null;
+      }
+    };
+
+    const scheduleAuto = () => {
+      if (motionQuery.matches) return;
+      stopAuto();
+      autoTimer = setTimeout(() => {
+        goTo(index + 1);
+        scheduleAuto();
+      }, autoDelay);
+    };
+
+    const buildDots = () => {
+      if (!dotsWrap) return;
+      dotsWrap.innerHTML = '';
+      slides.forEach((_, idx) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.setAttribute('aria-label', `Go to highlight ${idx + 1}`);
+        if (idx === index) dot.setAttribute('aria-current', 'true');
+        dot.addEventListener('click', () => {
+          goTo(idx);
+          scheduleAuto();
+        });
+        dotsWrap.appendChild(dot);
+      });
+    };
+
+    buildDots();
+    goTo(index, { immediate: true });
+    scheduleAuto();
+
+    if (prev) {
+      prev.addEventListener('click', () => {
+        goTo(index - 1);
+        scheduleAuto();
+      });
+    }
+
+    if (next) {
+      next.addEventListener('click', () => {
+        goTo(index + 1);
+        scheduleAuto();
+      });
+    }
+
+    mediaSlider.addEventListener('pointerenter', stopAuto);
+    mediaSlider.addEventListener('pointerleave', scheduleAuto);
+    mediaSlider.addEventListener('focusin', stopAuto);
+    mediaSlider.addEventListener('focusout', (event) => {
+      const nextTarget = event.relatedTarget;
+      if (!nextTarget || !mediaSlider.contains(nextTarget)) {
+        scheduleAuto();
+      }
+    });
+
+    mediaSlider.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        goTo(index - 1);
+        scheduleAuto();
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        goTo(index + 1);
+        scheduleAuto();
+      }
+    });
+
+    window.addEventListener('resize', () => goTo(index, { immediate: true }));
+
+    const handleVisibility = () => {
+      if (document.hidden) {
+        stopAuto();
+      } else {
+        scheduleAuto();
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibility);
+
+    const handleMotionChange = (event) => {
+      if (event.matches) {
+        stopAuto();
+      } else {
+        scheduleAuto();
+      }
+    };
+
+    if (typeof motionQuery.addEventListener === 'function') {
+      motionQuery.addEventListener('change', handleMotionChange);
+    } else if (typeof motionQuery.addListener === 'function') {
+      motionQuery.addListener(handleMotionChange);
+    }
+  }
+
   // Release cards flip interactions
   const releaseCards = document.querySelectorAll('[data-release-card]');
   if (releaseCards.length) {
