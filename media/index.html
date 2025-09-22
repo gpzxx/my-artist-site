@@ -1,10 +1,30 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>KIZU - Photos & Videos</title>
     <link rel="icon" href="../assets/icons/Kizu_Logo_1.png" type="image/png" />
+    <script>
+      (function (doc) {
+        var root = doc.documentElement;
+        if (!root) return;
+        if (root.classList) {
+          root.classList.remove('no-js');
+          root.classList.add('js');
+        } else {
+          var classes = root.className.split(/\s+/);
+          var filtered = [];
+          for (var i = 0; i < classes.length; i += 1) {
+            if (classes[i] && classes[i] !== 'no-js') {
+              filtered.push(classes[i]);
+            }
+          }
+          filtered.push('js');
+          root.className = filtered.join(' ');
+        }
+      })(document);
+    </script>
     <link rel="stylesheet" href="../assets/css/styles.css" />
   </head>
   <body>

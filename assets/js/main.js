@@ -132,15 +132,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     activate(index, { smooth: false });
 
-    prev?.addEventListener('click', () => {
-      activate(index - 1);
-      startAuto();
-    });
+    if (prev) {
+      prev.addEventListener('click', () => {
+        activate(index - 1);
+        startAuto();
+      });
+    }
 
-    next?.addEventListener('click', () => {
-      activate(index + 1);
-      startAuto();
-    });
+    if (next) {
+      next.addEventListener('click', () => {
+        activate(index + 1);
+        startAuto();
+      });
+    }
 
     gallerySlider.addEventListener('pointerdown', () => stopAuto());
     gallerySlider.addEventListener('pointerup', () => startAuto());
@@ -181,13 +185,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      closeBtn?.addEventListener('click', (event) => {
-        event.preventDefault();
-        flipClose();
-        if (typeof front.focus === 'function') {
-          front.focus({ preventScroll: true });
-        }
-      });
+      if (closeBtn) {
+        closeBtn.addEventListener('click', (event) => {
+          event.preventDefault();
+          flipClose();
+          if (typeof front.focus === 'function') {
+            front.focus({ preventScroll: true });
+          }
+        });
+      }
 
       card.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && card.classList.contains('is-flipped')) {
@@ -204,11 +210,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      hoverMedia.addEventListener?.('change', (event) => {
-        if (event.matches) {
-          flipClose();
-        }
-      });
+      if (typeof hoverMedia.addEventListener === 'function') {
+        hoverMedia.addEventListener('change', (event) => {
+          if (event.matches) {
+            flipClose();
+          }
+        });
+      } else if (typeof hoverMedia.addListener === 'function') {
+        hoverMedia.addListener((event) => {
+          if (event.matches) {
+            flipClose();
+          }
+        });
+      }
     });
   }
 
