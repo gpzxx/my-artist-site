@@ -3,23 +3,27 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>KIZU - Portfolio</title>
-    <meta name="description" content="Official artist portfolio: bio, media, and bookings" />
+    <title data-i18n="home.metaTitle">KIZU - Portfolio</title>
+    <meta name="description" content="Official artist portfolio: bio, media, and bookings" data-i18n="home.metaDescription" data-i18n-attr="content" />
     <link rel="icon" href="../assets/icons/Kizu_Logo_1.png" type="image/png" />
     <link rel="stylesheet" href="../assets/css/styles.css" />
   </head>
-  <body>
+  <body data-page="home">
     <header class="site-header">
       <div class="container nav-bar">
         <a class="brand" href="../home/">
           <span class="brand-name">KIZU</span>
         </a>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" data-i18n="nav.toggle" data-i18n-attr="aria-label">&#9776;</button>
         <nav class="site-nav" data-nav>
-          <a href="../biography/">Biography</a>
-          <a href="../media/">Media</a>
-          <a href="../releases/">Releases</a>
-          <a class="nav-cta" href="../booking/">Booking</a>
+          <a href="../biography/" data-i18n="nav.biography">Biography</a>
+          <a href="../media/" data-i18n="nav.media">Media</a>
+          <a href="../releases/" data-i18n="nav.releases">Releases</a>
+          <a class="nav-cta" href="../booking/" data-i18n="nav.booking">Booking</a>
+          <div class="lang-switch" role="group" aria-label="Language selection" data-lang-switch data-i18n="lang.toggleLabel" data-i18n-attr="aria-label">
+            <button type="button" data-lang="en" aria-pressed="true" data-i18n="lang.switchToEnglish" data-i18n-attr="aria-label">EN</button>
+            <button type="button" data-lang="de" aria-pressed="false" data-i18n="lang.switchToGerman" data-i18n-attr="aria-label">DE</button>
+          </div>
         </nav>
       </div>
     </header>
@@ -28,17 +32,17 @@
       <section class="intro">
         <div class="container intro-content">
           <div class="intro-panel reveal">
-            <span class="intro-eyebrow">Producer & DJ</span>
-            <h1>Immersive club journeys built on uplifting melodies and driving beats.</h1>
-            <p>Ravensburg-based artist shaping trance, speed garage, and hard house textures into high-intensity live sets and mindful listening experiences.</p>
+            <span class="intro-eyebrow" data-i18n="home.intro.eyebrow">Producer &amp; DJ</span>
+            <h1 data-i18n="home.intro.heading">Immersive club journeys built on uplifting melodies and driving beats.</h1>
+            <p data-i18n="home.intro.body">Ravensburg-based artist shaping trance, speed garage, and hard house textures into high-intensity live sets and mindful listening experiences.</p>
             <div class="intro-actions">
-              <a class="btn primary" href="mailto:bookings@kizuloge.com">Request a Booking</a>
-              <a class="btn outline" href="../releases/">Listen to Releases</a>
+              <a class="btn primary" href="mailto:bookings@kizuloge.com" data-i18n="home.intro.ctaPrimary">Request a Booking</a>
+              <a class="btn outline" href="../releases/" data-i18n="home.intro.ctaSecondary">Listen to Releases</a>
             </div>
-            <ul class="intro-tags" aria-label="Sounds and moods">
-              <li>Trance</li>
-              <li>Speed Garage</li>
-              <li>Hard House</li>
+            <ul class="intro-tags" aria-label="Sounds and moods" data-i18n="home.intro.tagsLabel" data-i18n-attr="aria-label">
+              <li data-i18n="home.intro.tag1">Trance</li>
+              <li data-i18n="home.intro.tag2">Speed Garage</li>
+              <li data-i18n="home.intro.tag3">Hard House</li>
             </ul>
           </div>
         </div>
@@ -48,27 +52,27 @@
         <div class="container spotlight-grid">
           <a class="spotlight-card" href="../biography/">
             <div>
-              <span class="spotlight-label">Story</span>
-              <h3>Biography</h3>
-              <p>Origins, influences, and little stories about myself</p>
+              <span class="spotlight-label" data-i18n="home.spotlight.story.label">Story</span>
+              <h3 data-i18n="home.spotlight.story.heading">Biography</h3>
+              <p data-i18n="home.spotlight.story.copy">Origins, influences, and little stories about myself</p>
             </div>
-            <span class="spotlight-link">Explore &rarr;</span>
+            <span class="spotlight-link" data-i18n="home.spotlight.story.link">Explore &rarr;</span>
           </a>
           <a class="spotlight-card" href="../media/">
             <div>
-              <span class="spotlight-label">Visuals</span>
-              <h3>Media</h3>
-              <p>High contrast imagery and live captures</p>
+              <span class="spotlight-label" data-i18n="home.spotlight.visuals.label">Visuals</span>
+              <h3 data-i18n="home.spotlight.visuals.heading">Media</h3>
+              <p data-i18n="home.spotlight.visuals.copy">High contrast imagery and live captures</p>
             </div>
-            <span class="spotlight-link">View &rarr;</span>
+            <span class="spotlight-link" data-i18n="home.spotlight.visuals.link">View &rarr;</span>
           </a>
           <a class="spotlight-card" href="../releases/">
             <div>
-              <span class="spotlight-label">Catalogue</span>
-              <h3>Releases</h3>
-              <p>Singles and mixes curated for late-night momentum.</p>
+              <span class="spotlight-label" data-i18n="home.spotlight.catalogue.label">Catalogue</span>
+              <h3 data-i18n="home.spotlight.catalogue.heading">Releases</h3>
+              <p data-i18n="home.spotlight.catalogue.copy">Singles and mixes curated for late-night momentum.</p>
             </div>
-            <span class="spotlight-link">Listen &rarr;</span>
+            <span class="spotlight-link" data-i18n="home.spotlight.catalogue.link">Listen &rarr;</span>
           </a>
         </div>
       </section>
@@ -76,35 +80,35 @@
       <section class="pulse reveal">
         <div class="container pulse-grid">
           <div class="pulse-copy">
-            <span class="pulse-eyebrow">Signature vibe</span>
-            <h2>Club energy with heart.</h2>
-            <p>My sets move from deep thriving raw techno/groove basslines into euphoric trance breakdowns, layering hard house and a lot of love for the crowd. Every show is a journey and definitely unique.</p>
-            <ul class="pulse-list" aria-label="Sound DNA">
+            <span class="pulse-eyebrow" data-i18n="home.pulse.eyebrow">Signature vibe</span>
+            <h2 data-i18n="home.pulse.heading">Club energy with heart.</h2>
+            <p data-i18n="home.pulse.body">My sets move from deep thriving raw techno/groove basslines into euphoric trance breakdowns, layering hard house and a lot of love for the crowd. Every show is a journey and definitely unique.</p>
+            <ul class="pulse-list" aria-label="Sound DNA" data-i18n="home.pulse.listLabel" data-i18n-attr="aria-label">
               <li>
-                <span class="pulse-term">Sound</span>
-                <span class="pulse-desc">Speed garage, trance, hard house and acid lines built for goosebumps.</span>
+                <span class="pulse-term" data-i18n="home.pulse.sound.term">Sound</span>
+                <span class="pulse-desc" data-i18n="home.pulse.sound.desc">Speed garage, trance, hard house and acid lines built for goosebumps.</span>
               </li>
               <li>
-                <span class="pulse-term">Vibe</span>
-                <span class="pulse-desc">High-energy rave, warm transitions and deep melodies to catch you off-guard turning fast into bass-face mode</span>
+                <span class="pulse-term" data-i18n="home.pulse.vibe.term">Vibe</span>
+                <span class="pulse-desc" data-i18n="home.pulse.vibe.desc">High-energy rave, warm transitions and deep melodies to catch you off-guard turning fast into bass-face mode</span>
               </li>
               <li>
-                <span class="pulse-term">Mission</span>
-                <span class="pulse-desc">Create a community. On the dancefloor, also for the living-rooms.</span>
+                <span class="pulse-term" data-i18n="home.pulse.mission.term">Mission</span>
+                <span class="pulse-desc" data-i18n="home.pulse.mission.desc">Create a community. On the dancefloor, also for the living-rooms.</span>
               </li>
             </ul>
             <div class="pulse-actions">
-              <a class="btn primary" href="../media/">View media</a>
-              <a class="btn outline" href="../releases/">Latest releases</a>
+              <a class="btn primary" href="../media/" data-i18n="home.pulse.ctaMedia">View media</a>
+              <a class="btn outline" href="../releases/" data-i18n="home.pulse.ctaReleases">Latest releases</a>
             </div>
           </div>
           <div class="pulse-visual">
             <picture>
               <source srcset="../assets/img/Kizu-3.webp" type="image/webp" />
-              <img src="../assets/img/Kizu-3.jpg" alt="KIZU during a club set bathed in purple light" loading="lazy" decoding="async" />
+              <img src="../assets/img/Kizu-3.jpg" alt="KIZU during a club set bathed in purple light" data-i18n="home.pulse.imageAlt" data-i18n-attr="alt" loading="lazy" decoding="async" />
             </picture>
             <div class="pulse-overlay">
-              <span>Rave safe, rave loud.</span>
+              <span data-i18n="home.pulse.overlay">Rave safe, rave loud.</span>
             </div>
           </div>
         </div>
@@ -122,7 +126,7 @@
           <a href="https://www.tiktok.com/@lc.kizu" aria-label="TikTok" class="icon"><img src="../assets/icons/tiktok.svg" alt="" loading="lazy" decoding="async" /></a>
           <a href="https://de.ra.co/dj/kizu" aria-label="Resident Advisor" class="icon"><img src="../assets/icons/ra.png" alt="" loading="lazy" decoding="async" /></a>
         </div>
-        <div class="credit">&copy; <span data-year></span> KIZU &middot; <a class="legal-link" href="../impressum/">Legal Notice</a> &middot; <a class="legal-link" href="../datenschutz/">Privacy Policy</a></div>
+        <div class="credit">&copy; <span data-year></span> KIZU &middot; <a class="legal-link" href="../impressum/" data-i18n="footer.legal">Legal Notice</a> &middot; <a class="legal-link" href="../datenschutz/" data-i18n="footer.privacy">Privacy Policy</a></div>
       </div>
     </footer>
 

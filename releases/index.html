@@ -3,58 +3,62 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>KIZU - Releases</title>
+    <title data-i18n="releases.metaTitle">KIZU - Releases</title>
     <link rel="icon" href="../assets/icons/Kizu_Logo_1.png" type="image/png" />
     <link rel="stylesheet" href="../assets/css/styles.css" />
   </head>
-  <body>
+  <body data-page="releases">
     <header class="site-header">
       <div class="container nav-bar">
         <a class="brand" href="../home/">
           <span class="brand-name">KIZU</span>
         </a>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" data-i18n="nav.toggle" data-i18n-attr="aria-label">&#9776;</button>
         <nav class="site-nav" data-nav>
-          <a href="../biography/">Biography</a>
-          <a href="../media/">Media</a>
-          <a class="active" href="../releases/">Releases</a>
-          <a class="nav-cta" href="../booking/">Booking</a>
+          <a href="../biography/" data-i18n="nav.biography">Biography</a>
+          <a href="../media/" data-i18n="nav.media">Media</a>
+          <a class="active" href="../releases/" data-i18n="nav.releases">Releases</a>
+          <a class="nav-cta" href="../booking/" data-i18n="nav.booking">Booking</a>
+          <div class="lang-switch" role="group" aria-label="Language selection" data-lang-switch data-i18n="lang.toggleLabel" data-i18n-attr="aria-label">
+            <button type="button" data-lang="en" aria-pressed="true" data-i18n="lang.switchToEnglish" data-i18n-attr="aria-label">EN</button>
+            <button type="button" data-lang="de" aria-pressed="false" data-i18n="lang.switchToGerman" data-i18n-attr="aria-label">DE</button>
+          </div>
         </nav>
       </div>
     </header>
 
     <main class="container page">
       <section class="page-header reveal">
-        <h1>Releases</h1>
-        <p>Tracks,mixes and highlights in my career to explore.</p>
+        <h1 data-i18n="releases.header.title">Releases</h1>
+        <p data-i18n="releases.header.lead">Tracks, mixes and highlights in my career to explore.</p>
       </section>
 
       <section class="filters reveal">
-        <button class="pill active" data-filter="all">All</button>
-        <button class="pill" data-filter="track">Tracks</button>
-        <button class="pill" data-filter="mix">Mixes</button>
-        <button class="pill" data-filter="labels">Labels</button>
+        <button class="pill active" data-filter="all" data-i18n="releases.filters.all">All</button>
+        <button class="pill" data-filter="track" data-i18n="releases.filters.tracks">Tracks</button>
+        <button class="pill" data-filter="mix" data-i18n="releases.filters.mixes">Mixes</button>
+        <button class="pill" data-filter="labels" data-i18n="releases.filters.labels">Labels</button>
       </section>
 
       <section class="release-grid" data-releases>
         <article class="release-card filter-item reveal" data-type="track" data-release-card>
           <div class="release-flip">
-            <div class="release-face release-front" tabindex="0" role="button" aria-label="Show release details for Haunted By Your Love" aria-expanded="false">
+            <div class="release-face release-front" tabindex="0" role="button" aria-label="Show release details for Haunted By Your Love" data-i18n="releases.hbyl.frontLabel" data-i18n-attr="aria-label" aria-expanded="false">
               <picture>
                 <source srcset="../assets/img/hbyl.webp" type="image/webp" />
-                <img src="../assets/img/hbyl.jpeg" alt="Haunted By Your Love cover art" loading="lazy" decoding="async" />
+                <img src="../assets/img/hbyl.jpeg" alt="Haunted By Your Love cover art" data-i18n="releases.hbyl.coverAlt" data-i18n-attr="alt" loading="lazy" decoding="async" />
               </picture>
             </div>
             <div class="release-face release-back">
-              <button class="release-close" type="button" data-release-close>Back to cover</button>
+              <button class="release-close" type="button" data-release-close data-i18n="releases.actions.back">Back to cover</button>
               <div class="release-body">
                 <div class="release-details">
-                  <span class="badge track">Track</span>
+                  <span class="badge track" data-i18n="releases.badges.track">Track</span>
                   <h3>Haunted By Your Love</h3>
-                  <p>Super melancholic summer anthem.</p>
+                  <p data-i18n="releases.hbyl.desc">Super melancholic summer anthem.</p>
                 </div>
                 <div class="release-links">
-                  <span>Listen</span>
+                  <span data-i18n="releases.listenLabel">Listen</span>
                   <a href="https://open.spotify.com/intl-de/track/0CfIIuJEnuQ9E0LsYQijre?si=be6d4272f6e342be">Spotify</a>
                 </div>
                 <div class="release-player">
@@ -67,22 +71,22 @@
 
         <article class="release-card filter-item reveal" data-type="track" data-release-card>
           <div class="release-flip">
-            <div class="release-face release-front" tabindex="0" role="button" aria-label="Show release details for Outta Space" aria-expanded="false">
+            <div class="release-face release-front" tabindex="0" role="button" aria-label="Show release details for Outta Space" data-i18n="releases.outtaspace.frontLabel" data-i18n-attr="aria-label" aria-expanded="false">
               <picture>
                 <source srcset="../assets/img/outtaspace.webp" type="image/webp" />
-                <img src="../assets/img/outtaspace.jpg" alt="Outta Space cover art" loading="lazy" decoding="async" />
+                <img src="../assets/img/outtaspace.jpg" alt="Outta Space cover art" data-i18n="releases.outtaspace.coverAlt" data-i18n-attr="alt" loading="lazy" decoding="async" />
               </picture>
             </div>
             <div class="release-face release-back">
-              <button class="release-close" type="button" data-release-close>Back to cover</button>
+              <button class="release-close" type="button" data-release-close data-i18n="releases.actions.back">Back to cover</button>
               <div class="release-body">
                 <div class="release-details">
-                  <span class="badge track">Track</span>
+                  <span class="badge track" data-i18n="releases.badges.track">Track</span>
                   <h3>Outta Space</h3>
-                  <p>We just love acid.</p>
+                  <p data-i18n="releases.outtaspace.desc">We just love acid.</p>
                 </div>
                 <div class="release-links">
-                  <span>Listen</span>
+                  <span data-i18n="releases.listenLabel">Listen</span>
                   <a href="https://open.spotify.com/intl-de/track/21IFnjS0UKb9SZgRd5zc5P">Spotify</a>
                   <a href="https://music.apple.com/de/album/outta-space/1819568989?i=1819568990">Apple Music</a>
                 </div>
@@ -96,22 +100,22 @@
 
         <article class="release-card filter-item reveal" data-type="track" data-release-card>
           <div class="release-flip">
-            <div class="release-face release-front" tabindex="0" role="button" aria-label="Show release details for Found You" aria-expanded="false">
+            <div class="release-face release-front" tabindex="0" role="button" aria-label="Show release details for Found You" data-i18n="releases.foundyou.frontLabel" data-i18n-attr="aria-label" aria-expanded="false">
               <picture>
                 <source srcset="../assets/img/Foundyou.webp" type="image/webp" />
-                <img src="../assets/img/Foundyou.jpg" alt="Found You cover art" loading="lazy" decoding="async" />
+                <img src="../assets/img/Foundyou.jpg" alt="Found You cover art" data-i18n="releases.foundyou.coverAlt" data-i18n-attr="alt" loading="lazy" decoding="async" />
               </picture>
             </div>
             <div class="release-face release-back">
-              <button class="release-close" type="button" data-release-close>Back to cover</button>
+              <button class="release-close" type="button" data-release-close data-i18n="releases.actions.back">Back to cover</button>
               <div class="release-body">
                 <div class="release-details">
-                  <span class="badge track">Track</span>
+                  <span class="badge track" data-i18n="releases.badges.track">Track</span>
                   <h3>Found You</h3>
-                  <p>Your next favorite closing track.</p>
+                  <p data-i18n="releases.foundyou.desc">Your next favorite closing track.</p>
                 </div>
                 <div class="release-links">
-                  <span>Listen</span>
+                  <span data-i18n="releases.listenLabel">Listen</span>
                   <a href="https://open.spotify.com/intl-de/track/0bXEh3hvGu7AZWlNuLvrIR?si=c9a4a05e26924fbb">Spotify</a>
                   <a href="https://music.apple.com/de/album/found-you-single/1835513869?i=1835513870">Apple Music</a>
                 </div>
@@ -125,22 +129,22 @@
 
         <article class="release-card filter-item reveal" data-type="track" data-release-card>
           <div class="release-flip">
-            <div class="release-face release-front" tabindex="0" role="button" aria-label="Show release details for Blow A Kiss" aria-expanded="false">
+            <div class="release-face release-front" tabindex="0" role="button" aria-label="Show release details for Blow A Kiss" data-i18n="releases.blowakiss.frontLabel" data-i18n-attr="aria-label" aria-expanded="false">
               <picture>
                 <source srcset="../assets/img/blowakiss.webp" type="image/webp" />
-                <img src="../assets/img/blowakiss.jpg" alt="Blow A Kiss cover art" loading="lazy" decoding="async" />
+                <img src="../assets/img/blowakiss.jpg" alt="Blow A Kiss cover art" data-i18n="releases.blowakiss.coverAlt" data-i18n-attr="alt" loading="lazy" decoding="async" />
               </picture>
             </div>
             <div class="release-face release-back">
-              <button class="release-close" type="button" data-release-close>Back to cover</button>
+              <button class="release-close" type="button" data-release-close data-i18n="releases.actions.back">Back to cover</button>
               <div class="release-body">
                 <div class="release-details">
-                  <span class="badge track">Track</span>
+                  <span class="badge track" data-i18n="releases.badges.track">Track</span>
                   <h3>Blow A Kiss</h3>
-                  <p>Super driving headbanger.</p>
+                  <p data-i18n="releases.blowakiss.desc">Super driving headbanger.</p>
                 </div>
                 <div class="release-links">
-                  <span>Listen</span>
+                  <span data-i18n="releases.listenLabel">Listen</span>
                   <a href="https://open.spotify.com/intl-de/track/6CmusGGtNoHCAWXyI1PhbB?si=646fa82d07514b12">Spotify</a>
                   <a href="https://music.apple.com/de/album/blow-a-kiss-single/1835666866?i=1835666867">Apple Music</a>
                 </div>
@@ -155,10 +159,10 @@
         <article class="mixes-card filter-item reveal" data-type="mix">
           <div class="mixes-content">
             <div class="mixes-header">
-              <span class="badge mix">Mixes</span>
+              <span class="badge mix" data-i18n="releases.badges.mix">Mixes</span>
               <div>
-                <h3>All Mixes Playlist</h3>
-                <p class="muted mixes-note">Hit play to run through every uploaded mix in one go.</p>
+                <h3 data-i18n="releases.mixes.title">All Mixes Playlist</h3>
+                <p class="muted mixes-note" data-i18n="releases.mixes.note">Hit play to run through every uploaded mix in one go.</p>
               </div>
             </div>
             <div class="mixes-embed audio-embed" data-soundcloud="https://soundcloud.com/kizuloge/sets/sets-podcasts-2025?si=8a1c73c77e5e4ed887a1c82862e59649&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" data-soundcloud-visual="false" data-soundcloud-height="520" data-soundcloud-comments="false" data-soundcloud-hide-related="true"></div>
@@ -166,31 +170,25 @@
         </article>
         <article class="label-card filter-item reveal" data-type="labels">
           <div>
-            <h3>Label Highlights</h3>
+            <h3 data-i18n="releases.labels.title">Label Highlights</h3>
           </div>
           <div class="label-logos">
-<!--            <div class="label-logo" aria-label="Coming Soon">
-              <picture class="label-logo-picture">
-                <source srcset="../assets/img/labels/sesh-dawgs-united-dark.svg" media="(prefers-color-scheme: dark)" />
-                <img src="../assets/img/labels/sesh-dawgs-united-light.svg" alt="Sesh Dawgs United" loading="lazy" decoding="async" />
-              </picture>
-            </div> -->
-            <div class="label-logo" aria-label="Parallel Label">
+            <div class="label-logo" aria-label="Parallel Label" data-i18n="releases.labels.parallel" data-i18n-attr="aria-label">
               <picture class="label-logo-picture">
                 <source srcset="../assets/img/labels/parallel-label-dark.svg" media="(prefers-color-scheme: dark)" />
-                <img src="../assets/img/labels/parallel-label-light.svg" alt="Parallel Label" loading="lazy" decoding="async" />
+                <img src="../assets/img/labels/parallel-label-light.svg" alt="Parallel Label" data-i18n="releases.labels.parallelAlt" data-i18n-attr="alt" loading="lazy" decoding="async" />
               </picture>
             </div>
-            <div class="label-logo" aria-label="Synthx Records">
+            <div class="label-logo" aria-label="Synthx Records" data-i18n="releases.labels.synthx" data-i18n-attr="aria-label">
               <picture class="label-logo-picture">
                 <source srcset="../assets/img/labels/synthx-records-dark.svg" media="(prefers-color-scheme: dark)" />
-                <img src="../assets/img/labels/synthx-records-light.svg" alt="Synthx Records" loading="lazy" decoding="async" />
+                <img src="../assets/img/labels/synthx-records-light.svg" alt="Synthx Records" data-i18n="releases.labels.synthxAlt" data-i18n-attr="alt" loading="lazy" decoding="async" />
               </picture>
             </div>
-            <div class="label-logo" aria-label="Coming Soon">
+            <div class="label-logo" aria-label="Coming Soon" data-i18n="releases.labels.coming" data-i18n-attr="aria-label">
               <picture class="label-logo-picture">
                 <source srcset="../assets/img/labels/milli-records-dark.svg" media="(prefers-color-scheme: dark)" />
-                <img src="../assets/img/labels/milli-records-light.svg" alt="Milli Records" loading="lazy" decoding="async" />
+                <img src="../assets/img/labels/milli-records-light.svg" alt="Milli Records" data-i18n="releases.labels.milliAlt" data-i18n-attr="alt" loading="lazy" decoding="async" />
               </picture>
             </div>
           </div>
@@ -208,7 +206,7 @@
           <a href="https://www.tiktok.com/@lc.kizu" aria-label="TikTok" class="icon"><img src="../assets/icons/tiktok.svg" alt="" loading="lazy" decoding="async" /></a>
           <a href="https://de.ra.co/dj/kizu" aria-label="Resident Advisor" class="icon"><img src="../assets/icons/ra.png" alt="" loading="lazy" decoding="async" /></a>
         </div>
-        <div class="credit">&copy; <span data-year></span> KIZU &middot; <a class="legal-link" href="../impressum/">Legal Notice</a> &middot; <a class="legal-link" href="../datenschutz/">Privacy Policy</a></div>
+        <div class="credit">&copy; <span data-year></span> KIZU &middot; <a class="legal-link" href="../impressum/" data-i18n="footer.legal">Legal Notice</a> &middot; <a class="legal-link" href="../datenschutz/" data-i18n="footer.privacy">Privacy Policy</a></div>
       </div>
     </footer>
 

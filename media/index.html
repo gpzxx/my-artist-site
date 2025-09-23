@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>KIZU - Photos & Videos</title>
+    <title data-i18n="media.metaTitle">KIZU - Photos &amp; Videos</title>
     <link rel="icon" href="../assets/icons/Kizu_Logo_1.png" type="image/png" />
     <script>
       (function (doc) {
@@ -27,18 +27,22 @@
     </script>
     <link rel="stylesheet" href="../assets/css/styles.css" />
   </head>
-  <body>
+  <body data-page="media">
     <header class="site-header">
       <div class="container nav-bar">
         <a class="brand" href="../home/">
           <span class="brand-name">KIZU</span>
         </a>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" data-i18n="nav.toggle" data-i18n-attr="aria-label">&#9776;</button>
         <nav class="site-nav" data-nav>
-          <a href="../biography/">Biography</a>
-          <a class="active" href="../media/">Media</a>
-          <a href="../releases/">Releases</a>
-          <a class="nav-cta" href="../booking/">Booking</a>
+          <a href="../biography/" data-i18n="nav.biography">Biography</a>
+          <a class="active" href="../media/" data-i18n="nav.media">Media</a>
+          <a href="../releases/" data-i18n="nav.releases">Releases</a>
+          <a class="nav-cta" href="../booking/" data-i18n="nav.booking">Booking</a>
+          <div class="lang-switch" role="group" aria-label="Language selection" data-lang-switch data-i18n="lang.toggleLabel" data-i18n-attr="aria-label">
+            <button type="button" data-lang="en" aria-pressed="true" data-i18n="lang.switchToEnglish" data-i18n-attr="aria-label">EN</button>
+            <button type="button" data-lang="de" aria-pressed="false" data-i18n="lang.switchToGerman" data-i18n-attr="aria-label">DE</button>
+          </div>
         </nav>
       </div>
     </header>
@@ -46,26 +50,26 @@
     <main class="page">
       <div class="container">
         <section class="page-header reveal">
-          <h1>Photos & Videos</h1>
-          <p>Snapshots and clips from the journey.</p>
+          <h1 data-i18n="media.header.title">Photos &amp; Videos</h1>
+          <p data-i18n="media.header.lead">Snapshots and clips from the journey.</p>
         </section>
       </div>
 
       <section class="media-slider reveal" data-gallery data-media-slider tabindex="0">
         <div class="media-slider-frame">
-          <button class="media-slider-arrow" type="button" data-media-prev aria-label="Previous image">&#10094;</button>
+          <button class="media-slider-arrow" type="button" data-media-prev aria-label="Previous image" data-i18n="media.slider.prev" data-i18n-attr="aria-label">&#10094;</button>
           <div class="media-slider-track" data-media-track>
             <figure class="media-slide is-active">
-              <img src="../assets/img/Kizu-5.jpg" alt="Live show" data-full="../assets/img/Kizu-5.jpg" data-full-webp="../assets/img/Kizu-5.webp" fetchpriority="high" decoding="async" />
+              <img src="../assets/img/Kizu-5.jpg" alt="Live show" data-i18n="media.slider.img1" data-i18n-attr="alt" data-full="../assets/img/Kizu-5.jpg" data-full-webp="../assets/img/Kizu-5.webp" fetchpriority="high" decoding="async" />
             </figure>
             <figure class="media-slide">
-              <img src="../assets/img/Kizu-14.jpg" alt="Studio session" data-full="../assets/img/Kizu-14.jpg" data-full-webp="../assets/img/Kizu-14.webp" decoding="async" />
+              <img src="../assets/img/Kizu-14.jpg" alt="Studio session" data-i18n="media.slider.img2" data-i18n-attr="alt" data-full="../assets/img/Kizu-14.jpg" data-full-webp="../assets/img/Kizu-14.webp" decoding="async" />
             </figure>
             <figure class="media-slide">
-              <img src="../assets/img/Kizu-3.jpg" alt="Portrait" data-full="../assets/img/Kizu-3.jpg" data-full-webp="../assets/img/Kizu-3.webp" decoding="async" />
+              <img src="../assets/img/Kizu-3.jpg" alt="Portrait" data-i18n="media.slider.img3" data-i18n-attr="alt" data-full="../assets/img/Kizu-3.jpg" data-full-webp="../assets/img/Kizu-3.webp" decoding="async" />
             </figure>
           </div>
-          <button class="media-slider-arrow" type="button" data-media-next aria-label="Next image">&#10095;</button>
+          <button class="media-slider-arrow" type="button" data-media-next aria-label="Next image" data-i18n="media.slider.next" data-i18n-attr="aria-label">&#10095;</button>
         </div>
       </section>
 
@@ -79,8 +83,8 @@
     </main>
 
     <div class="lightbox" data-lightbox hidden>
-      <button class="lightbox-close" aria-label="Close">&times;</button>
-      <img class="lightbox-media" alt="Expanded media" />
+      <button class="lightbox-close" aria-label="Close" data-i18n="media.lightbox.close" data-i18n-attr="aria-label">&times;</button>
+      <img class="lightbox-media" alt="Expanded media" data-i18n="media.lightbox.alt" data-i18n-attr="alt" />
     </div>
 
     <footer class="site-footer">
@@ -93,7 +97,7 @@
           <a href="https://www.tiktok.com/@lc.kizu" aria-label="TikTok" class="icon"><img src="../assets/icons/tiktok.svg" alt="" decoding="async" /></a>
           <a href="https://de.ra.co/dj/kizu" aria-label="Resident Advisor" class="icon"><img src="../assets/icons/ra.png" alt="" decoding="async" /></a>
         </div>
-        <div class="credit">&copy; <span data-year></span> KIZU &middot; <a class="legal-link" href="../impressum/">Legal Notice</a> &middot; <a class="legal-link" href="../datenschutz/">Privacy Policy</a></div>
+        <div class="credit">&copy; <span data-year></span> KIZU &middot; <a class="legal-link" href="../impressum/" data-i18n="footer.legal">Legal Notice</a> &middot; <a class="legal-link" href="../datenschutz/" data-i18n="footer.privacy">Privacy Policy</a></div>
       </div>
     </footer>
 
