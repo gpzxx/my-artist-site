@@ -180,6 +180,38 @@ a:focus-visible {
   gap: 30px;
 }
 
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  background: rgba(var(--surface-rgb), 0.86);
+  box-shadow: var(--shadow-soft);
+}
+
+.lang-switch button {
+  background: none;
+  border: none;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: color .25s ease, background .25s ease;
+}
+
+.lang-switch button:hover,
+.lang-switch button:focus-visible {
+  color: var(--ink);
+}
+
+.lang-switch button[aria-pressed="true"] {
+  color: var(--ink);
+  background: rgba(var(--accent-rgb), 0.12);
+}
+
 .site-nav a {
   font-size: 12px;
   letter-spacing: 0.32em;
@@ -1734,6 +1766,16 @@ a:focus-visible {
     box-shadow: var(--shadow-soft);
     display: none;
     min-width: 240px;
+  }
+
+  .lang-switch {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .lang-switch button {
+    flex: 1 1 auto;
+    padding-inline: 0;
   }
 
   .site-nav a {

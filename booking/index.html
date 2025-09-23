@@ -3,77 +3,81 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>KIZU - Booking</title>
+    <title data-i18n="booking.metaTitle">KIZU - Booking</title>
     <link rel="icon" href="../assets/icons/Kizu_Logo_1.png" type="image/png" />
     <link rel="stylesheet" href="../assets/css/styles.css" />
   </head>
-  <body>
+  <body data-page="booking">
     <header class="site-header">
       <div class="container nav-bar">
         <a class="brand" href="../home/">
           <span class="brand-name">KIZU</span>
         </a>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" data-i18n="nav.toggle" data-i18n-attr="aria-label">&#9776;</button>
         <nav class="site-nav" data-nav>
-          <a href="../biography/">Biography</a>
-          <a href="../media/">Media</a>
-          <a href="../releases/">Releases</a>
-          <a class="nav-cta active" href="../booking/">Booking</a>
+          <a href="../biography/" data-i18n="nav.biography">Biography</a>
+          <a href="../media/" data-i18n="nav.media">Media</a>
+          <a href="../releases/" data-i18n="nav.releases">Releases</a>
+          <a class="nav-cta active" href="../booking/" data-i18n="nav.booking">Booking</a>
+          <div class="lang-switch" role="group" aria-label="Language selection" data-lang-switch data-i18n="lang.toggleLabel" data-i18n-attr="aria-label">
+            <button type="button" data-lang="en" aria-pressed="true" data-i18n="lang.switchToEnglish" data-i18n-attr="aria-label">EN</button>
+            <button type="button" data-lang="de" aria-pressed="false" data-i18n="lang.switchToGerman" data-i18n-attr="aria-label">DE</button>
+          </div>
         </nav>
       </div>
     </header>
 
     <main class="container page">
       <section class="page-header reveal">
-        <h1>Technical & Hospitality Rider</h1>
-        <p>Download or view the latest PDF rider below.</p>
+        <h1 data-i18n="booking.header.title">Technical &amp; Hospitality Rider</h1>
+        <p data-i18n="booking.header.lead">Download or view the latest PDF rider below.</p>
         <div class="hero-actions">
-          <a class="btn primary" href="mailto:bookings@kizuloge.com">Request a Booking</a>
-          <a class="btn outline" href="../assets/docs/KIZU_Rider.pdf" download>Download Rider</a>
-          <a class="btn" href="../assets/docs/KIZU_Rider.pdf" target="_blank" rel="noopener">Open in new tab</a>
+          <a class="btn primary" href="mailto:bookings@kizuloge.com" data-i18n="booking.header.primaryCta">Request a Booking</a>
+          <a class="btn outline" href="../assets/docs/KIZU_Rider.pdf" download data-i18n="booking.header.download">Download Rider</a>
+          <a class="btn" href="../assets/docs/KIZU_Rider.pdf" target="_blank" rel="noopener" data-i18n="booking.header.open">Open in new tab</a>
         </div>
       </section>
 
       <section class="reveal" style="margin-top:18px">
         <div class="pdf-frame">
-          <iframe src="../assets/docs/KIZU_Rider.pdf#view=FitH" title="KIZU technical rider" loading="lazy" width="100%" height="820"></iframe>
+          <iframe src="../assets/docs/KIZU_Rider.pdf#view=FitH" title="KIZU technical rider" data-i18n="booking.rider.title" data-i18n-attr="title" loading="lazy" width="100%" height="820"></iframe>
           <noscript>
-            <p class="pdf-fallback">PDF preview unavailable? <a href="../assets/docs/KIZU_Rider.pdf">Download the rider</a>.</p>
+            <p class="pdf-fallback" data-i18n="booking.rider.fallback" data-i18n-mode="html">PDF preview unavailable? <a href="../assets/docs/KIZU_Rider.pdf">Download the rider</a>.</p>
           </noscript>
         </div>
       </section>
 
       <section class="contact-section reveal" id="contact-form">
-        <h2>Contact Form</h2>
-        <p>Send your request directly via the form or use the email address. After submitting, your mail app opens so you can add attachments before sending.</p>
+        <h2 data-i18n="booking.form.title">Contact Form</h2>
+        <p data-i18n="booking.form.lead">Send your request directly via the form or use the email address. After submitting, your mail app opens so you can add attachments before sending.</p>
         <form class="contact-form" method="post" action="mailto:bookings@kizuloge.com" data-contact-form>
           <div class="form-grid">
             <label class="form-field">
-              <span>Name *</span>
+              <span data-i18n="booking.form.name">Name *</span>
               <input type="text" name="name" required autocomplete="name" />
             </label>
             <label class="form-field">
-              <span>Email *</span>
+              <span data-i18n="booking.form.email">Email *</span>
               <input type="email" name="email" required autocomplete="email" />
             </label>
             <label class="form-field">
-              <span>Subject</span>
-              <input type="text" name="subject" placeholder="Booking, press, general request..." />
+              <span data-i18n="booking.form.subject">Subject</span>
+              <input type="text" name="subject" placeholder="Booking, press, general request..." data-i18n="booking.form.subjectPlaceholder" data-i18n-attr="placeholder" />
             </label>
             <label class="form-field form-field--full">
-              <span>Message *</span>
-              <textarea name="message" rows="6" required placeholder="How can we help?"></textarea>
+              <span data-i18n="booking.form.message">Message *</span>
+              <textarea name="message" rows="6" required placeholder="How can we help?" data-i18n="booking.form.messagePlaceholder" data-i18n-attr="placeholder"></textarea>
             </label>
           </div>
           <label class="form-field form-field--checkbox">
             <input type="checkbox" name="privacy" required />
-            <span>I have read the <a href="../impressum/">legal notice</a> and agree that my details may be processed to reply to my inquiry.</span>
+            <span data-i18n="booking.form.privacy" data-i18n-mode="html">I have read the <a href="../impressum/">legal notice</a> and agree that my details may be processed to reply to my inquiry.</span>
           </label>
           <div class="form-actions">
-            <button class="btn primary" type="submit">Send Message</button>
+            <button class="btn primary" type="submit" data-i18n="booking.form.submit">Send Message</button>
             <p class="contact-status" data-contact-status hidden role="status"></p>
           </div>
-          <p class="contact-disclaimer">The form opens your email program so you can review and send the message. No data is stored on this server.</p>
+          <p class="contact-disclaimer" data-i18n="booking.form.disclaimer">The form opens your email program so you can review and send the message. No data is stored on this server.</p>
         </form>
       </section>
     </main>
@@ -88,7 +92,7 @@
           <a href="https://www.tiktok.com/@lc.kizu" aria-label="TikTok" class="icon"><img src="../assets/icons/tiktok.svg" alt="" loading="lazy" decoding="async" /></a>
           <a href="https://de.ra.co/dj/kizu" aria-label="Resident Advisor" class="icon"><img src="../assets/icons/ra.png" alt="" loading="lazy" decoding="async" /></a>
         </div>
-        <div class="credit">&copy; <span data-year></span> KIZU &middot; <a class="legal-link" href="../impressum/">Legal Notice</a> &middot; <a class="legal-link" href="../datenschutz/">Privacy Policy</a></div>
+        <div class="credit">&copy; <span data-year></span> KIZU &middot; <a class="legal-link" href="../impressum/" data-i18n="footer.legal">Legal Notice</a> &middot; <a class="legal-link" href="../datenschutz/" data-i18n="footer.privacy">Privacy Policy</a></div>
       </div>
     </footer>
 

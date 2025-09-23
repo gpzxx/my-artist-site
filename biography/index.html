@@ -3,70 +3,74 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>KIZU - Biography</title>
+    <title data-i18n="bio.metaTitle">KIZU - Biography</title>
     <link rel="icon" href="../assets/icons/Kizu_Logo_1.png" type="image/png" />
     <link rel="stylesheet" href="../assets/css/styles.css" />
   </head>
-  <body>
+  <body data-page="biography">
     <header class="site-header">
       <div class="container nav-bar">
         <a class="brand" href="../home/">
           <span class="brand-name">KIZU</span>
         </a>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" data-i18n="nav.toggle" data-i18n-attr="aria-label">&#9776;</button>
         <nav class="site-nav" data-nav>
-          <a class="active" href="../biography/">Biography</a>
-          <a href="../media/">Media</a>
-          <a href="../releases/">Releases</a>
-          <a class="nav-cta" href="../booking/">Booking</a>
+          <a class="active" href="../biography/" data-i18n="nav.biography">Biography</a>
+          <a href="../media/" data-i18n="nav.media">Media</a>
+          <a href="../releases/" data-i18n="nav.releases">Releases</a>
+          <a class="nav-cta" href="../booking/" data-i18n="nav.booking">Booking</a>
+          <div class="lang-switch" role="group" aria-label="Language selection" data-lang-switch data-i18n="lang.toggleLabel" data-i18n-attr="aria-label">
+            <button type="button" data-lang="en" aria-pressed="true" data-i18n="lang.switchToEnglish" data-i18n-attr="aria-label">EN</button>
+            <button type="button" data-lang="de" aria-pressed="false" data-i18n="lang.switchToGerman" data-i18n-attr="aria-label">DE</button>
+          </div>
         </nav>
       </div>
     </header>
 
     <main class="container page">
       <section class="page-header reveal">
-        <h1>Biography</h1>
-        <p>Kizu is a young, versatile artist whose mission is to make people laugh, move them emotionally, and bring the ecstatic power of electronic music to the dance floor.</p>
+        <h1 data-i18n="bio.header.title">Biography</h1>
+        <p data-i18n="bio.header.lead">Kizu is a young, versatile artist whose mission is to make people laugh, move them emotionally, and bring the ecstatic power of electronic music to the dance floor.</p>
       </section>
 
       <section class="bio reveal">
         <div class="bio-media">
           <picture>
             <source srcset="../assets/img/DSC02938.webp" type="image/webp" />
-            <img src="../assets/img/DSC02938.jpg" alt="Portrait" loading="lazy" decoding="async" />
+            <img src="../assets/img/DSC02938.jpg" alt="Portrait" data-i18n="bio.media.alt" data-i18n-attr="alt" loading="lazy" decoding="async" />
           </picture>
         </div>
         <div class="bio-text">
-          <h2>About</h2>
-          <p>Based in Ravensburg, Germany, Kizu channels a warm, welcoming vibe and always goes the extra mile for the music and the crowd. On stage, he delivers energetic, feel-good DJ sets that fuse fast-paced groove and trance with flashes of bliss.</p>
-          <p>He began making music in late 2023 and stepped into production in late 2024, quickly shaping a confident, high-energy sound. Bookings span clubs and residencies including Hans-Bunte-Areal (Freiburg) and Club Douala (Ravensburg), with appearances at Circle (Offenburg) & //:about Blank (Berlin)</p>
-          <p>Releases and signings touch labels such as Para//e/ (Berlin), SYNTHX Records (Munich), Milli Records (Berlin), and SeshDawgsUnited (Berlin)</p>
-          <p>Always spread love and you will receive love.</p>
+          <h2 data-i18n="bio.about.title">About</h2>
+          <p data-i18n="bio.about.p1">Based in Ravensburg, Germany, Kizu channels a warm, welcoming vibe and always goes the extra mile for the music and the crowd. On stage, he delivers energetic, feel-good DJ sets that fuse fast-paced groove and trance with flashes of bliss.</p>
+          <p data-i18n="bio.about.p2">He began making music in late 2023 and stepped into production in late 2024, quickly shaping a confident, high-energy sound. Bookings span clubs and residencies including Hans-Bunte-Areal (Freiburg) and Club Douala (Ravensburg), with appearances at Circle (Offenburg) &amp; //:about Blank (Berlin)</p>
+          <p data-i18n="bio.about.p3">Releases and signings touch labels such as Para//e/ (Berlin), SYNTHX Records (Munich), Milli Records (Berlin), and SeshDawgsUnited (Berlin)</p>
+          <p data-i18n="bio.about.p4">Always spread love and you will receive love.</p>
 
-          <h3>Highlights</h3>
+          <h3 data-i18n="bio.highlights.title">Highlights</h3>
           <ul class="pill-list">
-            <li>Festival appearances</li>
-            <li><a href="../releases/">Label releases</a></li>
+            <li data-i18n="bio.highlights.item1">Festival appearances</li>
+            <li><a href="../releases/" data-i18n="bio.highlights.item2">Label releases</a></li>
           </ul>
 
-          <h3>Contact & Bookings</h3>
-          <p>Email: <a href="mailto:bookings@example.com">bookings@kizuloge.com</a></p>
+          <h3 data-i18n="bio.contact.title">Contact &amp; Bookings</h3>
+          <p data-i18n="bio.contact.body" data-i18n-mode="html">Email: <a href="mailto:bookings@kizuloge.com">bookings@kizuloge.com</a></p>
         </div>
       </section>
 
-      <section class="bio-stats reveal" aria-label="Career highlights">
+      <section class="bio-stats reveal" aria-label="Career highlights" data-i18n="bio.stats.label" data-i18n-attr="aria-label">
         <div class="bio-stats-grid">
           <div class="bio-stat">
-            <span class="bio-stat-value">2</span>
-            <span class="bio-stat-label">Years DJing</span>
+            <span class="bio-stat-value" data-i18n="bio.stats.valueYears">2</span>
+            <span class="bio-stat-label" data-i18n="bio.stats.labelYears">Years DJing</span>
           </div>
           <div class="bio-stat">
-            <span class="bio-stat-value">9</span>
-            <span class="bio-stat-label">Releases out</span>
+            <span class="bio-stat-value" data-i18n="bio.stats.valueReleases">9</span>
+            <span class="bio-stat-label" data-i18n="bio.stats.labelReleases">Releases out</span>
           </div>
           <div class="bio-stat">
-            <span class="bio-stat-value">10</span>
-            <span class="bio-stat-label">Clubs played</span>
+            <span class="bio-stat-value" data-i18n="bio.stats.valueClubs">10</span>
+            <span class="bio-stat-label" data-i18n="bio.stats.labelClubs">Clubs played</span>
           </div>
         </div>
       </section>
@@ -82,7 +86,7 @@
           <a href="https://www.tiktok.com/@lc.kizu" aria-label="TikTok" class="icon"><img src="../assets/icons/tiktok.svg" alt="" loading="lazy" decoding="async" /></a>
           <a href="https://de.ra.co/dj/kizu" aria-label="Resident Advisor" class="icon"><img src="../assets/icons/ra.png" alt="" loading="lazy" decoding="async" /></a>
         </div>
-        <div class="credit">&copy; <span data-year></span> KIZU &middot; <a class="legal-link" href="../impressum/">Legal Notice</a> &middot; <a class="legal-link" href="../datenschutz/">Privacy Policy</a></div>
+        <div class="credit">&copy; <span data-year></span> KIZU &middot; <a class="legal-link" href="../impressum/" data-i18n="footer.legal">Legal Notice</a> &middot; <a class="legal-link" href="../datenschutz/" data-i18n="footer.privacy">Privacy Policy</a></div>
       </div>
     </footer>
 
