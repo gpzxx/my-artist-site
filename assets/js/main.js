@@ -377,8 +377,8 @@ document.addEventListener('DOMContentLoaded', () => {
         toggle: 'Navigation umschalten',
         biography: 'Biografie',
         media: 'Medien',
-        releases: 'Veröffentlichungen',
-        booking: 'Buchung',
+        releases: 'Releases',
+        booking: 'Booking',
       },
       lang: {
         toggleLabel: 'Sprachauswahl',
@@ -394,8 +394,8 @@ document.addEventListener('DOMContentLoaded', () => {
         metaDescription: 'Offizielles Künstlerportfolio: Biografie, Medien und Buchung.',
         intro: {
           eyebrow: 'Producer & DJ',
-          heading: 'Immersive Clubreisen mit erhebenden Melodien und treibenden Beats.',
-          body: 'Der Künstler aus Ravensburg verbindet Trance, Speed Garage und Hard House zu energiegeladenen Livesets und achtsamen Listening-Erlebnissen.',
+          heading: 'Fesselnde Clubreisen voller euphorischer Melodien und treibender Beats.',
+          body: 'Der aus Ravensburg stammende Künstler vereint Trance, Speed Garage und Hard House zu kraftvollen Sets.',
           ctaPrimary: 'Booking anfragen',
           ctaSecondary: 'Releases anhören',
           tagsLabel: 'Sounds und Stimmungen',
@@ -418,7 +418,7 @@ document.addEventListener('DOMContentLoaded', () => {
           },
           catalogue: {
             label: 'Katalog',
-            heading: 'Veröffentlichungen',
+            heading: 'Releases',
             copy: 'Singles und Mixes für spätnächtlichen Drive.',
             link: 'Reinhören →',
           },
@@ -426,7 +426,7 @@ document.addEventListener('DOMContentLoaded', () => {
         pulse: {
           eyebrow: 'Signature-Vibe',
           heading: 'Clubenergie mit Herz.',
-          body: 'Meine Sets führen von druckvollen Techno- und Groove-Basslines in euphorische Trance-Breakdowns, schichten Hard House und ganz viel Liebe fürs Publikum. Jede Show ist eine Reise und immer einzigartig.',
+          body: 'Bass, Breakdowns, Hard House und Herz: Meine Sets sind pure Energie und machen jede Show zu einem besonderen Erlebnis.',
           listLabel: 'Sound-DNA',
           sound: {
             term: 'Sound',
@@ -434,33 +434,33 @@ document.addEventListener('DOMContentLoaded', () => {
           },
           vibe: {
             term: 'Vibe',
-            desc: 'High-Energy-Rave, warme Übergänge und tiefe Melodien, die dich ruckzuck in den Bassface-Modus schicken.',
+            desc: 'High-Energy-Rave, abstrakte Übergänge und treibende Melodien, die dich in Handumdrehen einen Bassface auslösen.',
           },
           mission: {
             term: 'Mission',
-            desc: 'Eine Community schaffen. Auf dem Dancefloor und fürs Wohnzimmer.',
+            desc: 'Eine Community schaffen. Auf dem Dancefloor - fürs Wohnzimmer.',
           },
           ctaMedia: 'Medien ansehen',
           ctaReleases: 'Neueste Releases',
           imageAlt: 'KIZU während eines Clubsets im violetten Licht',
-          overlay: 'Rave sicher, rave laut.',
+          overlay: 'Rave safe, rave loud.',
         },
       },
       bio: {
         metaTitle: 'KIZU - Biografie',
         header: {
           title: 'Biografie',
-          lead: 'Kizu ist ein junger, vielseitiger Künstler, dessen Mission es ist, Menschen zum Lachen zu bringen, sie emotional zu bewegen und die ekstatische Kraft elektronischer Musik auf den Dancefloor zu tragen.',
+          lead: 'Kizu ist ein junger, vielseitiger Künstler mit der Mission, Emotionen zu wecken, Freude zu schenken und die geballte Kraft elektronischer Musik auf die Tanzfläche zu entfesseln.',
         },
         media: {
           alt: 'Porträt',
         },
         about: {
           title: 'Über mich',
-          p1: 'Mit Sitz in Ravensburg versprüht Kizu eine warme, einladende Energie und geht für Musik und Crowd immer die Extrameile. Auf der Bühne liefert er energetische Feel-Good-DJ-Sets, die schnellen Groove und Trance mit Glücksmomenten verbinden.',
-          p2: 'Er begann Ende 2023 mit Musik und stieg Ende 2024 in die Produktion ein – und formte sehr schnell einen selbstbewussten, energiegeladenen Sound. Bookings führten in Clubs und Residencies wie Hans-Bunte-Areal (Freiburg) und Club Douala (Ravensburg) sowie zu Auftritten im Circle (Offenburg) & //:about Blank (Berlin).',
-          p3: 'Releases und Signings erschienen u. a. auf Para//e/ (Berlin), SYNTHX Records (München), Milli Records (Berlin) und SeshDawgsUnited (Berlin).',
-          p4: 'Verteile immer Liebe und du bekommst Liebe zurück.',
+          p1: 'Von Ravensburg aus verbreitet Kizu eine ansteckend positive Energie – für Musik und Crowd gibt er stets mehr als 100 % und seine Feel-Good-Sets verbinden treibenden Groove, tranceartige Höhen und jede Menge Glücksmomente',
+          p2: 'Kizu begann Ende 2023 mit dem Auflegen und stieg 2024 in die Musikproduktion ein, wo er seinen Signature Sound in kurzer Zeit prägte. Seine Bookings umfassen bereits Clubs und Residenzen wie Hans-Bunte-Areal (Freiburg) und Club Douala (Ravensburg) sowie Gigs im Circle (Offenburg) und //:about Blank (Berlin).',
+          p3: 'Seine Releases und Signings erschienen unter anderem bei Para//e/ (Berlin), SYNTHX Records (München), Milli Records (Berlin) und SeshDawgsUnited (Berlin).',
+          p4: 'Spread love and you will receive love.',
         },
         highlights: {
           title: 'Highlights',
@@ -500,9 +500,9 @@ document.addEventListener('DOMContentLoaded', () => {
         },
       },
       releases: {
-        metaTitle: 'KIZU - Veröffentlichungen',
+        metaTitle: 'KIZU - Releases',
         header: {
-          title: 'Veröffentlichungen',
+          title: 'Releases',
           lead: 'Tracks, Mixes und Highlights aus meiner Karriere zum Entdecken.',
         },
         filters: {
@@ -514,7 +514,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hbyl: {
           frontLabel: 'Release-Details zu Haunted By Your Love anzeigen',
           coverAlt: 'Haunted By Your Love Cover',
-          desc: 'Super melancholische Summer-Hymne.',
+          desc: 'Super melancholische Sommer-Hymne.',
         },
         actions: {
           back: 'Zurück zum Cover',
@@ -554,7 +554,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
       },
       booking: {
-        metaTitle: 'KIZU - Buchung',
+        metaTitle: 'KIZU - Booking',
         header: {
           title: 'Technical & Hospitality Rider',
           lead: 'Lade dir hier den aktuellen Rider als PDF herunter oder sieh ihn dir an.',
