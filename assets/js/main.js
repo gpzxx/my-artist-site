@@ -94,6 +94,12 @@ document.addEventListener('DOMContentLoaded', () => {
           title: 'Highlights',
           item1: 'Festival appearances',
           item2: 'Label releases',
+          festivalModal: {
+            title: 'Festival appearances',
+            intro: 'Snapshots from standout festival slots.',
+            list: '<li>Festival placeholder - City (Year)</li><li>Festival placeholder - City (Year)</li><li>Festival placeholder - City (Year)</li>',
+            close: 'Close',
+          },
         },
         contact: {
           title: 'Contact & Bookings',
@@ -107,13 +113,29 @@ document.addEventListener('DOMContentLoaded', () => {
           labelReleases: 'Releases out',
           valueClubs: '10',
           labelClubs: 'Clubs played',
+          clubsModal: {
+            title: 'Clubs played',
+            intro: 'Stages I have performed at so far:',
+            list: '<li>Hans-Bunte-Areal - Freiburg</li><li>Club Douala - Ravensburg</li><li>Circle - Offenburg</li><li>//:about blank - Berlin</li>',
+            close: 'Close',
+          },
         },
       },
       media: {
         metaTitle: 'KIZU - Photos & Videos',
         header: {
           title: 'Photos & Videos',
-          lead: 'Snapshots and clips from the journey.',
+          lead: 'Front-row footage from the booth, plus the stills that set the mood.',
+        },
+        videos: {
+          eyebrow: 'Live energy',
+          title: 'DJ sets in motion',
+          lead: 'The booth, the lights, the crowd — watch the energy unfold.',
+        },
+        photos: {
+          eyebrow: 'Still moments',
+          title: 'Photo highlights',
+          lead: 'Soft-focus frames that sit behind the music.',
         },
         slider: {
           prev: 'Previous image',
@@ -466,6 +488,12 @@ document.addEventListener('DOMContentLoaded', () => {
           title: 'Highlights',
           item1: 'Festival-Auftritte',
           item2: 'Label-Releases',
+          festivalModal: {
+            title: 'Festival-Auftritte',
+            intro: 'Einblicke in besondere Festivalshows.',
+            list: '<li>Festival-Platzhalter - Stadt (Jahr)</li><li>Festival-Platzhalter - Stadt (Jahr)</li><li>Festival-Platzhalter - Stadt (Jahr)</li>',
+            close: 'Schließen',
+          },
         },
         contact: {
           title: 'Kontakt & Booking',
@@ -479,13 +507,29 @@ document.addEventListener('DOMContentLoaded', () => {
           labelReleases: 'Releases veröffentlicht',
           valueClubs: '10',
           labelClubs: 'Clubs gespielt',
+          clubsModal: {
+            title: 'Gespielte Clubs',
+            intro: 'Diese Bühnen durfte ich bereits bespielen:',
+            list: '<li>Hans-Bunte-Areal - Freiburg</li><li>Club Douala - Ravensburg</li><li>Circle - Offenburg</li><li>//:about blank - Berlin</li>',
+            close: 'Schließen',
+          },
         },
       },
       media: {
         metaTitle: 'KIZU - Fotos & Videos',
         header: {
           title: 'Fotos & Videos',
-          lead: 'Momentaufnahmen und Clips von der Reise.',
+          lead: 'Mittendrin-Erlebnisse aus dem Booth plus die Stillframes für die Stimmung.',
+        },
+        videos: {
+          eyebrow: 'Live-Energie',
+          title: 'DJ-Sets in Bewegung',
+          lead: 'Der Booth, das Licht, die Crowd – sieh zu, wie die Energie entsteht.',
+        },
+        photos: {
+          eyebrow: 'Stille Momente',
+          title: 'Foto-Highlights',
+          lead: 'Weiche Eindrücke, die sich dezent hinter die Musik legen.',
         },
         slider: {
           prev: 'Vorheriges Bild',
@@ -865,6 +909,152 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', () => {
         nav.classList.remove('open');
         toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // Modals
+  const modalElements = document.querySelectorAll('[data-modal]');
+  if (modalElements.length) {
+    const modalMap = new Map();
+    const returnFocus = new WeakMap();
+    const openModals = new Set();
+    const focusableSelectors = 'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+    const updateBodyState = () => {
+      if (openModals.size) {
+        document.body.classList.add('has-modal-open');
+      } else {
+        document.body.classList.remove('has-modal-open');
+      }
+    };
+
+    const getFocusableElements = (modal) => {
+      return Array.from(modal.querySelectorAll(focusableSelectors)).filter((element) => {
+        if (element.hasAttribute('disabled')) return false;
+        if (element.getAttribute('aria-hidden') === 'true') return false;
+        const style = window.getComputedStyle(element);
+        return style.display !== 'none' && style.visibility !== 'hidden';
+      });
+    };
+
+    const focusFirstElement = (modal) => {
+      const focusable = getFocusableElements(modal);
+      const target = focusable[0] || modal.querySelector('.modal-dialog');
+      if (target && typeof target.focus === 'function') {
+        window.setTimeout(() => {
+          try {
+            target.focus({ preventScroll: true });
+          } catch (error) {
+            target.focus();
+          }
+        }, 20);
+      }
+    };
+
+    const trapFocus = (event, modal) => {
+      if (event.key !== 'Tab') return;
+      const focusable = getFocusableElements(modal);
+      if (!focusable.length) {
+        event.preventDefault();
+        const dialog = modal.querySelector('.modal-dialog');
+        if (dialog) dialog.focus({ preventScroll: true });
+        return;
+      }
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      const active = document.activeElement;
+      if (event.shiftKey) {
+        if (active === first || !modal.contains(active)) {
+          event.preventDefault();
+          last.focus({ preventScroll: true });
+        }
+      } else if (active === last) {
+        event.preventDefault();
+        first.focus({ preventScroll: true });
+      }
+    };
+
+    const setExpandedState = (trigger, expanded) => {
+      if (!trigger) return;
+      trigger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    };
+
+    const closeModal = (modal) => {
+      if (!modal || !openModals.has(modal)) return;
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      const trigger = returnFocus.get(modal);
+      if (trigger) {
+        setExpandedState(trigger, false);
+      }
+      const hideModal = (event) => {
+        if (event && event.target !== modal) return;
+        if (modal.classList.contains('is-open')) return;
+        modal.setAttribute('hidden', '');
+        modal.removeEventListener('transitionend', hideModal);
+      };
+      modal.addEventListener('transitionend', hideModal);
+      window.setTimeout(hideModal, 320);
+      openModals.delete(modal);
+      updateBodyState();
+      window.setTimeout(() => {
+        if (trigger && typeof trigger.focus === 'function') {
+          trigger.focus({ preventScroll: true });
+        }
+      }, 30);
+      returnFocus.delete(modal);
+    };
+
+    const openModal = (id, trigger) => {
+      const modal = modalMap.get(id);
+      if (!modal) return;
+      if (openModals.has(modal)) return;
+      modal.removeAttribute('hidden');
+      modal.setAttribute('aria-hidden', 'false');
+      modal.classList.add('is-open');
+      if (trigger) {
+        returnFocus.set(modal, trigger);
+        setExpandedState(trigger, true);
+      }
+      openModals.add(modal);
+      updateBodyState();
+      focusFirstElement(modal);
+    };
+
+    document.querySelectorAll('[data-modal-open]').forEach((trigger) => {
+      const id = trigger.dataset.modalOpen;
+      if (!id) return;
+      trigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        openModal(id, trigger);
+      });
+      trigger.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openModal(id, trigger);
+        }
+      });
+    });
+
+    modalElements.forEach((modal) => {
+      const id = modal.dataset.modal;
+      if (!id) return;
+      modalMap.set(id, modal);
+      modal.addEventListener('click', (event) => {
+        const closer = event.target.closest('[data-modal-close]');
+        if (closer) {
+          event.preventDefault();
+          closeModal(modal);
+        }
+      });
+      modal.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          closeModal(modal);
+        } else if (event.key === 'Tab') {
+          trapFocus(event, modal);
+        }
       });
     });
   }

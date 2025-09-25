@@ -49,9 +49,35 @@
 
           <h3 data-i18n="bio.highlights.title">Highlights</h3>
           <ul class="pill-list">
-            <li data-i18n="bio.highlights.item1">Festival appearances</li>
-            <li><a href="../releases/" data-i18n="bio.highlights.item2">Label releases</a></li>
+            <li>
+              <button
+                type="button"
+                class="pill pill--button"
+                data-modal-open="festival-experiences"
+                aria-haspopup="dialog"
+                aria-expanded="false"
+                aria-controls="festival-experiences-modal"
+                data-i18n="bio.highlights.item1"
+              >Festival appearances</button>
+            </li>
+            <li>
+              <a class="pill" href="../releases/" data-i18n="bio.highlights.item2">Label releases</a>
+            </li>
           </ul>
+
+          <div class="modal" data-modal="festival-experiences" id="festival-experiences-modal" hidden aria-hidden="true">
+            <div class="modal-backdrop" data-modal-close></div>
+            <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="festival-experiences-title" tabindex="-1">
+              <button type="button" class="modal-close" data-modal-close aria-label="Close" data-i18n="bio.highlights.festivalModal.close" data-i18n-attr="aria-label"></button>
+              <h2 class="modal-title" id="festival-experiences-title" data-i18n="bio.highlights.festivalModal.title">Festival appearances</h2>
+              <p class="modal-intro" data-i18n="bio.highlights.festivalModal.intro">Snapshots from standout festival slots.</p>
+              <ul class="modal-list" data-i18n="bio.highlights.festivalModal.list" data-i18n-mode="html">
+                <li>Festival placeholder - City (Year)</li>
+                <li>Festival placeholder - City (Year)</li>
+                <li>Festival placeholder - City (Year)</li>
+              </ul>
+            </div>
+          </div>
 
           <h3 data-i18n="bio.contact.title">Contact &amp; Bookings</h3>
           <p data-i18n="bio.contact.body" data-i18n-mode="html">Email: <a href="mailto:bookings@kizuloge.com">bookings@kizuloge.com</a></p>
@@ -68,12 +94,34 @@
             <span class="bio-stat-value" data-i18n="bio.stats.valueReleases">9</span>
             <span class="bio-stat-label" data-i18n="bio.stats.labelReleases">Releases out</span>
           </div>
-          <div class="bio-stat">
+          <button
+            type="button"
+            class="bio-stat bio-stat--button"
+            data-modal-open="clubs-played"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+            aria-controls="clubs-played-modal"
+          >
             <span class="bio-stat-value" data-i18n="bio.stats.valueClubs">10</span>
             <span class="bio-stat-label" data-i18n="bio.stats.labelClubs">Clubs played</span>
-          </div>
+          </button>
         </div>
       </section>
+
+      <div class="modal" data-modal="clubs-played" id="clubs-played-modal" hidden aria-hidden="true">
+        <div class="modal-backdrop" data-modal-close></div>
+        <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="clubs-played-title" tabindex="-1">
+          <button type="button" class="modal-close" data-modal-close aria-label="Close" data-i18n="bio.stats.clubsModal.close" data-i18n-attr="aria-label"></button>
+          <h2 class="modal-title" id="clubs-played-title" data-i18n="bio.stats.clubsModal.title">Clubs played</h2>
+          <p class="modal-intro" data-i18n="bio.stats.clubsModal.intro">Stages I have performed at so far:</p>
+          <ul class="modal-list" data-i18n="bio.stats.clubsModal.list" data-i18n-mode="html">
+            <li>Hans-Bunte-Areal - Freiburg</li>
+            <li>Club Douala - Ravensburg</li>
+            <li>Circle - Offenburg</li>
+            <li>//:about blank - Berlin</li>
+          </ul>
+        </div>
+      </div>
     </main>
 
     <footer class="site-footer">

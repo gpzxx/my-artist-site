@@ -51,35 +51,51 @@
       <div class="container">
         <section class="page-header reveal">
           <h1 data-i18n="media.header.title">Photos &amp; Videos</h1>
-          <p data-i18n="media.header.lead">Snapshots and clips from the journey.</p>
+          <p data-i18n="media.header.lead">Front-row footage from the booth, plus the stills that set the mood.</p>
         </section>
       </div>
 
-      <section class="media-slider reveal" data-gallery data-media-slider tabindex="0">
-        <div class="media-slider-frame">
-          <button class="media-slider-arrow" type="button" data-media-prev aria-label="Previous image" data-i18n="media.slider.prev" data-i18n-attr="aria-label">&#10094;</button>
-          <div class="media-slider-track" data-media-track>
-            <figure class="media-slide is-active">
-              <img src="../assets/img/Kizu-5.jpg" alt="Live show" data-i18n="media.slider.img1" data-i18n-attr="alt" data-full="../assets/img/Kizu-5.jpg" data-full-webp="../assets/img/Kizu-5.webp" fetchpriority="high" decoding="async" />
-            </figure>
-            <figure class="media-slide">
-              <img src="../assets/img/Kizu-14.jpg" alt="Studio session" data-i18n="media.slider.img2" data-i18n-attr="alt" data-full="../assets/img/Kizu-14.jpg" data-full-webp="../assets/img/Kizu-14.webp" decoding="async" />
-            </figure>
-            <figure class="media-slide">
-              <img src="../assets/img/Kizu-3.jpg" alt="Portrait" data-i18n="media.slider.img3" data-i18n-attr="alt" data-full="../assets/img/Kizu-3.jpg" data-full-webp="../assets/img/Kizu-3.webp" decoding="async" />
-            </figure>
+      <section class="media-videos reveal">
+        <div class="container media-videos__inner">
+          <div class="media-videos__copy">
+            <span class="media-label" data-i18n="media.videos.eyebrow">Live energy</span>
+            <h2 data-i18n="media.videos.title">DJ sets in motion</h2>
+            <p data-i18n="media.videos.lead">The booth, the lights, the crowd — watch the energy unfold.</p>
           </div>
-          <button class="media-slider-arrow" type="button" data-media-next aria-label="Next image" data-i18n="media.slider.next" data-i18n-attr="aria-label">&#10095;</button>
+          <div class="video-grid" data-youtube-gallery>
+            <div class="video-embed" data-youtube="hvE52b0SiFw"></div>
+            <div class="video-embed" data-youtube="oRUe2bkegJY"></div>
+            <div class="video-embed" data-youtube="r-g5_ZYFr0w"></div>
+          </div>
         </div>
       </section>
 
-      <div class="container">
-        <section class="video-grid reveal" data-youtube-gallery>
-          <div class="video-embed" data-youtube="hvE52b0SiFw"></div>
-          <div class="video-embed" data-youtube="oRUe2bkegJY"></div>
-          <div class="video-embed" data-youtube="r-g5_ZYFr0w"></div>
+      <section class="photo-gallery reveal">
+        <div class="container photo-gallery__head">
+          <div>
+            <span class="media-label" data-i18n="media.photos.eyebrow">Still moments</span>
+            <h2 data-i18n="media.photos.title">Photo highlights</h2>
+            <p data-i18n="media.photos.lead">Soft-focus frames that sit behind the music.</p>
+          </div>
+        </div>
+        <section class="media-slider photo-gallery-slider" data-gallery data-media-slider tabindex="0">
+          <div class="media-slider-frame">
+            <button class="media-slider-arrow" type="button" data-media-prev aria-label="Previous image" data-i18n="media.slider.prev" data-i18n-attr="aria-label">&#10094;</button>
+            <div class="media-slider-track" data-media-track>
+              <figure class="media-slide is-active">
+                <img src="../assets/img/Kizu-5.jpg" alt="Live show" data-i18n="media.slider.img1" data-i18n-attr="alt" data-full="../assets/img/Kizu-5.jpg" data-full-webp="../assets/img/Kizu-5.webp" fetchpriority="high" decoding="async" />
+              </figure>
+              <figure class="media-slide">
+                <img src="../assets/img/Kizu-14.jpg" alt="Studio session" data-i18n="media.slider.img2" data-i18n-attr="alt" data-full="../assets/img/Kizu-14.jpg" data-full-webp="../assets/img/Kizu-14.webp" decoding="async" />
+              </figure>
+              <figure class="media-slide">
+                <img src="../assets/img/Kizu-3.jpg" alt="Portrait" data-i18n="media.slider.img3" data-i18n-attr="alt" data-full="../assets/img/Kizu-3.jpg" data-full-webp="../assets/img/Kizu-3.webp" decoding="async" />
+              </figure>
+            </div>
+            <button class="media-slider-arrow" type="button" data-media-next aria-label="Next image" data-i18n="media.slider.next" data-i18n-attr="aria-label">&#10095;</button>
+          </div>
         </section>
-      </div>
+      </section>
     </main>
 
     <div class="lightbox" data-lightbox hidden>
