@@ -748,6 +748,7 @@ a:focus-visible {
 .pill--button {
   cursor: pointer;
   font: inherit;
+  padding: 10px 18px;
 }
 
 .pill--button:focus-visible {
