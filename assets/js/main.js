@@ -131,6 +131,8 @@ document.addEventListener('DOMContentLoaded', () => {
           eyebrow: 'Live energy',
           title: 'DJ sets in motion',
           lead: 'The booth, the lights, the crowd — watch the energy unfold.',
+          playLabel: 'Play video',
+          playCta: 'Play video',
         },
         photos: {
           eyebrow: 'Still moments',
@@ -525,6 +527,8 @@ document.addEventListener('DOMContentLoaded', () => {
           eyebrow: 'Live-Energie',
           title: 'DJ-Sets in Bewegung',
           lead: 'Der Booth, das Licht, die Crowd – sieh zu, wie die Energie entsteht.',
+          playLabel: 'Video abspielen',
+          playCta: 'Video abspielen',
         },
         photos: {
           eyebrow: 'Stille Momente',
@@ -1348,24 +1352,107 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // YouTube embeds
-  document.querySelectorAll('[data-youtube]').forEach((container) => {
-    const id = (container.dataset.youtube || '').trim();
-    if (!id || id.toUpperCase().startsWith('VIDEO_ID')) {
-      const placeholder = document.createElement('div');
-      placeholder.className = 'embed-placeholder';
-      placeholder.innerHTML = 'Add a YouTube ID to <code>data-youtube</code> to show an embedded player.';
+  const youtubeEmbeds = document.querySelectorAll('[data-youtube]');
+  if (youtubeEmbeds.length) {
+    let warmedYouTube = false;
+    const warmConnections = () => {
+      if (warmedYouTube) return;
+      warmedYouTube = true;
+      const head = document.head || document.getElementsByTagName('head')[0];
+      if (!head) return;
+      const addLink = (href) => {
+        const link = document.createElement('link');
+        link.rel = 'preconnect';
+        link.href = href;
+        if (!href.startsWith(window.location.origin)) {
+          link.crossOrigin = '';
+        }
+        head.appendChild(link);
+      };
+      ['https://www.youtube.com', 'https://www.google.com', 'https://i.ytimg.com'].forEach(addLink);
+    };
+
+    const loadVideo = (container, id, autoplay) => {
+      if (container.dataset.embedLoaded === 'true') return;
+      const params = autoplay ? '?autoplay=1&rel=0' : '?rel=0';
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube.com/embed/${id}${params}`;
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+      iframe.loading = 'lazy';
+      container.dataset.embedLoaded = 'true';
+      container.classList.remove('video-embed--lite');
+      container.classList.add('video-embed--loaded');
       container.innerHTML = '';
-      container.appendChild(placeholder);
-      return;
-    }
-    const iframe = document.createElement('iframe');
-    iframe.src = `https://www.youtube.com/embed/${id}?rel=0`;
-    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-    iframe.allowFullscreen = true;
-    iframe.loading = 'lazy';
-    container.innerHTML = '';
-    container.appendChild(iframe);
-  });
+      container.appendChild(iframe);
+    };
+
+    const getTranslation = (key) => {
+      const lang = currentLanguage || defaultLanguage;
+      return resolveTranslation(lang, key) ?? resolveTranslation(defaultLanguage, key);
+    };
+
+    youtubeEmbeds.forEach((container) => {
+      const id = (container.dataset.youtube || '').trim();
+      if (!id || id.toUpperCase().startsWith('VIDEO_ID')) {
+        const placeholder = document.createElement('div');
+        placeholder.className = 'embed-placeholder';
+        placeholder.innerHTML = 'Add a YouTube ID to <code>data-youtube</code> to show an embedded player.';
+        container.innerHTML = '';
+        container.appendChild(placeholder);
+        return;
+      }
+
+      const poster = (container.dataset.youtubePoster || `https://i.ytimg.com/vi/${id}/hqdefault.jpg`).trim();
+      container.classList.add('video-embed--lite');
+      container.dataset.embedLoaded = 'false';
+      container.innerHTML = '';
+
+      const thumb = document.createElement('img');
+      thumb.className = 'video-embed__thumb';
+      thumb.src = poster;
+      thumb.loading = 'lazy';
+      thumb.decoding = 'async';
+      thumb.alt = container.dataset.youtubeAlt || '';
+
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'video-embed__trigger';
+      button.dataset.i18n = 'media.videos.playLabel';
+      button.dataset.i18nAttr = 'aria-label';
+
+      const icon = document.createElement('span');
+      icon.className = 'video-embed__icon';
+      icon.setAttribute('aria-hidden', 'true');
+      icon.textContent = String.fromCharCode(0x25B6);
+
+      const label = document.createElement('span');
+      label.className = 'video-embed__text';
+      label.dataset.i18n = 'media.videos.playCta';
+      label.textContent = getTranslation('media.videos.playCta') || 'Play video';
+
+      const ariaText = getTranslation('media.videos.playLabel') || label.textContent;
+      button.setAttribute('aria-label', ariaText);
+
+      button.append(icon, label);
+      container.append(thumb, button);
+
+      const activate = (autoplay) => {
+        warmConnections();
+        loadVideo(container, id, autoplay);
+      };
+
+      button.addEventListener('click', (event) => {
+        event.preventDefault();
+        activate(true);
+      });
+      button.addEventListener('pointerenter', warmConnections, { once: true });
+      button.addEventListener('touchstart', warmConnections, { once: true, passive: true });
+      button.addEventListener('focus', warmConnections, { once: true });
+      container.addEventListener('pointerenter', warmConnections, { once: true });
+    });
+  }
+
 
   // SoundCloud embeds
   document.querySelectorAll('[data-soundcloud]').forEach((container) => {
