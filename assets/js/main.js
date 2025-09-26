@@ -934,6 +934,184 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Popups
+  const popupTriggers = document.querySelectorAll('[data-popup-target]');
+  const popupElements = document.querySelectorAll('[data-popup]');
+  if (popupTriggers.length && popupElements.length) {
+    const popupMap = new Map();
+    const triggerMap = new WeakMap();
+    const activePopups = new Set();
+    let storedScroll = 0;
+    const focusableSelectors = 'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+    const getFocusable = (popup) => {
+      return Array.from(popup.querySelectorAll(focusableSelectors)).filter((element) => {
+        if (element.hasAttribute('disabled')) return false;
+        if (element.getAttribute('aria-hidden') === 'true') return false;
+        const style = window.getComputedStyle(element);
+        return style.display !== 'none' && style.visibility !== 'hidden';
+      });
+    };
+
+    const setExpandedState = (trigger, expanded) => {
+      if (!trigger) return;
+      trigger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    };
+
+    const lockScroll = () => {
+      if (document.body.classList.contains('popup-open')) return;
+      storedScroll = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+      document.body.style.top = `-${storedScroll}px`;
+      document.body.style.width = '100%';
+      document.body.classList.add('popup-open');
+    };
+
+    const unlockScroll = () => {
+      if (!document.body.classList.contains('popup-open')) return;
+      document.body.classList.remove('popup-open');
+      document.body.style.removeProperty('top');
+      document.body.style.removeProperty('width');
+      window.scrollTo(0, storedScroll);
+    };
+
+    const focusFirstElement = (popup) => {
+      const focusable = getFocusable(popup);
+      const dialog = popup.querySelector('.popup__dialog');
+      const target = focusable[0] || dialog;
+      if (!target || typeof target.focus !== 'function') return;
+      window.setTimeout(() => {
+        try {
+          target.focus({ preventScroll: true });
+        } catch (error) {
+          target.focus();
+        }
+      }, 20);
+    };
+
+    const trapFocus = (event, popup) => {
+      if (event.key !== 'Tab') return;
+      const focusable = getFocusable(popup);
+      if (!focusable.length) {
+        event.preventDefault();
+        const dialog = popup.querySelector('.popup__dialog');
+        if (dialog && typeof dialog.focus === 'function') {
+          dialog.focus({ preventScroll: true });
+        }
+        return;
+      }
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      const active = document.activeElement;
+      if (event.shiftKey) {
+        if (active === first || !popup.contains(active)) {
+          event.preventDefault();
+          last.focus({ preventScroll: true });
+        }
+      } else if (active === last) {
+        event.preventDefault();
+        first.focus({ preventScroll: true });
+      }
+    };
+
+    const hidePopup = (popup) => {
+      const finish = () => {
+        popup.setAttribute('hidden', '');
+        popup.removeEventListener('transitionend', finish);
+      };
+      popup.addEventListener('transitionend', finish);
+      window.setTimeout(finish, 320);
+    };
+
+    const closePopup = (popup, { restoreFocus = true } = {}) => {
+      if (!popup || !popup.classList.contains('is-active')) return;
+      popup.classList.remove('is-active');
+      popup.setAttribute('aria-hidden', 'true');
+      const trigger = triggerMap.get(popup);
+      if (trigger) {
+        setExpandedState(trigger, false);
+      }
+      hidePopup(popup);
+      activePopups.delete(popup);
+      if (!activePopups.size) {
+        unlockScroll();
+      }
+      if (restoreFocus && trigger && typeof trigger.focus === 'function') {
+        window.setTimeout(() => {
+          try {
+            trigger.focus({ preventScroll: true });
+          } catch (error) {
+            trigger.focus();
+          }
+        }, 30);
+      }
+      triggerMap.delete(popup);
+    };
+
+    const openPopup = (popup, trigger) => {
+      if (!popup || popup.classList.contains('is-active')) return;
+      popup.removeAttribute('hidden');
+      popup.setAttribute('aria-hidden', 'false');
+      triggerMap.set(popup, trigger || null);
+      if (trigger) {
+        setExpandedState(trigger, true);
+      }
+      window.requestAnimationFrame(() => {
+        popup.classList.add('is-active');
+        focusFirstElement(popup);
+      });
+      activePopups.add(popup);
+      lockScroll();
+    };
+
+    popupElements.forEach((popup) => {
+      const key = popup.dataset.popup;
+      if (!key) return;
+      popupMap.set(key, popup);
+      popup.addEventListener('click', (event) => {
+        const closer = event.target.closest('[data-popup-close]');
+        if (closer) {
+          event.preventDefault();
+          closePopup(popup);
+        }
+      });
+      popup.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          closePopup(popup);
+        } else if (event.key === 'Tab') {
+          trapFocus(event, popup);
+        }
+      });
+    });
+
+    popupTriggers.forEach((trigger) => {
+      const targetId = trigger.dataset.popupTarget;
+      if (!targetId) return;
+      const handleOpen = (event) => {
+        event.preventDefault();
+        const popup = popupMap.get(targetId);
+        if (popup) {
+          openPopup(popup, trigger);
+        }
+      };
+      trigger.addEventListener('click', handleOpen);
+      trigger.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          handleOpen(event);
+        }
+      });
+    });
+
+    window.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      const activePopup = Array.from(activePopups).pop();
+      if (activePopup) {
+        event.preventDefault();
+        closePopup(activePopup);
+      }
+    });
+  }
+
   // Gallery lightbox
   const gallery = document.querySelector('[data-gallery]');
   const lightbox = document.querySelector('[data-lightbox]');
