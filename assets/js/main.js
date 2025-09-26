@@ -917,6 +917,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Keep page content offset in sync with fixed header height
+  const header = document.querySelector('.site-header');
+  if (header) {
+    const updateHeaderOffset = () => {
+      const height = header.getBoundingClientRect().height;
+      if (height) {
+        document.documentElement.style.setProperty('--header-offset', `${height}px`);
+      }
+    };
+    updateHeaderOffset();
+    window.addEventListener('resize', updateHeaderOffset);
+    if (window.ResizeObserver) {
+      const observer = new ResizeObserver(updateHeaderOffset);
+      observer.observe(header);
+    }
+  }
+
   // Modals
   const modalElements = document.querySelectorAll('[data-modal]');
   if (modalElements.length) {
@@ -969,18 +986,36 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     };
 
+    const restoreScrollPosition = () => {
+      const stored = document.body.dataset.modalScroll;
+      const targetScroll = stored ? Number.parseInt(stored, 10) : scrollPosition;
+      if (Number.isNaN(targetScroll)) return;
+      if (document.body.style.position === 'fixed') {
+        document.body.style.top = `-${targetScroll}px`;
+      }
+      window.scrollTo(0, targetScroll);
+    };
+
     const focusFirstElement = (modal) => {
       const focusable = getFocusableElements(modal);
       const target = focusable[0] || modal.querySelector('.modal-dialog');
-      if (target && typeof target.focus === 'function') {
-        window.setTimeout(() => {
-          try {
-            target.focus({ preventScroll: true });
-          } catch (error) {
-            target.focus();
-          }
-        }, 20);
-      }
+      if (!target || typeof target.focus !== 'function') return;
+      window.setTimeout(() => {
+        let usedFallback = false;
+        try {
+          target.focus({ preventScroll: true });
+        } catch (error) {
+          usedFallback = true;
+          target.focus();
+        }
+        // Some Safari versions ignore preventScroll without throwing, so force
+        // the scroll position back after the focus call.
+        if (usedFallback) {
+          restoreScrollPosition();
+        } else {
+          window.requestAnimationFrame(restoreScrollPosition);
+        }
+      }, 20);
     };
 
     const trapFocus = (event, modal) => {

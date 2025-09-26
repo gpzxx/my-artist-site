@@ -36,6 +36,7 @@
   --btn-outline-border: rgba(20, 19, 31, 0.28);
   --btn-outline-text: rgba(24, 24, 38, 0.76);
   --hero-eyebrow: rgba(102, 100, 128, 0.62);
+  --header-offset: 96px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -75,6 +76,7 @@
     --btn-outline-border: rgba(255, 255, 255, 0.24);
     --btn-outline-text: rgba(255, 255, 255, 0.8);
     --hero-eyebrow: rgba(255, 255, 255, 0.58);
+    --header-offset: 96px;
   }
 }
 
@@ -101,6 +103,7 @@ body {
   -webkit-font-smoothing: antialiased;
   opacity: 0;
   animation: page-in .6s ease forwards;
+  padding-top: var(--header-offset, 0px);
 }
 
 body.has-modal-open {
@@ -153,8 +156,11 @@ a:focus-visible {
 
 /* Header */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 30;
   background: rgba(var(--surface-rgb), 0.88);
   backdrop-filter: blur(14px);
