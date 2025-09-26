@@ -934,207 +934,242 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Popups
-  const popupElements = document.querySelectorAll('[data-popup]');
-  if (popupElements.length) {
-    const popupMap = new Map();
-    const returnFocus = new WeakMap();
-    const openPopups = new Set();
-    let scrollPosition = 0;
-    const focusableSelectors = 'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+// Popups - FIXED VERSION
+const popupElements = document.querySelectorAll('[data-popup]');
+if (popupElements.length) {
+  const popupMap = new Map();
+  const returnFocus = new WeakMap();
+  const openPopups = new Set();
+  const focusableSelectors = 'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
-    const lockBodyScroll = () => {
-      if (document.body.classList.contains('popup-open')) return;
-      scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
-      document.body.style.top = `-${scrollPosition}px`;
-      document.body.style.position = 'fixed';
-      document.body.style.width = '100%';
-      document.body.dataset.popupScroll = String(scrollPosition);
-      document.body.classList.add('popup-open');
-    };
+  // Improved scroll lock that works on mobile
+  const lockBodyScroll = () => {
+    if (document.body.classList.contains('popup-open')) return;
+    
+    // Store current scroll position
+    const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+    
+    // Apply styles to lock scroll
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = '100%';
+    document.body.dataset.scrollPosition = String(scrollY);
+    document.body.classList.add('popup-open');
+  };
 
-    const unlockBodyScroll = () => {
-      if (!document.body.classList.contains('popup-open')) return;
-      const stored = document.body.dataset.popupScroll;
-      document.body.classList.remove('popup-open');
-      document.body.style.removeProperty('top');
-      document.body.style.removeProperty('position');
-      document.body.style.removeProperty('width');
-      const restoreTo = stored ? Number.parseInt(stored, 10) : scrollPosition;
-      if (!Number.isNaN(restoreTo)) {
-        window.scrollTo(0, restoreTo);
-      }
-      if (stored) {
-        delete document.body.dataset.popupScroll;
-      }
-    };
+  const unlockBodyScroll = () => {
+    if (!document.body.classList.contains('popup-open')) return;
+    
+    // Remove lock styles
+    document.body.classList.remove('popup-open');
+    document.body.style.removeProperty('overflow');
+    document.body.style.removeProperty('position');
+    document.body.style.removeProperty('top');
+    document.body.style.removeProperty('width');
+    
+    // Restore scroll position
+    const scrollY = parseInt(document.body.dataset.scrollPosition || '0', 10);
+    delete document.body.dataset.scrollPosition;
+    
+    // Use requestAnimationFrame to ensure proper restoration
+    window.requestAnimationFrame(() => {
+      window.scrollTo(0, scrollY);
+    });
+  };
 
-    const updateBodyState = () => {
-      if (openPopups.size) {
-        lockBodyScroll();
-      } else {
-        unlockBodyScroll();
-      }
-    };
+  const updateBodyState = () => {
+    if (openPopups.size > 0) {
+      lockBodyScroll();
+    } else {
+      unlockBodyScroll();
+    }
+  };
 
-    const getFocusableElements = (popup) => {
-      return Array.from(popup.querySelectorAll(focusableSelectors)).filter((element) => {
-        if (element.hasAttribute('disabled')) return false;
-        if (element.getAttribute('aria-hidden') === 'true') return false;
-        const style = window.getComputedStyle(element);
-        return style.display !== 'none' && style.visibility !== 'hidden';
-      });
-    };
+  const getFocusableElements = (popup) => {
+    return Array.from(popup.querySelectorAll(focusableSelectors)).filter((el) => {
+      if (el.hasAttribute('disabled')) return false;
+      if (el.getAttribute('aria-hidden') === 'true') return false;
+      const style = window.getComputedStyle(el);
+      return style.display !== 'none' && style.visibility !== 'hidden';
+    });
+  };
 
-    const restoreScrollPosition = () => {
-      const stored = document.body.dataset.popupScroll;
-      const targetScroll = stored ? Number.parseInt(stored, 10) : scrollPosition;
-      if (Number.isNaN(targetScroll)) return;
-      if (document.body.style.position === 'fixed') {
-        document.body.style.top = `-${targetScroll}px`;
-      }
-      window.scrollTo(0, targetScroll);
-    };
-
-    const focusFirstElement = (popup) => {
+  const focusFirstElement = (popup) => {
+    // Delay focus to ensure popup is visible
+    requestAnimationFrame(() => {
       const focusable = getFocusableElements(popup);
       const target = focusable[0] || popup.querySelector('.popup__dialog');
-      if (!target || typeof target.focus !== 'function') return;
-      window.setTimeout(() => {
-        let usedFallback = false;
+      
+      if (target && typeof target.focus === 'function') {
         try {
-          target.focus({ preventScroll: true });
-        } catch (error) {
-          usedFallback = true;
+          // Try without preventScroll first (better mobile support)
           target.focus();
+        } catch (e) {
+          console.warn('Focus failed:', e);
         }
-        if (usedFallback) {
-          restoreScrollPosition();
-        } else {
-          window.requestAnimationFrame(restoreScrollPosition);
-        }
-      }, 20);
-    };
+      }
+    });
+  };
 
-    const trapFocus = (event, popup) => {
-      if (event.key !== 'Tab') return;
-      const focusable = getFocusableElements(popup);
-      if (!focusable.length) {
+  const trapFocus = (event, popup) => {
+    if (event.key !== 'Tab') return;
+    
+    const focusable = getFocusableElements(popup);
+    if (!focusable.length) {
+      event.preventDefault();
+      return;
+    }
+    
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    const active = document.activeElement;
+    
+    if (event.shiftKey) {
+      if (active === first || !popup.contains(active)) {
         event.preventDefault();
-        const dialog = popup.querySelector('.popup__dialog');
-        if (dialog) dialog.focus({ preventScroll: true });
-        return;
+        last.focus();
       }
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-      const active = document.activeElement;
-      if (event.shiftKey) {
-        if (active === first || !popup.contains(active)) {
-          event.preventDefault();
-          last.focus({ preventScroll: true });
-        }
-      } else if (active === last) {
-        event.preventDefault();
-        first.focus({ preventScroll: true });
-      }
-    };
+    } else if (active === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  };
 
-    const setExpandedState = (trigger, expanded) => {
-      if (!trigger) return;
-      trigger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-    };
+  const setExpandedState = (trigger, expanded) => {
+    if (!trigger) return;
+    trigger.setAttribute('aria-expanded', String(expanded));
+  };
 
-    const closePopup = (popup) => {
-      if (!popup || !openPopups.has(popup)) return;
-      popup.classList.remove('is-active');
-      popup.setAttribute('aria-hidden', 'true');
-      const trigger = returnFocus.get(popup);
-      if (trigger) {
-        setExpandedState(trigger, false);
-      }
-      const hide = (event) => {
-        if (event && event.target !== popup) return;
-        if (popup.classList.contains('is-active')) return;
-        popup.setAttribute('hidden', '');
-        popup.removeEventListener('transitionend', hide);
-      };
-      popup.addEventListener('transitionend', hide);
-      window.setTimeout(hide, 320);
+  const closePopup = (popup) => {
+    if (!popup || !openPopups.has(popup)) return;
+    
+    // Start close animation
+    popup.classList.remove('is-active');
+    popup.setAttribute('aria-hidden', 'true');
+    
+    const trigger = returnFocus.get(popup);
+    if (trigger) {
+      setExpandedState(trigger, false);
+    }
+    
+    // Wait for animation then hide
+    const hidePopup = () => {
+      popup.setAttribute('hidden', '');
       openPopups.delete(popup);
       updateBodyState();
-      window.setTimeout(() => {
-        if (trigger && typeof trigger.focus === 'function') {
-          try {
-            trigger.focus({ preventScroll: true });
-          } catch (error) {
-            trigger.focus();
-          }
-        }
-      }, 30);
+      
+      // Restore focus after body scroll is unlocked
+      if (trigger && typeof trigger.focus === 'function') {
+        requestAnimationFrame(() => {
+          trigger.focus();
+        });
+      }
+      
       returnFocus.delete(popup);
     };
+    
+    // Use shorter timeout for mobile
+    setTimeout(hidePopup, 300);
+  };
 
-    const openPopup = (id, trigger) => {
-      const popup = popupMap.get(id);
-      if (!popup || openPopups.has(popup)) return;
-      popup.removeAttribute('hidden');
+  const openPopup = (id, trigger) => {
+    const popup = popupMap.get(id);
+    if (!popup || openPopups.has(popup)) return;
+    
+    // Show popup
+    popup.removeAttribute('hidden');
+    
+    // Force layout recalculation before adding active class
+    popup.offsetHeight;
+    
+    // Add active class for animation
+    requestAnimationFrame(() => {
       popup.setAttribute('aria-hidden', 'false');
       popup.classList.add('is-active');
+      
       if (trigger) {
         returnFocus.set(popup, trigger);
         setExpandedState(trigger, true);
       }
+      
       openPopups.add(popup);
       updateBodyState();
       focusFirstElement(popup);
-    };
-
-    popupElements.forEach((popup) => {
-      const id = popup.dataset.popup;
-      if (!id) return;
-      popupMap.set(id, popup);
-      popup.addEventListener('click', (event) => {
-        const closer = event.target.closest('[data-popup-close]');
-        if (closer) {
-          event.preventDefault();
-          closePopup(popup);
-        }
-      });
-      popup.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-          event.preventDefault();
-          closePopup(popup);
-        } else if (event.key === 'Tab') {
-          trapFocus(event, popup);
-        }
-      });
     });
+  };
 
-    document.querySelectorAll('[data-popup-target]').forEach((trigger) => {
-      const id = trigger.dataset.popupTarget;
-      if (!id) return;
-      trigger.addEventListener('click', (event) => {
+  // Initialize popups
+  popupElements.forEach((popup) => {
+    const id = popup.dataset.popup;
+    if (!id) return;
+    
+    popupMap.set(id, popup);
+    
+    // Click handler for close buttons and backdrop
+    popup.addEventListener('click', (event) => {
+      const closer = event.target.closest('[data-popup-close]');
+      if (closer || event.target === popup.querySelector('.popup__backdrop')) {
         event.preventDefault();
-        openPopup(id, trigger);
-      });
-      trigger.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          openPopup(id, trigger);
-        }
-      });
-    });
-
-    window.addEventListener('keydown', (event) => {
-      if (event.key !== 'Escape') return;
-      const active = Array.from(openPopups).pop();
-      if (active) {
-        event.preventDefault();
-        closePopup(active);
+        closePopup(popup);
       }
     });
-  }
+    
+    // Keyboard handler
+    popup.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        closePopup(popup);
+      } else if (event.key === 'Tab') {
+        trapFocus(event, popup);
+      }
+    });
+  });
 
+  // Initialize triggers
+  document.querySelectorAll('[data-popup-target]').forEach((trigger) => {
+    const id = trigger.dataset.popupTarget;
+    if (!id) return;
+    
+    trigger.addEventListener('click', (event) => {
+      event.preventDefault();
+      openPopup(id, trigger);
+    });
+    
+    trigger.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openPopup(id, trigger);
+      }
+    });
+  });
+
+  // Global escape handler
+  window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && openPopups.size > 0) {
+      event.preventDefault();
+      const active = Array.from(openPopups).pop();
+      if (active) closePopup(active);
+    }
+  });
+  
+  // Handle iOS viewport changes
+  let viewportHeight = window.innerHeight;
+  window.addEventListener('resize', () => {
+    const newHeight = window.innerHeight;
+    // Only update if significant change (not just address bar hiding)
+    if (Math.abs(newHeight - viewportHeight) > 100) {
+      viewportHeight = newHeight;
+      // Update any open popups position if needed
+      openPopups.forEach(popup => {
+        const dialog = popup.querySelector('.popup__dialog');
+        if (dialog) {
+          dialog.style.maxHeight = `${newHeight * 0.9}px`;
+        }
+      });
+    }
+  });
+}
   // Gallery lightbox
   const gallery = document.querySelector('[data-gallery]');
   const lightbox = document.querySelector('[data-lightbox]');
