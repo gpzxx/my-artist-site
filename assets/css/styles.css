@@ -965,8 +965,7 @@ button.bio-stat:focus-visible .bio-stat-label {
 }
 
 body.popup-open {
-  position: fixed;
-  width: 100%;
+  overflow: hidden;
 }
 
 @media (min-width: 721px) {
