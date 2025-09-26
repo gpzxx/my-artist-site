@@ -865,7 +865,7 @@ a:focus-visible {
   position: fixed;
   inset: 0;
   display: grid;
-  align-items: center;
+  align-items: flex-start;
   justify-items: center;
   padding: 32px 18px;
   background: rgba(8, 8, 14, 0.72);
@@ -903,6 +903,8 @@ a:focus-visible {
   padding: clamp(28px, 4vw, 42px);
   max-width: 520px;
   width: min(100%, 520px);
+  max-height: 100svh;
+  overflow: auto; 
   z-index: 1;
 }
 
@@ -974,6 +976,10 @@ a:focus-visible {
   border-color: rgba(var(--accent-rgb), 0.3);
   color: var(--accent);
   outline: none;
+}
+
+@media (min-width: 721px) {
+  .modal { align-items: center; }
 }
 
 .filters {
