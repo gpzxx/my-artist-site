@@ -935,16 +935,49 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Popups
-  const popupTriggers = document.querySelectorAll('[data-popup-target]');
   const popupElements = document.querySelectorAll('[data-popup]');
-  if (popupTriggers.length && popupElements.length) {
+  if (popupElements.length) {
     const popupMap = new Map();
-    const triggerMap = new WeakMap();
-    const activePopups = new Set();
-    let storedScroll = 0;
+    const returnFocus = new WeakMap();
+    const openPopups = new Set();
+    let scrollPosition = 0;
     const focusableSelectors = 'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
-    const getFocusable = (popup) => {
+    const lockBodyScroll = () => {
+      if (document.body.classList.contains('popup-open')) return;
+      scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+      document.body.style.top = `-${scrollPosition}px`;
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.dataset.popupScroll = String(scrollPosition);
+      document.body.classList.add('popup-open');
+    };
+
+    const unlockBodyScroll = () => {
+      if (!document.body.classList.contains('popup-open')) return;
+      const stored = document.body.dataset.popupScroll;
+      document.body.classList.remove('popup-open');
+      document.body.style.removeProperty('top');
+      document.body.style.removeProperty('position');
+      document.body.style.removeProperty('width');
+      const restoreTo = stored ? Number.parseInt(stored, 10) : scrollPosition;
+      if (!Number.isNaN(restoreTo)) {
+        window.scrollTo(0, restoreTo);
+      }
+      if (stored) {
+        delete document.body.dataset.popupScroll;
+      }
+    };
+
+    const updateBodyState = () => {
+      if (openPopups.size) {
+        lockBodyScroll();
+      } else {
+        unlockBodyScroll();
+      }
+    };
+
+    const getFocusableElements = (popup) => {
       return Array.from(popup.querySelectorAll(focusableSelectors)).filter((element) => {
         if (element.hasAttribute('disabled')) return false;
         if (element.getAttribute('aria-hidden') === 'true') return false;
@@ -953,50 +986,43 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     };
 
-    const setExpandedState = (trigger, expanded) => {
-      if (!trigger) return;
-      trigger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-    };
-
-    const lockScroll = () => {
-      if (document.body.classList.contains('popup-open')) return;
-      storedScroll = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
-      document.body.style.top = `-${storedScroll}px`;
-      document.body.style.width = '100%';
-      document.body.classList.add('popup-open');
-    };
-
-    const unlockScroll = () => {
-      if (!document.body.classList.contains('popup-open')) return;
-      document.body.classList.remove('popup-open');
-      document.body.style.removeProperty('top');
-      document.body.style.removeProperty('width');
-      window.scrollTo(0, storedScroll);
+    const restoreScrollPosition = () => {
+      const stored = document.body.dataset.popupScroll;
+      const targetScroll = stored ? Number.parseInt(stored, 10) : scrollPosition;
+      if (Number.isNaN(targetScroll)) return;
+      if (document.body.style.position === 'fixed') {
+        document.body.style.top = `-${targetScroll}px`;
+      }
+      window.scrollTo(0, targetScroll);
     };
 
     const focusFirstElement = (popup) => {
-      const focusable = getFocusable(popup);
-      const dialog = popup.querySelector('.popup__dialog');
-      const target = focusable[0] || dialog;
+      const focusable = getFocusableElements(popup);
+      const target = focusable[0] || popup.querySelector('.popup__dialog');
       if (!target || typeof target.focus !== 'function') return;
       window.setTimeout(() => {
+        let usedFallback = false;
         try {
           target.focus({ preventScroll: true });
         } catch (error) {
+          usedFallback = true;
           target.focus();
+        }
+        if (usedFallback) {
+          restoreScrollPosition();
+        } else {
+          window.requestAnimationFrame(restoreScrollPosition);
         }
       }, 20);
     };
 
     const trapFocus = (event, popup) => {
       if (event.key !== 'Tab') return;
-      const focusable = getFocusable(popup);
+      const focusable = getFocusableElements(popup);
       if (!focusable.length) {
         event.preventDefault();
         const dialog = popup.querySelector('.popup__dialog');
-        if (dialog && typeof dialog.focus === 'function') {
-          dialog.focus({ preventScroll: true });
-        }
+        if (dialog) dialog.focus({ preventScroll: true });
         return;
       }
       const first = focusable[0];
@@ -1013,60 +1039,60 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-    const hidePopup = (popup) => {
-      const finish = () => {
-        popup.setAttribute('hidden', '');
-        popup.removeEventListener('transitionend', finish);
-      };
-      popup.addEventListener('transitionend', finish);
-      window.setTimeout(finish, 320);
+    const setExpandedState = (trigger, expanded) => {
+      if (!trigger) return;
+      trigger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
     };
 
-    const closePopup = (popup, { restoreFocus = true } = {}) => {
-      if (!popup || !popup.classList.contains('is-active')) return;
+    const closePopup = (popup) => {
+      if (!popup || !openPopups.has(popup)) return;
       popup.classList.remove('is-active');
       popup.setAttribute('aria-hidden', 'true');
-      const trigger = triggerMap.get(popup);
+      const trigger = returnFocus.get(popup);
       if (trigger) {
         setExpandedState(trigger, false);
       }
-      hidePopup(popup);
-      activePopups.delete(popup);
-      if (!activePopups.size) {
-        unlockScroll();
-      }
-      if (restoreFocus && trigger && typeof trigger.focus === 'function') {
-        window.setTimeout(() => {
+      const hide = (event) => {
+        if (event && event.target !== popup) return;
+        if (popup.classList.contains('is-active')) return;
+        popup.setAttribute('hidden', '');
+        popup.removeEventListener('transitionend', hide);
+      };
+      popup.addEventListener('transitionend', hide);
+      window.setTimeout(hide, 320);
+      openPopups.delete(popup);
+      updateBodyState();
+      window.setTimeout(() => {
+        if (trigger && typeof trigger.focus === 'function') {
           try {
             trigger.focus({ preventScroll: true });
           } catch (error) {
             trigger.focus();
           }
-        }, 30);
-      }
-      triggerMap.delete(popup);
+        }
+      }, 30);
+      returnFocus.delete(popup);
     };
 
-    const openPopup = (popup, trigger) => {
-      if (!popup || popup.classList.contains('is-active')) return;
+    const openPopup = (id, trigger) => {
+      const popup = popupMap.get(id);
+      if (!popup || openPopups.has(popup)) return;
       popup.removeAttribute('hidden');
       popup.setAttribute('aria-hidden', 'false');
-      triggerMap.set(popup, trigger || null);
+      popup.classList.add('is-active');
       if (trigger) {
+        returnFocus.set(popup, trigger);
         setExpandedState(trigger, true);
       }
-      window.requestAnimationFrame(() => {
-        popup.classList.add('is-active');
-        focusFirstElement(popup);
-      });
-      activePopups.add(popup);
-      lockScroll();
+      openPopups.add(popup);
+      updateBodyState();
+      focusFirstElement(popup);
     };
 
     popupElements.forEach((popup) => {
-      const key = popup.dataset.popup;
-      if (!key) return;
-      popupMap.set(key, popup);
+      const id = popup.dataset.popup;
+      if (!id) return;
+      popupMap.set(id, popup);
       popup.addEventListener('click', (event) => {
         const closer = event.target.closest('[data-popup-close]');
         if (closer) {
@@ -1084,30 +1110,27 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    popupTriggers.forEach((trigger) => {
-      const targetId = trigger.dataset.popupTarget;
-      if (!targetId) return;
-      const handleOpen = (event) => {
+    document.querySelectorAll('[data-popup-target]').forEach((trigger) => {
+      const id = trigger.dataset.popupTarget;
+      if (!id) return;
+      trigger.addEventListener('click', (event) => {
         event.preventDefault();
-        const popup = popupMap.get(targetId);
-        if (popup) {
-          openPopup(popup, trigger);
-        }
-      };
-      trigger.addEventListener('click', handleOpen);
+        openPopup(id, trigger);
+      });
       trigger.addEventListener('keydown', (event) => {
         if (event.key === 'Enter' || event.key === ' ') {
-          handleOpen(event);
+          event.preventDefault();
+          openPopup(id, trigger);
         }
       });
     });
 
     window.addEventListener('keydown', (event) => {
       if (event.key !== 'Escape') return;
-      const activePopup = Array.from(activePopups).pop();
-      if (activePopup) {
+      const active = Array.from(openPopups).pop();
+      if (active) {
         event.preventDefault();
-        closePopup(activePopup);
+        closePopup(active);
       }
     });
   }
