@@ -753,6 +753,21 @@ a:focus-visible {
   cursor: pointer;
   font: inherit;
   width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border: 1px solid var(--border);
+  background: rgba(var(--ink-rgb), 0.06);
+  color: var(--muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 11px;
+  line-height: 1;
+  transition: border-color .3s ease, background .3s ease, color .3s ease, transform .2s var(--transition);
 }
 
 .pill--button:focus-visible {
