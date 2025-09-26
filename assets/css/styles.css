@@ -169,7 +169,8 @@ a:focus-visible {
   justify-content: space-between;
   gap: 32px;
   padding: 20px 0;
-  position: fixed;
+  position: relative;
+  width: 100%;
 }
 
 .brand-name {
@@ -753,45 +754,6 @@ a:focus-visible {
 
 .pill-list a {
   color: var(--muted);
-}
-
-.bio-detail-card {
-  margin: 28px auto 0;
-  padding: clamp(22px, 4vw, 30px);
-  border: 1px solid var(--border);
-  background: rgba(var(--surface-card-rgb), 0.96);
-  display: grid;
-  gap: 16px;
-  max-width: 640px;
-  width: 100%;
-}
-
-.bio-detail-title {
-  margin: 0;
-  font-size: 12px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ink-strong);
-}
-
-.bio-detail-intro {
-  margin: 0;
-  color: var(--ink-subtle);
-  line-height: 1.6;
-}
-
-.bio-detail-list {
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 10px;
-  color: var(--ink-strong);
-  list-style: none;
-}
-
-.bio-detail-list li {
-  font-size: 15px;
-  letter-spacing: 0.04em;
 }
 
 .bio-stats {
