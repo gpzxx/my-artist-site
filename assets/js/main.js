@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
           festivalModal: {
             title: 'Festival appearances',
             intro: 'Snapshots from standout festival slots.',
-            list: '<li>Festival placeholder - City (Year)</li><li>Festival placeholder - City (Year)</li><li>Festival placeholder - City (Year)</li>',
+            list: '<li>Hart bis Zart Festival - Freiburg (2024)</li><li>Hart bis Zart Festival - Freiburg (2025)</li><li>Backyard77 - Offenburg (2025)</li>',
             close: 'Close',
           },
         },
@@ -111,12 +111,12 @@ document.addEventListener('DOMContentLoaded', () => {
           labelYears: 'Years DJing',
           valueReleases: '9',
           labelReleases: 'Releases out',
-          valueClubs: '10',
+          valueClubs: '7',
           labelClubs: 'Clubs played',
           clubsModal: {
             title: 'Clubs played',
             intro: 'Stages I have performed at so far:',
-            list: '<li>Hans-Bunte-Areal - Freiburg</li><li>Club Douala - Ravensburg</li><li>Circle - Offenburg</li><li>//:about blank - Berlin</li>',
+            list: '<li>Hans-Bunte-Areal - Freiburg</li><li>Club Douala - Ravensburg</li><li>Circle - Offenburg</li><li>//:about blank - Berlin</li><li>Bahnwärter Thiel - München</li><li>Gleis44 - Ulm</li><li>TheGreatRängTäng - Freiburg</li>',
             close: 'Close',
           },
         },
@@ -493,7 +493,7 @@ document.addEventListener('DOMContentLoaded', () => {
           festivalModal: {
             title: 'Festival-Auftritte',
             intro: 'Einblicke in besondere Festivalshows.',
-            list: '<li>Festival-Platzhalter - Stadt (Jahr)</li><li>Festival-Platzhalter - Stadt (Jahr)</li><li>Festival-Platzhalter - Stadt (Jahr)</li>',
+            list: '<li>Hart bis Zart Festival - Freiburg (2024)</li><li>Hart bis Zart Festival - Freiburg (2025)</li><li>Backyard77 - Offenburg (2025)</li>',
             close: 'Schließen',
           },
         },
@@ -507,12 +507,12 @@ document.addEventListener('DOMContentLoaded', () => {
           labelYears: 'Jahre als DJ',
           valueReleases: '9',
           labelReleases: 'Releases veröffentlicht',
-          valueClubs: '10',
+          valueClubs: '7',
           labelClubs: 'Clubs gespielt',
           clubsModal: {
             title: 'Gespielte Clubs',
             intro: 'Diese Bühnen durfte ich bereits bespielen:',
-            list: '<li>Hans-Bunte-Areal - Freiburg</li><li>Club Douala - Ravensburg</li><li>Circle - Offenburg</li><li>//:about blank - Berlin</li>',
+            list: '<li>Hans-Bunte-Areal - Freiburg</li><li>Club Douala - Ravensburg</li><li>Circle - Offenburg</li><li>//:about blank - Berlin</li><li>Bahnwärter Thiel - München</li><li>Gleis44 - Ulm</li><li>TheGreatRängTäng - Freiburg</li>',
             close: 'Schließen',
           },
         },
@@ -923,13 +923,40 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalMap = new Map();
     const returnFocus = new WeakMap();
     const openModals = new Set();
+    let scrollPosition = 0;
     const focusableSelectors = 'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+    const lockBodyScroll = () => {
+      if (document.body.classList.contains('has-modal-open')) return;
+      scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+      document.body.style.top = `-${scrollPosition}px`;
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.dataset.modalScroll = String(scrollPosition);
+      document.body.classList.add('has-modal-open');
+    };
+
+    const unlockBodyScroll = () => {
+      if (!document.body.classList.contains('has-modal-open')) return;
+      const stored = document.body.dataset.modalScroll;
+      document.body.classList.remove('has-modal-open');
+      document.body.style.removeProperty('top');
+      document.body.style.removeProperty('position');
+      document.body.style.removeProperty('width');
+      const restoreTo = stored ? Number.parseInt(stored, 10) : scrollPosition;
+      if (!Number.isNaN(restoreTo)) {
+        window.scrollTo(0, restoreTo);
+      }
+      if (stored) {
+        delete document.body.dataset.modalScroll;
+      }
+    };
 
     const updateBodyState = () => {
       if (openModals.size) {
-        document.body.classList.add('has-modal-open');
+        lockBodyScroll();
       } else {
-        document.body.classList.remove('has-modal-open');
+        unlockBodyScroll();
       }
     };
 
