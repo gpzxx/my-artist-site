@@ -24,10 +24,10 @@
   --ink-faint: rgba(var(--ink-rgb), 0.5);
   --container: 1180px;
   --transition: cubic-bezier(.2, .7, .2, 1);
-  --radius-sm: 10px;
-  --radius-md: 16px;
-  --radius-lg: 22px;
-  --radius-pill: 999px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-pill: 0px;
   --focus-ring: 2px solid rgba(var(--accent-rgb), 0.6);
   --focus-ring-offset: 3px;
   --hero-overlay: linear-gradient(90deg, rgba(244, 243, 250, 0.72) 0%, rgba(232, 231, 243, 0.48) 55%, rgba(224, 223, 238, 0.12) 100%);
@@ -279,7 +279,7 @@ a:focus-visible {
   justify-content: center;
   width: 44px;
   height: 44px;
-  border-radius: 50%;
+  border-radius: 0;
   border: 1px solid var(--border);
   background: rgba(var(--surface-rgb), 0.8);
   color: var(--ink);
@@ -525,7 +525,8 @@ a:focus-visible {
   position: relative;
   padding: 120px 0;
   background: linear-gradient(135deg, rgba(var(--surface-raised-rgb), 0.92) 0%, rgba(183, 166, 255, 0.12) 100%);
-  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .pulse::before {
@@ -742,7 +743,6 @@ a:focus-visible {
   outline-offset: var(--focus-ring-offset);
 }
 
-.pill.popup-trigger {
   cursor: pointer;
 }
 
@@ -889,126 +889,41 @@ button.bio-stat:focus-visible .bio-stat-label {
   text-decoration: underline;
 }
 
-.popup {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  background: rgba(8, 8, 14, 0.72);
-  backdrop-filter: blur(6px);
-  z-index: 900;
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-  transition: opacity 0.28s ease, visibility 0.28s ease;
-  overflow: hidden;
-}
 
-.popup[hidden] {
-  display: none !important;
-}
-
-.popup.is-active {
-  opacity: 1;
-  pointer-events: auto;
-  visibility: visible;
-}
-
-.popup__backdrop {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-}
-
-.popup__dialog {
-  position: relative;
-  background: var(--surface);
-  color: var(--ink);
-  box-shadow: var(--shadow-soft);
-  padding: clamp(24px, 4vw, 42px);
-  max-width: min(90vw, 520px);
-  width: 100%;
-  max-height: 90vh;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  z-index: 1;
-  border-radius: 18px;
-  margin: auto;
-  /* Ensure dialog stays in viewport */
-  transform: translateZ(0);
-}
-
-.popup__title {
-  margin: 0 0 12px;
-  font-size: clamp(22px, 3vw, 28px);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-strong);
-  padding-right: 40px; /* Space for close button */
-}
-
-.popup__intro {
-  margin: 0 0 18px;
+.festival-note {
+  margin: 8px 0 12px;
+  font-size: 14px;
   color: var(--ink-subtle);
+}
+
+.festival-list {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 14px;
+  color: var(--ink-soft);
   line-height: 1.6;
 }
 
-.popup__list {
+.festival-list li + li {
+  margin-top: 6px;
+}
+
+.bio-stat-note {
+  margin: 12px 0 8px;
+  font-size: 13px;
+  color: var(--ink-subtle);
+}
+
+.bio-stat-list {
   margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 12px;
-  color: var(--ink-strong);
-  font-size: 16px;
-  letter-spacing: 0.04em;
+  padding-left: 20px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.5;
 }
 
-.popup__close {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 40px;
-  height: 40px;
-  border: 1px solid rgba(var(--ink-rgb), 0.2);
-  background: rgba(255, 255, 255, 0.16);
-  color: var(--muted);
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-  border-radius: 50%;
-}
-
-.popup__close::before,
-.popup__close::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 16px;
-  height: 2px;
-  background: currentColor;
-}
-
-.popup__close::before {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.popup__close::after {
-  transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-.popup__close:hover,
-.popup__close:focus-visible {
-  background: rgba(var(--accent-rgb), 0.14);
-  border-color: rgba(var(--accent-rgb), 0.3);
-  color: var(--accent);
+.bio-stat-list li + li {
+  margin-top: 4px;
 }
 
 /* Mobile specific adjustments */
@@ -1028,71 +943,8 @@ button.bio-stat:focus-visible .bio-stat-label {
   .media-slider-arrow {
     display: none;
   }
-
-  .popup {
-    padding: 0;
-    align-items: stretch;
-  }
-  
-  .popup__dialog {
-    max-width: 100%;
-    width: 100%;
-    height: 100%;
-    max-height: 100%;
-    margin: 0;
-    border-radius: 0;
-    display: flex;
-    flex-direction: column;
-    padding: env(safe-area-inset-top, 20px) 20px 20px 20px;
-  }
-  
-  .popup__close {
-    position: fixed;
-    top: calc(10px + env(safe-area-inset-top, 0px));
-    right: 10px;
-    z-index: 2;
-    width: 44px;
-    height: 44px;
-  }
-  
-  .popup__title {
-    margin-top: 20px;
-    padding-right: 50px;
-  }
-  
-  .popup__list {
-    font-size: 15px;
-    flex: 1;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-  }
 }
 
-/* Tablet adjustments */
-@media (min-width: 641px) and (max-width: 1024px) {
-  .popup__dialog {
-    max-width: min(80vw, 520px);
-  }
-}
-
-/* Ensure proper stacking on iOS */
-@supports (-webkit-touch-callout: none) {
-  .popup__dialog {
-    -webkit-backface-visibility: hidden;
-    -webkit-transform: translateZ(0);
-  }
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-  .popup__dialog {
-    border: 2px solid currentColor;
-  }
-  
-  .popup__close {
-    border-width: 2px;
-  }
-}
 
 .filters {
   display: flex;
@@ -1822,7 +1674,7 @@ button.bio-stat:focus-visible .bio-stat-label {
   right: 30px;
   width: 48px;
   height: 48px;
-  border-radius: 50%;
+  border-radius: 0;
   border: 1px solid var(--border);
   background: rgba(var(--surface-rgb), 0.78);
   color: var(--ink);
@@ -1883,7 +1735,7 @@ button.bio-stat:focus-visible .bio-stat-label {
   justify-content: center;
   width: 36px;
   height: 36px;
-  border-radius: 50%;
+  border-radius: 0;
   border: 1px solid var(--border);
   transition: border-color .3s ease, transform .3s var(--transition);
 }
