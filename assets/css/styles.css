@@ -889,9 +889,6 @@ button.bio-stat:focus-visible .bio-stat-label {
   text-decoration: underline;
 }
 
-/* Replace the popup styles in your styles.css (around line 1250-1390) with this: */
-
-/* Fixed Popup Styles for Mobile */
 .popup {
   position: fixed;
   inset: 0;
@@ -906,8 +903,7 @@ button.bio-stat:focus-visible .bio-stat-label {
   pointer-events: none;
   visibility: hidden;
   transition: opacity 0.28s ease, visibility 0.28s ease;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
 }
 
 .popup[hidden] {
@@ -1013,12 +1009,6 @@ button.bio-stat:focus-visible .bio-stat-label {
   background: rgba(var(--accent-rgb), 0.14);
   border-color: rgba(var(--accent-rgb), 0.3);
   color: var(--accent);
-}
-
-/* Prevent body scroll when popup is open - simplified */
-body.popup-open {
-  overflow: hidden !important;
-  /* Position and top are set by JS */
 }
 
 /* Mobile specific adjustments */

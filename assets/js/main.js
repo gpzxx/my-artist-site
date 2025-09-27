@@ -242,17 +242,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const focusableSelector = 'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
     let activePopup = null;
     let lastTrigger = null;
-    let storedScroll = 0;
+    let scrollY = 0;
 
     const toggleScrollLock = (lock) => {
       if (lock) {
-        storedScroll = window.pageYOffset;
-        document.body.style.overflow = 'hidden';
+        scrollY = window.scrollY || window.pageYOffset || 0;
         document.body.classList.add('popup-open');
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.left = '0';
+        document.body.style.right = '0';
+        document.body.style.width = '100%';
       } else {
-        document.body.style.removeProperty('overflow');
         document.body.classList.remove('popup-open');
-        window.scrollTo(0, storedScroll);
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
+        document.body.style.width = '';
+        window.scrollTo(0, scrollY);
       }
     };
 
