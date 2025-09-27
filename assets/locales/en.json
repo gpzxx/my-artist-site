@@ -1,0 +1,257 @@
+{
+  "bio": {
+    "metaTitle": "KIZU - Biography",
+    "header": {
+      "title": "Biography",
+      "lead": "Kizu is a young, versatile artist whose mission is to make people laugh, move them emotionally, and bring the ecstatic power of electronic music to the dance floor."
+    },
+    "media": {
+      "alt": "Portrait"
+    },
+    "about": {
+      "title": "About",
+      "p1": "Based in Ravensburg, Germany, Kizu channels a warm, welcoming vibe and always goes the extra mile for the music and the crowd. On stage, he delivers energetic, feel-good DJ sets that fuse fast-paced groove and trance with flashes of bliss.",
+      "p2": "He began making music in late 2023 and stepped into production in late 2024, quickly shaping a confident, high-energy sound. Bookings span clubs and residencies including Hans-Bunte-Areal (Freiburg) and Club Douala (Ravensburg), with appearances at Circle (Offenburg) & //:about Blank (Berlin)",
+      "p3": "Releases and signings touch labels such as Para//e/ (Berlin), SYNTHX Records (Munich), Milli Records (Berlin), and SeshDawgsUnited (Berlin)",
+      "p4": "Always spread love and you will receive love."
+    },
+    "highlights": {
+      "title": "Highlights",
+      "item1": "Festival appearances",
+      "item2": "Label releases",
+      "festivalModal": {
+        "title": "Festival appearances",
+        "intro": "Snapshots from standout festival slots.",
+        "list": "<li>Hart bis Zart Festival - Freiburg (2024)</li><li>Hart bis Zart Festival - Freiburg (2025)</li><li>Backyard77 - Offenburg (2025)</li>",
+        "close": "Close"
+      }
+    },
+    "contact": {
+      "title": "Contact & Bookings",
+      "body": "Email: <a href=\"mailto:bookings@kizuloge.com\">bookings@kizuloge.com</a>"
+    },
+    "stats": {
+      "label": "Career highlights",
+      "valueYears": "2",
+      "labelYears": "Years DJing",
+      "valueReleases": "9",
+      "labelReleases": "Releases out",
+      "valueClubs": "7",
+      "labelClubs": "Clubs played",
+      "clubsModal": {
+        "title": "Clubs played",
+        "intro": "Stages I have performed at so far:",
+        "list": "<li>Hans-Bunte-Areal - Freiburg</li><li>Club Douala - Ravensburg</li><li>Circle - Offenburg</li><li>//:about blank - Berlin</li><li>Bahnwärter Thiel - München</li><li>Gleis44 - Ulm</li><li>TheGreatRängTäng - Freiburg</li>",
+        "close": "Close"
+      }
+    }
+  },
+  "booking": {
+    "metaTitle": "KIZU - Booking",
+    "header": {
+      "title": "Technical & Hospitality Rider",
+      "lead": "Download or view the latest PDF rider below.",
+      "primaryCta": "Request a Booking",
+      "download": "Download Rider",
+      "open": "Open in new tab"
+    },
+    "rider": {
+      "title": "KIZU technical rider",
+      "fallback": "PDF preview unavailable? <a href=\"../assets/docs/KIZU_Rider.pdf\">Download the rider</a>."
+    },
+    "form": {
+      "title": "Contact Form",
+      "lead": "Send your request directly via the form or use the email address. After submitting, your mail app opens so you can add attachments before sending.",
+      "name": "Name *",
+      "email": "Email *",
+      "subject": "Subject",
+      "subjectPlaceholder": "Booking, press, general request...",
+      "message": "Message *",
+      "messagePlaceholder": "How can we help?",
+      "privacy": "I have read the <a href=\"../impressum/\">legal notice</a> and agree that my details may be processed to reply to my inquiry.",
+      "submit": "Send Message",
+      "disclaimer": "The form opens your email program so you can review and send the message. No data is stored on this server."
+    }
+  },
+  "common": {
+    "nav": {
+      "toggle": "Toggle navigation",
+      "biography": "Biography",
+      "media": "Media",
+      "releases": "Releases",
+      "booking": "Booking"
+    },
+    "lang": {
+      "toggleLabel": "Language selection",
+      "switchToEnglish": "Switch to English",
+      "switchToGerman": "Switch to German"
+    },
+    "footer": {
+      "legal": "Legal Notice",
+      "privacy": "Privacy Policy"
+    }
+  },
+  "home": {
+    "metaTitle": "KIZU - Portfolio",
+    "metaDescription": "Official artist portfolio: bio, media, and bookings",
+    "intro": {
+      "eyebrow": "Producer & DJ",
+      "heading": "Immersive club journeys built on uplifting melodies and driving beats.",
+      "body": "Ravensburg-based artist shaping trance, speed garage, and hard house textures into high-intensity live sets and mindful listening experiences.",
+      "ctaPrimary": "Request a Booking",
+      "ctaSecondary": "Listen to Releases",
+      "tagsLabel": "Sounds and moods",
+      "tag1": "Trance",
+      "tag2": "Speed Garage",
+      "tag3": "Hard House"
+    },
+    "spotlight": {
+      "story": {
+        "label": "Story",
+        "heading": "Biography",
+        "copy": "Origins, influences, and little stories about myself",
+        "link": "Explore →"
+      },
+      "visuals": {
+        "label": "Visuals",
+        "heading": "Media",
+        "copy": "High contrast imagery and live captures",
+        "link": "View →"
+      },
+      "catalogue": {
+        "label": "Catalogue",
+        "heading": "Releases",
+        "copy": "Singles and mixes curated for late-night momentum.",
+        "link": "Listen →"
+      }
+    },
+    "pulse": {
+      "eyebrow": "Signature vibe",
+      "heading": "Club energy with heart.",
+      "body": "My sets move from deep thriving raw techno/groove basslines into euphoric trance breakdowns, layering hard house and a lot of love for the crowd. Every show is a journey and definitely unique.",
+      "listLabel": "Sound DNA",
+      "sound": {
+        "term": "Sound",
+        "desc": "Speed garage, trance, hard house and acid lines built for goosebumps."
+      },
+      "vibe": {
+        "term": "Vibe",
+        "desc": "High-energy rave, warm transitions and deep melodies to catch you off-guard turning fast into bass-face mode"
+      },
+      "mission": {
+        "term": "Mission",
+        "desc": "Create a community. On the dancefloor, also for the living-rooms."
+      },
+      "ctaMedia": "View media",
+      "ctaReleases": "Latest releases",
+      "imageAlt": "KIZU during a club set bathed in purple light",
+      "overlay": "Rave safe, rave loud."
+    }
+  },
+  "imprint": {
+    "metaTitle": "KIZU - Legal Notice",
+    "metaDescription": "Legal notice and regulatory information for the official portfolio of KIZU.",
+    "header": "\n          <h1>Legal Notice</h1>\n          <p>Information pursuant to Section 5 TMG and Section 55 RStV.</p>\n        ",
+    "sectionInfo": "\n          <h2>Information pursuant to Section 5 TMG</h2>\n          <address>\n            <strong>Andrei Moldovan</strong><br />\n            DJ / Producer<br />\n            Wilhelmstrasse 14<br />\n            88250 Weingarten<br />\n            Germany\n          </address>\n        ",
+    "sectionContact": "\n          <h2>Contact</h2>\n          <p>Phone: <a href=\"tel:+4917632817822\">+49 (0) 176 328 17822</a><br />\n          Email: <a href=\"mailto:info@kizuloge.com\">info@kizuloge.com</a></p>\n          <p>You can also use the <a href=\"../booking/#contact-form\">contact form</a> on the booking page.</p>\n        ",
+    "sectionDispute": "\n          <h2>Consumer dispute resolution</h2>\n          <p>We are neither willing nor obliged to participate in dispute resolution proceedings before a consumer arbitration board.</p>\n          <p>Source: <a href=\"https://www.e-recht24.de\" rel=\"noopener\" target=\"_blank\">e-recht24.de</a></p>\n        ",
+    "sectionContent": "\n          <h2>Liability for content</h2>\n          <p>As a service provider we are responsible for our own content on these pages in accordance with Section 7 paragraph 1 TMG and general legislation. According to Sections 8 to 10 TMG, we are however not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate unlawful activity.</p>\n          <p>Obligations to remove or block the use of information under general legislation remain unaffected. Liability in this respect is however only possible from the time we become aware of a specific infringement. If we become aware of any such legal violations, we will remove the relevant content immediately.</p>\n        ",
+    "sectionLinks": "\n          <h2>Liability for links</h2>\n          <p>Our offer contains links to external third-party websites over whose content we have no influence. Therefore we cannot assume any liability for this external content. The respective provider or operator of the linked pages is always responsible for the content of the pages. Unlawful content was not recognisable at the time the link was created.</p>\n          <p>Permanent monitoring of the content of the linked pages is however unreasonable without concrete evidence of a violation of the law. If we become aware of any legal infringements, we will remove such links immediately.</p>\n        ",
+    "sectionCopyright": "\n          <h2>Copyright</h2>\n          <p>The content and works created by the site operators on these pages are subject to German copyright law. Duplication, processing, distribution and any kind of utilisation outside the limits of copyright law require the written consent of the respective author or creator. Downloads and copies of this site are only permitted for private, non-commercial use.</p>\n          <p>Where the content on this page was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is identified as such. Should you nevertheless become aware of a copyright infringement, please inform us accordingly. As soon as we become aware of legal violations, we will remove such content immediately.</p>\n        ",
+    "sectionOdr": "\n          <h2>Online dispute resolution</h2>\n          <p>The European Commission provides a platform for online dispute resolution (ODR): <a href=\"https://ec.europa.eu/consumers/odr\" rel=\"noopener\" target=\"_blank\">https://ec.europa.eu/consumers/odr</a>. You can find our email address above in this legal notice.</p>\n        "
+  },
+  "media": {
+    "metaTitle": "KIZU - Photos & Videos",
+    "header": {
+      "title": "Photos & Videos",
+      "lead": "Front-row footage from the booth, plus the stills that set the mood."
+    },
+    "videos": {
+      "eyebrow": "Live energy",
+      "title": "DJ sets in motion",
+      "lead": "The booth, the lights, the crowd — watch the energy unfold.",
+      "playLabel": "Play video",
+      "playCta": "Play video"
+    },
+    "photos": {
+      "eyebrow": "Still moments",
+      "title": "Photo highlights",
+      "lead": "Soft-focus frames that sit behind the music."
+    },
+    "slider": {
+      "prev": "Previous image",
+      "img1": "Live show",
+      "img2": "Studio session",
+      "img3": "Portrait",
+      "next": "Next image"
+    },
+    "lightbox": {
+      "close": "Close",
+      "alt": "Expanded media"
+    }
+  },
+  "privacy": {
+    "metaTitle": "KIZU - Privacy Policy",
+    "metaDescription": "Privacy information about how personal data is processed on the official KIZU website.",
+    "header": "\n          <h1>Privacy Policy</h1>\n          <p>Information in accordance with Article 13 GDPR on how we handle personal data.</p>\n        ",
+    "section1": "\n          <h2>1. Data protection at a glance</h2>\n          <h3>General information</h3>\n          <p>The following notes provide a simple overview of what happens to your personal data when you visit this website. Personal data is any data that can be used to identify you personally. Detailed information on the subject of data protection can be found in the full privacy policy below.</p>\n          <h3>Data collection on this website</h3>\n          <h4>Who is responsible for data collection on this website?</h4>\n          <p>Data processing on this website is carried out by the website operator. You can find the operator's contact details in the section \"Responsible party\" within this privacy policy.</p>\n          <h4>How do we collect your data?</h4>\n          <p>On the one hand, your data is collected when you communicate it to us. This may, for example, be data that you enter in a contact form.</p>\n          <p>Other data is collected automatically or after your consent when you visit the website. This is primarily technical data (for example the browser and operating system used or the time the page was accessed). This data is collected automatically as soon as you enter this website.</p>\n          <h4>What do we use your data for?</h4>\n          <p>Part of the data is collected to ensure error-free provision of the website. Other data may be used to analyse your user behaviour. Where the website can be used to initiate or conclude contracts, transmitted data will also be processed for offers, orders or other requests.</p>\n          <h4>What rights do you have regarding your data?</h4>\n          <p>You have the right at any time to obtain free information about the origin, recipient and purpose of your stored personal data. You also have the right to request the rectification or erasure of this data. If you have given consent to data processing, you may withdraw that consent at any time with effect for the future. Furthermore, you have the right to request restriction of the processing of your personal data under certain circumstances. You also have a right to lodge a complaint with the competent supervisory authority.</p>\n          <p>You can contact us at any time regarding these rights and any other questions on the subject of data protection.</p>\n        ",
+    "section2": "\n          <h2>2. General information and mandatory details</h2>\n          <h3>Data protection</h3>\n          <p>The operators of these pages take the protection of your personal data very seriously. We treat your personal data confidentially and in accordance with statutory data protection regulations and this privacy policy.</p>\n          <p>When you use this website, various personal data will be collected. Personal data is data that can be used to identify you personally. This privacy policy explains what data we collect and what we use it for. It also explains how and for what purpose this happens.</p>\n          <p>We would like to point out that data transmission on the Internet (for example when communicating by email) can have security gaps. Complete protection of data against access by third parties is not possible.</p>\n          <h3>Responsible party</h3>\n          <p>The responsible party for data processing on this website is:</p>\n          <p>KIZU Productions<br />\n          Wilhelmstrasse 14<br />\n          88250 Weingarten<br />\n          Germany</p>\n          <p>Phone: <a href=\"tel:+4917632817822\">+49 (0) 176 328 17822</a><br />\n          Email: <a href=\"mailto:info@kizuloge.com\">info@kizuloge.com</a></p>\n          <p>The responsible party is the natural or legal person who alone or jointly with others determines the purposes and means of the processing of personal data (such as names, email addresses or similar).</p>\n          <h3>Storage period</h3>\n          <p>Unless a more specific storage period has been specified in this privacy policy, your personal data will remain with us until the purpose for data processing no longer applies. If you assert a legitimate request for erasure or withdraw your consent to data processing, your data will be erased unless we have other legally permissible reasons for storing your personal data (for example tax or commercial retention periods); in the latter case the data will be erased once these reasons no longer apply.</p>\n          <h3>General information on the legal basis for data processing on this website</h3>\n          <p>If you have consented to data processing, we process your personal data on the basis of Article 6 paragraph 1 letter a GDPR or Article 9 paragraph 2 letter a GDPR if special categories of data pursuant to Article 9 paragraph 1 GDPR are processed. In the event of explicit consent to the transfer of personal data to third countries, data processing is also carried out on the basis of Article 49 paragraph 1 letter a GDPR. If you have consented to the storage of cookies or access to information on your device (for example via device fingerprinting), data processing is also carried out on the basis of Section 25 paragraph 1 TDDDG. Consent can be withdrawn at any time. If your data is required to fulfil a contract or to carry out pre-contractual measures, we process your data on the basis of Article 6 paragraph 1 letter b GDPR. Furthermore, we process your data if this is necessary to fulfil a legal obligation on the basis of Article 6 paragraph 1 letter c GDPR. Data processing may also be carried out on the basis of our legitimate interest pursuant to Article 6 paragraph 1 letter f GDPR. Information on the relevant legal basis in each individual case is provided in the following paragraphs of this privacy policy.</p>\n          <h3>Recipients of personal data</h3>\n          <p>In the course of our business activities we work together with various external parties. In some cases, it is also necessary to transfer personal data to these external parties. We only pass on personal data to external parties if you have consented to this, if there is a legal obligation to do so, if we have a legitimate interest in transferring the data or if another legal basis permits the data to be transferred. When outsourcing processing to processors, we only pass on personal data on the basis of a contract on order processing. In the case of joint processing, a contract on joint processing is concluded.</p>\n          <h3>Withdrawal of your consent to data processing</h3>\n          <p>Many data processing operations are only possible with your explicit consent. You can withdraw consent that you have already given at any time. The lawfulness of the data processing carried out until the withdrawal remains unaffected by the withdrawal.</p>\n          <h3>Right to object to data processing in special cases and to direct marketing (Article 21 GDPR)</h3>\n          <p>IF DATA PROCESSING IS CARRIED OUT ON THE BASIS OF ARTICLE 6 PARAGRAPH 1 LETTER E OR F GDPR, YOU HAVE THE RIGHT TO OBJECT TO THE PROCESSING OF YOUR PERSONAL DATA AT ANY TIME FOR REASONS ARISING FROM YOUR PARTICULAR SITUATION; THIS ALSO APPLIES TO PROFILING BASED ON THESE PROVISIONS. THE RESPECTIVE LEGAL BASIS ON WHICH PROCESSING IS BASED CAN BE FOUND IN THIS PRIVACY POLICY. IF YOU OBJECT, WE WILL NO LONGER PROCESS YOUR AFFECTED PERSONAL DATA UNLESS WE CAN PROVE COMPELLING LEGITIMATE GROUNDS FOR THE PROCESSING WHICH OUTWEIGH YOUR INTERESTS, RIGHTS AND FREEDOMS OR THE PROCESSING SERVES TO ASSERT, EXERCISE OR DEFEND LEGAL CLAIMS (OBJECTION PURSUANT TO ARTICLE 21 PARAGRAPH 1 GDPR).</p>\n          <p>IF YOUR PERSONAL DATA IS PROCESSED FOR DIRECT MARKETING PURPOSES, YOU HAVE THE RIGHT TO OBJECT AT ANY TIME TO THE PROCESSING OF PERSONAL DATA CONCERNING YOU FOR THE PURPOSE OF SUCH ADVERTISING; THIS ALSO APPLIES TO PROFILING INSOFAR AS IT IS ASSOCIATED WITH SUCH DIRECT MARKETING. IF YOU OBJECT, YOUR PERSONAL DATA WILL NO LONGER BE USED FOR DIRECT MARKETING PURPOSES (OBJECTION PURSUANT TO ARTICLE 21 PARAGRAPH 2 GDPR).</p>\n          <h3>Right to lodge a complaint with the competent supervisory authority</h3>\n          <p>In the event of infringements of the GDPR, data subjects have a right to lodge a complaint with a supervisory authority, in particular in the Member State of their habitual residence, their place of work or the place of the alleged infringement. The right to lodge a complaint exists without prejudice to other administrative or judicial remedies.</p>\n          <h3>Right to data portability</h3>\n          <p>You have the right to have data that we process automatically on the basis of your consent or in fulfilment of a contract handed over to you or to a third party in a common, machine-readable format. If you request the direct transfer of the data to another controller, this will only be done if it is technically feasible.</p>\n          <h3>SSL or TLS encryption</h3>\n          <p>This site uses SSL or TLS encryption for security reasons and to protect the transmission of confidential content, such as orders or enquiries that you send to us as the site operator. You can recognise an encrypted connection by the fact that the address line of the browser changes from \"http://\" to \"https://\" and by the lock symbol in your browser line.</p>\n          <p>If SSL or TLS encryption is activated, the data you transmit to us cannot be read by third parties.</p>\n          <h3>Information, rectification and erasure</h3>\n          <p>Within the framework of the applicable legal provisions, you have the right to receive information free of charge at any time about your stored personal data, its origin and recipient and the purpose of the data processing and, if necessary, a right to rectify or erase this data. You can contact us at any time for this purpose and for further questions on the subject of personal data.</p>\n          <h3>Right to restriction of processing</h3>\n          <p>You have the right to request the restriction of the processing of your personal data. You can contact us at any time for this purpose. The right to restriction of processing exists in the following cases:</p>\n          <ul>\n            <li>If you dispute the accuracy of the personal data stored by us, we usually need time to check this. For the duration of the verification, you have the right to request the restriction of the processing of your personal data.</li>\n            <li>If the processing of your personal data was/is carried out unlawfully, you can request the restriction of data processing instead of erasure.</li>\n            <li>If we no longer need your personal data, but you need it to exercise, defend or assert legal claims, you have the right to request the restriction of the processing of your personal data instead of erasure.</li>\n            <li>If you have lodged an objection pursuant to Article 21 paragraph 1 GDPR, your interests and ours must be weighed up. As long as it has not yet been determined whose interests prevail, you have the right to request the restriction of the processing of your personal data.</li>\n          </ul>\n          <p>If you have restricted the processing of your personal data, this data — apart from its storage — may only be processed with your consent or for the establishment, exercise or defence of legal claims or for the protection of the rights of another natural or legal person or for reasons of important public interest of the European Union or a Member State.</p>\n          <h3>Objection to promotional emails</h3>\n          <p>We hereby object to the use of contact data published within the scope of the legal notice obligation to send unsolicited advertising and information materials. The operators of the pages expressly reserve the right to take legal action in the event of the unsolicited sending of advertising information, for example via spam emails.</p>\n        ",
+    "section3": "\n          <h2>3. Data collection on this website</h2>\n          <h3>Cookies</h3>\n          <p>Our website does not use cookies that require consent on its own. Third-party embeds (YouTube, SoundCloud, Spotify) may load cookies under their respective responsibility and privacy policies.</p>\n          <h3>Contact form</h3>\n          <p>If you send us enquiries using the contact form, your details from the enquiry form, including the contact data you provide there, will be stored by us for the purpose of processing the enquiry and in the event of follow-up questions. We do not share this data without your consent.</p>\n          <p>The processing of this data is based on Article 6 paragraph 1 letter b GDPR if your request is related to the performance of a contract or is necessary for the implementation of pre-contractual measures. In all other cases, the processing is based on our legitimate interest in the effective processing of enquiries directed to us (Article 6 paragraph 1 letter f GDPR) or on your consent (Article 6 paragraph 1 letter a GDPR) if this has been requested; consent can be withdrawn at any time.</p>\n          <p>The data you provide in the contact form will remain with us until you ask us to erase it, withdraw your consent to storage or the purpose for data storage no longer applies (for example after your enquiry has been processed). Mandatory statutory provisions — in particular retention periods — remain unaffected.</p>\n        ",
+    "section4": "\n          <h2>4. Hosting and content delivery networks (CDN)</h2>\n          <h3>Amazon CloudFront CDN</h3>\n          <p>We use the content delivery network (CDN) Amazon CloudFront. The provider is Amazon Web Services EMEA SARL, 38 Avenue John F. Kennedy, L-1855 Luxembourg (hereinafter \"Amazon\").</p>\n          <p>Amazon CloudFront is a globally distributed content delivery network. Technically, the information transfer between your browser and our website is routed via the Amazon CloudFront network. This enables us to increase the worldwide accessibility and performance of our website.</p>\n          <p>The use of Amazon CloudFront is based on our legitimate interest in providing our website as error-free and secure as possible (Article 6 paragraph 1 letter f GDPR). Where consent has been requested, processing is carried out exclusively on the basis of Article 6 paragraph 1 letter a GDPR and Section 25 paragraph 1 TDDDG, insofar as the consent includes the storage of cookies or access to information on the user's device (for example device fingerprinting). Consent can be withdrawn at any time.</p>\n          <p>The transfer of data to the USA is based on the EU Commission's standard contractual clauses. Details can be found here: <a href=\"https://aws.amazon.com/blogs/security/aws-gdpr-data-processing-addendum/\" target=\"_blank\" rel=\"noopener noreferrer\">https://aws.amazon.com/blogs/security/aws-gdpr-data-processing-addendum/</a>.</p>\n          <p>The company is certified under the EU-US Data Privacy Framework (DPF). The DPF is an agreement between the European Union and the USA intended to ensure compliance with European data protection standards when processing data in the USA. Every company certified under the DPF undertakes to comply with these data protection standards. Further information can be found at: <a href=\"https://www.dataprivacyframework.gov/participant/4452\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.dataprivacyframework.gov/participant/4452</a>.</p>\n        ",
+    "section5": "\n          <h2>5. Plugins and tools</h2>\n          <h3>YouTube</h3>\n          <p>This website integrates videos hosted on YouTube. The operator of YouTube is Google Ireland Limited (\"Google\"), Gordon House, Barrow Street, Dublin 4, Ireland.</p>\n          <p>When you visit one of our pages on which YouTube is embedded, a connection to YouTube servers is established. The YouTube server is informed about which of our pages you have visited.</p>\n          <p>YouTube may also store various cookies on your device or use comparable technologies for recognition (for example device fingerprinting). In this way YouTube can obtain information about visitors to this website. Among other things, this information is used to collect video statistics, improve user friendliness and prevent fraud attempts. The data is also processed within the Google advertising network.</p>\n          <p>If you are logged into your YouTube account, you enable YouTube to assign your browsing behaviour directly to your personal profile. You can prevent this by logging out of your YouTube account.</p>\n          <p>YouTube is used in the interest of providing an attractive presentation of our online offerings. This represents a legitimate interest within the meaning of Article 6 paragraph 1 letter f GDPR. If corresponding consent has been requested, processing takes place exclusively on the basis of Article 6 paragraph 1 letter a GDPR and Section 25 paragraph 1 TDDDG, insofar as consent includes the storage of cookies or access to information on the user's device (for example device fingerprinting) within the meaning of the TDDDG. Consent can be withdrawn at any time.</p>\n          <p>Further information on how user data is handled can be found in YouTube's privacy policy: <a href=\"https://policies.google.com/privacy?hl=en\" target=\"_blank\" rel=\"noopener noreferrer\">https://policies.google.com/privacy?hl=en</a>.</p>\n          <p>The company is certified under the EU-US Data Privacy Framework (DPF). Further information can be found at: <a href=\"https://www.dataprivacyframework.gov/participant/5780\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.dataprivacyframework.gov/participant/5780</a>.</p>\n          <h3>SoundCloud</h3>\n          <p>This website may integrate plugins of the social network SoundCloud (SoundCloud Limited, Berners House, 47-48 Berners Street, London W1T 3NF, United Kingdom). You can recognise the SoundCloud plugins by the SoundCloud logo on the relevant pages.</p>\n          <p>When you visit this website, after the plugin is activated a direct connection is established between your browser and the SoundCloud server. SoundCloud therefore receives the information that you have visited this website with your IP address. If you click the \"Like\" or \"Share\" button while you are logged into your SoundCloud user account, you can link and/or share the content of this website on your SoundCloud profile. This enables SoundCloud to associate your visit to this website with your user account. We would like to point out that, as the provider of these pages, we have no knowledge of the content of the transmitted data or how it is used by SoundCloud.</p>\n          <p>Data storage and analysis takes place on the basis of Article 6 paragraph 1 letter f GDPR. The website operator has a legitimate interest in achieving the broadest possible visibility in social media. If corresponding consent has been requested, processing takes place exclusively on the basis of Article 6 paragraph 1 letter a GDPR and Section 25 paragraph 1 TDDDG, insofar as the consent includes the storage of cookies or access to information on the user's device (for example device fingerprinting). Consent can be withdrawn at any time.</p>\n          <p>The United Kingdom is regarded as a country with an adequate level of data protection. This means that the level of data protection is equivalent to that of the European Union.</p>\n          <p>Further information can be found in SoundCloud's privacy policy: <a href=\"https://soundcloud.com/pages/privacy\" target=\"_blank\" rel=\"noopener noreferrer\">https://soundcloud.com/pages/privacy</a>.</p>\n          <p>If you do not want SoundCloud to associate your visit to this website with your SoundCloud user account, please log out of your SoundCloud account before activating SoundCloud content.</p>\n          <h3>Spotify</h3>\n          <p>This website integrates functions of the music service Spotify. The provider is Spotify AB, Birger Jarlsgatan 61, 113 56 Stockholm, Sweden. You can recognise Spotify plugins by the green logo on this website. An overview of the Spotify plugins can be found at: <a href=\"https://developer.spotify.com\" target=\"_blank\" rel=\"noopener noreferrer\">https://developer.spotify.com</a>.</p>\n          <p>When you visit this website via the plugin, a direct connection is established between your browser and the Spotify server. Spotify therefore receives the information that you have visited this website with your IP address. If you click the Spotify button while you are logged into your Spotify account, you can link the content of this website to your Spotify profile. This allows Spotify to associate the visit to this website with your user account.</p>\n          <p>Please note that Spotify uses Google Analytics cookies when Spotify is used, so that your usage data may also be transmitted to Google when using Spotify. Google Analytics is a tool of the Google group designed to analyse user behaviour and is based in the USA. Spotify is solely responsible for this integration. As the website operator we have no influence on this processing.</p>\n          <p>Data storage and analysis takes place on the basis of Article 6 paragraph 1 letter f GDPR. The website operator has a legitimate interest in the appealing acoustic design of the website. If the corresponding consent has been requested, processing takes place exclusively on the basis of Article 6 paragraph 1 letter a GDPR and Section 25 paragraph 1 TDDDG, insofar as the consent covers the storage of cookies or access to information on the user's device (for example device fingerprinting). Consent can be withdrawn at any time.</p>\n          <p>Further information can be found in Spotify's privacy policy: <a href=\"https://www.spotify.com/en/legal/privacy-policy/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.spotify.com/en/legal/privacy-policy/</a>.</p>\n          <p>If you do not want Spotify to be able to associate the visit to this website with your Spotify user account, please log out of your Spotify account before activating Spotify content.</p>\n          <p>Source: <a href=\"https://www.e-recht24.de\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.e-recht24.de</a></p>\n        "
+  },
+  "releases": {
+    "metaTitle": "KIZU - Releases",
+    "header": {
+      "title": "Releases",
+      "lead": "Tracks, mixes and highlights in my career to explore."
+    },
+    "filters": {
+      "all": "All",
+      "tracks": "Tracks",
+      "mixes": "Mixes",
+      "labels": "Labels"
+    },
+    "hbyl": {
+      "frontLabel": "Show release details for Haunted By Your Love",
+      "coverAlt": "Haunted By Your Love cover art",
+      "desc": "Super melancholic summer anthem."
+    },
+    "actions": {
+      "back": "Back to cover"
+    },
+    "badges": {
+      "track": "Track",
+      "mix": "Mixes"
+    },
+    "listenLabel": "Listen",
+    "outtaspace": {
+      "frontLabel": "Show release details for Outta Space",
+      "coverAlt": "Outta Space cover art",
+      "desc": "We just love acid."
+    },
+    "foundyou": {
+      "frontLabel": "Show release details for Found You",
+      "coverAlt": "Found You cover art",
+      "desc": "Your next favorite closing track."
+    },
+    "blowakiss": {
+      "frontLabel": "Show release details for Blow A Kiss",
+      "coverAlt": "Blow A Kiss cover art",
+      "desc": "Super driving headbanger."
+    },
+    "mixes": {
+      "title": "All Mixes Playlist",
+      "note": "Hit play to run through every uploaded mix in one go."
+    },
+    "labels": {
+      "title": "Label Highlights",
+      "parallel": "Parallel Label",
+      "parallelAlt": "Parallel Label",
+      "synthx": "Synthx Records",
+      "synthxAlt": "Synthx Records",
+      "coming": "Coming Soon",
+      "milliAlt": "Milli Records"
+    }
+  }
+}

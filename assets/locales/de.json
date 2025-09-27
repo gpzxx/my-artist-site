@@ -1,0 +1,257 @@
+{
+  "bio": {
+    "metaTitle": "KIZU - Biografie",
+    "header": {
+      "title": "Biografie",
+      "lead": "Kizu ist ein junger, vielseitiger Künstler mit der Mission, Emotionen zu wecken, Freude zu schenken und die geballte Kraft elektronischer Musik auf die Tanzfläche zu entfesseln."
+    },
+    "media": {
+      "alt": "Porträt"
+    },
+    "about": {
+      "title": "Über mich",
+      "p1": "Von Ravensburg aus verbreitet Kizu eine ansteckend positive Energie — für Musik und Crowd gibt er stets mehr als 100 % und seine Feel-Good-Sets verbinden treibenden Groove, tranceartige Höhen und jede Menge Glücksmomente",
+      "p2": "Kizu begann Ende 2023 mit dem Auflegen und stieg 2024 in die Musikproduktion ein, wo er seinen Signature Sound in kurzer Zeit prägte. Seine Bookings umfassen bereits Clubs und Residenzen wie Hans-Bunte-Areal (Freiburg) und Club Douala (Ravensburg) sowie Gigs im Circle (Offenburg) und //:about Blank (Berlin).",
+      "p3": "Seine Releases und Signings erschienen unter anderem bei Para//e/ (Berlin), SYNTHX Records (München), Milli Records (Berlin) und SeshDawgsUnited (Berlin).",
+      "p4": "Spread love and you will receive love."
+    },
+    "highlights": {
+      "title": "Highlights",
+      "item1": "Festival-Auftritte",
+      "item2": "Label-Releases",
+      "festivalModal": {
+        "title": "Festival-Auftritte",
+        "intro": "Einblicke in besondere Festivalshows.",
+        "list": "<li>Hart bis Zart Festival - Freiburg (2024)</li><li>Hart bis Zart Festival - Freiburg (2025)</li><li>Backyard77 - Offenburg (2025)</li>",
+        "close": "Schließen"
+      }
+    },
+    "contact": {
+      "title": "Kontakt & Booking",
+      "body": "E-Mail: <a href=\"mailto:bookings@kizuloge.com\">bookings@kizuloge.com</a>"
+    },
+    "stats": {
+      "label": "Karriere-Highlights",
+      "valueYears": "2",
+      "labelYears": "Jahre als DJ",
+      "valueReleases": "9",
+      "labelReleases": "Releases veröffentlicht",
+      "valueClubs": "7",
+      "labelClubs": "Clubs gespielt",
+      "clubsModal": {
+        "title": "Gespielte Clubs",
+        "intro": "Diese Bühnen durfte ich bereits bespielen:",
+        "list": "<li>Hans-Bunte-Areal - Freiburg</li><li>Club Douala - Ravensburg</li><li>Circle - Offenburg</li><li>//:about blank - Berlin</li><li>Bahnwärter Thiel - München</li><li>Gleis44 - Ulm</li><li>TheGreatRängTäng - Freiburg</li>",
+        "close": "Schließen"
+      }
+    }
+  },
+  "booking": {
+    "metaTitle": "KIZU - Booking",
+    "header": {
+      "title": "Technical & Hospitality Rider",
+      "lead": "Lade dir hier den aktuellen Rider als PDF herunter oder sieh ihn dir an.",
+      "primaryCta": "Booking anfragen",
+      "download": "Rider herunterladen",
+      "open": "Im neuen Tab öffnen"
+    },
+    "rider": {
+      "title": "KIZU Technical Rider",
+      "fallback": "PDF-Vorschau nicht verfügbar? <a href=\"../assets/docs/KIZU_Rider.pdf\">Rider herunterladen</a>."
+    },
+    "form": {
+      "title": "Kontaktformular",
+      "lead": "Schicke deine Anfrage direkt über das Formular oder nutze die E-Mail-Adresse. Nach dem Absenden öffnet sich dein Mailprogramm, damit du Anhänge ergänzen kannst.",
+      "name": "Name *",
+      "email": "E-Mail *",
+      "subject": "Betreff",
+      "subjectPlaceholder": "Booking, Presse, allgemeine Anfrage ...",
+      "message": "Nachricht *",
+      "messagePlaceholder": "Wobei können wir helfen?",
+      "privacy": "Ich habe das <a href=\"../impressum/\">Impressum</a> gelesen und stimme zu, dass meine Angaben zur Beantwortung verarbeitet werden.",
+      "submit": "Nachricht senden",
+      "disclaimer": "Das Formular öffnet dein E-Mail-Programm, damit du die Nachricht prüfen und versenden kannst. Es werden keine Daten auf diesem Server gespeichert."
+    }
+  },
+  "common": {
+    "nav": {
+      "toggle": "Navigation umschalten",
+      "biography": "Biografie",
+      "media": "Medien",
+      "releases": "Releases",
+      "booking": "Booking"
+    },
+    "lang": {
+      "toggleLabel": "Sprachauswahl",
+      "switchToEnglish": "Auf Englisch wechseln",
+      "switchToGerman": "Auf Deutsch wechseln"
+    },
+    "footer": {
+      "legal": "Impressum",
+      "privacy": "Datenschutzerklärung"
+    }
+  },
+  "home": {
+    "metaTitle": "KIZU - Portfolio",
+    "metaDescription": "Offizielles Künstlerportfolio: Biografie, Medien und Buchung.",
+    "intro": {
+      "eyebrow": "Producer & DJ",
+      "heading": "Fesselnde Clubreisen voller euphorischer Melodien und treibender Beats.",
+      "body": "Der aus Ravensburg stammende Künstler vereint Trance, Speed Garage und Hard House zu kraftvollen Sets.",
+      "ctaPrimary": "Booking anfragen",
+      "ctaSecondary": "Releases anhören",
+      "tagsLabel": "Sounds und Stimmungen",
+      "tag1": "Trance",
+      "tag2": "Speed Garage",
+      "tag3": "Hard House"
+    },
+    "spotlight": {
+      "story": {
+        "label": "Story",
+        "heading": "Biografie",
+        "copy": "Ursprünge, Einflüsse und kleine Geschichten über mich",
+        "link": "Mehr erfahren →"
+      },
+      "visuals": {
+        "label": "Visuals",
+        "heading": "Medien",
+        "copy": "Hochkontrastige Bilder und Live-Momente",
+        "link": "Ansehen →"
+      },
+      "catalogue": {
+        "label": "Katalog",
+        "heading": "Releases",
+        "copy": "Singles und Mixes für spätnächtlichen Drive.",
+        "link": "Reinhören →"
+      }
+    },
+    "pulse": {
+      "eyebrow": "Signature-Vibe",
+      "heading": "Clubenergie mit Herz.",
+      "body": "Bass, Breakdowns, Hard House und Herz: Meine Sets sind pure Energie und machen jede Show zu einem besonderen Erlebnis.",
+      "listLabel": "Sound-DNA",
+      "sound": {
+        "term": "Sound",
+        "desc": "Speed Garage, Trance, Hard House und Acid-Lines für Gänsehautmomente."
+      },
+      "vibe": {
+        "term": "Vibe",
+        "desc": "High-Energy-Rave, abstrakte Übergänge und treibende Melodien, die dich in Handumdrehen einen Bassface auslösen."
+      },
+      "mission": {
+        "term": "Mission",
+        "desc": "Eine Community schaffen. Auf dem Dancefloor - fürs Wohnzimmer."
+      },
+      "ctaMedia": "Medien ansehen",
+      "ctaReleases": "Neueste Releases",
+      "imageAlt": "KIZU während eines Clubsets im violetten Licht",
+      "overlay": "Rave safe, rave loud."
+    }
+  },
+  "imprint": {
+    "metaTitle": "KIZU - Impressum",
+    "metaDescription": "Impressum und rechtliche Angaben zum offiziellen Portfolio von KIZU.",
+    "header": "\n          <h1>Impressum</h1>\n          <p>Angaben gemäß § 5 TMG und § 55 RStV.</p>\n        ",
+    "sectionInfo": "\n          <h2>Angaben gemäß § 5 TMG</h2>\n          <address>\n            <strong>Andrei Moldovan</strong><br />\n            DJ / Producer<br />\n            Wilhelmstrasse 14<br />\n            88250 Weingarten<br />\n            Deutschland\n          </address>\n        ",
+    "sectionContact": "\n          <h2>Kontakt</h2>\n          <p>Telefon: <a href=\"tel:+4917632817822\">+49 (0) 176 328 17822</a><br />\n          E-Mail: <a href=\"mailto:info@kizuloge.com\">info@kizuloge.com</a></p>\n          <p>Alternativ kannst du das <a href=\"../booking/#contact-form\">Kontaktformular</a> auf der Booking-Seite nutzen.</p>\n        ",
+    "sectionDispute": "\n          <h2>Verbraucherstreitbeilegung</h2>\n          <p>Wir sind weder bereit noch verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>\n          <p>Quelle: <a href=\"https://www.e-recht24.de\" rel=\"noopener\" target=\"_blank\">e-recht24.de</a></p>\n        ",
+    "sectionContent": "\n          <h2>Haftung für Inhalte</h2>\n          <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>\n          <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden entsprechender Rechtsverletzungen entfernen wir diese Inhalte umgehend.</p>\n        ",
+    "sectionLinks": "\n          <h2>Haftung für Links</h2>\n          <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.</p>\n          <p>Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen entfernen wir derartige Links umgehend.</p>\n        ",
+    "sectionCopyright": "\n          <h2>Urheberrecht</h2>\n          <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>\n          <p>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Solltest du trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen entfernen wir derartige Inhalte umgehend.</p>\n        ",
+    "sectionOdr": "\n          <h2>Online-Streitbeilegung</h2>\n          <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href=\"https://ec.europa.eu/consumers/odr\" rel=\"noopener\" target=\"_blank\">https://ec.europa.eu/consumers/odr</a>. Unsere E-Mail-Adresse findest du oben im Impressum.</p>\n        "
+  },
+  "media": {
+    "metaTitle": "KIZU - Fotos & Videos",
+    "header": {
+      "title": "Fotos & Videos",
+      "lead": "Mittendrin-Erlebnisse aus dem Booth plus die Stillframes für die Stimmung."
+    },
+    "videos": {
+      "eyebrow": "Live-Energie",
+      "title": "DJ-Sets in Bewegung",
+      "lead": "Der Booth, das Licht, die Crowd — sieh zu, wie die Energie entsteht.",
+      "playLabel": "Video abspielen",
+      "playCta": "Video abspielen"
+    },
+    "photos": {
+      "eyebrow": "Stille Momente",
+      "title": "Foto-Highlights",
+      "lead": "Weiche Eindrücke, die sich dezent hinter die Musik legen."
+    },
+    "slider": {
+      "prev": "Vorheriges Bild",
+      "img1": "Liveshow",
+      "img2": "Studiosession",
+      "img3": "Porträt",
+      "next": "Nächstes Bild"
+    },
+    "lightbox": {
+      "close": "Schließen",
+      "alt": "Erweitertes Medium"
+    }
+  },
+  "privacy": {
+    "metaTitle": "KIZU - Datenschutzerklärung",
+    "metaDescription": "Informationen zum Umgang mit personenbezogenen Daten auf der offiziellen KIZU Website.",
+    "header": "\n          <h1>Datenschutzerklärung</h1>\n          <p>Informationen gemäß Artikel 13 DSGVO darüber, wie wir mit personenbezogenen Daten umgehen.</p>\n        ",
+    "section1": "\n          <h2>1. Datenschutz auf einen Blick</h2>\n          <h3>Allgemeine Hinweise</h3>\n          <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit deinen personenbezogenen Daten passiert, wenn du diese Website besuchst. Personenbezogene Daten sind alle Daten, mit denen du persönlich identifiziert werden kannst. Ausführliche Informationen zum Thema Datenschutz entnimmst du unserer nachfolgenden Datenschutzerklärung.</p>\n          <h3>Datenerfassung auf dieser Website</h3>\n          <h4>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</h4>\n          <p>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten findest du im Abschnitt „Verantwortliche Stelle\" in dieser Datenschutzerklärung.</p>\n          <h4>Wie erfassen wir deine Daten?</h4>\n          <p>Deine Daten werden zum einen dadurch erhoben, dass du uns diese mitteilst. Hierbei kann es sich z. B. um Daten handeln, die du in ein Kontaktformular eingibst.</p>\n          <p>Andere Daten werden automatisch oder nach deiner Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung erfolgt automatisch, sobald du diese Website betrittst.</p>\n          <h4>Wofür nutzen wir deine Daten?</h4>\n          <p>Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse deines Nutzerverhaltens verwendet werden. Soweit über die Website Verträge angebahnt oder abgeschlossen werden können, verarbeiten wir übermittelte Daten außerdem für Angebote, Bestellungen oder sonstige Anfragen.</p>\n          <h4>Welche Rechte hast du bezüglich deiner Daten?</h4>\n          <p>Du hast jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck deiner gespeicherten personenbezogenen Daten zu erhalten. Du hast außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn du eine Einwilligung zur Datenverarbeitung erteilt hast, kannst du diese Einwilligung jederzeit für die Zukunft widerrufen. Außerdem hast du das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung deiner personenbezogenen Daten zu verlangen. Des Weiteren steht dir ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.</p>\n          <p>Hierzu sowie zu weiteren Fragen zum Thema Datenschutz kannst du dich jederzeit an uns wenden.</p>\n        ",
+    "section2": "\n          <h2>2. Allgemeine Hinweise und Pflichtinformationen</h2>\n          <h3>Datenschutz</h3>\n          <p>Die Betreiber dieser Seiten nehmen den Schutz deiner persönlichen Daten sehr ernst. Wir behandeln deine personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>\n          <p>Wenn du diese Website benutzt, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, mit denen du persönlich identifiziert werden kannst. Die vorliegende Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen. Sie erläutert auch, wie und zu welchem Zweck das geschieht.</p>\n          <p>Wir weisen darauf hin, dass die Datenübertragung im Internet (z. B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.</p>\n          <h3>Verantwortliche Stelle</h3>\n          <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>\n          <p>KIZU Productions<br />\n          Wilhelmstrasse 14<br />\n          88250 Weingarten<br />\n          Deutschland</p>\n          <p>Telefon: <a href=\"tel:+4917632817822\">+49 (0) 176 328 17822</a><br />\n          E-Mail: <a href=\"mailto:info@kizuloge.com\">info@kizuloge.com</a></p>\n          <p>Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.</p>\n          <h3>Speicherdauer</h3>\n          <p>Soweit in dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben deine personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn du ein berechtigtes Löschersuchen stellst oder eine Einwilligung zur Datenverarbeitung widerrufst, werden deine Daten gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe für die Speicherung deiner personenbezogenen Daten haben (z. B. steuer- oder handelsrechtliche Aufbewahrungsfristen); in letzterem Fall erfolgt die Löschung nach Fortfall dieser Gründe.</p>\n          <h3>Allgemeine Hinweise zu den Rechtsgrundlagen der Datenverarbeitung auf dieser Website</h3>\n          <p>Sofern du in die Datenverarbeitung eingewilligt hast, verarbeiten wir deine personenbezogenen Daten auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO bzw. Art. 9 Abs. 2 lit. a DSGVO, sofern besondere Datenkategorien nach Art. 9 Abs. 1 DSGVO verarbeitet werden. Im Falle einer ausdrücklichen Einwilligung in die Übertragung personenbezogener Daten in Drittstaaten erfolgt die Datenverarbeitung außerdem auf Grundlage von Art. 49 Abs. 1 lit. a DSGVO. Hast du in die Speicherung von Cookies oder in den Zugriff auf Informationen in dein Endgerät (z. B. via Device-Fingerprinting) eingewilligt, erfolgt die Datenverarbeitung zusätzlich auf Grundlage von § 25 Abs. 1 TDDDG. Die Einwilligung ist jederzeit widerrufbar. Sind deine Daten zur Vertragserfüllung oder zur Durchführung vorvertraglicher Maßnahmen erforderlich, verarbeiten wir deine Daten auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO. Darüber hinaus verarbeiten wir deine Daten, sofern dies zur Erfüllung einer rechtlichen Verpflichtung erforderlich ist, auf Grundlage von Art. 6 Abs. 1 lit. c DSGVO. Die Datenverarbeitung kann ferner auf Grundlage unseres berechtigten Interesses nach Art. 6 Abs. 1 lit. f DSGVO erfolgen. Über die jeweils einschlägigen Rechtsgrundlagen wird in den folgenden Absätzen dieser Datenschutzerklärung informiert.</p>\n          <h3>Empfänger von personenbezogenen Daten</h3>\n          <p>Im Rahmen unserer Geschäftstätigkeit arbeiten wir mit verschiedenen externen Stellen zusammen. Dabei kann auch eine Übermittlung personenbezogener Daten erforderlich sein. Wir geben personenbezogene Daten nur dann an externe Stellen weiter, wenn du eingewilligt hast, eine gesetzliche Verpflichtung besteht, wir ein berechtigtes Interesse an der Weitergabe haben oder eine andere Rechtsgrundlage die Weitergabe erlaubt. Beim Einsatz von Auftragsverarbeitern geben wir personenbezogene Daten nur auf Grundlage eines Auftragsverarbeitungsvertrags weiter. Bei gemeinsamer Verarbeitung wird ein Vertrag über die gemeinsame Verarbeitung geschlossen.</p>\n          <h3>Widerruf deiner Einwilligung zur Datenverarbeitung</h3>\n          <p>Viele Datenverarbeitungsvorgänge sind nur mit deiner ausdrücklichen Einwilligung möglich. Du kannst eine bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.</p>\n          <h3>Widerspruchsrecht gegen die Datenerhebung in besonderen Fällen sowie gegen Direktwerbung (Art. 21 DSGVO)</h3>\n          <p>WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E ODER F DSGVO ERFOLGT, HAST DU JEDERZEIT DAS RECHT, AUS GRÜNDEN, DIE SICH AUS DEINER BESONDEREN SITUATION ERGEBEN, GEGEN DIE VERARBEITUNG DEINER PERSONENBEZOGENEN DATEN WIDERSPRUCH EINZULEGEN; DIES GILT AUCH FÜR EIN AUF DIESE BESTIMMUNGEN GESTÜTZTES PROFILING. DIE JEWEILIGE RECHTSGRUNDLAGE, AUF DENEN EINE VERARBEITUNG BERUHT, ENTNIMMST DU DIESER DATENSCHUTZERKLÄRUNG. WENN DU WIDERSPRUCH EINLEGST, WERDEN WIR DEINE BETROFFENEN PERSONENBEZOGENEN DATEN NICHT MEHR VERARBEITEN, ES SEI DENN, WIR KÖNNEN ZWINGENDE SCHUTZWÜRDIGE GRÜNDE FÜR DIE VERARBEITUNG NACHWEISEN, DIE DEINE INTERESSEN, RECHTE UND FREIHEITEN ÜBERWIEGEN, ODER DIE VERARBEITUNG DIENT DER GELTENDMACHUNG, AUSÜBUNG ODER VERTEIDIGUNG VON RECHTSANSPRÜCHEN (WIDERSPRUCH NACH ART. 21 ABS. 1 DSGVO).</p>\n          <p>WERDEN DEINE PERSONENBEZOGENEN DATEN VERARBEITET, UM DIREKTWERBUNG ZU BETREIBEN, HAST DU DAS RECHT, JEDERZEIT WIDERSPRUCH GEGEN DIE VERARBEITUNG DICH BETREFFENDER PERSONENBEZOGENER DATEN ZUM ZWECKE DERARTIGER WERBUNG EINZULEGEN; DIES GILT AUCH FÜR DAS PROFILING, SOWEIT ES MIT SOLCHER DIREKTWERBUNG IN VERBINDUNG STEHT. WENN DU WIDERSPRICHST, WERDEN DEINE PERSONENBEZOGENEN DATEN ANSCHLIESSEND NICHT MEHR ZUM ZWECKE DER DIREKTWERBUNG VERWENDET (WIDERSPRUCH NACH ART. 21 ABS. 2 DSGVO).</p>\n          <h3>Beschwerderecht bei der zuständigen Aufsichtsbehörde</h3>\n          <p>Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbehörde zu, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes. Das Beschwerderecht besteht unbeschadet anderweitiger verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe.</p>\n          <h3>Recht auf Datenübertragbarkeit</h3>\n          <p>Du hast das Recht, Daten, die wir auf Grundlage deiner Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an dich oder an einen Dritten in einem gängigen, maschinenlesbaren Format aushändigen zu lassen. Sofern du die direkte Übertragung der Daten an einen anderen Verantwortlichen verlangst, erfolgt dies nur, soweit es technisch machbar ist.</p>\n          <h3>SSL- bzw. TLS-Verschlüsselung</h3>\n          <p>Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel Bestellungen oder Anfragen, die du an uns als Seitenbetreiber sendest, eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennst du daran, dass die Adresszeile des Browsers von „http://\" auf „https://\" wechselt und an dem Schloss-Symbol in deiner Browserzeile.</p>\n          <p>Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können Daten, die du an uns übermittelst, nicht von Dritten mitgelesen werden.</p>\n          <h3>Auskunft, Löschung und Berichtigung</h3>\n          <p>Du hast im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über deine gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger sowie den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung oder Löschung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten kannst du dich jederzeit an uns wenden.</p>\n          <h3>Recht auf Einschränkung der Verarbeitung</h3>\n          <p>Du hast das Recht, die Einschränkung der Verarbeitung deiner personenbezogenen Daten zu verlangen. Hierzu kannst du dich jederzeit an uns wenden. Das Recht auf Einschränkung der Verarbeitung besteht in folgenden Fällen:</p>\n          <ul>\n            <li>Wenn du die Richtigkeit deiner bei uns gespeicherten personenbezogenen Daten bestreitest, benötigen wir in der Regel Zeit, um dies zu überprüfen. Für die Dauer der Prüfung hast du das Recht, die Einschränkung der Verarbeitung deiner personenbezogenen Daten zu verlangen.</li>\n            <li>Wenn die Verarbeitung deiner personenbezogenen Daten unrechtmäßig geschah/geschieht, kannst du statt der Löschung die Einschränkung der Datenverarbeitung verlangen.</li>\n            <li>Wenn wir deine personenbezogenen Daten nicht mehr benötigen, du sie jedoch zur Ausübung, Verteidigung oder Geltendmachung von Rechtsansprüchen benötigst, hast du das Recht, statt der Löschung die Einschränkung der Verarbeitung deiner personenbezogenen Daten zu verlangen.</li>\n            <li>Wenn du einen Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt hast, muss eine Abwägung zwischen deinen und unseren Interessen vorgenommen werden. Solange noch nicht feststeht, wessen Interessen überwiegen, hast du das Recht, die Einschränkung der Verarbeitung deiner personenbezogenen Daten zu verlangen.</li>\n          </ul>\n          <p>Wenn du die Verarbeitung deiner personenbezogenen Daten eingeschränkt hast, dürfen diese Daten — von ihrer Speicherung abgesehen — nur mit deiner Einwilligung oder zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen oder zum Schutz der Rechte einer anderen natürlichen oder juristischen Person oder aus Gründen eines wichtigen öffentlichen Interesses der Europäischen Union oder eines Mitgliedstaats verarbeitet werden.</p>\n          <h3>Widerspruch gegen Werbe-E-Mails</h3>\n          <p>Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-E-Mails, vor.</p>\n        ",
+    "section3": "\n          <h2>3. Datenerfassung auf dieser Website</h2>\n          <h3>Cookies</h3>\n          <p>Unsere Website setzt von sich aus keine zustimmungspflichtigen Cookies ein. Eingebettete Inhalte von Dritten (YouTube, SoundCloud, Spotify) können unter eigener Verantwortung und eigenen Datenschutzerklärungen Cookies laden.</p>\n          <h3>Kontaktformular</h3>\n          <p>Wenn du uns über das Kontaktformular Anfragen zukommen lässt, werden deine Angaben aus dem Formular inklusive der von dir dort angegebenen Kontaktdaten zum Zwecke der Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne deine Einwilligung weiter.</p>\n          <p>Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern deine Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf deiner Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), sofern diese abgefragt wurde; die Einwilligung ist jederzeit widerrufbar.</p>\n          <p>Die von dir im Kontaktformular eingegebenen Daten verbleiben bei uns, bis du uns zur Löschung aufforderst, deine Einwilligung zur Speicherung widerrufst oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung deiner Anfrage). Zwingende gesetzliche Bestimmungen — insbesondere Aufbewahrungsfristen — bleiben unberührt.</p>\n        ",
+    "section4": "\n          <h2>4. Hosting und Content Delivery Networks (CDN)</h2>\n          <h3>Amazon CloudFront CDN</h3>\n          <p>Wir nutzen das Content Delivery Network (CDN) Amazon CloudFront. Anbieter ist die Amazon Web Services EMEA SARL, 38 Avenue John F. Kennedy, L-1855 Luxemburg (nachfolgend „Amazon\").</p>\n          <p>Amazon CloudFront ist ein weltweit verteiltes CDN. Technisch erfolgt die Informationsübertragung zwischen deinem Browser und unserer Website über das Netzwerk von Amazon CloudFront. Dadurch können wir die weltweite Erreichbarkeit und Performance unserer Website verbessern.</p>\n          <p>Der Einsatz von Amazon CloudFront erfolgt auf Grundlage unseres berechtigten Interesses an einer möglichst fehlerfreien und sicheren Bereitstellung unserer Website (Art. 6 Abs. 1 lit. f DSGVO). Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B. Device-Fingerprinting) umfasst. Die Einwilligung ist jederzeit widerrufbar.</p>\n          <p>Die Übertragung von Daten in die USA erfolgt auf Grundlage der Standardvertragsklauseln der EU-Kommission. Details findest du hier: <a href=\"https://aws.amazon.com/blogs/security/aws-gdpr-data-processing-addendum/\" target=\"_blank\" rel=\"noopener noreferrer\">https://aws.amazon.com/blogs/security/aws-gdpr-data-processing-addendum/</a>.</p>\n          <p>Das Unternehmen ist unter dem EU-US Data Privacy Framework (DPF) zertifiziert. Das DPF ist eine Vereinbarung zwischen der Europäischen Union und den USA, die die Einhaltung europäischer Datenschutzstandards bei Datenverarbeitungen in den USA gewährleisten soll. jeder zertifizierte Anbieter verpflichtet sich, diese Standards einzuhalten. Weitere Informationen findest du unter: <a href=\"https://www.dataprivacyframework.gov/participant/4452\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.dataprivacyframework.gov/participant/4452</a>.</p>\n        ",
+    "section5": "\n          <h2>5. Plugins und Tools</h2>\n          <h3>YouTube</h3>\n          <p>Diese Website bindet Videos der Plattform YouTube ein. Betreiber von YouTube ist die Google Ireland Limited („Google\"), Gordon House, Barrow Street, Dublin 4, Irland.</p>\n          <p>Wenn du eine unserer Seiten besuchst, auf denen YouTube eingebunden ist, wird eine Verbindung zu den Servern von YouTube hergestellt. Dabei wird dem YouTube-Server mitgeteilt, welche unserer Seiten du besucht hast.</p>\n          <p>YouTube kann außerdem verschiedene Cookies auf deinem Endgerät speichern oder vergleichbare Wiedererkennungstechnologien einsetzen (z. B. Device-Fingerprinting). Auf diese Weise kann YouTube Informationen über Besucher dieser Website erhalten. Diese Informationen werden u. a. genutzt, um Videostatistiken zu erfassen, die Benutzerfreundlichkeit zu verbessern und Betrugsversuchen vorzubeugen. Die Daten werden zudem im Google-Werbenetzwerk verarbeitet.</p>\n          <p>Bist du in deinem YouTube-Account eingeloggt, ermöglichst du YouTube, dein Surfverhalten direkt deinem persönlichen Profil zuzuordnen. Du kannst dies verhindern, indem du dich aus deinem YouTube-Account ausloggst.</p>\n          <p>Die Nutzung von YouTube erfolgt im Interesse einer ansprechenden Darstellung unserer Online-Angebote. Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B. Device-Fingerprinting) umfasst. Die Einwilligung ist jederzeit widerrufbar.</p>\n          <p>Weitere Informationen zum Umgang mit Nutzerdaten findest du in der Datenschutzerklärung von YouTube: <a href=\"https://policies.google.com/privacy?hl=de\" target=\"_blank\" rel=\"noopener noreferrer\">https://policies.google.com/privacy?hl=de</a>.</p>\n          <p>Das Unternehmen ist unter dem EU-US Data Privacy Framework (DPF) zertifiziert. Weitere Informationen findest du unter: <a href=\"https://www.dataprivacyframework.gov/participant/5780\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.dataprivacyframework.gov/participant/5780</a>.</p>\n          <h3>SoundCloud</h3>\n          <p>Diese Website kann Plugins des sozialen Netzwerks SoundCloud (SoundCloud Limited, Berners House, 47-48 Berners Street, London W1T 3NF, Vereinigtes Königreich) einbinden. Die SoundCloud-Plugins erkennst du am SoundCloud-Logo auf den betreffenden Seiten.</p>\n          <p>Wenn du diese Website besuchst, wird nach Aktivierung des Plugins eine direkte Verbindung zwischen deinem Browser und dem SoundCloud-Server hergestellt. SoundCloud erhält dadurch die Information, dass du diese Website mit deiner IP-Adresse besucht hast. Wenn du den „Like\"- oder „Share\"-Button anklickst, während du in deinem SoundCloud-Nutzerkonto eingeloggt bist, kannst du die Inhalte dieser Website mit deinem SoundCloud-Profil verlinken und/oder teilen. Dadurch kann SoundCloud den Besuch dieser Website deinem Benutzerkonto zuordnen. Wir weisen darauf hin, dass wir als Anbieter der Seiten keine Kenntnis vom Inhalt der übermittelten Daten sowie deren Nutzung durch SoundCloud erhalten.</p>\n          <p>Die Speicherung und Analyse der Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an einer möglichst umfangreichen Sichtbarkeit in den sozialen Medien. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B. Device-Fingerprinting) umfasst. Die Einwilligung ist jederzeit widerrufbar.</p>\n          <p>Das Vereinigte Königreich gilt als Drittland mit einem datenschutzrechtlich angemessenen Schutzniveau. Das bedeutet, das Datenschutzniveau entspricht dem der Europäischen Union.</p>\n          <p>Weitere Informationen findest du in der Datenschutzerklärung von SoundCloud: <a href=\"https://soundcloud.com/pages/privacy\" target=\"_blank\" rel=\"noopener noreferrer\">https://soundcloud.com/pages/privacy</a>.</p>\n          <p>Wenn du nicht möchtest, dass SoundCloud den Besuch dieser Website deinem SoundCloud-Nutzerkonto zuordnet, logge dich vor der Aktivierung des SoundCloud-Inhalts aus deinem SoundCloud-Konto aus.</p>\n          <h3>Spotify</h3>\n          <p>Diese Website bindet Funktionen des Musikdienstes Spotify ein. Anbieter ist die Spotify AB, Birger Jarlsgatan 61, 113 56 Stockholm, Schweden. Die Spotify-Plugins erkennst du an dem grünen Logo auf dieser Website. Eine Übersicht über die Spotify-Plugins findest du hier: <a href=\"https://developer.spotify.com\" target=\"_blank\" rel=\"noopener noreferrer\">https://developer.spotify.com</a>.</p>\n          <p>Wenn du diese Website über das Plugin besuchst, wird eine direkte Verbindung zwischen deinem Browser und dem Spotify-Server hergestellt. Spotify erhält dadurch die Information, dass du diese Website mit deiner IP-Adresse besucht hast. Wenn du den Spotify-Button anklickst, während du in deinem Spotify-Account eingeloggt bist, kannst du die Inhalte dieser Website mit deinem Spotify-Profil verlinken. Dadurch kann Spotify den Besuch dieser Website deinem Benutzerkonto zuordnen.</p>\n          <p>Bitte beachte, dass Spotify bei Nutzung von Spotify Google-Analytics-Cookies verwendet, so dass deine Nutzungsdaten beim Einsatz von Spotify auch an Google übertragen werden können. Google Analytics ist ein Tool des Google-Konzerns zur Analyse des Nutzerverhaltens und hat seinen Sitz in den USA. Spotify ist für diese Einbindung allein verantwortlich. Als Websitebetreiber haben wir auf diese Verarbeitung keinen Einfluss.</p>\n          <p>Die Speicherung und Analyse der Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an einer klanglich ansprechenden Gestaltung seiner Website. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B. Device-Fingerprinting) umfasst. Die Einwilligung ist jederzeit widerrufbar.</p>\n          <p>Weitere Informationen findest du in der Datenschutzerklärung von Spotify: <a href=\"https://www.spotify.com/de/legal/privacy-policy/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.spotify.com/de/legal/privacy-policy/</a>.</p>\n          <p>Wenn du nicht möchtest, dass Spotify den Besuch dieser Website deinem Spotify-Nutzerkonto zuordnen kann, logge dich vor der Aktivierung des Spotify-Inhalts aus deinem Spotify-Konto aus.</p>\n          <p>Quelle: <a href=\"https://www.e-recht24.de\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.e-recht24.de</a></p>\n        "
+  },
+  "releases": {
+    "metaTitle": "KIZU - Releases",
+    "header": {
+      "title": "Releases",
+      "lead": "Tracks, Mixes und Highlights aus meiner Karriere zum Entdecken."
+    },
+    "filters": {
+      "all": "Alle",
+      "tracks": "Tracks",
+      "mixes": "Mixes",
+      "labels": "Labels"
+    },
+    "hbyl": {
+      "frontLabel": "Release-Details zu Haunted By Your Love anzeigen",
+      "coverAlt": "Haunted By Your Love Cover",
+      "desc": "Super melancholische Sommer-Hymne."
+    },
+    "actions": {
+      "back": "Zurück zum Cover"
+    },
+    "badges": {
+      "track": "Track",
+      "mix": "Mixes"
+    },
+    "listenLabel": "Anhören",
+    "outtaspace": {
+      "frontLabel": "Release-Details zu Outta Space anzeigen",
+      "coverAlt": "Outta Space Cover",
+      "desc": "Wir lieben Acid."
+    },
+    "foundyou": {
+      "frontLabel": "Release-Details zu Found You anzeigen",
+      "coverAlt": "Found You Cover",
+      "desc": "Dein neuer Lieblingssong fürs Closing."
+    },
+    "blowakiss": {
+      "frontLabel": "Release-Details zu Blow A Kiss anzeigen",
+      "coverAlt": "Blow A Kiss Cover",
+      "desc": "Super treibender Kopfnicker."
+    },
+    "mixes": {
+      "title": "Alle Mixes Playlist",
+      "note": "Play drücken und alle hochgeladenen Mixes am Stück hören."
+    },
+    "labels": {
+      "title": "Label-Highlights",
+      "parallel": "Parallel Label",
+      "parallelAlt": "Parallel Label",
+      "synthx": "Synthx Records",
+      "synthxAlt": "Synthx Records",
+      "coming": "In Kürze",
+      "milliAlt": "Milli Records"
+    }
+  }
+}
