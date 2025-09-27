@@ -346,7 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <li>If we no longer need your personal data, but you need it to exercise, defend or assert legal claims, you have the right to request the restriction of the processing of your personal data instead of erasure.</li>
             <li>If you have lodged an objection pursuant to Article 21 paragraph 1 GDPR, your interests and ours must be weighed up. As long as it has not yet been determined whose interests prevail, you have the right to request the restriction of the processing of your personal data.</li>
           </ul>
-          <p>If you have restricted the processing of your personal data, this data – apart from its storage – may only be processed with your consent or for the establishment, exercise or defence of legal claims or for the protection of the rights of another natural or legal person or for reasons of important public interest of the European Union or a Member State.</p>
+          <p>If you have restricted the processing of your personal data, this data — apart from its storage — may only be processed with your consent or for the establishment, exercise or defence of legal claims or for the protection of the rights of another natural or legal person or for reasons of important public interest of the European Union or a Member State.</p>
           <h3>Objection to promotional emails</h3>
           <p>We hereby object to the use of contact data published within the scope of the legal notice obligation to send unsolicited advertising and information materials. The operators of the pages expressly reserve the right to take legal action in the event of the unsolicited sending of advertising information, for example via spam emails.</p>
         `,
@@ -357,7 +357,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <h3>Contact form</h3>
           <p>If you send us enquiries using the contact form, your details from the enquiry form, including the contact data you provide there, will be stored by us for the purpose of processing the enquiry and in the event of follow-up questions. We do not share this data without your consent.</p>
           <p>The processing of this data is based on Article 6 paragraph 1 letter b GDPR if your request is related to the performance of a contract or is necessary for the implementation of pre-contractual measures. In all other cases, the processing is based on our legitimate interest in the effective processing of enquiries directed to us (Article 6 paragraph 1 letter f GDPR) or on your consent (Article 6 paragraph 1 letter a GDPR) if this has been requested; consent can be withdrawn at any time.</p>
-          <p>The data you provide in the contact form will remain with us until you ask us to erase it, withdraw your consent to storage or the purpose for data storage no longer applies (for example after your enquiry has been processed). Mandatory statutory provisions – in particular retention periods – remain unaffected.</p>
+          <p>The data you provide in the contact form will remain with us until you ask us to erase it, withdraw your consent to storage or the purpose for data storage no longer applies (for example after your enquiry has been processed). Mandatory statutory provisions — in particular retention periods — remain unaffected.</p>
         `,
         section4: `
           <h2>4. Hosting and content delivery networks (CDN)</h2>
@@ -481,7 +481,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         about: {
           title: 'Über mich',
-          p1: 'Von Ravensburg aus verbreitet Kizu eine ansteckend positive Energie – für Musik und Crowd gibt er stets mehr als 100 % und seine Feel-Good-Sets verbinden treibenden Groove, tranceartige Höhen und jede Menge Glücksmomente',
+          p1: 'Von Ravensburg aus verbreitet Kizu eine ansteckend positive Energie — für Musik und Crowd gibt er stets mehr als 100 % und seine Feel-Good-Sets verbinden treibenden Groove, tranceartige Höhen und jede Menge Glücksmomente',
           p2: 'Kizu begann Ende 2023 mit dem Auflegen und stieg 2024 in die Musikproduktion ein, wo er seinen Signature Sound in kurzer Zeit prägte. Seine Bookings umfassen bereits Clubs und Residenzen wie Hans-Bunte-Areal (Freiburg) und Club Douala (Ravensburg) sowie Gigs im Circle (Offenburg) und //:about Blank (Berlin).',
           p3: 'Seine Releases und Signings erschienen unter anderem bei Para//e/ (Berlin), SYNTHX Records (München), Milli Records (Berlin) und SeshDawgsUnited (Berlin).',
           p4: 'Spread love and you will receive love.',
@@ -526,7 +526,7 @@ document.addEventListener('DOMContentLoaded', () => {
         videos: {
           eyebrow: 'Live-Energie',
           title: 'DJ-Sets in Bewegung',
-          lead: 'Der Booth, das Licht, die Crowd – sieh zu, wie die Energie entsteht.',
+          lead: 'Der Booth, das Licht, die Crowd — sieh zu, wie die Energie entsteht.',
           playLabel: 'Video abspielen',
           playCta: 'Video abspielen',
         },
@@ -689,7 +689,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit deinen personenbezogenen Daten passiert, wenn du diese Website besuchst. Personenbezogene Daten sind alle Daten, mit denen du persönlich identifiziert werden kannst. Ausführliche Informationen zum Thema Datenschutz entnimmst du unserer nachfolgenden Datenschutzerklärung.</p>
           <h3>Datenerfassung auf dieser Website</h3>
           <h4>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</h4>
-          <p>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten findest du im Abschnitt „Verantwortliche Stelle“ in dieser Datenschutzerklärung.</p>
+          <p>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten findest du im Abschnitt „Verantwortliche Stelle" in dieser Datenschutzerklärung.</p>
           <h4>Wie erfassen wir deine Daten?</h4>
           <p>Deine Daten werden zum einen dadurch erhoben, dass du uns diese mitteilst. Hierbei kann es sich z. B. um Daten handeln, die du in ein Kontaktformular eingibst.</p>
           <p>Andere Daten werden automatisch oder nach deiner Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung erfolgt automatisch, sobald du diese Website betrittst.</p>
@@ -730,7 +730,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <h3>Recht auf Datenübertragbarkeit</h3>
           <p>Du hast das Recht, Daten, die wir auf Grundlage deiner Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an dich oder an einen Dritten in einem gängigen, maschinenlesbaren Format aushändigen zu lassen. Sofern du die direkte Übertragung der Daten an einen anderen Verantwortlichen verlangst, erfolgt dies nur, soweit es technisch machbar ist.</p>
           <h3>SSL- bzw. TLS-Verschlüsselung</h3>
-          <p>Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel Bestellungen oder Anfragen, die du an uns als Seitenbetreiber sendest, eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennst du daran, dass die Adresszeile des Browsers von „http://“ auf „https://“ wechselt und an dem Schloss-Symbol in deiner Browserzeile.</p>
+          <p>Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel Bestellungen oder Anfragen, die du an uns als Seitenbetreiber sendest, eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennst du daran, dass die Adresszeile des Browsers von „http://" auf „https://" wechselt und an dem Schloss-Symbol in deiner Browserzeile.</p>
           <p>Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können Daten, die du an uns übermittelst, nicht von Dritten mitgelesen werden.</p>
           <h3>Auskunft, Löschung und Berichtigung</h3>
           <p>Du hast im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über deine gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger sowie den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung oder Löschung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten kannst du dich jederzeit an uns wenden.</p>
@@ -742,7 +742,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <li>Wenn wir deine personenbezogenen Daten nicht mehr benötigen, du sie jedoch zur Ausübung, Verteidigung oder Geltendmachung von Rechtsansprüchen benötigst, hast du das Recht, statt der Löschung die Einschränkung der Verarbeitung deiner personenbezogenen Daten zu verlangen.</li>
             <li>Wenn du einen Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt hast, muss eine Abwägung zwischen deinen und unseren Interessen vorgenommen werden. Solange noch nicht feststeht, wessen Interessen überwiegen, hast du das Recht, die Einschränkung der Verarbeitung deiner personenbezogenen Daten zu verlangen.</li>
           </ul>
-          <p>Wenn du die Verarbeitung deiner personenbezogenen Daten eingeschränkt hast, dürfen diese Daten – von ihrer Speicherung abgesehen – nur mit deiner Einwilligung oder zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen oder zum Schutz der Rechte einer anderen natürlichen oder juristischen Person oder aus Gründen eines wichtigen öffentlichen Interesses der Europäischen Union oder eines Mitgliedstaats verarbeitet werden.</p>
+          <p>Wenn du die Verarbeitung deiner personenbezogenen Daten eingeschränkt hast, dürfen diese Daten — von ihrer Speicherung abgesehen — nur mit deiner Einwilligung oder zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen oder zum Schutz der Rechte einer anderen natürlichen oder juristischen Person oder aus Gründen eines wichtigen öffentlichen Interesses der Europäischen Union oder eines Mitgliedstaats verarbeitet werden.</p>
           <h3>Widerspruch gegen Werbe-E-Mails</h3>
           <p>Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-E-Mails, vor.</p>
         `,
@@ -753,12 +753,12 @@ document.addEventListener('DOMContentLoaded', () => {
           <h3>Kontaktformular</h3>
           <p>Wenn du uns über das Kontaktformular Anfragen zukommen lässt, werden deine Angaben aus dem Formular inklusive der von dir dort angegebenen Kontaktdaten zum Zwecke der Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne deine Einwilligung weiter.</p>
           <p>Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern deine Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf deiner Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), sofern diese abgefragt wurde; die Einwilligung ist jederzeit widerrufbar.</p>
-          <p>Die von dir im Kontaktformular eingegebenen Daten verbleiben bei uns, bis du uns zur Löschung aufforderst, deine Einwilligung zur Speicherung widerrufst oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung deiner Anfrage). Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.</p>
+          <p>Die von dir im Kontaktformular eingegebenen Daten verbleiben bei uns, bis du uns zur Löschung aufforderst, deine Einwilligung zur Speicherung widerrufst oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung deiner Anfrage). Zwingende gesetzliche Bestimmungen — insbesondere Aufbewahrungsfristen — bleiben unberührt.</p>
         `,
         section4: `
           <h2>4. Hosting und Content Delivery Networks (CDN)</h2>
           <h3>Amazon CloudFront CDN</h3>
-          <p>Wir nutzen das Content Delivery Network (CDN) Amazon CloudFront. Anbieter ist die Amazon Web Services EMEA SARL, 38 Avenue John F. Kennedy, L-1855 Luxemburg (nachfolgend „Amazon“).</p>
+          <p>Wir nutzen das Content Delivery Network (CDN) Amazon CloudFront. Anbieter ist die Amazon Web Services EMEA SARL, 38 Avenue John F. Kennedy, L-1855 Luxemburg (nachfolgend „Amazon").</p>
           <p>Amazon CloudFront ist ein weltweit verteiltes CDN. Technisch erfolgt die Informationsübertragung zwischen deinem Browser und unserer Website über das Netzwerk von Amazon CloudFront. Dadurch können wir die weltweite Erreichbarkeit und Performance unserer Website verbessern.</p>
           <p>Der Einsatz von Amazon CloudFront erfolgt auf Grundlage unseres berechtigten Interesses an einer möglichst fehlerfreien und sicheren Bereitstellung unserer Website (Art. 6 Abs. 1 lit. f DSGVO). Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B. Device-Fingerprinting) umfasst. Die Einwilligung ist jederzeit widerrufbar.</p>
           <p>Die Übertragung von Daten in die USA erfolgt auf Grundlage der Standardvertragsklauseln der EU-Kommission. Details findest du hier: <a href="https://aws.amazon.com/blogs/security/aws-gdpr-data-processing-addendum/" target="_blank" rel="noopener noreferrer">https://aws.amazon.com/blogs/security/aws-gdpr-data-processing-addendum/</a>.</p>
@@ -767,7 +767,7 @@ document.addEventListener('DOMContentLoaded', () => {
         section5: `
           <h2>5. Plugins und Tools</h2>
           <h3>YouTube</h3>
-          <p>Diese Website bindet Videos der Plattform YouTube ein. Betreiber von YouTube ist die Google Ireland Limited („Google“), Gordon House, Barrow Street, Dublin 4, Irland.</p>
+          <p>Diese Website bindet Videos der Plattform YouTube ein. Betreiber von YouTube ist die Google Ireland Limited („Google"), Gordon House, Barrow Street, Dublin 4, Irland.</p>
           <p>Wenn du eine unserer Seiten besuchst, auf denen YouTube eingebunden ist, wird eine Verbindung zu den Servern von YouTube hergestellt. Dabei wird dem YouTube-Server mitgeteilt, welche unserer Seiten du besucht hast.</p>
           <p>YouTube kann außerdem verschiedene Cookies auf deinem Endgerät speichern oder vergleichbare Wiedererkennungstechnologien einsetzen (z. B. Device-Fingerprinting). Auf diese Weise kann YouTube Informationen über Besucher dieser Website erhalten. Diese Informationen werden u. a. genutzt, um Videostatistiken zu erfassen, die Benutzerfreundlichkeit zu verbessern und Betrugsversuchen vorzubeugen. Die Daten werden zudem im Google-Werbenetzwerk verarbeitet.</p>
           <p>Bist du in deinem YouTube-Account eingeloggt, ermöglichst du YouTube, dein Surfverhalten direkt deinem persönlichen Profil zuzuordnen. Du kannst dies verhindern, indem du dich aus deinem YouTube-Account ausloggst.</p>
@@ -776,7 +776,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <p>Das Unternehmen ist unter dem EU-US Data Privacy Framework (DPF) zertifiziert. Weitere Informationen findest du unter: <a href="https://www.dataprivacyframework.gov/participant/5780" target="_blank" rel="noopener noreferrer">https://www.dataprivacyframework.gov/participant/5780</a>.</p>
           <h3>SoundCloud</h3>
           <p>Diese Website kann Plugins des sozialen Netzwerks SoundCloud (SoundCloud Limited, Berners House, 47-48 Berners Street, London W1T 3NF, Vereinigtes Königreich) einbinden. Die SoundCloud-Plugins erkennst du am SoundCloud-Logo auf den betreffenden Seiten.</p>
-          <p>Wenn du diese Website besuchst, wird nach Aktivierung des Plugins eine direkte Verbindung zwischen deinem Browser und dem SoundCloud-Server hergestellt. SoundCloud erhält dadurch die Information, dass du diese Website mit deiner IP-Adresse besucht hast. Wenn du den „Like“- oder „Share“-Button anklickst, während du in deinem SoundCloud-Nutzerkonto eingeloggt bist, kannst du die Inhalte dieser Website mit deinem SoundCloud-Profil verlinken und/oder teilen. Dadurch kann SoundCloud den Besuch dieser Website deinem Benutzerkonto zuordnen. Wir weisen darauf hin, dass wir als Anbieter der Seiten keine Kenntnis vom Inhalt der übermittelten Daten sowie deren Nutzung durch SoundCloud erhalten.</p>
+          <p>Wenn du diese Website besuchst, wird nach Aktivierung des Plugins eine direkte Verbindung zwischen deinem Browser und dem SoundCloud-Server hergestellt. SoundCloud erhält dadurch die Information, dass du diese Website mit deiner IP-Adresse besucht hast. Wenn du den „Like"- oder „Share"-Button anklickst, während du in deinem SoundCloud-Nutzerkonto eingeloggt bist, kannst du die Inhalte dieser Website mit deinem SoundCloud-Profil verlinken und/oder teilen. Dadurch kann SoundCloud den Besuch dieser Website deinem Benutzerkonto zuordnen. Wir weisen darauf hin, dass wir als Anbieter der Seiten keine Kenntnis vom Inhalt der übermittelten Daten sowie deren Nutzung durch SoundCloud erhalten.</p>
           <p>Die Speicherung und Analyse der Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an einer möglichst umfangreichen Sichtbarkeit in den sozialen Medien. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B. Device-Fingerprinting) umfasst. Die Einwilligung ist jederzeit widerrufbar.</p>
           <p>Das Vereinigte Königreich gilt als Drittland mit einem datenschutzrechtlich angemessenen Schutzniveau. Das bedeutet, das Datenschutzniveau entspricht dem der Europäischen Union.</p>
           <p>Weitere Informationen findest du in der Datenschutzerklärung von SoundCloud: <a href="https://soundcloud.com/pages/privacy" target="_blank" rel="noopener noreferrer">https://soundcloud.com/pages/privacy</a>.</p>
@@ -934,7 +934,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-// Popups - FIXED VERSION
+// Popups - IMPROVED MOBILE VERSION
 const popupElements = document.querySelectorAll('[data-popup]');
 if (popupElements.length) {
   const popupMap = new Map();
@@ -942,40 +942,46 @@ if (popupElements.length) {
   const openPopups = new Set();
   const focusableSelectors = 'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
-  // Improved scroll lock that works on mobile
+  // Check if device is iOS
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+  // Enhanced scroll lock
   const lockBodyScroll = () => {
     if (document.body.classList.contains('popup-open')) return;
     
-    // Store current scroll position
-    const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
-    
-    // Apply styles to lock scroll
-    document.body.style.overflow = 'hidden';
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.width = '100%';
+    const scrollY = window.scrollY || window.pageYOffset || 0;
     document.body.dataset.scrollPosition = String(scrollY);
     document.body.classList.add('popup-open');
+    
+    if (isIOS) {
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+    } else {
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = `${window.innerWidth - document.documentElement.clientWidth}px`;
+    }
   };
 
   const unlockBodyScroll = () => {
     if (!document.body.classList.contains('popup-open')) return;
     
-    // Remove lock styles
-    document.body.classList.remove('popup-open');
-    document.body.style.removeProperty('overflow');
-    document.body.style.removeProperty('position');
-    document.body.style.removeProperty('top');
-    document.body.style.removeProperty('width');
-    
-    // Restore scroll position
     const scrollY = parseInt(document.body.dataset.scrollPosition || '0', 10);
+    document.body.classList.remove('popup-open');
     delete document.body.dataset.scrollPosition;
     
-    // Use requestAnimationFrame to ensure proper restoration
-    window.requestAnimationFrame(() => {
+    if (isIOS) {
+      document.body.style.removeProperty('position');
+      document.body.style.removeProperty('top');
+      document.body.style.removeProperty('width');
       window.scrollTo(0, scrollY);
-    });
+    } else {
+      document.body.style.removeProperty('overflow');
+      document.body.style.removeProperty('padding-right');
+      window.requestAnimationFrame(() => {
+        window.scrollTo(0, scrollY);
+      });
+    }
   };
 
   const updateBodyState = () => {
@@ -996,20 +1002,19 @@ if (popupElements.length) {
   };
 
   const focusFirstElement = (popup) => {
-    // Delay focus to ensure popup is visible
-    requestAnimationFrame(() => {
+    setTimeout(() => {
       const focusable = getFocusableElements(popup);
-      const target = focusable[0] || popup.querySelector('.popup__dialog');
+      const dialog = popup.querySelector('.popup__dialog');
+      const target = focusable[0] || dialog;
       
       if (target && typeof target.focus === 'function') {
         try {
-          // Try without preventScroll first (better mobile support)
           target.focus();
         } catch (e) {
           console.warn('Focus failed:', e);
         }
       }
-    });
+    }, 100);
   };
 
   const trapFocus = (event, popup) => {
@@ -1030,7 +1035,7 @@ if (popupElements.length) {
         event.preventDefault();
         last.focus();
       }
-    } else if (active === last) {
+    } else if (active === last || !popup.contains(active)) {
       event.preventDefault();
       first.focus();
     }
@@ -1044,7 +1049,6 @@ if (popupElements.length) {
   const closePopup = (popup) => {
     if (!popup || !openPopups.has(popup)) return;
     
-    // Start close animation
     popup.classList.remove('is-active');
     popup.setAttribute('aria-hidden', 'true');
     
@@ -1053,38 +1057,31 @@ if (popupElements.length) {
       setExpandedState(trigger, false);
     }
     
-    // Wait for animation then hide
-    const hidePopup = () => {
+    setTimeout(() => {
       popup.setAttribute('hidden', '');
       openPopups.delete(popup);
       updateBodyState();
       
-      // Restore focus after body scroll is unlocked
       if (trigger && typeof trigger.focus === 'function') {
-        requestAnimationFrame(() => {
+        setTimeout(() => {
           trigger.focus();
-        });
+        }, 50);
       }
       
       returnFocus.delete(popup);
-    };
-    
-    // Use shorter timeout for mobile
-    setTimeout(hidePopup, 300);
+    }, 300);
   };
 
   const openPopup = (id, trigger) => {
     const popup = popupMap.get(id);
     if (!popup || openPopups.has(popup)) return;
     
-    // Show popup
     popup.removeAttribute('hidden');
     
-    // Force layout recalculation before adding active class
-    popup.offsetHeight;
+    // Force reflow
+    void popup.offsetHeight;
     
-    // Add active class for animation
-    requestAnimationFrame(() => {
+    setTimeout(() => {
       popup.setAttribute('aria-hidden', 'false');
       popup.classList.add('is-active');
       
@@ -1096,7 +1093,7 @@ if (popupElements.length) {
       openPopups.add(popup);
       updateBodyState();
       focusFirstElement(popup);
-    });
+    }, 10);
   };
 
   // Initialize popups
@@ -1106,7 +1103,29 @@ if (popupElements.length) {
     
     popupMap.set(id, popup);
     
-    // Click handler for close buttons and backdrop
+    // Touch-friendly event handling
+    let touchStartY = 0;
+    let touchEndY = 0;
+    
+    popup.addEventListener('touchstart', (e) => {
+      touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+    
+    popup.addEventListener('touchend', (e) => {
+      touchEndY = e.changedTouches[0].screenY;
+      const distance = Math.abs(touchEndY - touchStartY);
+      
+      // Only close if it's a tap, not a swipe
+      if (distance < 10) {
+        const target = e.target;
+        if (target.closest('[data-popup-close]') || target === popup.querySelector('.popup__backdrop')) {
+          e.preventDefault();
+          closePopup(popup);
+        }
+      }
+    });
+    
+    // Click handler for desktop
     popup.addEventListener('click', (event) => {
       const closer = event.target.closest('[data-popup-close]');
       if (closer || event.target === popup.querySelector('.popup__backdrop')) {
@@ -1153,14 +1172,12 @@ if (popupElements.length) {
     }
   });
   
-  // Handle iOS viewport changes
+  // Handle viewport changes
   let viewportHeight = window.innerHeight;
   window.addEventListener('resize', () => {
     const newHeight = window.innerHeight;
-    // Only update if significant change (not just address bar hiding)
     if (Math.abs(newHeight - viewportHeight) > 100) {
       viewportHeight = newHeight;
-      // Update any open popups position if needed
       openPopups.forEach(popup => {
         const dialog = popup.querySelector('.popup__dialog');
         if (dialog) {
@@ -1170,6 +1187,7 @@ if (popupElements.length) {
     }
   });
 }
+
   // Gallery lightbox
   const gallery = document.querySelector('[data-gallery]');
   const lightbox = document.querySelector('[data-lightbox]');
@@ -1227,7 +1245,7 @@ if (popupElements.length) {
       const initialIndex = slides.findIndex((slide) => slide.classList.contains('is-active'));
       if (initialIndex >= 0) {
         index = initialIndex;
-      } else {
+      } else if (slides[0]) {
         slides[0].classList.add('is-active');
       }
     }
@@ -1386,10 +1404,26 @@ if (popupElements.length) {
       const flipOpen = () => setFlipped(true);
       const flipClose = () => setFlipped(false);
 
+      // Touch-friendly interaction
+      let touchStartTime = 0;
+      
+      front.addEventListener('touchstart', () => {
+        touchStartTime = Date.now();
+      }, { passive: true });
+      
+      front.addEventListener('touchend', (event) => {
+        const touchDuration = Date.now() - touchStartTime;
+        if (touchDuration < 300 && !card.classList.contains('is-flipped')) {
+          event.preventDefault();
+          flipOpen();
+        }
+      });
+
       front.addEventListener('click', (event) => {
-        if (hoverMedia.matches) return;
-        event.preventDefault();
-        flipOpen();
+        if (!hoverMedia.matches && !card.classList.contains('is-flipped')) {
+          event.preventDefault();
+          flipOpen();
+        }
       });
 
       front.addEventListener('keydown', (event) => {
@@ -1402,9 +1436,10 @@ if (popupElements.length) {
       if (closeBtn) {
         closeBtn.addEventListener('click', (event) => {
           event.preventDefault();
+          event.stopPropagation();
           flipClose();
           if (typeof front.focus === 'function') {
-            front.focus({ preventScroll: true });
+            setTimeout(() => front.focus({ preventScroll: true }), 100);
           }
         });
       }
@@ -1559,7 +1594,6 @@ if (popupElements.length) {
       container.addEventListener('pointerenter', warmConnections, { once: true });
     });
   }
-
 
   // SoundCloud embeds
   document.querySelectorAll('[data-soundcloud]').forEach((container) => {
