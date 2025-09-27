@@ -934,7 +934,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-// Popups - IMPROVED MOBILE VERSION
+// Replace the popup section in your main.js with this fixed version
+// (Starting from line ~387 to ~627)
+
+// Popups - FIXED MOBILE VERSION
 const popupElements = document.querySelectorAll('[data-popup]');
 if (popupElements.length) {
   const popupMap = new Map();
@@ -942,54 +945,36 @@ if (popupElements.length) {
   const openPopups = new Set();
   const focusableSelectors = 'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
-  // Check if device is iOS
-  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
-  // Enhanced scroll lock
+  // Simplified and more reliable scroll lock
+  let scrollPosition = 0;
+  
   const lockBodyScroll = () => {
-    if (document.body.classList.contains('popup-open')) return;
+    if (openPopups.size === 0) return;
     
-    const scrollY = window.scrollY || window.pageYOffset || 0;
-    document.body.dataset.scrollPosition = String(scrollY);
+    // Save scroll position before locking
+    scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Apply scroll lock styles
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollPosition}px`;
+    document.body.style.width = '100%';
     document.body.classList.add('popup-open');
-    
-    if (isIOS) {
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.position = 'fixed';
-      document.body.style.width = '100%';
-    } else {
-      document.body.style.overflow = 'hidden';
-      document.body.style.paddingRight = `${window.innerWidth - document.documentElement.clientWidth}px`;
-    }
   };
 
   const unlockBodyScroll = () => {
-    if (!document.body.classList.contains('popup-open')) return;
+    if (openPopups.size > 0) return;
     
-    const scrollY = parseInt(document.body.dataset.scrollPosition || '0', 10);
+    // Remove scroll lock styles
+    document.body.style.removeProperty('overflow');
+    document.body.style.removeProperty('position');
+    document.body.style.removeProperty('top');
+    document.body.style.removeProperty('width');
     document.body.classList.remove('popup-open');
-    delete document.body.dataset.scrollPosition;
     
-    if (isIOS) {
-      document.body.style.removeProperty('position');
-      document.body.style.removeProperty('top');
-      document.body.style.removeProperty('width');
-      window.scrollTo(0, scrollY);
-    } else {
-      document.body.style.removeProperty('overflow');
-      document.body.style.removeProperty('padding-right');
-      window.requestAnimationFrame(() => {
-        window.scrollTo(0, scrollY);
-      });
-    }
-  };
-
-  const updateBodyState = () => {
-    if (openPopups.size > 0) {
-      lockBodyScroll();
-    } else {
-      unlockBodyScroll();
-    }
+    // Restore scroll position
+    window.scrollTo(0, scrollPosition);
+    scrollPosition = 0;
   };
 
   const getFocusableElements = (popup) => {
@@ -1002,19 +987,21 @@ if (popupElements.length) {
   };
 
   const focusFirstElement = (popup) => {
-    setTimeout(() => {
+    // Delay focus to ensure popup is fully rendered
+    requestAnimationFrame(() => {
       const focusable = getFocusableElements(popup);
-      const dialog = popup.querySelector('.popup__dialog');
-      const target = focusable[0] || dialog;
+      const closeButton = popup.querySelector('.popup__close');
+      const target = closeButton || focusable[0] || popup.querySelector('.popup__dialog');
       
       if (target && typeof target.focus === 'function') {
         try {
-          target.focus();
+          target.focus({ preventScroll: true });
         } catch (e) {
-          console.warn('Focus failed:', e);
+          // Fallback for browsers that don't support preventScroll
+          target.focus();
         }
       }
-    }, 100);
+    });
   };
 
   const trapFocus = (event, popup) => {
@@ -1057,15 +1044,17 @@ if (popupElements.length) {
       setExpandedState(trigger, false);
     }
     
+    // Delay hiding to allow animation
     setTimeout(() => {
       popup.setAttribute('hidden', '');
       openPopups.delete(popup);
-      updateBodyState();
+      unlockBodyScroll();
       
+      // Return focus to trigger
       if (trigger && typeof trigger.focus === 'function') {
-        setTimeout(() => {
-          trigger.focus();
-        }, 50);
+        requestAnimationFrame(() => {
+          trigger.focus({ preventScroll: true });
+        });
       }
       
       returnFocus.delete(popup);
@@ -1076,13 +1065,21 @@ if (popupElements.length) {
     const popup = popupMap.get(id);
     if (!popup || openPopups.has(popup)) return;
     
-    popup.removeAttribute('hidden');
+    // Add to open popups set first
+    openPopups.add(popup);
     
-    // Force reflow
+    // Lock scroll immediately
+    lockBodyScroll();
+    
+    // Show popup
+    popup.removeAttribute('hidden');
+    popup.setAttribute('aria-hidden', 'false');
+    
+    // Force reflow before adding active class
     void popup.offsetHeight;
     
-    setTimeout(() => {
-      popup.setAttribute('aria-hidden', 'false');
+    // Add active class for animation
+    requestAnimationFrame(() => {
       popup.classList.add('is-active');
       
       if (trigger) {
@@ -1090,10 +1087,8 @@ if (popupElements.length) {
         setExpandedState(trigger, true);
       }
       
-      openPopups.add(popup);
-      updateBodyState();
       focusFirstElement(popup);
-    }, 10);
+    });
   };
 
   // Initialize popups
@@ -1103,36 +1098,42 @@ if (popupElements.length) {
     
     popupMap.set(id, popup);
     
-    // Touch-friendly event handling
+    // Click handler for close buttons and backdrop
+    popup.addEventListener('click', (event) => {
+      const target = event.target;
+      const isBackdrop = target.classList.contains('popup__backdrop');
+      const isCloseButton = target.closest('[data-popup-close]');
+      
+      if (isBackdrop || isCloseButton) {
+        event.preventDefault();
+        event.stopPropagation();
+        closePopup(popup);
+      }
+    });
+    
+    // Touch handling for mobile
     let touchStartY = 0;
-    let touchEndY = 0;
     
     popup.addEventListener('touchstart', (e) => {
-      touchStartY = e.changedTouches[0].screenY;
+      touchStartY = e.touches[0].clientY;
     }, { passive: true });
     
     popup.addEventListener('touchend', (e) => {
-      touchEndY = e.changedTouches[0].screenY;
+      const touchEndY = e.changedTouches[0].clientY;
       const distance = Math.abs(touchEndY - touchStartY);
       
-      // Only close if it's a tap, not a swipe
+      // Only process as tap if movement is minimal
       if (distance < 10) {
         const target = e.target;
-        if (target.closest('[data-popup-close]') || target === popup.querySelector('.popup__backdrop')) {
+        const isBackdrop = target.classList.contains('popup__backdrop');
+        const isCloseButton = target.closest('[data-popup-close]');
+        
+        if (isBackdrop || isCloseButton) {
           e.preventDefault();
           closePopup(popup);
         }
       }
-    });
-    
-    // Click handler for desktop
-    popup.addEventListener('click', (event) => {
-      const closer = event.target.closest('[data-popup-close]');
-      if (closer || event.target === popup.querySelector('.popup__backdrop')) {
-        event.preventDefault();
-        closePopup(popup);
-      }
-    });
+    }, { passive: false });
     
     // Keyboard handler
     popup.addEventListener('keydown', (event) => {
@@ -1172,19 +1173,9 @@ if (popupElements.length) {
     }
   });
   
-  // Handle viewport changes
-  let viewportHeight = window.innerHeight;
-  window.addEventListener('resize', () => {
-    const newHeight = window.innerHeight;
-    if (Math.abs(newHeight - viewportHeight) > 100) {
-      viewportHeight = newHeight;
-      openPopups.forEach(popup => {
-        const dialog = popup.querySelector('.popup__dialog');
-        if (dialog) {
-          dialog.style.maxHeight = `${newHeight * 0.9}px`;
-        }
-      });
-    }
+  // Clean up on page unload
+  window.addEventListener('beforeunload', () => {
+    openPopups.forEach(popup => closePopup(popup));
   });
 }
 

@@ -895,27 +895,29 @@ button.bio-stat:focus-visible .bio-stat-label {
   text-decoration: underline;
 }
 
+/* Replace the popup styles in your styles.css (around line 1250-1390) with this: */
+
 /* Fixed Popup Styles for Mobile */
 .popup {
   position: fixed;
   inset: 0;
   display: flex;
-  align-items: center; /* Changed from flex-start */
+  align-items: center;
   justify-content: center;
-  padding: 20px; /* Reduced padding for mobile */
+  padding: 20px;
   background: rgba(8, 8, 14, 0.72);
   backdrop-filter: blur(6px);
   z-index: 900;
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-  transition: opacity 0.28s ease, visibility 0.28s ease; /* Added visibility transition */
+  transition: opacity 0.28s ease, visibility 0.28s ease;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
 }
 
 .popup[hidden] {
-  display: none !important; /* Ensure hidden popups are truly hidden */
+  display: none !important;
 }
 
 .popup.is-active {
@@ -929,7 +931,7 @@ button.bio-stat:focus-visible .bio-stat-label {
   inset: 0;
   width: 100%;
   height: 100%;
-  cursor: pointer; /* Make it clear it's clickable */
+  cursor: pointer;
 }
 
 .popup__dialog {
@@ -938,14 +940,16 @@ button.bio-stat:focus-visible .bio-stat-label {
   color: var(--ink);
   box-shadow: var(--shadow-soft);
   padding: clamp(24px, 4vw, 42px);
-  max-width: min(90vw, 520px); /* Reduced from 100% to 90vw for mobile */
+  max-width: min(90vw, 520px);
   width: 100%;
-  max-height: 85vh; /* Reduced from 100svh */
+  max-height: 90vh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   z-index: 1;
   border-radius: 18px;
-  margin: auto; /* Center vertically */
+  margin: auto;
+  /* Ensure dialog stays in viewport */
+  transform: translateZ(0);
 }
 
 .popup__title {
@@ -954,6 +958,7 @@ button.bio-stat:focus-visible .bio-stat-label {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-strong);
+  padding-right: 40px; /* Space for close button */
 }
 
 .popup__intro {
@@ -977,8 +982,8 @@ button.bio-stat:focus-visible .bio-stat-label {
   position: absolute;
   top: 14px;
   right: 14px;
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 40px;
   border: 1px solid rgba(var(--ink-rgb), 0.2);
   background: rgba(255, 255, 255, 0.16);
   color: var(--muted);
@@ -987,6 +992,7 @@ button.bio-stat:focus-visible .bio-stat-label {
   align-items: center;
   justify-content: center;
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  border-radius: 50%;
 }
 
 .popup__close::before,
@@ -995,7 +1001,7 @@ button.bio-stat:focus-visible .bio-stat-label {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 14px;
+  width: 16px;
   height: 2px;
   background: currentColor;
 }
@@ -1015,70 +1021,76 @@ button.bio-stat:focus-visible .bio-stat-label {
   color: var(--accent);
 }
 
-/* Prevent body scroll when popup is open */
+/* Prevent body scroll when popup is open - simplified */
 body.popup-open {
   overflow: hidden !important;
-  position: fixed !important;
-  width: 100% !important;
-  touch-action: none; /* Prevent touch scrolling */
+  /* Position and top are set by JS */
 }
 
 /* Mobile specific adjustments */
 @media (max-width: 640px) {
   .popup {
-    padding: 16px;
-    align-items: flex-start; /* Align to top on small screens */
-    padding-top: env(safe-area-inset-top, 20px); /* iOS safe area */
+    padding: 0;
+    align-items: stretch;
   }
   
   .popup__dialog {
-    max-width: calc(100vw - 32px);
-    max-height: calc(100vh - 40px - env(safe-area-inset-top, 0px));
-    margin-top: 20px;
-    padding: clamp(20px, 4vw, 32px);
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    margin: 0;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    padding: env(safe-area-inset-top, 20px) 20px 20px 20px;
   }
   
   .popup__close {
-    width: 40px;
-    height: 40px;
-    top: 12px;
-    right: 12px;
+    position: fixed;
+    top: calc(10px + env(safe-area-inset-top, 0px));
+    right: 10px;
+    z-index: 2;
+    width: 44px;
+    height: 44px;
   }
   
   .popup__title {
-    font-size: clamp(20px, 5vw, 24px);
-    padding-right: 40px; /* Space for close button */
+    margin-top: 20px;
+    padding-right: 50px;
   }
   
   .popup__list {
-    font-size: 14px;
+    font-size: 15px;
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
-/* iOS specific fixes */
+/* Tablet adjustments */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .popup__dialog {
+    max-width: min(80vw, 520px);
+  }
+}
+
+/* Ensure proper stacking on iOS */
 @supports (-webkit-touch-callout: none) {
   .popup__dialog {
-    /* iOS scroll bounce fix */
-    -webkit-overflow-scrolling: touch;
-    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
   }
 }
 
-/* Landscape mode adjustments */
-@media (max-height: 500px) and (orientation: landscape) {
-  .popup {
-    padding: 10px;
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .popup__dialog {
+    border: 2px solid currentColor;
   }
   
-  .popup__dialog {
-    max-height: calc(100vh - 20px);
-    margin-top: 0;
-  }
-}
-
-@media (min-width: 721px) {
-  .popup {
-    align-items: center;
+  .popup__close {
+    border-width: 2px;
   }
 }
 
