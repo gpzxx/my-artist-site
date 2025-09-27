@@ -762,10 +762,56 @@ button.pill:focus-visible {
 }
 
 .pill-list .pill {
-  min-height: 44px;
-  padding-inline: 22px;
-  width: 100%;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  min-height: 44px;
+  padding: 10px 22px;
+  width: 100%;
+  border-radius: 0;
+  border: 1px solid var(--border);
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--muted);
+  background: rgba(var(--ink-rgb), 0.06);
+  text-decoration: none;
+  transition: border-color .3s ease, background .3s ease, color .3s ease, transform .2s var(--transition);
+}
+
+.pill-list button.pill {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: inherit;
+  cursor: pointer;
+  text-align: center;
+  padding: 10px 22px; /* Gleiche Padding-Werte wie Link */
+  margin: 0;
+}
+
+/* Hover-Effekte für beide */
+.pill-list .pill:hover {
+  border-color: rgba(var(--accent-rgb), 0.45);
+  background: rgba(var(--accent-rgb), 0.1);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Focus-States */
+.pill-list .pill:focus-visible {
+  outline: 2px solid rgba(var(--accent-rgb), 0.6);
+  outline-offset: 3px;
+}
+
+/* Link-spezifische Anpassung */
+.pill-list a.pill {
+  display: flex; /* Wichtig für vertikale Zentrierung */
+  text-align: center;
+  color: var(--muted); /* Überschreibe Link-Farbe */
 }
 
 
