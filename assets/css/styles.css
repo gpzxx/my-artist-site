@@ -849,25 +849,27 @@ button.bio-stat:focus-visible .bio-stat-label {
   text-decoration: underline;
 }
 
+/* Fixed Popup Styles for Mobile */
 .popup {
   position: fixed;
   inset: 0;
   display: flex;
-  align-items: flex-start;
+  align-items: center; /* Changed from flex-start */
   justify-content: center;
-  padding: 32px 18px;
+  padding: 20px; /* Reduced padding for mobile */
   background: rgba(8, 8, 14, 0.72);
   backdrop-filter: blur(6px);
   z-index: 900;
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-  transition: opacity 0.28s ease;
+  transition: opacity 0.28s ease, visibility 0.28s ease; /* Added visibility transition */
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 .popup[hidden] {
-  display: none;
+  display: none !important; /* Ensure hidden popups are truly hidden */
 }
 
 .popup.is-active {
@@ -881,6 +883,7 @@ button.bio-stat:focus-visible .bio-stat-label {
   inset: 0;
   width: 100%;
   height: 100%;
+  cursor: pointer; /* Make it clear it's clickable */
 }
 
 .popup__dialog {
@@ -888,13 +891,15 @@ button.bio-stat:focus-visible .bio-stat-label {
   background: var(--surface);
   color: var(--ink);
   box-shadow: var(--shadow-soft);
-  padding: clamp(28px, 4vw, 42px);
-  max-width: 520px;
-  width: min(100%, 520px);
-  max-height: 100svh;
-  overflow: auto;
+  padding: clamp(24px, 4vw, 42px);
+  max-width: min(90vw, 520px); /* Reduced from 100% to 90vw for mobile */
+  width: 100%;
+  max-height: 85vh; /* Reduced from 100svh */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   z-index: 1;
   border-radius: 18px;
+  margin: auto; /* Center vertically */
 }
 
 .popup__title {
@@ -964,8 +969,65 @@ button.bio-stat:focus-visible .bio-stat-label {
   color: var(--accent);
 }
 
+/* Prevent body scroll when popup is open */
 body.popup-open {
-  overflow: hidden;
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100% !important;
+  touch-action: none; /* Prevent touch scrolling */
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 640px) {
+  .popup {
+    padding: 16px;
+    align-items: flex-start; /* Align to top on small screens */
+    padding-top: env(safe-area-inset-top, 20px); /* iOS safe area */
+  }
+  
+  .popup__dialog {
+    max-width: calc(100vw - 32px);
+    max-height: calc(100vh - 40px - env(safe-area-inset-top, 0px));
+    margin-top: 20px;
+    padding: clamp(20px, 4vw, 32px);
+  }
+  
+  .popup__close {
+    width: 40px;
+    height: 40px;
+    top: 12px;
+    right: 12px;
+  }
+  
+  .popup__title {
+    font-size: clamp(20px, 5vw, 24px);
+    padding-right: 40px; /* Space for close button */
+  }
+  
+  .popup__list {
+    font-size: 14px;
+  }
+}
+
+/* iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+  .popup__dialog {
+    /* iOS scroll bounce fix */
+    -webkit-overflow-scrolling: touch;
+    transform: translateZ(0);
+  }
+}
+
+/* Landscape mode adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  .popup {
+    padding: 10px;
+  }
+  
+  .popup__dialog {
+    max-height: calc(100vh - 20px);
+    margin-top: 0;
+  }
 }
 
 @media (min-width: 721px) {
@@ -996,13 +1058,14 @@ body.popup-open {
   color: var(--accent);
 }
 
-/* Media slider */
+/* Media slider with Touch Support */
 .media-slider {
   margin: 0 0 110px;
   width: 100vw;
   max-width: 100vw;
   margin-left: calc(50% - 50vw);
   position: relative;
+  touch-action: pan-y; /* Allow vertical scrolling while swiping horizontally */
 }
 
 .media-slider:focus-visible {
@@ -1034,6 +1097,8 @@ body.popup-open {
   flex: 0 0 100%;
   margin: 0;
   min-height: clamp(320px, 56vh, 620px);
+  -webkit-user-select: none; /* Prevent text selection while dragging */
+  user-select: none;
 }
 
 .media-slide img {
@@ -1041,6 +1106,7 @@ body.popup-open {
   height: 100%;
   object-fit: cover;
   display: block;
+  pointer-events: none; /* Prevent image dragging */
 }
 
 .media-slider-arrow {
@@ -1332,7 +1398,7 @@ body.popup-open {
   }
 }
 
-/* Releases */
+/* Releases with Touch Device Support */
 .release-grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -1347,6 +1413,11 @@ body.popup-open {
   min-height: 420px;
   transition: transform .45s var(--transition), box-shadow .45s ease;
   will-change: transform;
+}
+
+.release-card.touch-device .release-flip {
+  /* No hover effect on touch devices */
+  transform: none !important;
 }
 
 .release-card:hover,
@@ -1803,7 +1874,7 @@ body.popup-open {
   color: var(--muted);
 }
 
-/* Reveal */
+/* Reveal with Better Performance */
 .reveal {
   opacity: 1;
   transform: none;
