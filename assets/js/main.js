@@ -235,6 +235,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Biography detail toggles
+  const detailSections = new Map();
+  document.querySelectorAll('[data-detail-content]').forEach((section) => {
+    const key = section.dataset.detailContent;
+    if (key) {
+      detailSections.set(key, section);
+    }
+  });
+
+  document.querySelectorAll('[data-detail-toggle]').forEach((trigger) => {
+    const key = trigger.dataset.detailToggle;
+    if (!key) return;
+    const section = detailSections.get(key);
+    if (!section) return;
+    trigger.addEventListener('click', () => {
+      const isOpen = !section.classList.contains('is-open');
+      section.classList.toggle('is-open', isOpen);
+      if (isOpen) {
+        section.removeAttribute('hidden');
+      } else {
+        section.setAttribute('hidden', '');
+      }
+      trigger.setAttribute('aria-expanded', String(isOpen));
+    });
+  });
+
   // Gallery lightbox
   const gallery = document.querySelector('[data-gallery]');
   const lightbox = document.querySelector('[data-lightbox]');

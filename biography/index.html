@@ -49,19 +49,28 @@
 
           <h3 data-i18n="bio.highlights.title">Highlights</h3>
           <ul class="pill-list">
-            <li id="festival-experiences">
-              <div class="pill" data-i18n="bio.highlights.item1">Festival appearances</div>
-              <p class="festival-note" data-i18n="bio.highlights.festivalModal.intro">Snapshots from standout festival slots.</p>
-              <ul class="festival-list" data-i18n="bio.highlights.festivalModal.list" data-i18n-mode="html">
-                <li>Hart bis Zart Festival - Freiburg (2024)</li>
-                <li>Hart bis Zart Festival - Freiburg (2025)</li>
-                <li>Backyard77 - Offenburg (2025)</li>
-              </ul>
+            <li>
+              <button
+                type="button"
+                class="pill"
+                data-detail-toggle="festival"
+                aria-expanded="false"
+                data-i18n="bio.highlights.item1"
+              >Festival appearances</button>
             </li>
             <li>
               <a class="pill" href="../releases/" data-i18n="bio.highlights.item2">Label releases</a>
             </li>
           </ul>
+          <div class="bio-detail" data-detail-content="festival" hidden>
+            <h2 data-i18n="bio.highlights.festivalModal.title">Festival appearances</h2>
+            <p data-i18n="bio.highlights.festivalModal.intro">Snapshots from standout festival slots.</p>
+            <ul data-i18n="bio.highlights.festivalModal.list" data-i18n-mode="html">
+              <li>Hart bis Zart Festival - Freiburg (2024)</li>
+              <li>Hart bis Zart Festival - Freiburg (2025)</li>
+              <li>Backyard77 - Offenburg (2025)</li>
+            </ul>
+          </div>
 
           <h3 data-i18n="bio.contact.title">Contact &amp; Bookings</h3>
           <p data-i18n="bio.contact.body" data-i18n-mode="html">Email: <a href="mailto:bookings@kizuloge.com">bookings@kizuloge.com</a></p>
@@ -78,22 +87,32 @@
             <span class="bio-stat-value" data-i18n="bio.stats.valueReleases">9</span>
             <a class="bio-stat-label bio-stat-label--link" href="../releases/" data-i18n="bio.stats.labelReleases">Releases out</a>
           </div>
-          <div class="bio-stat" id="clubs-played">
-            <span class="bio-stat-value" data-i18n="bio.stats.valueClubs">7</span>
-            <span class="bio-stat-label" data-i18n="bio.stats.labelClubs">Clubs played</span>
-            <p class="bio-stat-note" data-i18n="bio.stats.clubsModal.intro">Stages I have performed at so far:</p>
-            <ul class="bio-stat-list" data-i18n="bio.stats.clubsModal.list" data-i18n-mode="html">
-              <li>Hans-Bunte-Areal - Freiburg</li>
-              <li>Club Douala - Ravensburg</li>
-              <li>Circle - Offenburg</li>
-              <li>//:about blank - Berlin</li>
-              <li>Bahnw&auml;rter Thiel - M&uuml;nchen</li>
-              <li>Gleis44 - Ulm</li>
-              <li>TheGreatR&auml;ngT&auml;ng - Freiburg</li>
-            </ul>
+          <div class="bio-stat">
+            <button
+              type="button"
+              class="bio-stat-toggle"
+              data-detail-toggle="clubs"
+              aria-expanded="false"
+            >
+              <span class="bio-stat-value" data-i18n="bio.stats.valueClubs">7</span>
+              <span class="bio-stat-label" data-i18n="bio.stats.labelClubs">Clubs played</span>
+            </button>
           </div>
         </div>
       </section>
+      <div class="bio-detail" data-detail-content="clubs" hidden>
+        <h2 data-i18n="bio.stats.clubsModal.title">Clubs played</h2>
+        <p data-i18n="bio.stats.clubsModal.intro">Stages I have performed at so far:</p>
+        <ul data-i18n="bio.stats.clubsModal.list" data-i18n-mode="html">
+          <li>Hans-Bunte-Areal - Freiburg</li>
+          <li>Club Douala - Ravensburg</li>
+          <li>Circle - Offenburg</li>
+          <li>//:about blank - Berlin</li>
+          <li>Bahnw&auml;rter Thiel - M&uuml;nchen</li>
+          <li>Gleis44 - Ulm</li>
+          <li>TheGreatR&auml;ngT&auml;ng - Freiburg</li>
+        </ul>
+      </div>
     </main>
 
     <footer class="site-footer">
