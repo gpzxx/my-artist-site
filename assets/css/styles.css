@@ -898,7 +898,7 @@ button.pill {
 
 .bio-detail {
   display: none;
-  margin: 32px auto 0;
+  margin: clamp(20px, 4vw, 32px) 0;
   padding: clamp(24px, 4vw, 40px);
   border: 1px solid var(--border);
   background: rgba(var(--surface-rgb), 0.9);
