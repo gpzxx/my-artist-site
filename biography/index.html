@@ -49,8 +49,14 @@
 
           <h3 data-i18n="bio.highlights.title">Highlights</h3>
           <ul class="pill-list">
-            <li>
-              <a class="pill" href="#festival-experiences" data-i18n="bio.highlights.item1">Festival appearances</a>
+            <li id="festival-experiences">
+              <div class="pill" data-i18n="bio.highlights.item1">Festival appearances</div>
+              <p class="festival-note" data-i18n="bio.highlights.festivalModal.intro">Snapshots from standout festival slots.</p>
+              <ul class="festival-list" data-i18n="bio.highlights.festivalModal.list" data-i18n-mode="html">
+                <li>Hart bis Zart Festival - Freiburg (2024)</li>
+                <li>Hart bis Zart Festival - Freiburg (2025)</li>
+                <li>Backyard77 - Offenburg (2025)</li>
+              </ul>
             </li>
             <li>
               <a class="pill" href="../releases/" data-i18n="bio.highlights.item2">Label releases</a>
@@ -72,38 +78,20 @@
             <span class="bio-stat-value" data-i18n="bio.stats.valueReleases">9</span>
             <a class="bio-stat-label bio-stat-label--link" href="../releases/" data-i18n="bio.stats.labelReleases">Releases out</a>
           </div>
-          <div class="bio-stat">
+          <div class="bio-stat" id="clubs-played">
             <span class="bio-stat-value" data-i18n="bio.stats.valueClubs">7</span>
-            <a class="bio-stat-label bio-stat-label--link" href="#clubs-played" data-i18n="bio.stats.labelClubs">Clubs played</a>
+            <span class="bio-stat-label" data-i18n="bio.stats.labelClubs">Clubs played</span>
+            <p class="bio-stat-note" data-i18n="bio.stats.clubsModal.intro">Stages I have performed at so far:</p>
+            <ul class="bio-stat-list" data-i18n="bio.stats.clubsModal.list" data-i18n-mode="html">
+              <li>Hans-Bunte-Areal - Freiburg</li>
+              <li>Club Douala - Ravensburg</li>
+              <li>Circle - Offenburg</li>
+              <li>//:about blank - Berlin</li>
+              <li>Bahnw&auml;rter Thiel - M&uuml;nchen</li>
+              <li>Gleis44 - Ulm</li>
+              <li>TheGreatR&auml;ngT&auml;ng - Freiburg</li>
+            </ul>
           </div>
-        </div>
-      </section>
-
-      <section id="festival-experiences" class="bio-detail reveal" aria-labelledby="festival-experiences-heading">
-        <div class="bio-detail__inner">
-          <h2 id="festival-experiences-heading" data-i18n="bio.highlights.festivalModal.title">Festival appearances</h2>
-          <p data-i18n="bio.highlights.festivalModal.intro">Snapshots from standout festival slots.</p>
-          <ul data-i18n="bio.highlights.festivalModal.list" data-i18n-mode="html">
-            <li>Hart bis Zart Festival - Freiburg (2024)</li>
-            <li>Hart bis Zart Festival - Freiburg (2025)</li>
-            <li>Backyard77 - Offenburg (2025)</li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="clubs-played" class="bio-detail reveal" aria-labelledby="clubs-played-heading">
-        <div class="bio-detail__inner">
-          <h2 id="clubs-played-heading" data-i18n="bio.stats.clubsModal.title">Clubs played</h2>
-          <p data-i18n="bio.stats.clubsModal.intro">Stages I have performed at so far:</p>
-          <ul data-i18n="bio.stats.clubsModal.list" data-i18n-mode="html">
-            <li>Hans-Bunte-Areal - Freiburg</li>
-            <li>Club Douala - Ravensburg</li>
-            <li>Circle - Offenburg</li>
-            <li>//:about blank - Berlin</li>
-            <li>Bahnw&auml;rter Thiel - M&uuml;nchen</li>
-            <li>Gleis44 - Ulm</li>
-            <li>TheGreatR&auml;ngT&auml;ng - Freiburg</li>
-          </ul>
         </div>
       </section>
     </main>
