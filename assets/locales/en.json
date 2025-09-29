@@ -188,6 +188,12 @@
     "lightbox": {
       "close": "Close",
       "alt": "Expanded media"
+    },
+    "press": {
+      "title": "Press assets",
+      "lead": "Download high resolution imagery and short-form video clips for press coverage.",
+      "images": "Download press images",
+      "videos": "Download press videos"
     }
   },
   "privacy": {

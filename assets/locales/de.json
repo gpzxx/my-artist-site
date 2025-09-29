@@ -188,6 +188,12 @@
     "lightbox": {
       "close": "Schließen",
       "alt": "Erweitertes Medium"
+    },
+    "press": {
+      "title": "Presse-Assets",
+      "lead": "Lade hochauflösende Bilder und kurze Videoclips für Pressearbeit herunter.",
+      "images": "Pressebilder herunterladen",
+      "videos": "Pressevideos herunterladen"
     }
   },
   "privacy": {
