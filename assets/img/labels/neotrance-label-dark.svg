@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="title">
+  <title>NeoTrance label mark dark</title>
+  <rect width="200" height="200" fill="#050505" rx="12"/>
+  <circle cx="100" cy="100" r="60" fill="none" stroke="#b7a6ff" stroke-width="8" />
+  <path d="M70 130 L100 70 L130 130" fill="none" stroke="#e9e6ff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

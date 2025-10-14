@@ -717,6 +717,7 @@ a:focus-visible {
   margin: 0;
   flex: 1 1 0;
   min-width: 180px;
+  display: flex;
 }
 
 .pill {
@@ -758,6 +759,7 @@ button.pill {
   min-height: 44px;
   padding: 10px 22px;
   width: 100%;
+  flex: 1 1 auto;
   border-radius: var(--radius-pill);
   border: 1px solid var(--border);
   text-transform: uppercase;
