@@ -799,13 +799,26 @@ button.pill {
 
 /* Link-spezifische Anpassung */
 .pill-list a.pill {
-  display: flex; /* Wichtig für vertikale Zentrierung */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 22px;
+  width: 100%;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--muted);
+  background: rgba(var(--ink-rgb), 0.06);
   text-align: center;
-  color: var(--muted); /* Überschreibe Link-Farbe */
+  text-decoration: none;
+  transition: border-color .3s ease, background .3s ease, color .3s ease, transform .2s var(--transition);
 }
 
-
-.pill-list a {
+.pill-list a.pill:visited {
   color: var(--muted);
 }
 
