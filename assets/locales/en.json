@@ -29,7 +29,7 @@
       "upcomingModal": {
         "title": "Upcoming gigs",
         "intro": "Catch me live at the dates below.",
-        "list": "<li><time datetime=\"2025-06-14\">14 Jun 2025</time> · Hans-Bunte-Areal Rooftop, Freiburg</li><li><time datetime=\"2025-07-05\">05 Jul 2025</time> · Club Douala, Ravensburg</li><li><time datetime=\"2025-07-19\">19 Jul 2025</time> · Backyard77, Offenburg</li>",
+        "list": "<li><time datetime=\"2025-06-14\">14 Jun 2025</time> · Hans-Bunte-Areal Rooftop, Freiburg</li><li><time datetime=\"2025-07-05\">05 Jul 2025</time> · Club Douala, Ravensburg</li><li><time datetime=\"2025-07-19\">19 Jul 2025</time> · Backyard77, Offenburg</li><li><time datetime=\"2025-10-17\">17 Oct 2025</time> · Climax, Stuttgart</li><li><time datetime=\"2025-10-18\">18 Oct 2025</time> · Circle, Offenburg</li><li><time datetime=\"2025-10-24\">24 Oct 2025</time> · AEDEN, Berlin</li><li><time datetime=\"2025-11-15\">15 Nov 2025</time> · DESTROYED, Hans-Bunte-Areal, Freiburg</li><li><time datetime=\"2025-12-12\">12 Dec 2025</time> · TBA, Berlin</li><li><time datetime=\"2025-12-13\">13 Dec 2025</time> · Ski Aggu @ Hans-Bunte-Areal, Freiburg</li><li><time datetime=\"2025-12-20\">20 Dec 2025</time> · Destroyed @ Hans-Bunte-Areal, Freiburg</li><li><time datetime=\"2026-01-10\">10 Jan 2026</time> · TBA, Hamburg</li>",
         "close": "Close"
       }
     },
@@ -253,20 +253,20 @@
       "coverAlt": "Blow A Kiss cover art",
       "desc": "Super driving headbanger."
     },
-    "newtrack1": {
-      "frontLabel": "Show release details for Track Title Placeholder",
-      "coverAlt": "Placeholder cover art for Track Title Placeholder",
-      "desc": "Update this description with details about the release."
+    "icedlips": {
+      "frontLabel": "Show release details for Iced Lips",
+      "coverAlt": "Iced Lips cover art",
+      "desc": "Neo-trance heater with icy synth stabs and rolling groove."
     },
-    "newtrack2": {
-      "frontLabel": "Show release details for Track Title Placeholder",
-      "coverAlt": "Placeholder cover art for Track Title Placeholder",
-      "desc": "Update this description with details about the release."
+    "lookatme": {
+      "frontLabel": "Show release details for Look At Me",
+      "coverAlt": "Look At Me cover art",
+      "desc": "Peak-time driver for Synthx Records with hypnotic vocals."
     },
-    "newtrack3": {
-      "frontLabel": "Show release details for Track Title Placeholder",
-      "coverAlt": "Placeholder cover art for Track Title Placeholder",
-      "desc": "Update this description with details about the release."
+    "believeradio": {
+      "frontLabel": "Show release details for Believe (Radio Edit)",
+      "coverAlt": "Believe (Radio Edit) cover art",
+      "desc": "Parallel premiere full of uplifting pads and euphoric drops."
     },
     "newtrack4": {
       "frontLabel": "Show release details for Track Title Placeholder",

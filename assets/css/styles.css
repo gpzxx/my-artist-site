@@ -822,6 +822,13 @@ button.pill {
   color: var(--muted);
 }
 
+.pill-list a.pill:hover {
+  border-color: rgba(var(--accent-rgb), 0.45);
+  background: rgba(var(--accent-rgb), 0.1);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
 .bio-stats {
   margin: 80px auto 0;
   padding-top: 32px;
@@ -1483,7 +1490,7 @@ button.pill {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: baseline;
 }
 
 .release-links span {
@@ -1491,6 +1498,7 @@ button.pill {
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--muted);
+  line-height: 1;
 }
 
 .release-links a {
@@ -1501,6 +1509,7 @@ button.pill {
   border-bottom: 1px solid transparent;
   padding-bottom: 3px;
   transition: border-color .3s ease, color .3s ease;
+  line-height: 1;
 }
 
 .release-links a:hover,
