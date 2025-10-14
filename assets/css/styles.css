@@ -734,14 +734,12 @@ a:focus-visible {
   background: rgba(var(--ink-rgb), 0.06);
   text-decoration: none;
   transition: border-color .3s ease, background .3s ease, color .3s ease, transform .2s var(--transition);
+  cursor: pointer;
 }
 
 .pill:focus-visible {
   outline: var(--focus-ring);
   outline-offset: var(--focus-ring-offset);
-}
-
-  cursor: pointer;
 }
 
 button.pill {

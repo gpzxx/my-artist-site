@@ -253,6 +253,26 @@
       "coverAlt": "Blow A Kiss cover art",
       "desc": "Super driving headbanger."
     },
+    "newtrack1": {
+      "frontLabel": "Show release details for Track Title Placeholder",
+      "coverAlt": "Placeholder cover art for Track Title Placeholder",
+      "desc": "Update this description with details about the release."
+    },
+    "newtrack2": {
+      "frontLabel": "Show release details for Track Title Placeholder",
+      "coverAlt": "Placeholder cover art for Track Title Placeholder",
+      "desc": "Update this description with details about the release."
+    },
+    "newtrack3": {
+      "frontLabel": "Show release details for Track Title Placeholder",
+      "coverAlt": "Placeholder cover art for Track Title Placeholder",
+      "desc": "Update this description with details about the release."
+    },
+    "newtrack4": {
+      "frontLabel": "Show release details for Track Title Placeholder",
+      "coverAlt": "Placeholder cover art for Track Title Placeholder",
+      "desc": "Update this description with details about the release."
+    },
     "mixes": {
       "title": "Podcast Playlist",
       "note": "Hit play to run through every uploaded podcast in one go."

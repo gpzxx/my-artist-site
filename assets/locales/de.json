@@ -253,6 +253,26 @@
       "coverAlt": "Blow A Kiss Cover",
       "desc": "Super treibender Kopfnicker."
     },
+    "newtrack1": {
+      "frontLabel": "Release-Details zu Track Title Placeholder anzeigen",
+      "coverAlt": "Platzhalter-Cover für Track Title Placeholder",
+      "desc": "Diese Beschreibung mit Infos zum Release aktualisieren."
+    },
+    "newtrack2": {
+      "frontLabel": "Release-Details zu Track Title Placeholder anzeigen",
+      "coverAlt": "Platzhalter-Cover für Track Title Placeholder",
+      "desc": "Diese Beschreibung mit Infos zum Release aktualisieren."
+    },
+    "newtrack3": {
+      "frontLabel": "Release-Details zu Track Title Placeholder anzeigen",
+      "coverAlt": "Platzhalter-Cover für Track Title Placeholder",
+      "desc": "Diese Beschreibung mit Infos zum Release aktualisieren."
+    },
+    "newtrack4": {
+      "frontLabel": "Release-Details zu Track Title Placeholder anzeigen",
+      "coverAlt": "Platzhalter-Cover für Track Title Placeholder",
+      "desc": "Diese Beschreibung mit Infos zum Release aktualisieren."
+    },
     "mixes": {
       "title": "Podcast-Playlist",
       "note": "Play drücken und alle hochgeladenen Podcasts am Stück hören."
