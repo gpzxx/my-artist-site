@@ -1638,8 +1638,8 @@ button.pill {
 
 .label-logo--with-links {
   flex-direction: column;
-  gap: 12px;
-  padding: 16px 14px;
+  gap: 18px;
+  padding: 18px 16px 20px;
 }
 
 .label-logo-picture {
@@ -1653,7 +1653,7 @@ button.pill {
 .label-logo--with-links .label-logo-picture {
   flex: none;
   width: 100%;
-  max-width: 120px;
+  max-width: 220px;
   margin: 0 auto;
 }
 
@@ -1671,24 +1671,35 @@ button.pill {
 
 .label-logo-links {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   justify-content: center;
-  font-size: 10px;
-  letter-spacing: 0.24em;
 }
 
-.label-logo-links a {
-  color: var(--accent);
-  text-transform: uppercase;
-  border-bottom: 1px solid transparent;
-  padding-bottom: 2px;
-  transition: color .3s ease, border-color .3s ease;
+.label-logo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--border);
+  background: rgba(var(--surface-rgb), 0.92);
+  transition: border-color .3s ease, transform .2s ease;
 }
 
-.label-logo-links a:hover,
-.label-logo-links a:focus-visible {
-  color: var(--accent);
-  border-color: rgba(var(--accent-rgb), 0.4);
+.label-logo-link:hover,
+.label-logo-link:focus-visible {
+  border-color: rgba(var(--accent-rgb), 0.5);
+  transform: translateY(-2px);
+}
+
+.label-logo-link img {
+  width: 22px;
+  height: 22px;
+}
+
+.label-logo-link svg,
+.label-logo-link img {
+  display: block;
 }
 
 .audio-embed {
