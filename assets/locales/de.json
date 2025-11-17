@@ -29,7 +29,7 @@
       "upcomingModal": {
         "title": "Bevorstehende Gigs",
         "intro": "Hier kannst du mich demnächst live erleben.",
-        "list": "<li><time datetime=\"2025-06-14\">14. Juni 2025</time> · Hans-Bunte-Areal Rooftop, Freiburg</li><li><time datetime=\"2025-10-17\">17. Oktober 2025</time> · Climax, Stuttgart</li><li><time datetime=\"2025-10-18\">18. Oktober 2025</time> · Circle, Offenburg</li><li><time datetime=\"2025-10-24\">24. Oktober 2025</time> · AEDEN, Berlin</li><li><time datetime=\"2025-11-15\">15. November 2025</time> · DESTROYED, Hans-Bunte-Areal, Freiburg</li><li><time datetime=\"2025-12-12\">12. Dezember 2025</time> · TBA, Berlin</li><li><time datetime=\"2025-12-13\">13. Dezember 2025</time> · Ski Aggu @ Hans-Bunte-Areal, Freiburg</li><li><time datetime=\"2025-12-20\">20. Dezember 2025</time> · Destroyed @ Hans-Bunte-Areal, Freiburg</li><li><time datetime=\"2026-01-10\">10. Januar 2026</time> · TBA, Hamburg</li>",
+        "list": "<li><time datetime=\"2025-11-15\">15. November 2025</time> · DESTROYED, @ Hans-Bunte-Areal, Freiburg</li><li><time datetime=\"2025-12-12\">12. Dezember 2025</time> · Fridget Spinner, @ Lokschuppen, Berlin</li><li><time datetime=\"2025-12-13\">13. Dezember 2025</time> · Ski Aggu, @ Hans-Bunte-Areal, Freiburg</li><li><time datetime=\"2025-12-20\">20. Dezember 2025</time> · Titan, @ Club Ost, Berlin</li><li><time datetime=\"2026-01-10\">10. Januar 2026</time> · TBA, Hamburg</li>",
         "close": "Schließen"
       }
     },
@@ -48,7 +48,7 @@
       "clubsModal": {
         "title": "Gespielte Clubs",
         "intro": "Diese Bühnen durfte ich bereits bespielen:",
-        "list": "<li>Hans-Bunte-Areal - Freiburg</li><li>Club Douala - Ravensburg</li><li>Circle - Offenburg</li><li>//:about blank - Berlin</li><li>Bahnwärter Thiel - München</li><li>Gleis44 - Ulm</li><li>TheGreatRängTäng - Freiburg</li>",
+        "list": "<li>Hans-Bunte-Areal - Freiburg</li><li>Club Douala - Ravensburg</li><li>Circle - Offenburg</li><li>//:about blank - Berlin</li><li>Bahnwärter Thiel - München</li><li>Gleis44 - Ulm</li><li>TheGreatRängTäng - Freiburg</li><li>AEDEN - Berlin</li>",
         "close": "Schließen"
       }
     }
