@@ -37,7 +37,6 @@
         <button class="pill active" data-filter="all" data-i18n="releases.filters.all">All</button>
         <button class="pill" data-filter="track" data-i18n="releases.filters.tracks">Tracks</button>
         <button class="pill" data-filter="mix" data-i18n="releases.filters.mixes">Mixes</button>
-        <button class="pill" data-filter="labels" data-i18n="releases.filters.labels">Labels</button>
       </section>
 
       <section class="release-grid" data-releases>
@@ -268,6 +267,64 @@
           </div>
         </article>
 
+        <article class="release-card filter-item reveal" data-type="track" data-release-card>
+          <div class="release-flip">
+            <div class="release-face release-front" tabindex="0" role="button" aria-label="Show release details for Upcoming Release 1" data-i18n="releases.newtrack5.frontLabel" data-i18n-attr="aria-label" aria-expanded="false">
+              <picture>
+                <source srcset="../assets/img/Kizu-14.webp" type="image/webp" />
+                <img src="../assets/img/Kizu-14.jpg" alt="Placeholder cover art for Upcoming Release 1" data-i18n="releases.newtrack5.coverAlt" data-i18n-attr="alt" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <div class="release-face release-back">
+              <button class="release-close" type="button" data-release-close data-i18n="releases.actions.back">Back to cover</button>
+              <div class="release-body">
+                <div class="release-details">
+                  <span class="badge track" data-i18n="releases.badges.track">Track</span>
+                  <h3>Upcoming Release 1</h3>
+                  <p data-i18n="releases.newtrack5.desc">Add the final description, links and embed once the track is ready.</p>
+                </div>
+                <div class="release-links">
+                  <span data-i18n="releases.listenLabel">Listen</span>
+                  <a href="https://open.spotify.com/" aria-label="Add the Spotify link for this release">Spotify</a>
+                  <a href="https://soundcloud.com/" aria-label="Add the SoundCloud link for this release">SoundCloud</a>
+                </div>
+                <div class="release-player">
+                  <div class="audio-embed" data-soundcloud="https://soundcloud.com/replace-with-track-url"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="release-card filter-item reveal" data-type="track" data-release-card>
+          <div class="release-flip">
+            <div class="release-face release-front" tabindex="0" role="button" aria-label="Show release details for Upcoming Release 2" data-i18n="releases.newtrack6.frontLabel" data-i18n-attr="aria-label" aria-expanded="false">
+              <picture>
+                <source srcset="../assets/img/Kizu-5.webp" type="image/webp" />
+                <img src="../assets/img/Kizu-5.jpg" alt="Placeholder cover art for Upcoming Release 2" data-i18n="releases.newtrack6.coverAlt" data-i18n-attr="alt" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <div class="release-face release-back">
+              <button class="release-close" type="button" data-release-close data-i18n="releases.actions.back">Back to cover</button>
+              <div class="release-body">
+                <div class="release-details">
+                  <span class="badge track" data-i18n="releases.badges.track">Track</span>
+                  <h3>Upcoming Release 2</h3>
+                  <p data-i18n="releases.newtrack6.desc">Drop in the release blurb, streaming links and player embed here.</p>
+                </div>
+                <div class="release-links">
+                  <span data-i18n="releases.listenLabel">Listen</span>
+                  <a href="https://open.spotify.com/" aria-label="Add the Spotify link for this release">Spotify</a>
+                  <a href="https://soundcloud.com/" aria-label="Add the SoundCloud link for this release">SoundCloud</a>
+                </div>
+                <div class="release-player">
+                  <div class="audio-embed" data-soundcloud="https://soundcloud.com/replace-with-track-url"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
         <article class="mixes-card filter-item reveal" data-type="mix">
           <div class="mixes-content">
             <div class="mixes-header">
@@ -278,45 +335,6 @@
               </div>
             </div>
             <div class="mixes-embed audio-embed" data-soundcloud="https://soundcloud.com/kizuloge/sets/sets-podcasts-2025?si=8a1c73c77e5e4ed887a1c82862e59649&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" data-soundcloud-visual="false" data-soundcloud-height="520" data-soundcloud-comments="false" data-soundcloud-hide-related="true"></div>
-          </div>
-        </article>
-        <article class="label-card filter-item reveal" data-type="labels">
-          <div>
-            <h3 data-i18n="releases.labels.title">Label Highlights</h3>
-          </div>
-          <div class="label-logos">
-            <div class="label-logo" aria-label="Parallel Label" data-i18n="releases.labels.parallel" data-i18n-attr="aria-label">
-              <picture class="label-logo-picture">
-                <source srcset="../assets/img/labels/parallel-label-dark.png" media="(prefers-color-scheme: dark)" />
-                <img src="../assets/img/labels/parallel-label-light.png" alt="Parallel Label" data-i18n="releases.labels.parallelAlt" data-i18n-attr="alt" loading="lazy" decoding="async" />
-              </picture>
-            </div>
-            <div class="label-logo" aria-label="Synthx Records" data-i18n="releases.labels.synthx" data-i18n-attr="aria-label">
-              <picture class="label-logo-picture">
-                <source srcset="../assets/img/labels/synthx-records-dark.svg" media="(prefers-color-scheme: dark)" />
-                <img src="../assets/img/labels/synthx-records-light.svg" alt="Synthx Records" data-i18n="releases.labels.synthxAlt" data-i18n-attr="alt" loading="lazy" decoding="async" />
-              </picture>
-            </div>
-            <div class="label-logo label-logo--with-links" aria-label="Milli Records" data-i18n="releases.labels.milli" data-i18n-attr="aria-label">
-              <picture class="label-logo-picture">
-                <source srcset="../assets/img/labels/milli-records-dark.png" media="(prefers-color-scheme: dark)" type="image/png" />
-                <img src="../assets/img/labels/milli-records-light.png" alt="Milli Records" data-i18n="releases.labels.milliAlt" data-i18n-attr="alt" loading="lazy" decoding="async" />
-              </picture>
-              <div class="label-logo-links">
-                <a class="label-logo-link" href="https://www.instagram.com/milli_records/" target="_blank" rel="noopener noreferrer" aria-label="Milli Records on Instagram" data-i18n="releases.labels.milliInstagram" data-i18n-attr="aria-label">
-                  <img src="../assets/icons/instagram.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-                </a>
-                <a class="label-logo-link" href="https://soundcloud.com/millirecs" target="_blank" rel="noopener noreferrer" aria-label="Milli Records on SoundCloud" data-i18n="releases.labels.milliSoundcloud" data-i18n-attr="aria-label">
-                  <img src="../assets/icons/soundcloud.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-                </a>
-              </div>
-            </div>
-            <div class="label-logo" aria-label="NeoTrance" data-i18n="releases.labels.neotrance" data-i18n-attr="aria-label">
-              <picture class="label-logo-picture">
-                <source srcset="../assets/img/labels/neotrance-label-dark.svg" media="(prefers-color-scheme: dark)" />
-                <img src="../assets/img/labels/neotrance-label-light.svg" alt="NeoTrance" data-i18n="releases.labels.neotranceAlt" data-i18n-attr="alt" loading="lazy" decoding="async" />
-              </picture>
-            </div>
           </div>
         </article>
       </section>

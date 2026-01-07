@@ -29,7 +29,7 @@
       "upcomingModal": {
         "title": "Upcoming gigs",
         "intro": "Catch me live at the dates below.",
-        "list": "<li><time datetime=\"2025-11-15\">15 Nov 2025</time> · DESTROYED, @ Hans-Bunte-Areal, Freiburg</li><li><time datetime=\"2025-12-12\">12 Dec 2025</time> · Fridget Spinner, @ Lokschuppen, Berlin</li><li><time datetime=\"2025-12-13\">13 Dec 2025</time> · Ski Aggu, @ Hans-Bunte-Areal, Freiburg</li><li><time datetime=\"2025-12-20\">20 Dec 2025</time> · Titan, @ Club Ost, Berlin</li><li><time datetime=\"2026-01-10\">10 Jan 2026</time> · TBA, Hamburg</li>",
+        "list": "<li><time datetime=\"2026-01-10\">10 Jan 2026</time> · Fundbureau, Hamburg</li><li><time datetime=\"2026-01-17\">17 Jan 2026</time> · Expressguthalle, Schwenningen</li><li><time datetime=\"2026-01-31\">31 Jan 2026</time> · Hans-Bunte-Areal, Freiburg</li><li><time datetime=\"2026-02-07\">7 Feb 2026</time> · Hans-Bunte-Areal, Freiburg</li><li><time datetime=\"2026-07-19\">19 Jul 2026</time> · Sea You Festival, Tunisee, Freiburg</li>",
         "close": "Close"
       }
     },
@@ -43,12 +43,12 @@
       "labelYears": "Years DJing",
       "valueReleases": "9",
       "labelReleases": "Releases out",
-      "valueClubs": "7",
+      "valueClubs": "11",
       "labelClubs": "Clubs played",
       "clubsModal": {
         "title": "Clubs played",
         "intro": "Stages I have performed at so far:",
-        "list": "<li>Hans-Bunte-Areal - Freiburg</li><li>Club Douala - Ravensburg</li><li>Circle - Offenburg</li><li>//:about blank - Berlin</li><li>Bahnwärter Thiel - München</li><li>Gleis44 - Ulm</li><li>TheGreatRängTäng - Freiburg</li><li>AEDEN - Berlin</li>",
+        "list": "<li>Bootshaus - Köln</li><li>Club Ost - Berlin</li><li>Lokschuppen - Berlin</li><li>AEDEN - Berlin</li><li>//:about blank - Berlin</li><li>Hans-Bunte-Areal - Freiburg</li><li>Club Douala - Ravensburg</li><li>Circle - Offenburg</li><li>Bahnwärter Thiel - München</li><li>Gleis44 - Ulm</li><li>TheGreatRängTäng - Freiburg</li>",
         "close": "Close"
       }
     }
@@ -222,8 +222,7 @@
     "filters": {
       "all": "All",
       "tracks": "Tracks",
-      "mixes": "Mixes",
-      "labels": "Labels"
+      "mixes": "Mixes"
     },
     "hbyl": {
       "frontLabel": "Show release details for Haunted By Your Love",
@@ -273,23 +272,19 @@
       "coverAlt": "Placeholder cover art for Track Title Placeholder",
       "desc": "Update this description with details about the release."
     },
+    "newtrack5": {
+      "frontLabel": "Show release details for Upcoming Release 1",
+      "coverAlt": "Placeholder cover art for Upcoming Release 1",
+      "desc": "Swap in the final description, links, and embed once the track is ready."
+    },
+    "newtrack6": {
+      "frontLabel": "Show release details for Upcoming Release 2",
+      "coverAlt": "Placeholder cover art for Upcoming Release 2",
+      "desc": "Replace this copy, the links, and embed with the finished release info."
+    },
     "mixes": {
       "title": "Podcast Playlist",
       "note": "Hit play to run through every uploaded podcast in one go."
-    },
-    "labels": {
-      "title": "Label Highlights",
-      "parallel": "Parallel Label",
-      "parallelAlt": "Parallel Label",
-      "synthx": "Synthx Records",
-      "synthxAlt": "Synthx Records",
-      "coming": "Coming Soon",
-      "milliAlt": "Milli Records",
-      "milli": "Milli Records",
-      "milliInstagram": "Milli Records on Instagram",
-      "milliSoundcloud": "Milli Records on SoundCloud",
-      "neotrance": "NeoTrance",
-      "neotranceAlt": "NeoTrance"
     }
   }
 }
