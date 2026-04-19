@@ -34,113 +34,137 @@
       </div>
     </header>
 
-    <main class="container page">
-      <section class="page-header reveal">
-        <h1 data-i18n="bio.header.title">Biography</h1>
-        <p data-i18n="bio.header.lead">Kizu is a young, versatile artist whose mission is to make people laugh, move them emotionally, and bring the ecstatic power of electronic music to the dance floor.</p>
-      </section>
+    <main class="bio-page-main">
 
-      <section class="bio reveal">
-        <div class="bio-media">
-          <picture>
-            <source srcset="../assets/img/DSC02938.webp" type="image/webp" />
-            <img src="../assets/img/DSC02938.jpg" alt="Portrait" data-i18n="bio.media.alt" data-i18n-attr="alt" loading="lazy" decoding="async" />
-          </picture>
+      <div class="bio-editorial">
+
+        <!-- ── LEFT: sticky portrait column ───────────────────── -->
+        <div class="bio-col-photo">
+          <div class="bio-photo-wrap">
+            <picture>
+              <source srcset="../assets/img/DSC02938.webp" type="image/webp" />
+              <img src="../assets/img/DSC02938.jpg"
+                alt="KIZU portrait"
+                data-i18n="bio.media.alt" data-i18n-attr="alt"
+                fetchpriority="high" loading="eager" decoding="async" />
+            </picture>
+            <div class="bio-photo-overlay"></div>
+          </div>
         </div>
-        <div class="bio-text">
-          <h2 data-i18n="bio.about.title">About</h2>
-          <p data-i18n="bio.about.p1">Based in Ravensburg, Germany, Kizu channels a warm, welcoming vibe and always goes the extra mile for the music and the crowd. On stage, he delivers energetic, feel-good DJ sets that fuse fast-paced groove and trance with flashes of bliss.</p>
-          <p data-i18n="bio.about.p2">He began making music in late 2023 and stepped into production in late 2024, quickly shaping a confident, high-energy sound. Bookings span clubs and residencies including Hans-Bunte-Areal (Freiburg) and Club Douala (Ravensburg), with appearances at Circle (Offenburg) &amp; //:about Blank (Berlin)</p>
-          <p data-i18n="bio.about.p3">Releases and signings touch labels such as Para//e/ (Berlin), SYNTHX Records (Munich), Milli Records (Berlin), and SeshDawgsUnited (Berlin)</p>
-          <p data-i18n="bio.about.p4">Always spread love and you will receive love.</p>
 
-          <h3 data-i18n="bio.highlights.title">Highlights</h3>
-          <ul class="pill-list">
-            <li>
-              <button
-                type="button"
-                class="pill"
-                data-detail-toggle="festival"
-                aria-expanded="false"
-                data-i18n="bio.highlights.item1"
-              >Festival appearances</button>
-            </li>
-            <li>
-              <button
-                type="button"
-                class="pill"
-                data-detail-toggle="upcoming"
-                aria-expanded="false"
-                data-i18n="bio.highlights.item3"
-              >Upcoming gigs</button>
-            </li>
-            <li>
-              <a class="pill" href="../releases/" data-i18n="bio.highlights.item2">Label releases</a>
-            </li>
-          </ul>
-          <div class="bio-detail" data-detail-content="festival" hidden>
-            <h2 data-i18n="bio.highlights.festivalModal.title">Festival appearances</h2>
-            <p data-i18n="bio.highlights.festivalModal.intro">Snapshots from standout festival slots.</p>
-            <ul data-i18n="bio.highlights.festivalModal.list" data-i18n-mode="html">
-              <li>Hart bis Zart Festival - Freiburg (2024)</li>
-              <li>Hart bis Zart Festival - Freiburg (2025)</li>
-              <li>Backyard77 - Offenburg (2025)</li>
-              <li>Sea You Festival Aftershow - Freiburg (2025)</li>
+        <!-- ── RIGHT: scrolling editorial text ────────────────── -->
+        <div class="bio-col-text">
+          <div class="bio-col-inner">
+
+            <span class="bio-eyebrow reveal">Trance &middot; Hard House &middot; Speed Garage</span>
+            <h1 class="bio-editorial-headline reveal" data-i18n="bio.header.title">Biography</h1>
+
+            <p class="reveal" data-i18n="bio.header.lead">Kizu is a young, versatile artist whose mission is to make people laugh, move them emotionally, and bring the ecstatic power of electronic music to the dance floor.</p>
+
+            <p class="reveal" data-i18n="bio.about.p1">Based in Ravensburg, Germany, Kizu channels a warm, welcoming vibe and always goes the extra mile for the music and the crowd. On stage, he delivers energetic, feel-good DJ sets that fuse fast-paced groove and trance with flashes of bliss.</p>
+
+            <p class="reveal" data-i18n="bio.about.p2">He began making music in late 2023 and stepped into production in late 2024, quickly shaping a confident, high-energy sound. Bookings span clubs and residencies including Hans-Bunte-Areal (Freiburg) and Club Douala (Ravensburg), with appearances at Circle (Offenburg) &amp; //:about Blank (Berlin)</p>
+
+            <blockquote class="bio-quote reveal">
+              <p data-i18n="bio.about.p4">Always spread love and you will receive love.</p>
+            </blockquote>
+
+            <p class="reveal" data-i18n="bio.about.p3">Releases and signings touch labels such as Para//e/ (Berlin), SYNTHX Records (Munich), Milli Records (Berlin), and SeshDawgsUnited (Berlin)</p>
+
+            <blockquote class="bio-quote bio-quote--milestone reveal">
+              <p>4&nbsp;labels.<br>1&nbsp;year.</p>
+              <cite>Para//e/ &middot; SYNTHX Records &middot; Milli Records &middot; SeshDawgsUnited</cite>
+            </blockquote>
+
+            <h2 class="bio-section-title reveal" data-i18n="bio.highlights.title">Highlights</h2>
+            <ul class="pill-list reveal">
+              <li>
+                <button type="button" class="pill" data-detail-toggle="upcoming" aria-expanded="false"
+                  data-i18n="bio.highlights.item3">Tour Dates 2026</button>
+              </li>
+              <li>
+                <button type="button" class="pill" data-detail-toggle="past-gigs" aria-expanded="false"
+                  data-i18n="bio.highlights.item4">Past Gigs 2026</button>
+              </li>
+              <li>
+                <button type="button" class="pill" data-detail-toggle="festival" aria-expanded="false"
+                  data-i18n="bio.highlights.item1">Festival appearances</button>
+              </li>
+              <li>
+                <a class="pill" href="../releases/" data-i18n="bio.highlights.item2">Label releases</a>
+              </li>
             </ul>
-          </div>
-          <div class="bio-detail" data-detail-content="upcoming" hidden>
-            <h2 data-i18n="bio.highlights.upcomingModal.title">Upcoming gigs</h2>
-            <p data-i18n="bio.highlights.upcomingModal.intro">Catch me live at the dates below.</p>
-            <ul data-i18n="bio.highlights.upcomingModal.list" data-i18n-mode="html">
-              <li><time datetime="2025-11-15">15 Nov 2025</time> · DESTROYED, @ Hans-Bunte-Areal, Freiburg</li>
-              <li><time datetime="2025-12-12">12 Dec 2025</time> · Fridget Spinner, @ Lokschuppen, Berlin</li>
-              <li><time datetime="2025-12-13">13 Dec 2025</time> · Ski Aggu, @ Hans-Bunte-Areal, Freiburg</li>
-              <li><time datetime="2025-12-20">20 Dec 2025</time> · Titan, @ Club Ost, Berlin</li>
-              <li><time datetime="2026-01-10">10 Jan 2026</time> · TBA, Hamburg</li>
-            </ul>
-          </div>
 
-          <h3 data-i18n="bio.contact.title">Contact &amp; Bookings</h3>
-          <p data-i18n="bio.contact.body" data-i18n-mode="html">Email: <a href="mailto:bookings@kizuloge.com">bookings@kizuloge.com</a></p>
-        </div>
-      </section>
+            <div class="bio-detail" data-detail-content="upcoming" hidden>
+              <h2 data-i18n="bio.highlights.upcomingModal.title">Tour Dates 2026</h2>
+              <p data-i18n="bio.highlights.upcomingModal.intro">Full schedule — past shows greyed out, upcoming in neon.</p>
+              <ul class="gig-list" data-i18n="bio.highlights.upcomingModal.list" data-i18n-mode="html"></ul>
+            </div>
 
-      <section class="bio-stats reveal" aria-label="Career highlights" data-i18n="bio.stats.label" data-i18n-attr="aria-label">
-        <div class="bio-stats-grid">
-          <div class="bio-stat">
-            <span class="bio-stat-value" data-i18n="bio.stats.valueYears">2</span>
-            <span class="bio-stat-label" data-i18n="bio.stats.labelYears">Years DJing</span>
-          </div>
-          <div class="bio-stat">
-            <span class="bio-stat-value" data-i18n="bio.stats.valueReleases">9</span>
-            <a class="bio-stat-label bio-stat-label--link" href="../releases/" data-i18n="bio.stats.labelReleases">Releases out</a>
-          </div>
-          <div class="bio-stat">
-            <button
-              type="button"
-              class="bio-stat-toggle"
-              data-detail-toggle="clubs"
-              aria-expanded="false"
-            >
-              <span class="bio-stat-value" data-i18n="bio.stats.valueClubs">7</span>
-              <span class="bio-stat-label" data-i18n="bio.stats.labelClubs">Clubs played</span>
-            </button>
+            <div class="bio-detail" data-detail-content="past-gigs" hidden>
+              <h2 data-i18n="bio.highlights.pastModal.title">Past Gigs 2026</h2>
+              <p data-i18n="bio.highlights.pastModal.intro">Shows already played this year.</p>
+              <ul class="gig-list" data-i18n="bio.highlights.pastModal.list" data-i18n-mode="html"></ul>
+            </div>
+
+            <div class="bio-detail" data-detail-content="festival" hidden>
+              <h2 data-i18n="bio.highlights.festivalModal.title">Festival appearances</h2>
+              <p data-i18n="bio.highlights.festivalModal.intro">Snapshots from standout festival slots.</p>
+              <ul data-i18n="bio.highlights.festivalModal.list" data-i18n-mode="html">
+                <li>Hart bis Zart Festival - Freiburg (2024)</li>
+                <li>Hart bis Zart Festival - Freiburg (2025)</li>
+                <li>Backyard77 - Offenburg (2025)</li>
+                <li>Sea You Festival Aftershow - Freiburg (2025)</li>
+              </ul>
+            </div>
+
+            <h2 class="bio-section-title reveal" data-i18n="bio.contact.title">Contact &amp; Bookings</h2>
+            <p class="reveal" data-i18n="bio.contact.body" data-i18n-mode="html">Email: <a href="mailto:bookings@kizuloge.com">bookings@kizuloge.com</a></p>
+
           </div>
         </div>
-      </section>
-      <div class="bio-detail" data-detail-content="clubs" hidden>
-        <h2 data-i18n="bio.stats.clubsModal.title">Clubs played</h2>
-        <ul data-i18n="bio.stats.clubsModal.list" data-i18n-mode="html">
-          <li>Hans-Bunte-Areal - Freiburg</li>
-          <li>Club Douala - Ravensburg</li>
-          <li>Circle - Offenburg</li>
-          <li>//:about blank - Berlin</li>
-          <li>Bahnw&auml;rter Thiel - M&uuml;nchen</li>
-          <li>Gleis44 - Ulm</li>
-          <li>TheGreatR&auml;ngT&auml;ng - Freiburg</li>
-          <li>AEDEN - Berlin</li>
-        </ul>
+
       </div>
+
+      <!-- ── Stats bar: below the editorial grid ─────────────── -->
+      <div class="container">
+        <section class="bio-stats reveal" aria-label="Career highlights" data-i18n="bio.stats.label" data-i18n-attr="aria-label">
+          <div class="bio-stats-grid">
+            <div class="bio-stat">
+              <span class="bio-stat-value" data-i18n="bio.stats.valueYears">2</span>
+              <span class="bio-stat-label" data-i18n="bio.stats.labelYears">Years DJing</span>
+            </div>
+            <div class="bio-stat">
+              <span class="bio-stat-value" data-i18n="bio.stats.valueReleases">9</span>
+              <a class="bio-stat-label bio-stat-label--link" href="../releases/" data-i18n="bio.stats.labelReleases">Releases out</a>
+            </div>
+            <div class="bio-stat">
+              <button type="button" class="bio-stat-toggle" data-detail-toggle="clubs" aria-expanded="false">
+                <span class="bio-stat-value" data-i18n="bio.stats.valueClubs">11</span>
+                <span class="bio-stat-label" data-i18n="bio.stats.labelClubs">Clubs played</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <div class="bio-detail" data-detail-content="clubs" hidden>
+          <h2 data-i18n="bio.stats.clubsModal.title">Clubs played</h2>
+          <ul data-i18n="bio.stats.clubsModal.list" data-i18n-mode="html">
+            <li>Bootshaus - K&ouml;ln</li>
+            <li>Club Ost - Berlin</li>
+            <li>Lokschuppen - Berlin</li>
+            <li>AEDEN - Berlin</li>
+            <li>//:about blank - Berlin</li>
+            <li>Hans-Bunte-Areal - Freiburg</li>
+            <li>Club Douala - Ravensburg</li>
+            <li>Circle - Offenburg</li>
+            <li>Bahnw&auml;rter Thiel - M&uuml;nchen</li>
+            <li>Gleis44 - Ulm</li>
+            <li>TheGreatR&auml;ngT&auml;ng - Freiburg</li>
+          </ul>
+        </div>
+      </div>
+
     </main>
 
     <footer class="site-footer">
@@ -159,4 +183,4 @@
 
     <script src="../assets/js/main.js" defer></script>
   </body>
-  </html>
+</html>

@@ -729,7 +729,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return !['false', '0', 'no', 'off'].includes(normalized);
     };
     const iframe = document.createElement('iframe');
-    const color = container.dataset.soundcloudColor || '#c8f026';
+    const color = container.dataset.soundcloudColor || '#00f5ff';
     const params = new URLSearchParams();
     params.set('url', url);
     params.set('color', color);
@@ -877,7 +877,10 @@ document.addEventListener('DOMContentLoaded', () => {
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.08 });
+    }, {
+      rootMargin: '0px 0px -72px 0px',
+      threshold: 0,
+    });
     document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
   } else {
     document.querySelectorAll('.reveal').forEach((element) => element.classList.add('in'));

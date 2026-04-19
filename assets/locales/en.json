@@ -19,7 +19,8 @@
       "title": "Highlights",
       "item1": "Festival appearances",
       "item2": "Label releases",
-      "item3": "Upcoming gigs",
+      "item3": "Tour Dates 2026",
+      "item4": "Past Gigs 2026",
       "festivalModal": {
         "title": "Festival appearances",
         "intro": "Snapshots from standout festival slots.",
@@ -27,9 +28,15 @@
         "close": "Close"
       },
       "upcomingModal": {
-        "title": "Upcoming gigs",
-        "intro": "Catch me live at the dates below.",
-        "list": "<li><time datetime=\"2026-01-10\">10 Jan 2026</time> · Fundbureau, Hamburg</li><li><time datetime=\"2026-01-17\">17 Jan 2026</time> · Expressguthalle, Schwenningen</li><li><time datetime=\"2026-01-31\">31 Jan 2026</time> · Hans-Bunte-Areal, Freiburg</li><li><time datetime=\"2026-02-07\">7 Feb 2026</time> · Hans-Bunte-Areal, Freiburg</li><li><time datetime=\"2026-07-19\">19 Jul 2026</time> · Sea You Festival, Tunisee, Freiburg</li>",
+        "title": "Tour Dates 2026",
+        "intro": "Full schedule — past shows greyed out, upcoming in neon.",
+        "list": "<li><time class=\"gig-date\" datetime=\"2026-03-06\">06 Mar 2026</time><span class=\"gig-venue\">Motke, Ravensburg</span></li><li><time class=\"gig-date\" datetime=\"2026-03-20\">20 Mar 2026</time><span class=\"gig-venue\">Gleis44, Ulm</span></li><li><time class=\"gig-date\" datetime=\"2026-04-04\">04 Apr 2026</time><span class=\"gig-venue\">Club Douala, Ravensburg</span></li><li><time class=\"gig-date\" datetime=\"2026-04-05\">05 Apr 2026</time><span class=\"gig-venue\">Easter Rave, Hans Bunte Areal</span></li><li><time class=\"gig-date\" datetime=\"2026-04-11\">11 Apr 2026</time><span class=\"gig-venue\">Pressure X, Villingen-Schwenningen</span></li><li><time class=\"gig-date\" datetime=\"2026-04-18\">18 Apr 2026</time><span class=\"gig-venue\">Destroyed, Hans Bunte Areal</span></li><li><time class=\"gig-date\" datetime=\"2026-04-25\">25 Apr 2026</time><span class=\"gig-venue\">Circle, Offenburg</span></li><li><time class=\"gig-date\" datetime=\"2026-04-30\">30 Apr 2026</time><span class=\"gig-venue\">Unite Rave, Ravensburg</span></li><li><time class=\"gig-date\" datetime=\"2026-04-30\">30 Apr 2026</time><span class=\"gig-venue\">11 Years, Hans Bunte Areal</span></li><li><time class=\"gig-date\" datetime=\"2026-05-09\">09 May 2026</time><span class=\"gig-venue\">Hans-Bunte-Areal, Freiburg</span></li><li><time class=\"gig-date\" datetime=\"2026-05-16\">16 May 2026</time><span class=\"gig-venue\">Hans-Bunte-Areal, Freiburg</span></li><li><time class=\"gig-date\" datetime=\"2026-05-30\">30 May 2026</time><span class=\"gig-venue\">AEDEN, Berlin</span></li><li><time class=\"gig-date\" datetime=\"2026-06-06\">06 Jun 2026</time><span class=\"gig-venue\">Leipzig, TBA</span></li><li><time class=\"gig-date\" datetime=\"2026-07-19\">19 Jul 2026</time><span class=\"gig-venue\">Sea You Festival, Tunisee, Freiburg</span></li>",
+        "close": "Close"
+      },
+      "pastModal": {
+        "title": "Past Gigs 2026",
+        "intro": "Shows already played this year.",
+        "list": "<li><time class=\"gig-date\" datetime=\"2026-02-13\">13 Feb 2026</time><span class=\"gig-venue\">Cultura 40 Charity Rave, Freiburg</span></li><li><time class=\"gig-date\" datetime=\"2026-02-07\">07 Feb 2026</time><span class=\"gig-venue\">Hans-Bunte-Areal, Freiburg</span></li><li><time class=\"gig-date\" datetime=\"2026-01-31\">31 Jan 2026</time><span class=\"gig-venue\">Hans-Bunte-Areal, Freiburg</span></li><li><time class=\"gig-date\" datetime=\"2026-01-17\">17 Jan 2026</time><span class=\"gig-venue\">Expressguthalle, Schwenningen</span></li><li><time class=\"gig-date\" datetime=\"2026-01-16\">16 Jan 2026</time><span class=\"gig-venue\">Circle, Offenburg</span></li><li><time class=\"gig-date\" datetime=\"2026-01-10\">10 Jan 2026</time><span class=\"gig-venue\">Fundbureau, Hamburg</span></li><li><time class=\"gig-date\" datetime=\"2026-01-05\">05 Jan 2026</time><span class=\"gig-venue\">Hans-Bunte-Areal, Freiburg</span></li><li><time class=\"gig-date\" datetime=\"2026-01-02\">02 Jan 2026</time><span class=\"gig-venue\">Bootshaus, Köln</span></li>",
         "close": "Close"
       }
     },

@@ -205,6 +205,7 @@ a:focus-visible {
   color: var(--muted);
   position: relative;
   padding: 4px 0;
+  transition: color .38s cubic-bezier(.25, .46, .45, .94);
 }
 
 .site-nav a::after {
@@ -249,7 +250,13 @@ a:focus-visible {
   font-size: 11px;
   font-weight: 600;
   color: var(--muted);
-  transition: color .2s ease;
+  transition: color .38s cubic-bezier(.25, .46, .45, .94), text-shadow .38s cubic-bezier(.25, .46, .45, .94);
+}
+
+.nav-cta:hover,
+.nav-cta:focus-visible {
+  color: var(--accent);
+  text-shadow: 0 0 14px rgba(var(--accent-rgb), 0.45);
 }
 
 .nav-cta:hover,
@@ -295,7 +302,12 @@ a:focus-visible {
   color: var(--btn-outline-text);
   font-weight: 500;
   cursor: pointer;
-  transition: transform .28s var(--transition), border-color .28s ease, background .28s ease, box-shadow .28s ease, color .28s ease;
+  transition:
+    transform    .42s cubic-bezier(.25, .46, .45, .94),
+    border-color .42s cubic-bezier(.25, .46, .45, .94),
+    background   .42s cubic-bezier(.25, .46, .45, .94),
+    box-shadow   .42s cubic-bezier(.25, .46, .45, .94),
+    color        .42s cubic-bezier(.25, .46, .45, .94);
 }
 
 .btn:hover {
@@ -579,6 +591,13 @@ a:focus-visible {
   text-transform: uppercase;
   letter-spacing: 0.32em;
   color: var(--accent);
+  display: inline-block;
+  transition: transform .42s cubic-bezier(.25, .46, .45, .94), opacity .42s cubic-bezier(.25, .46, .45, .94);
+}
+
+.spotlight-card:hover .spotlight-link {
+  transform: translateX(6px);
+  opacity: 0.75;
 }
 
 /* Pulse section */
@@ -823,7 +842,12 @@ button.pill {
   color: var(--muted);
   background: rgba(var(--ink-rgb), 0.06);
   text-decoration: none;
-  transition: border-color .3s ease, background .3s ease, color .3s ease, transform .2s var(--transition);
+  transition:
+    border-color .38s cubic-bezier(.25, .46, .45, .94),
+    background   .38s cubic-bezier(.25, .46, .45, .94),
+    color        .38s cubic-bezier(.25, .46, .45, .94),
+    transform    .38s cubic-bezier(.25, .46, .45, .94),
+    box-shadow   .38s cubic-bezier(.25, .46, .45, .94);
 }
 
 .pill-list button.pill {
@@ -841,10 +865,11 @@ button.pill {
 
 /* Hover-Effekte für beide */
 .pill-list .pill:hover {
-  border-color: rgba(var(--accent-rgb), 0.45);
+  border-color: rgba(var(--accent-rgb), 0.5);
   background: rgba(var(--accent-rgb), 0.1);
   color: var(--accent);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 0 18px rgba(var(--accent-rgb), 0.18);
 }
 
 /* Focus-States */
@@ -871,7 +896,12 @@ button.pill {
   background: rgba(var(--ink-rgb), 0.06);
   text-align: center;
   text-decoration: none;
-  transition: border-color .3s ease, background .3s ease, color .3s ease, transform .2s var(--transition);
+  transition:
+    border-color .38s cubic-bezier(.25, .46, .45, .94),
+    background   .38s cubic-bezier(.25, .46, .45, .94),
+    color        .38s cubic-bezier(.25, .46, .45, .94),
+    transform    .38s cubic-bezier(.25, .46, .45, .94),
+    box-shadow   .38s cubic-bezier(.25, .46, .45, .94);
 }
 
 .pill-list a.pill:visited {
@@ -1003,6 +1033,249 @@ button.pill {
 
 .bio-detail ul li + li {
   margin-top: 6px;
+}
+
+/* ── Gig list — tabular date + venue layout ─────────────── */
+.gig-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gig-list li {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 0 20px;
+  align-items: baseline;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(var(--ink-rgb), 0.07);
+}
+
+.gig-list li:first-child {
+  border-top: 1px solid rgba(var(--ink-rgb), 0.07);
+  padding-top: 12px;
+}
+
+.gig-date {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(var(--accent-rgb), 0.28);
+}
+
+.gig-venue {
+  color: var(--ink);
+  font-weight: 500;
+  font-size: clamp(13px, 1.1vw, 14px);
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 480px) {
+  .gig-list li {
+    grid-template-columns: 1fr;
+    gap: 2px;
+    padding: 10px 0;
+  }
+  .gig-date {
+    font-size: 10px;
+  }
+}
+
+/* ── Bio editorial page layout ──────────────────────────── */
+.bio-page-main {
+  width: 100%;
+}
+
+.bio-editorial {
+  display: grid;
+  grid-template-columns: 42% 1fr;
+  align-items: start;
+}
+
+.bio-photo-wrap {
+  position: sticky;
+  top: var(--header-offset, 96px);
+  height: calc(100vh - var(--header-offset, 96px));
+  overflow: hidden;
+}
+
+.bio-photo-wrap picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.bio-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  display: block;
+  transition: transform .8s cubic-bezier(.2, .8, .2, 1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes bio-photo-entrance {
+    from { transform: scale(1.07); opacity: 0.6; }
+    to   { transform: scale(1);    opacity: 1;   }
+  }
+  .bio-photo-wrap img {
+    animation: bio-photo-entrance 1.6s cubic-bezier(.16, 1, .3, 1) both;
+  }
+}
+
+.bio-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent 48%, rgba(3, 3, 4, 0.72) 100%),
+    linear-gradient(0deg, rgba(3, 3, 4, 0.5) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.bio-col-text {
+  padding: clamp(64px, 9vw, 120px) clamp(36px, 5.5vw, 84px) clamp(80px, 10vw, 160px);
+}
+
+.bio-col-inner {
+  max-width: 600px;
+}
+
+.bio-eyebrow {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.44em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.bio-editorial-headline {
+  font-size: clamp(52px, 6.5vw, 88px);
+  line-height: 0.9;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 52px;
+  color: var(--ink);
+}
+
+.bio-col-inner > p {
+  line-height: 1.9;
+  color: var(--ink-soft);
+  margin: 0 0 24px;
+  font-size: clamp(15px, 1.3vw, 17px);
+}
+
+.bio-col-inner > p a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.bio-section-title {
+  margin: 52px 0 22px;
+  font-size: 10px;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--ink-subtle);
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+}
+
+/* Blockquote — left-bar variant */
+.bio-quote {
+  margin: 56px 0;
+  padding: 0 0 0 28px;
+  border-left: 3px solid var(--accent);
+}
+
+.bio-quote > p {
+  font-size: clamp(22px, 2.8vw, 34px);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  margin: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Blockquote — centered milestone variant */
+.bio-quote--milestone {
+  border-left: none;
+  padding: 52px 0;
+  border-top: 1px solid rgba(var(--accent-rgb), 0.22);
+  border-bottom: 1px solid rgba(var(--accent-rgb), 0.22);
+  text-align: center;
+  margin: 64px 0;
+}
+
+.bio-quote--milestone > p {
+  font-size: clamp(40px, 5.5vw, 70px);
+  line-height: 1.06;
+}
+
+.bio-quote cite {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink-subtle);
+  font-style: normal;
+  margin-top: 20px;
+}
+
+/* Stats inside bio-page-main container */
+.bio-page-main .bio-stats {
+  margin-top: 72px;
+  padding-bottom: 80px;
+}
+
+/* ── Bio editorial — responsive collapse ─────────────────── */
+@media (max-width: 960px) {
+  .bio-editorial {
+    grid-template-columns: 1fr;
+  }
+
+  .bio-col-photo {
+    height: 70vw;
+    max-height: 560px;
+    min-height: 260px;
+  }
+
+  .bio-photo-wrap {
+    position: relative;
+    top: 0;
+    height: 100%;
+  }
+
+  .bio-photo-overlay {
+    background:
+      linear-gradient(0deg, rgba(3, 3, 4, 0.55) 0%, transparent 45%);
+  }
+
+  .bio-col-text {
+    padding: 52px clamp(22px, 7vw, 48px) 72px;
+  }
+
+  .bio-col-inner {
+    max-width: 720px;
+  }
+
+  .bio-editorial-headline {
+    font-size: clamp(44px, 9vw, 68px);
+    margin-bottom: 36px;
+  }
+
+  .bio-quote > p {
+    font-size: clamp(20px, 4.5vw, 28px);
+  }
+
+  .bio-quote--milestone > p {
+    font-size: clamp(32px, 8vw, 52px);
+  }
 }
 
 /* Mobile specific adjustments */
@@ -1424,8 +1697,7 @@ button.pill {
   position: relative;
   grid-column: span 4;
   perspective: 1400px;
-  aspect-ratio: 1 / 1;
-  min-height: 360px;
+  height: 420px;
   transition: transform .45s var(--transition), box-shadow .45s ease;
   will-change: transform;
 }
@@ -1491,7 +1763,7 @@ button.pill {
 .release-front img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   transition: transform .6s cubic-bezier(.2, .8, .2, 1);
 }
 
@@ -1500,10 +1772,30 @@ button.pill {
   outline-offset: -6px;
 }
 
+.release-front__info {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 40px 20px 18px;
+  background: linear-gradient(0deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.5) 55%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  pointer-events: none;
+}
+
+.release-front__info h3 {
+  margin: 0;
+  font-size: clamp(14px, 1.5vw, 19px);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #fff;
+  line-height: 1.1;
+}
+
 .release-back {
   transform: rotateY(180deg);
-  padding: 40px 24px 20px;
-  gap: 14px;
+  padding: 54px 22px 18px;
+  gap: 0;
   justify-content: flex-start;
   background: linear-gradient(155deg, rgba(9, 9, 14, 0.98), rgba(6, 6, 10, 0.9));
   color: rgba(255, 255, 255, 0.92);
@@ -1534,8 +1826,9 @@ button.pill {
 .release-body {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  height: 100%;
+  gap: 10px;
+  flex: 1;
+  min-height: 0;
 }
 
 .release-details {
@@ -1598,13 +1891,14 @@ button.pill {
 
 .release-player .audio-embed {
   flex: 1;
-  min-height: 220px;
+  min-height: 0;
   margin-top: 0;
 }
 
 .release-player .audio-embed iframe,
 .release-player .audio-embed .embed-placeholder {
   height: 100%;
+  min-height: 110px;
 }
 
 .mixes-card {
@@ -1773,12 +2067,16 @@ button.pill {
   height: 36px;
   border-radius: 0;
   border: 1px solid var(--border);
-  transition: border-color .3s ease, transform .3s var(--transition);
+  transition:
+    border-color .4s cubic-bezier(.25, .46, .45, .94),
+    transform    .4s cubic-bezier(.25, .46, .45, .94),
+    box-shadow   .4s cubic-bezier(.25, .46, .45, .94);
 }
 
 .socials .icon:hover {
-  border-color: rgba(var(--accent-rgb), 0.45);
-  transform: translateY(-3px);
+  border-color: rgba(var(--accent-rgb), 0.55);
+  transform: translateY(-6px) scale(1.1);
+  box-shadow: 0 0 16px rgba(var(--accent-rgb), 0.3);
 }
 
 .socials .icon img {
@@ -1832,17 +2130,16 @@ button.pill {
 
   .release-card {
     grid-column: span 6;
-    aspect-ratio: 1 / 1;
-    min-height: 300px;
+    height: 400px;
   }
 
   .release-back {
-    padding: 32px 22px 20px;
+    padding: 50px 20px 16px;
   }
 
   .release-close {
-    top: 16px;
-    right: 16px;
+    top: 14px;
+    right: 14px;
   }
 
   .mixes-card {
@@ -2029,18 +2326,17 @@ button.pill {
 
   .release-card {
     grid-column: span 12;
-    aspect-ratio: unset;
+    height: auto;
     min-height: 420px;
   }
 
   .release-back {
-    padding: 26px 18px 18px;
+    padding: 48px 18px 16px;
   }
 
   .release-close {
     top: 12px;
     right: 12px;
-    letter-spacing: 0.24em;
   }
 
   .release-details h3 {
@@ -2052,12 +2348,13 @@ button.pill {
   }
 
   .release-player .audio-embed {
-    min-height: 180px;
+    min-height: 120px;
   }
 
   .release-player .audio-embed iframe,
   .release-player .audio-embed .embed-placeholder {
     height: 100%;
+    min-height: 120px;
   }
 
   .mixes-card {
@@ -2763,7 +3060,7 @@ button.pill {
   }
 
   .release-back {
-    padding: 36px 18px 16px !important;
+    padding: 48px 16px 14px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -2771,17 +3068,17 @@ button.pill {
   .release-back::-webkit-scrollbar { display: none; }
 
   .player-tab-panel .audio-embed {
-    min-height: 108px;
+    min-height: 110px;
   }
 
   .player-tab-panel .audio-embed iframe {
-    min-height: 108px;
+    min-height: 110px;
   }
 
-  /* Stacked players in release cards fit within card */
-  .release-body { gap: 10px; }
+  .release-body { gap: 8px; }
   .release-details h3 { font-size: 18px; }
   .release-details p  { font-size: 12px; margin: 0; }
+  .release-front__info h3 { font-size: 15px; }
 }
 
 /* ── 6. Neon-breathing on primary CTA ────────────
@@ -2810,28 +3107,40 @@ button.pill {
 }
 
 /* ── 8. Enhanced scroll reveal + stagger ─────────
-   Stagger via data-reveal-delay set by JS          */
+   Spring curve (.16,1,.3,1) gives a fast-then-settle feel.
+   scale(0.97) adds depth without causing layout.     */
 .js .reveal {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(44px) scale(0.97);
   transition:
-    opacity   .65s cubic-bezier(.2,.7,.2,1),
-    transform .65s cubic-bezier(.2,.7,.2,1);
+    opacity   .82s cubic-bezier(.16, 1, .3, 1),
+    transform .82s cubic-bezier(.16, 1, .3, 1);
 }
 .js .reveal.in {
   opacity: 1;
-  transform: none;
+  transform: translateY(0) scale(1);
 }
 
 /* Stagger slots (JS writes data-reveal-delay="N") */
-.js .reveal[data-reveal-delay="1"] { transition-delay:  80ms; }
-.js .reveal[data-reveal-delay="2"] { transition-delay: 160ms; }
-.js .reveal[data-reveal-delay="3"] { transition-delay: 240ms; }
-.js .reveal[data-reveal-delay="4"] { transition-delay: 320ms; }
-.js .reveal[data-reveal-delay="5"] { transition-delay: 400ms; }
-.js .reveal[data-reveal-delay="6"] { transition-delay: 480ms; }
+.js .reveal[data-reveal-delay="1"] { transition-delay: 100ms; }
+.js .reveal[data-reveal-delay="2"] { transition-delay: 200ms; }
+.js .reveal[data-reveal-delay="3"] { transition-delay: 300ms; }
+.js .reveal[data-reveal-delay="4"] { transition-delay: 400ms; }
+.js .reveal[data-reveal-delay="5"] { transition-delay: 500ms; }
+.js .reveal[data-reveal-delay="6"] { transition-delay: 600ms; }
 
-/* ── 9. Accent glow on active nav item ─────────── */
+/* ── 9. Brand KIZU — neon glow breath ──────────── */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes brand-glow {
+    0%, 100% { text-shadow: 0 0 6px rgba(0,245,255,0.12); }
+    50%       { text-shadow: 0 0 18px rgba(0,245,255,0.52), 0 0 36px rgba(0,245,255,0.16); }
+  }
+  .brand-name {
+    animation: brand-glow 4.5s ease-in-out infinite;
+  }
+}
+
+/* ── Accent glow on active nav item ─────────────── */
 .nav-cta.active {
   color: var(--accent);
   text-shadow: 0 0 14px rgba(var(--accent-rgb), 0.5);
