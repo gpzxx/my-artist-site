@@ -25,6 +25,8 @@
         }
       })(document);
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="../assets/css/styles.css" />
   </head>
   <body data-page="media">
@@ -33,7 +35,11 @@
         <a class="brand" href="../home/">
           <span class="brand-name">KIZU</span>
         </a>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" data-i18n="nav.toggle" data-i18n-attr="aria-label">&#9776;</button>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" data-i18n="nav.toggle" data-i18n-attr="aria-label">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
         <nav class="site-nav" data-nav>
           <a href="../biography/" data-i18n="nav.biography">Biography</a>
           <a class="active" href="../media/" data-i18n="nav.media">Media</a>
@@ -63,9 +69,21 @@
             <p data-i18n="media.videos.lead">The booth, the lights, the crowd &mdash; watch the energy unfold.</p>
           </div>
           <div class="video-grid" data-youtube-gallery>
-            <div class="video-embed" data-youtube="hvE52b0SiFw"></div>
-            <div class="video-embed" data-youtube="oRUe2bkegJY"></div>
-            <div class="video-embed" data-youtube="r-g5_ZYFr0w"></div>
+            <div class="video-card">
+              <div class="video-embed" data-youtube="hvE52b0SiFw"
+                data-youtube-alt="KIZULOGE live set highlight"></div>
+              <p class="video-card__label">Live Set Highlight</p>
+            </div>
+            <div class="video-card">
+              <div class="video-embed" data-youtube="oRUe2bkegJY"
+                data-youtube-alt="KIZULOGE club recording"></div>
+              <p class="video-card__label">Club Recording</p>
+            </div>
+            <div class="video-card">
+              <div class="video-embed" data-youtube="r-g5_ZYFr0w"
+                data-youtube-alt="KIZULOGE DJ set"></div>
+              <p class="video-card__label">DJ Set</p>
+            </div>
           </div>
         </div>
       </section>

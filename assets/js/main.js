@@ -204,19 +204,67 @@ document.addEventListener('DOMContentLoaded', () => {
   // Mobile navigation toggle
   const nav = document.querySelector('[data-nav]');
   const toggle = document.querySelector('.nav-toggle');
+
+  // Create backdrop once, inject into body
+  let backdrop = null;
+  if (toggle && nav) {
+    backdrop = document.createElement('div');
+    backdrop.className = 'nav-backdrop';
+    backdrop.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(backdrop);
+  }
+
+  const closeNav = () => {
+    nav.classList.remove('open');
+    toggle.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    if (backdrop) backdrop.classList.remove('active');
+  };
+
   if (toggle && nav) {
     toggle.addEventListener('click', () => {
       const open = nav.classList.toggle('open');
+      toggle.classList.toggle('is-open', open);
       toggle.setAttribute('aria-expanded', String(open));
+      if (backdrop) backdrop.classList.toggle('active', open);
     });
 
+    // Close on backdrop click
+    if (backdrop) {
+      backdrop.addEventListener('click', closeNav);
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && nav.classList.contains('open')) {
+        closeNav();
+        toggle.focus();
+      }
+    });
+
+    // Close when a nav link is clicked (page nav)
     nav.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
+      link.addEventListener('click', closeNav);
     });
   }
+
+  // ── Stagger reveal delays for grid children ──────────
+  const staggerParents = [
+    '.spotlight-grid',
+    '.release-grid',
+    '.video-grid',
+    '.bio-stats-grid',
+  ];
+  staggerParents.forEach((selector) => {
+    const parent = document.querySelector(selector);
+    if (!parent) return;
+    const revealChildren = Array.from(parent.children).filter(
+      (el) => el.classList.contains('reveal')
+    );
+    revealChildren.forEach((child, i) => {
+      child.dataset.revealDelay = String(Math.min(i + 1, 6));
+    });
+  });
 
   // Keep page content offset in sync with fixed header height
   const header = document.querySelector('.site-header');
@@ -681,7 +729,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return !['false', '0', 'no', 'off'].includes(normalized);
     };
     const iframe = document.createElement('iframe');
-    const color = container.dataset.soundcloudColor || '#b7a6ff';
+    const color = container.dataset.soundcloudColor || '#c8f026';
     const params = new URLSearchParams();
     params.set('url', url);
     params.set('color', color);
@@ -714,40 +762,108 @@ document.addEventListener('DOMContentLoaded', () => {
     container.appendChild(iframe);
   });
 
-  // Contact form mailto handling
+  // Spotify embeds
+  document.querySelectorAll('[data-spotify]').forEach((container) => {
+    const path = (container.dataset.spotify || '').trim();
+    if (!path || path.toLowerCase().includes('replace')) {
+      container.innerHTML = '<div class="embed-placeholder">Add a Spotify track or album path to <code>data-spotify</code>.</div>';
+      return;
+    }
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://open.spotify.com/embed/${path}?utm_source=generator&theme=0`;
+    iframe.allow = 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+    iframe.loading = 'lazy';
+    iframe.title = 'Spotify audio player';
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.style.minHeight = '118px';
+    iframe.style.border = '0';
+    iframe.style.display = 'block';
+    container.innerHTML = '';
+    container.appendChild(iframe);
+  });
+
+  // Player tabs (Spotify ↔ SoundCloud)
+  document.querySelectorAll('[data-player-tabs]').forEach((tabsEl) => {
+    const buttons = Array.from(tabsEl.querySelectorAll('[data-tab-btn]'));
+    const panels = Array.from(tabsEl.querySelectorAll('[data-tab-panel]'));
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tabBtn;
+        buttons.forEach((b) => b.classList.toggle('is-active', b === btn));
+        panels.forEach((p) => {
+          const active = p.dataset.tabPanel === target;
+          p.classList.toggle('is-active', active);
+          if (active) {
+            p.removeAttribute('hidden');
+          } else {
+            p.setAttribute('hidden', '');
+          }
+        });
+      });
+    });
+  });
+
+  // Contact / booking form — mailto handler
   const contactForm = document.querySelector('[data-contact-form]');
   if (contactForm) {
     const statusEl = contactForm.querySelector('[data-contact-status]');
+
+    // Live validation: mark fields as touched on blur so :invalid shows only after interaction
+    contactForm.querySelectorAll('.bform-input').forEach((field) => {
+      field.addEventListener('blur', () => field.classList.add('touched'), { once: true });
+    });
+
     contactForm.addEventListener('submit', (event) => {
       event.preventDefault();
       const form = event.currentTarget;
-      const data = new FormData(form);
-      const name = (data.get('name') || '').toString().trim();
-      const email = (data.get('email') || '').toString().trim();
-      const subjectValue = (data.get('subject') || '').toString().trim();
-      const message = (data.get('message') || '').toString().trim();
-      const subject = subjectValue || 'Contact request';
-      const bodyLines = [
-        `Name: ${name || 'N/A'}`,
-        `Email: ${email || 'N/A'}`,
-        '',
-        'Message:',
-        message || 'N/A',
-      ];
-      const body = bodyLines.join('\n');
-      const mailto = `mailto:bookings@kizuloge.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailto;
-      if (statusEl) {
-        statusEl.textContent = 'Your email application opened. Please review the details and send the message there.';
-        statusEl.hidden = false;
+
+      // Mark all fields as touched to show validation state
+      form.querySelectorAll('.bform-input').forEach((f) => f.classList.add('touched'));
+
+      if (!form.checkValidity()) {
+        const firstInvalid = form.querySelector(':invalid');
+        if (firstInvalid) firstInvalid.focus();
+        return;
       }
+
+      const data     = new FormData(form);
+      const name      = (data.get('name')       || '').toString().trim();
+      const email     = (data.get('email')      || '').toString().trim();
+      const eventDate = (data.get('event-date') || '').toString().trim();
+      const eventType = (data.get('event-type') || '').toString().trim();
+      const details   = (data.get('message')    || '').toString().trim();
+
+      const subjectParts = ['Booking Request'];
+      if (eventType) subjectParts.push(eventType);
+      if (eventDate) subjectParts.push(eventDate);
+      const subject = subjectParts.join(' — ');
+
+      const bodyLines = [
+        `Name:        ${name      || 'N/A'}`,
+        `E-Mail:      ${email     || 'N/A'}`,
+        `Event Date:  ${eventDate || 'N/A'}`,
+        `Event Type:  ${eventType || 'N/A'}`,
+        '',
+        'Details:',
+        details || 'N/A',
+      ];
+
+      const mailto = `mailto:bookings@kizuloge.com`
+        + `?subject=${encodeURIComponent(subject)}`
+        + `&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+
+      window.location.href = mailto;
+
+      if (statusEl) {
+        statusEl.textContent = 'Your email app is opening — review the details, then hit Send.';
+        statusEl.removeAttribute('hidden');
+      }
+
       window.setTimeout(() => {
-        try {
-          form.reset();
-        } catch (error) {
-          console.error(error);
-        }
-      }, 300);
+        try { form.reset(); } catch (_) { /* ignore */ }
+        form.querySelectorAll('.bform-input').forEach((f) => f.classList.remove('touched'));
+      }, 400);
     });
   }
 

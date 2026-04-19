@@ -2,9 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <script>document.documentElement.classList.add('js')</script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title data-i18n="releases.metaTitle">KIZU - Releases</title>
     <link rel="icon" href="../assets/icons/Kizu_Logo_1.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="../assets/css/styles.css" />
   </head>
   <body data-page="releases">
@@ -13,7 +16,11 @@
         <a class="brand" href="../home/">
           <span class="brand-name">KIZU</span>
         </a>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" data-i18n="nav.toggle" data-i18n-attr="aria-label">&#9776;</button>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" data-i18n="nav.toggle" data-i18n-attr="aria-label">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
         <nav class="site-nav" data-nav>
           <a href="../biography/" data-i18n="nav.biography">Biography</a>
           <a href="../media/" data-i18n="nav.media">Media</a>
@@ -40,44 +47,73 @@
       </section>
 
       <section class="release-grid" data-releases>
+
+        <!-- ── Club Stories ───────────────────────────────── -->
         <article class="release-card filter-item reveal" data-type="track" data-release-card>
           <div class="release-flip">
-            <div class="release-face release-front" tabindex="0" role="button" aria-label="Show release details for Club Stories" data-i18n="releases.clubstories.frontLabel" data-i18n-attr="aria-label" aria-expanded="false">
+            <div class="release-face release-front" tabindex="0" role="button"
+              aria-label="Show release details for Club Stories"
+              data-i18n="releases.clubstories.frontLabel" data-i18n-attr="aria-label"
+              aria-expanded="false">
               <picture>
                 <source srcset="../assets/img/club-stories.webp" type="image/webp" />
-                <img src="../assets/img/club-stories.png" alt="Club Stories cover art" data-i18n="releases.clubstories.coverAlt" data-i18n-attr="alt" loading="lazy" decoding="async" />
+                <img src="../assets/img/club-stories.png" alt="Club Stories cover art"
+                  data-i18n="releases.clubstories.coverAlt" data-i18n-attr="alt"
+                  loading="lazy" decoding="async" />
               </picture>
             </div>
             <div class="release-face release-back">
-              <button class="release-close" type="button" data-release-close data-i18n="releases.actions.back">Back to cover</button>
+              <button class="release-close" type="button" data-release-close
+                data-i18n="releases.actions.back">Back</button>
               <div class="release-body">
                 <div class="release-details">
                   <span class="badge track" data-i18n="releases.badges.track">Track</span>
                   <h3>Club Stories</h3>
-                  <p data-i18n="releases.clubstories.desc">Club Stories EP016 on Parallel HH mixes rolling trance with hypnotic percussion.</p>
+                  <p data-i18n="releases.clubstories.desc">EP016 on Parallel HH — rolling trance with hypnotic percussion.</p>
                 </div>
                 <div class="release-links">
                   <span data-i18n="releases.listenLabel">Listen</span>
-                  <a href="https://open.spotify.com/intl-de/album/0KJYmlV0F3BEDnHvB9aZbm?si=V0LASUiPQr-rnhVz6nFb-A" aria-label="Listen to Club Stories on Spotify">Spotify</a>
-                  <a href="https://soundcloud.com/parallelhh/sets/kizu-club-stories-ep016?si=211ad7d123504081a0f038da375d72e6&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" aria-label="Listen to Club Stories on SoundCloud">SoundCloud</a>
+                  <a href="https://open.spotify.com/intl-de/album/0KJYmlV0F3BEDnHvB9aZbm?si=V0LASUiPQr-rnhVz6nFb-A" target="_blank" rel="noopener">Spotify</a>
+                  <a href="https://soundcloud.com/parallelhh/sets/kizu-club-stories-ep016" target="_blank" rel="noopener">SoundCloud</a>
                 </div>
                 <div class="release-player">
-                  <div class="audio-embed" data-soundcloud="https://soundcloud.com/parallelhh/sets/kizu-club-stories-ep016?si=211ad7d123504081a0f038da375d72e6&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"></div>
+                  <div class="player-tabs" data-player-tabs>
+                    <div class="player-tabs__bar">
+                      <button class="player-tab is-active" data-tab-btn="spotify" type="button">Spotify</button>
+                      <button class="player-tab" data-tab-btn="soundcloud" type="button">SoundCloud</button>
+                    </div>
+                    <div class="player-tabs__body">
+                      <div class="audio-embed player-tab-panel is-active" data-tab-panel="spotify"
+                        data-spotify="album/0KJYmlV0F3BEDnHvB9aZbm"></div>
+                      <div class="audio-embed player-tab-panel" data-tab-panel="soundcloud" hidden
+                        data-soundcloud="https://soundcloud.com/parallelhh/sets/kizu-club-stories-ep016?si=211ad7d123504081a0f038da375d72e6"
+                        data-soundcloud-visual="false" data-soundcloud-color="#c8f026"
+                        data-soundcloud-height="116" data-soundcloud-hide-related="true" data-soundcloud-comments="false"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </article>
+
+        <!-- ── Iced Lips ──────────────────────────────────── -->
         <article class="release-card filter-item reveal" data-type="track" data-release-card>
           <div class="release-flip">
-            <div class="release-face release-front" tabindex="0" role="button" aria-label="Show release details for Iced Lips" data-i18n="releases.icedlips.frontLabel" data-i18n-attr="aria-label" aria-expanded="false">
+            <div class="release-face release-front" tabindex="0" role="button"
+              aria-label="Show release details for Iced Lips"
+              data-i18n="releases.icedlips.frontLabel" data-i18n-attr="aria-label"
+              aria-expanded="false">
               <picture>
                 <source srcset="../assets/img/iced-lips.webp" type="image/webp" />
-                <img src="../assets/img/iced-lips.jpg" alt="Iced Lips cover art" data-i18n="releases.icedlips.coverAlt" data-i18n-attr="alt" loading="lazy" decoding="async" />
+                <img src="../assets/img/iced-lips.jpg" alt="Iced Lips cover art"
+                  data-i18n="releases.icedlips.coverAlt" data-i18n-attr="alt"
+                  loading="lazy" decoding="async" />
               </picture>
             </div>
             <div class="release-face release-back">
-              <button class="release-close" type="button" data-release-close data-i18n="releases.actions.back">Back to cover</button>
+              <button class="release-close" type="button" data-release-close
+                data-i18n="releases.actions.back">Back</button>
               <div class="release-body">
                 <div class="release-details">
                   <span class="badge track" data-i18n="releases.badges.track">Track</span>
@@ -86,25 +122,35 @@
                 </div>
                 <div class="release-links">
                   <span data-i18n="releases.listenLabel">Listen</span>
-                  <a href="https://soundcloud.com/neo_trance/kizu-iced-lips?in=kizuloge/sets/releases&si=0c2a19a100a44ba4bd0ac0a9641772a9&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" aria-label="Listen to Iced Lips on SoundCloud">SoundCloud</a>
+                  <a href="https://soundcloud.com/neo_trance/kizu-iced-lips" target="_blank" rel="noopener">SoundCloud</a>
                 </div>
                 <div class="release-player">
-                  <div class="audio-embed" data-soundcloud="https://soundcloud.com/neo_trance/kizu-iced-lips?in=kizuloge/sets/releases&si=0c2a19a100a44ba4bd0ac0a9641772a9&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"></div>
+                  <div class="audio-embed" data-soundcloud="https://soundcloud.com/neo_trance/kizu-iced-lips?in=kizuloge/sets/releases&si=0c2a19a100a44ba4bd0ac0a9641772a9"
+                    data-soundcloud-visual="false" data-soundcloud-color="#c8f026"
+                    data-soundcloud-height="116" data-soundcloud-hide-related="true" data-soundcloud-comments="false"></div>
                 </div>
               </div>
             </div>
           </div>
         </article>
+
+        <!-- ── Haunted By Your Love ───────────────────────── -->
         <article class="release-card filter-item reveal" data-type="track" data-release-card>
           <div class="release-flip">
-            <div class="release-face release-front" tabindex="0" role="button" aria-label="Show release details for Haunted By Your Love" data-i18n="releases.hbyl.frontLabel" data-i18n-attr="aria-label" aria-expanded="false">
+            <div class="release-face release-front" tabindex="0" role="button"
+              aria-label="Show release details for Haunted By Your Love"
+              data-i18n="releases.hbyl.frontLabel" data-i18n-attr="aria-label"
+              aria-expanded="false">
               <picture>
                 <source srcset="../assets/img/hbyl.webp" type="image/webp" />
-                <img src="../assets/img/hbyl.jpeg" alt="Haunted By Your Love cover art" data-i18n="releases.hbyl.coverAlt" data-i18n-attr="alt" loading="lazy" decoding="async" />
+                <img src="../assets/img/hbyl.jpeg" alt="Haunted By Your Love cover art"
+                  data-i18n="releases.hbyl.coverAlt" data-i18n-attr="alt"
+                  loading="lazy" decoding="async" />
               </picture>
             </div>
             <div class="release-face release-back">
-              <button class="release-close" type="button" data-release-close data-i18n="releases.actions.back">Back to cover</button>
+              <button class="release-close" type="button" data-release-close
+                data-i18n="releases.actions.back">Back</button>
               <div class="release-body">
                 <div class="release-details">
                   <span class="badge track" data-i18n="releases.badges.track">Track</span>
@@ -113,26 +159,47 @@
                 </div>
                 <div class="release-links">
                   <span data-i18n="releases.listenLabel">Listen</span>
-                  <a href="https://open.spotify.com/intl-de/track/0CfIIuJEnuQ9E0LsYQijre?si=be6d4272f6e342be">Spotify</a>
+                  <a href="https://open.spotify.com/intl-de/track/0CfIIuJEnuQ9E0LsYQijre?si=be6d4272f6e342be" target="_blank" rel="noopener">Spotify</a>
+                  <a href="https://soundcloud.com/parallelhh/kizu-dj-ordnungsamt-nireos-haunted-by-your-love-s045" target="_blank" rel="noopener">SoundCloud</a>
                 </div>
                 <div class="release-player">
-                  <div class="audio-embed" data-soundcloud="https://soundcloud.com/parallelhh/kizu-dj-ordnungsamt-nireos-haunted-by-your-love-s045?in=kizuloge/sets/releases&si=58469d38c381400ab911d19c0f13c824&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"></div>
+                  <div class="player-tabs" data-player-tabs>
+                    <div class="player-tabs__bar">
+                      <button class="player-tab is-active" data-tab-btn="spotify" type="button">Spotify</button>
+                      <button class="player-tab" data-tab-btn="soundcloud" type="button">SoundCloud</button>
+                    </div>
+                    <div class="player-tabs__body">
+                      <div class="audio-embed player-tab-panel is-active" data-tab-panel="spotify"
+                        data-spotify="track/0CfIIuJEnuQ9E0LsYQijre"></div>
+                      <div class="audio-embed player-tab-panel" data-tab-panel="soundcloud" hidden
+                        data-soundcloud="https://soundcloud.com/parallelhh/kizu-dj-ordnungsamt-nireos-haunted-by-your-love-s045?in=kizuloge/sets/releases&si=58469d38c381400ab911d19c0f13c824"
+                        data-soundcloud-visual="false" data-soundcloud-color="#c8f026"
+                        data-soundcloud-height="116" data-soundcloud-hide-related="true" data-soundcloud-comments="false"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </article>
 
+        <!-- ── Outta Space ────────────────────────────────── -->
         <article class="release-card filter-item reveal" data-type="track" data-release-card>
           <div class="release-flip">
-            <div class="release-face release-front" tabindex="0" role="button" aria-label="Show release details for Outta Space" data-i18n="releases.outtaspace.frontLabel" data-i18n-attr="aria-label" aria-expanded="false">
+            <div class="release-face release-front" tabindex="0" role="button"
+              aria-label="Show release details for Outta Space"
+              data-i18n="releases.outtaspace.frontLabel" data-i18n-attr="aria-label"
+              aria-expanded="false">
               <picture>
                 <source srcset="../assets/img/outtaspace.webp" type="image/webp" />
-                <img src="../assets/img/outtaspace.jpg" alt="Outta Space cover art" data-i18n="releases.outtaspace.coverAlt" data-i18n-attr="alt" loading="lazy" decoding="async" />
+                <img src="../assets/img/outtaspace.jpg" alt="Outta Space cover art"
+                  data-i18n="releases.outtaspace.coverAlt" data-i18n-attr="alt"
+                  loading="lazy" decoding="async" />
               </picture>
             </div>
             <div class="release-face release-back">
-              <button class="release-close" type="button" data-release-close data-i18n="releases.actions.back">Back to cover</button>
+              <button class="release-close" type="button" data-release-close
+                data-i18n="releases.actions.back">Back</button>
               <div class="release-body">
                 <div class="release-details">
                   <span class="badge track" data-i18n="releases.badges.track">Track</span>
@@ -141,27 +208,48 @@
                 </div>
                 <div class="release-links">
                   <span data-i18n="releases.listenLabel">Listen</span>
-                  <a href="https://open.spotify.com/intl-de/track/21IFnjS0UKb9SZgRd5zc5P">Spotify</a>
-                  <a href="https://music.apple.com/de/album/outta-space/1819568989?i=1819568990">Apple Music</a>
+                  <a href="https://open.spotify.com/intl-de/track/21IFnjS0UKb9SZgRd5zc5P" target="_blank" rel="noopener">Spotify</a>
+                  <a href="https://music.apple.com/de/album/outta-space/1819568989?i=1819568990" target="_blank" rel="noopener">Apple Music</a>
+                  <a href="https://soundcloud.com/kizuloge/kizu-outta-space" target="_blank" rel="noopener">SoundCloud</a>
                 </div>
                 <div class="release-player">
-                  <div class="audio-embed" data-soundcloud="https://soundcloud.com/kizuloge/kizu-outta-space?si=90604bc2faec407b819c3dcac88b090d&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"></div>
+                  <div class="player-tabs" data-player-tabs>
+                    <div class="player-tabs__bar">
+                      <button class="player-tab is-active" data-tab-btn="spotify" type="button">Spotify</button>
+                      <button class="player-tab" data-tab-btn="soundcloud" type="button">SoundCloud</button>
+                    </div>
+                    <div class="player-tabs__body">
+                      <div class="audio-embed player-tab-panel is-active" data-tab-panel="spotify"
+                        data-spotify="track/21IFnjS0UKb9SZgRd5zc5P"></div>
+                      <div class="audio-embed player-tab-panel" data-tab-panel="soundcloud" hidden
+                        data-soundcloud="https://soundcloud.com/kizuloge/kizu-outta-space?si=90604bc2faec407b819c3dcac88b090d"
+                        data-soundcloud-visual="false" data-soundcloud-color="#c8f026"
+                        data-soundcloud-height="116" data-soundcloud-hide-related="true" data-soundcloud-comments="false"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </article>
 
+        <!-- ── Found You ──────────────────────────────────── -->
         <article class="release-card filter-item reveal" data-type="track" data-release-card>
           <div class="release-flip">
-            <div class="release-face release-front" tabindex="0" role="button" aria-label="Show release details for Found You" data-i18n="releases.foundyou.frontLabel" data-i18n-attr="aria-label" aria-expanded="false">
+            <div class="release-face release-front" tabindex="0" role="button"
+              aria-label="Show release details for Found You"
+              data-i18n="releases.foundyou.frontLabel" data-i18n-attr="aria-label"
+              aria-expanded="false">
               <picture>
                 <source srcset="../assets/img/Foundyou.webp" type="image/webp" />
-                <img src="../assets/img/Foundyou.jpg" alt="Found You cover art" data-i18n="releases.foundyou.coverAlt" data-i18n-attr="alt" loading="lazy" decoding="async" />
+                <img src="../assets/img/Foundyou.jpg" alt="Found You cover art"
+                  data-i18n="releases.foundyou.coverAlt" data-i18n-attr="alt"
+                  loading="lazy" decoding="async" />
               </picture>
             </div>
             <div class="release-face release-back">
-              <button class="release-close" type="button" data-release-close data-i18n="releases.actions.back">Back to cover</button>
+              <button class="release-close" type="button" data-release-close
+                data-i18n="releases.actions.back">Back</button>
               <div class="release-body">
                 <div class="release-details">
                   <span class="badge track" data-i18n="releases.badges.track">Track</span>
@@ -170,27 +258,48 @@
                 </div>
                 <div class="release-links">
                   <span data-i18n="releases.listenLabel">Listen</span>
-                  <a href="https://open.spotify.com/intl-de/track/0bXEh3hvGu7AZWlNuLvrIR?si=c9a4a05e26924fbb">Spotify</a>
-                  <a href="https://music.apple.com/de/album/found-you-single/1835513869?i=1835513870">Apple Music</a>
+                  <a href="https://open.spotify.com/intl-de/track/0bXEh3hvGu7AZWlNuLvrIR?si=c9a4a05e26924fbb" target="_blank" rel="noopener">Spotify</a>
+                  <a href="https://music.apple.com/de/album/found-you-single/1835513869?i=1835513870" target="_blank" rel="noopener">Apple Music</a>
+                  <a href="https://soundcloud.com/kizuloge/kizu-found-you-free-dl" target="_blank" rel="noopener">SoundCloud</a>
                 </div>
                 <div class="release-player">
-                  <div class="audio-embed" data-soundcloud="https://soundcloud.com/kizuloge/kizu-found-you-free-dl?si=f411d3861bc94f81978aa1722e7c77d5&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"></div>
+                  <div class="player-tabs" data-player-tabs>
+                    <div class="player-tabs__bar">
+                      <button class="player-tab is-active" data-tab-btn="spotify" type="button">Spotify</button>
+                      <button class="player-tab" data-tab-btn="soundcloud" type="button">SoundCloud</button>
+                    </div>
+                    <div class="player-tabs__body">
+                      <div class="audio-embed player-tab-panel is-active" data-tab-panel="spotify"
+                        data-spotify="track/0bXEh3hvGu7AZWlNuLvrIR"></div>
+                      <div class="audio-embed player-tab-panel" data-tab-panel="soundcloud" hidden
+                        data-soundcloud="https://soundcloud.com/kizuloge/kizu-found-you-free-dl?si=f411d3861bc94f81978aa1722e7c77d5"
+                        data-soundcloud-visual="false" data-soundcloud-color="#c8f026"
+                        data-soundcloud-height="116" data-soundcloud-hide-related="true" data-soundcloud-comments="false"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </article>
 
+        <!-- ── Blow A Kiss ────────────────────────────────── -->
         <article class="release-card filter-item reveal" data-type="track" data-release-card>
           <div class="release-flip">
-            <div class="release-face release-front" tabindex="0" role="button" aria-label="Show release details for Blow A Kiss" data-i18n="releases.blowakiss.frontLabel" data-i18n-attr="aria-label" aria-expanded="false">
+            <div class="release-face release-front" tabindex="0" role="button"
+              aria-label="Show release details for Blow A Kiss"
+              data-i18n="releases.blowakiss.frontLabel" data-i18n-attr="aria-label"
+              aria-expanded="false">
               <picture>
                 <source srcset="../assets/img/blowakiss.webp" type="image/webp" />
-                <img src="../assets/img/blowakiss.jpg" alt="Blow A Kiss cover art" data-i18n="releases.blowakiss.coverAlt" data-i18n-attr="alt" loading="lazy" decoding="async" />
+                <img src="../assets/img/blowakiss.jpg" alt="Blow A Kiss cover art"
+                  data-i18n="releases.blowakiss.coverAlt" data-i18n-attr="alt"
+                  loading="lazy" decoding="async" />
               </picture>
             </div>
             <div class="release-face release-back">
-              <button class="release-close" type="button" data-release-close data-i18n="releases.actions.back">Back to cover</button>
+              <button class="release-close" type="button" data-release-close
+                data-i18n="releases.actions.back">Back</button>
               <div class="release-body">
                 <div class="release-details">
                   <span class="badge track" data-i18n="releases.badges.track">Track</span>
@@ -199,27 +308,48 @@
                 </div>
                 <div class="release-links">
                   <span data-i18n="releases.listenLabel">Listen</span>
-                  <a href="https://open.spotify.com/intl-de/track/6CmusGGtNoHCAWXyI1PhbB?si=646fa82d07514b12">Spotify</a>
-                  <a href="https://music.apple.com/de/album/blow-a-kiss-single/1835666866?i=1835666867">Apple Music</a>
+                  <a href="https://open.spotify.com/intl-de/track/6CmusGGtNoHCAWXyI1PhbB?si=646fa82d07514b12" target="_blank" rel="noopener">Spotify</a>
+                  <a href="https://music.apple.com/de/album/blow-a-kiss-single/1835666866?i=1835666867" target="_blank" rel="noopener">Apple Music</a>
+                  <a href="https://soundcloud.com/kizuloge/blow-a-kiss-kizu" target="_blank" rel="noopener">SoundCloud</a>
                 </div>
                 <div class="release-player">
-                  <div class="audio-embed" data-soundcloud="https://soundcloud.com/kizuloge/blow-a-kiss-kizu?si=2366ead3a02546ca8b197203099d9d47&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"></div>
+                  <div class="player-tabs" data-player-tabs>
+                    <div class="player-tabs__bar">
+                      <button class="player-tab is-active" data-tab-btn="spotify" type="button">Spotify</button>
+                      <button class="player-tab" data-tab-btn="soundcloud" type="button">SoundCloud</button>
+                    </div>
+                    <div class="player-tabs__body">
+                      <div class="audio-embed player-tab-panel is-active" data-tab-panel="spotify"
+                        data-spotify="track/6CmusGGtNoHCAWXyI1PhbB"></div>
+                      <div class="audio-embed player-tab-panel" data-tab-panel="soundcloud" hidden
+                        data-soundcloud="https://soundcloud.com/kizuloge/blow-a-kiss-kizu?si=2366ead3a02546ca8b197203099d9d47"
+                        data-soundcloud-visual="false" data-soundcloud-color="#c8f026"
+                        data-soundcloud-height="116" data-soundcloud-hide-related="true" data-soundcloud-comments="false"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </article>
 
+        <!-- ── Look At Me ─────────────────────────────────── -->
         <article class="release-card filter-item reveal" data-type="track" data-release-card>
           <div class="release-flip">
-            <div class="release-face release-front" tabindex="0" role="button" aria-label="Show release details for Look At Me" data-i18n="releases.lookatme.frontLabel" data-i18n-attr="aria-label" aria-expanded="false">
+            <div class="release-face release-front" tabindex="0" role="button"
+              aria-label="Show release details for Look At Me"
+              data-i18n="releases.lookatme.frontLabel" data-i18n-attr="aria-label"
+              aria-expanded="false">
               <picture>
                 <source srcset="../assets/img/look at me.jpeg" type="image/jpeg" />
-                <img src="../assets/img/look at me.jpeg" alt="Look At Me cover art" data-i18n="releases.lookatme.coverAlt" data-i18n-attr="alt" loading="lazy" decoding="async" />
+                <img src="../assets/img/look at me.jpeg" alt="Look At Me cover art"
+                  data-i18n="releases.lookatme.coverAlt" data-i18n-attr="alt"
+                  loading="lazy" decoding="async" />
               </picture>
             </div>
             <div class="release-face release-back">
-              <button class="release-close" type="button" data-release-close data-i18n="releases.actions.back">Back to cover</button>
+              <button class="release-close" type="button" data-release-close
+                data-i18n="releases.actions.back">Back</button>
               <div class="release-body">
                 <div class="release-details">
                   <span class="badge track" data-i18n="releases.badges.track">Track</span>
@@ -228,103 +358,19 @@
                 </div>
                 <div class="release-links">
                   <span data-i18n="releases.listenLabel">Listen</span>
-                  <a href="https://soundcloud.com/synthx-records/kizu-dj-ordnungsamt-look-at-me?in=kizuloge/sets/releases&si=5cb77bbf439445f0ac40946f86c2b5f8&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" aria-label="Listen to Look At Me on SoundCloud">SoundCloud</a>
+                  <a href="https://soundcloud.com/synthx-records/kizu-dj-ordnungsamt-look-at-me" target="_blank" rel="noopener">SoundCloud</a>
                 </div>
                 <div class="release-player">
-                  <div class="audio-embed" data-soundcloud="https://soundcloud.com/synthx-records/kizu-dj-ordnungsamt-look-at-me?in=kizuloge/sets/releases&si=5cb77bbf439445f0ac40946f86c2b5f8&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"></div>
+                  <div class="audio-embed" data-soundcloud="https://soundcloud.com/synthx-records/kizu-dj-ordnungsamt-look-at-me?in=kizuloge/sets/releases&si=5cb77bbf439445f0ac40946f86c2b5f8"
+                    data-soundcloud-visual="false" data-soundcloud-color="#c8f026"
+                    data-soundcloud-height="116" data-soundcloud-hide-related="true" data-soundcloud-comments="false"></div>
                 </div>
               </div>
             </div>
           </div>
         </article>
 
-        <article class="release-card filter-item reveal" data-type="track" data-release-card>
-          <div class="release-flip">
-            <div class="release-face release-front" tabindex="0" role="button" aria-label="Show release details for Track Title Placeholder" data-i18n="releases.newtrack4.frontLabel" data-i18n-attr="aria-label" aria-expanded="false">
-              <picture>
-                <source srcset="../assets/img/DSC02938.webp" type="image/webp" />
-                <img src="../assets/img/DSC02938.jpg" alt="Placeholder cover art for Track Title Placeholder" data-i18n="releases.newtrack4.coverAlt" data-i18n-attr="alt" loading="lazy" decoding="async" />
-              </picture>
-            </div>
-            <div class="release-face release-back">
-              <button class="release-close" type="button" data-release-close data-i18n="releases.actions.back">Back to cover</button>
-              <div class="release-body">
-                <div class="release-details">
-                  <span class="badge track" data-i18n="releases.badges.track">Track</span>
-                  <h3>Track Title Placeholder</h3>
-                  <p data-i18n="releases.newtrack4.desc">Update this description with details about the release.</p>
-                </div>
-                <div class="release-links">
-                  <span data-i18n="releases.listenLabel">Listen</span>
-                  <a href="https://open.spotify.com/" aria-label="Add the Spotify link for this release">Spotify</a>
-                  <a href="https://soundcloud.com/" aria-label="Add the SoundCloud link for this release">SoundCloud</a>
-                </div>
-                <div class="release-player">
-                  <div class="audio-embed" data-soundcloud="https://soundcloud.com/replace-with-track-url"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="release-card filter-item reveal" data-type="track" data-release-card>
-          <div class="release-flip">
-            <div class="release-face release-front" tabindex="0" role="button" aria-label="Show release details for Upcoming Release 1" data-i18n="releases.newtrack5.frontLabel" data-i18n-attr="aria-label" aria-expanded="false">
-              <picture>
-                <source srcset="../assets/img/Kizu-14.webp" type="image/webp" />
-                <img src="../assets/img/Kizu-14.jpg" alt="Placeholder cover art for Upcoming Release 1" data-i18n="releases.newtrack5.coverAlt" data-i18n-attr="alt" loading="lazy" decoding="async" />
-              </picture>
-            </div>
-            <div class="release-face release-back">
-              <button class="release-close" type="button" data-release-close data-i18n="releases.actions.back">Back to cover</button>
-              <div class="release-body">
-                <div class="release-details">
-                  <span class="badge track" data-i18n="releases.badges.track">Track</span>
-                  <h3>Upcoming Release 1</h3>
-                  <p data-i18n="releases.newtrack5.desc">Add the final description, links and embed once the track is ready.</p>
-                </div>
-                <div class="release-links">
-                  <span data-i18n="releases.listenLabel">Listen</span>
-                  <a href="https://open.spotify.com/" aria-label="Add the Spotify link for this release">Spotify</a>
-                  <a href="https://soundcloud.com/" aria-label="Add the SoundCloud link for this release">SoundCloud</a>
-                </div>
-                <div class="release-player">
-                  <div class="audio-embed" data-soundcloud="https://soundcloud.com/replace-with-track-url"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="release-card filter-item reveal" data-type="track" data-release-card>
-          <div class="release-flip">
-            <div class="release-face release-front" tabindex="0" role="button" aria-label="Show release details for Upcoming Release 2" data-i18n="releases.newtrack6.frontLabel" data-i18n-attr="aria-label" aria-expanded="false">
-              <picture>
-                <source srcset="../assets/img/Kizu-5.webp" type="image/webp" />
-                <img src="../assets/img/Kizu-5.jpg" alt="Placeholder cover art for Upcoming Release 2" data-i18n="releases.newtrack6.coverAlt" data-i18n-attr="alt" loading="lazy" decoding="async" />
-              </picture>
-            </div>
-            <div class="release-face release-back">
-              <button class="release-close" type="button" data-release-close data-i18n="releases.actions.back">Back to cover</button>
-              <div class="release-body">
-                <div class="release-details">
-                  <span class="badge track" data-i18n="releases.badges.track">Track</span>
-                  <h3>Upcoming Release 2</h3>
-                  <p data-i18n="releases.newtrack6.desc">Drop in the release blurb, streaming links and player embed here.</p>
-                </div>
-                <div class="release-links">
-                  <span data-i18n="releases.listenLabel">Listen</span>
-                  <a href="https://open.spotify.com/" aria-label="Add the Spotify link for this release">Spotify</a>
-                  <a href="https://soundcloud.com/" aria-label="Add the SoundCloud link for this release">SoundCloud</a>
-                </div>
-                <div class="release-player">
-                  <div class="audio-embed" data-soundcloud="https://soundcloud.com/replace-with-track-url"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
+        <!-- ── Mixes & Podcasts ───────────────────────────── -->
         <article class="mixes-card filter-item reveal" data-type="mix">
           <div class="mixes-content">
             <div class="mixes-header">
@@ -334,9 +380,16 @@
                 <p class="muted mixes-note" data-i18n="releases.mixes.note">Hit play to run through every uploaded mix in one go.</p>
               </div>
             </div>
-            <div class="mixes-embed audio-embed" data-soundcloud="https://soundcloud.com/kizuloge/sets/sets-podcasts-2025?si=8a1c73c77e5e4ed887a1c82862e59649&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" data-soundcloud-visual="false" data-soundcloud-height="520" data-soundcloud-comments="false" data-soundcloud-hide-related="true"></div>
+            <div class="mixes-embed audio-embed"
+              data-soundcloud="https://soundcloud.com/kizuloge/sets/sets-podcasts-2025?si=8a1c73c77e5e4ed887a1c82862e59649"
+              data-soundcloud-visual="false"
+              data-soundcloud-color="#c8f026"
+              data-soundcloud-height="520"
+              data-soundcloud-comments="false"
+              data-soundcloud-hide-related="true"></div>
           </div>
         </article>
+
       </section>
     </main>
 
@@ -356,4 +409,4 @@
 
     <script src="../assets/js/main.js" defer></script>
   </body>
-  </html>
+</html>

@@ -2,10 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <script>document.documentElement.classList.add('js')</script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title data-i18n="home.metaTitle">KIZU - Portfolio</title>
     <meta name="description" content="Official artist portfolio: bio, media, and bookings" data-i18n="home.metaDescription" data-i18n-attr="content" />
     <link rel="icon" href="../assets/icons/Kizu_Logo_1.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="../assets/css/styles.css" />
   </head>
   <body data-page="home">
@@ -14,7 +17,11 @@
         <a class="brand" href="../home/">
           <span class="brand-name">KIZU</span>
         </a>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" data-i18n="nav.toggle" data-i18n-attr="aria-label">&#9776;</button>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" data-i18n="nav.toggle" data-i18n-attr="aria-label">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
         <nav class="site-nav" data-nav>
           <a href="../biography/" data-i18n="nav.biography">Biography</a>
           <a href="../media/" data-i18n="nav.media">Media</a>
@@ -28,24 +35,51 @@
       </div>
     </header>
 
-    <main class="home">
-      <section class="intro">
-        <div class="container intro-content">
-          <div class="intro-panel reveal">
-            <span class="intro-eyebrow" data-i18n="home.intro.eyebrow">Producer &amp; DJ</span>
-            <h1 data-i18n="home.intro.heading">Immersive club journeys built on uplifting melodies and driving beats.</h1>
-            <p data-i18n="home.intro.body">Ravensburg-based artist shaping trance, speed garage, and hard house textures into high-intensity live sets and mindful listening experiences.</p>
-            <div class="intro-actions">
-              <a class="btn primary" href="mailto:bookings@kizuloge.com" data-i18n="home.intro.ctaPrimary">Request a Booking</a>
-              <a class="btn outline" href="../releases/" data-i18n="home.intro.ctaSecondary">Listen to Releases</a>
-            </div>
-            <ul class="intro-tags" aria-label="Sounds and moods" data-i18n="home.intro.tagsLabel" data-i18n-attr="aria-label">
-              <li data-i18n="home.intro.tag1">Trance</li>
-              <li data-i18n="home.intro.tag2">Speed Garage</li>
-              <li data-i18n="home.intro.tag3">Hard House</li>
-            </ul>
+    <main>
+
+      <!-- ── HERO ─────────────────────────────────────────── -->
+      <section class="hero" aria-label="Hero">
+
+        <div class="hero-bg" aria-hidden="true">
+          <!-- Video loop: add <source src="../assets/video/hero-loop.mp4" type="video/mp4"> inside to activate -->
+          <video class="hero-bg__video" autoplay muted loop playsinline poster="../assets/img/hero-kizu.jpg">
+            <!-- <source src="../assets/video/hero-loop.mp4" type="video/mp4" /> -->
+          </video>
+          <picture class="hero-bg__fallback">
+            <source srcset="../assets/img/hero-kizu.webp" type="image/webp" />
+            <img
+              src="../assets/img/hero-kizu.jpg"
+              alt=""
+              class="hero-bg__img"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </picture>
+        </div>
+
+        <div class="hero__overlay" aria-hidden="true"></div>
+
+        <div class="hero__content reveal">
+          <span class="hero__eyebrow" data-i18n="home.intro.eyebrow">DJ &amp; Producer</span>
+          <h1 class="hero__title">KIZU</h1>
+          <ul class="hero__genres" aria-label="Genres" data-i18n="home.intro.tagsLabel" data-i18n-attr="aria-label">
+            <li data-i18n="home.intro.tag1">Trance</li>
+            <li class="sep" aria-hidden="true">·</li>
+            <li data-i18n="home.intro.tag2">Speed Garage</li>
+            <li class="sep" aria-hidden="true">·</li>
+            <li data-i18n="home.intro.tag3">Hard House</li>
+          </ul>
+          <div class="hero__actions">
+            <a class="btn primary" href="../releases/" data-i18n="home.intro.ctaSecondary">Latest Releases</a>
+            <a class="btn outline" href="mailto:bookings@kizuloge.com" data-i18n="home.intro.ctaPrimary">Request Booking</a>
           </div>
         </div>
+
+        <div class="hero__scroll" aria-hidden="true">
+          <span>Scroll</span>
+          <div class="hero__scroll-line"></div>
+        </div>
+
       </section>
 
       <section class="spotlight reveal">
