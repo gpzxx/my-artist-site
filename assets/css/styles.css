@@ -68,9 +68,30 @@
     --btn-primary-bg: var(--accent);
     --btn-primary-border: var(--accent);
     --btn-primary-text: #ffffff;
-    --btn-outline-border: rgba(255, 255, 255, 0.36);
-    --btn-outline-text: rgba(255, 255, 255, 0.88);
+    --btn-outline-border: rgba(20, 19, 31, 0.3);
+    --btn-outline-text: rgba(20, 19, 31, 0.78);
     --header-offset: 96px;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  /* Suppress neon glows — they look muddy on white backgrounds */
+  .bio-stat-value {
+    text-shadow: none;
+  }
+  .gig-date {
+    text-shadow: none;
+  }
+  .brand-name {
+    animation: none;
+    text-shadow: none;
+  }
+  .bio-detail {
+    background: #ffffff;
+    border-color: rgba(20, 19, 31, 0.12);
+  }
+  .bio-detail h2 {
+    color: #14131f;
   }
 }
 
@@ -1012,6 +1033,22 @@ a:focus-visible {
   letter-spacing: 0.02em;
 }
 
+/* ── Venue/Festival lists — name left, city right ── */
+.gig-list--venues .gig-date {
+  flex: 1;
+  white-space: normal;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+}
+
+.gig-list--venues .gig-venue {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  text-align: right;
+  color: var(--ink-subtle);
+  padding-left: 16px;
+}
+
 @media (max-width: 480px) {
   .gig-list li {
     flex-direction: column;
@@ -1021,6 +1058,11 @@ a:focus-visible {
   .gig-date {
     flex: none;
     font-size: 10px;
+  }
+  .gig-list--venues .gig-venue {
+    text-align: left;
+    padding-left: 0;
+    font-size: 12px;
   }
 }
 

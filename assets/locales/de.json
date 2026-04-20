@@ -24,7 +24,7 @@
       "festivalModal": {
         "title": "Festival-Auftritte",
         "intro": "Einblicke in besondere Festivalshows.",
-        "list": "<li>Hart bis Zart Festival - Freiburg (2024)</li><li>Hart bis Zart Festival - Freiburg (2025)</li><li>Backyard77 - Offenburg (2025)</li><li>Sea You Festival Aftershow - Freiburg (2025)</li>",
+        "list": "<li><span class=\"gig-date\">Hart bis Zart Festival</span><span class=\"gig-venue\">Freiburg (2024)</span></li><li><span class=\"gig-date\">Hart bis Zart Festival</span><span class=\"gig-venue\">Freiburg (2025)</span></li><li><span class=\"gig-date\">Backyard77</span><span class=\"gig-venue\">Offenburg (2025)</span></li><li><span class=\"gig-date\">Sea You Festival Aftershow</span><span class=\"gig-venue\">Freiburg (2025)</span></li>",
         "close": "Schließen"
       },
       "upcomingModal": {
@@ -55,7 +55,7 @@
       "clubsModal": {
         "title": "Gespielte Clubs",
         "intro": "Diese Bühnen durfte ich bereits bespielen:",
-        "list": "<li>Bootshaus - Köln</li><li>Club Ost - Berlin</li><li>Lokschuppen - Berlin</li><li>AEDEN - Berlin</li><li>//:about blank - Berlin</li><li>Hans-Bunte-Areal - Freiburg</li><li>Club Douala - Ravensburg</li><li>Circle - Offenburg</li><li>Bahnwärter Thiel - München</li><li>Gleis44 - Ulm</li><li>TheGreatRängTäng - Freiburg</li>",
+        "list": "<li><span class=\"gig-date\">Bootshaus</span><span class=\"gig-venue\">Köln</span></li><li><span class=\"gig-date\">Club Ost</span><span class=\"gig-venue\">Berlin</span></li><li><span class=\"gig-date\">Lokschuppen</span><span class=\"gig-venue\">Berlin</span></li><li><span class=\"gig-date\">AEDEN</span><span class=\"gig-venue\">Berlin</span></li><li><span class=\"gig-date\">//:about blank</span><span class=\"gig-venue\">Berlin</span></li><li><span class=\"gig-date\">Hans-Bunte-Areal</span><span class=\"gig-venue\">Freiburg</span></li><li><span class=\"gig-date\">Club Douala</span><span class=\"gig-venue\">Ravensburg</span></li><li><span class=\"gig-date\">Circle</span><span class=\"gig-venue\">Offenburg</span></li><li><span class=\"gig-date\">Bahnwärter Thiel</span><span class=\"gig-venue\">München</span></li><li><span class=\"gig-date\">Gleis44</span><span class=\"gig-venue\">Ulm</span></li><li><span class=\"gig-date\">TheGreatRängTäng</span><span class=\"gig-venue\">Freiburg</span></li>",
         "close": "Schließen"
       }
     }
