@@ -92,7 +92,7 @@ body {
   letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
   opacity: 0;
-  animation: page-in .6s ease forwards;
+  animation: page-in .5s cubic-bezier(.2, .7, .2, 1) both;
   padding-top: var(--header-offset, 0px);
 }
 
@@ -267,8 +267,11 @@ a:focus-visible {
 
 .nav-toggle {
   display: none;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0;
+  padding: 0;
   width: 44px;
   height: 44px;
   border-radius: 0;
@@ -423,7 +426,7 @@ a:focus-visible {
       rgba(0, 0, 0, 0.68) 72%,
       rgba(0, 0, 0, 0.97) 100%
     ),
-    radial-gradient(ellipse 70% 55% at 50% 44%, rgba(0, 245, 255, 0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 55% at 50% 44%, rgba(var(--accent-rgb), 0.05) 0%, transparent 60%),
     radial-gradient(ellipse 120% 100% at 50% 50%, transparent 25%, rgba(0,0,0,0.62) 100%);
 }
 
@@ -506,7 +509,7 @@ a:focus-visible {
 .hero__scroll-line {
   width: 1px;
   height: 44px;
-  background: linear-gradient(to bottom, rgba(0, 245, 255, 0.65), transparent);
+  background: linear-gradient(to bottom, rgba(var(--accent-rgb), 0.65), transparent);
   animation: hero-scroll-pulse 2.2s ease-in-out infinite;
 }
 
@@ -604,7 +607,7 @@ a:focus-visible {
 .pulse {
   position: relative;
   padding: 130px 0;
-  background: linear-gradient(135deg, rgba(var(--surface-raised-rgb), 0.98) 0%, rgba(0, 245, 255, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(var(--surface-raised-rgb), 0.98) 0%, rgba(var(--accent-rgb), 0.05) 100%);
 }
 
 .pulse::before {
@@ -748,34 +751,6 @@ a:focus-visible {
   max-width: 520px;
 }
 
-.bio {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
-  gap: 48px;
-}
-
-.bio-media img {
-  border: none;
-  background: none;
-  box-shadow: none;
-  transition: transform .6s var(--transition);
-}
-
-.bio-media img:hover {
-  transform: scale(1.02);
-}
-
-.bio-text h2,
-.bio-text h3 {
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  margin: 0 0 16px;
-}
-
-.bio-text p {
-  margin: 0 0 18px;
-  color: var(--ink-soft);
-}
 
 .pill-list {
   display: flex;
@@ -816,14 +791,6 @@ a:focus-visible {
   outline-offset: var(--focus-ring-offset);
 }
 
-button.pill {
-  -webkit-appearance: none;
-  appearance: none;
-  font: inherit;
-  border: 1px solid var(--border);
-  background: rgba(var(--ink-rgb), 0.06);
-  color: var(--muted);
-}
 
 .pill-list .pill {
   display: flex;
@@ -852,18 +819,13 @@ button.pill {
 
 .pill-list button.pill {
   -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   font-family: inherit;
-  font-size: 11px;
-  font-weight: inherit;
   cursor: pointer;
   text-align: center;
-  padding: 10px 22px; /* Gleiche Padding-Werte wie Link */
   margin: 0;
 }
 
-/* Hover-Effekte für beide */
 .pill-list .pill:hover {
   border-color: rgba(var(--accent-rgb), 0.5);
   background: rgba(var(--accent-rgb), 0.1);
@@ -876,32 +838,6 @@ button.pill {
 .pill-list .pill:focus-visible {
   outline: var(--focus-ring);
   outline-offset: var(--focus-ring-offset);
-}
-
-/* Link-spezifische Anpassung */
-.pill-list a.pill {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 10px 22px;
-  width: 100%;
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--border);
-  text-transform: uppercase;
-  letter-spacing: 0.28em;
-  font-size: 11px;
-  line-height: 1.4;
-  color: var(--muted);
-  background: rgba(var(--ink-rgb), 0.06);
-  text-align: center;
-  text-decoration: none;
-  transition:
-    border-color .38s cubic-bezier(.25, .46, .45, .94),
-    background   .38s cubic-bezier(.25, .46, .45, .94),
-    color        .38s cubic-bezier(.25, .46, .45, .94),
-    transform    .38s cubic-bezier(.25, .46, .45, .94),
-    box-shadow   .38s cubic-bezier(.25, .46, .45, .94);
 }
 
 .pill-list a.pill:visited {
@@ -1026,7 +962,8 @@ button.pill {
 
 .bio-detail ul {
   margin: 0;
-  padding-left: 20px;
+  padding-left: 0;
+  list-style: none;
   color: var(--ink-soft);
   line-height: 1.6;
 }
@@ -1043,11 +980,11 @@ button.pill {
 }
 
 .gig-list li {
-  display: grid;
-  grid-template-columns: 110px 1fr;
-  gap: 0 20px;
+  display: flex;
   align-items: baseline;
+  gap: 0 20px;
   padding: 11px 0;
+  margin-bottom: 4px;
   border-bottom: 1px solid rgba(var(--ink-rgb), 0.07);
 }
 
@@ -1057,6 +994,7 @@ button.pill {
 }
 
 .gig-date {
+  flex: 0 0 120px;
   font-size: 11px;
   letter-spacing: 0.1em;
   color: var(--accent);
@@ -1067,6 +1005,7 @@ button.pill {
 }
 
 .gig-venue {
+  flex: 1;
   color: var(--ink);
   font-weight: 500;
   font-size: clamp(13px, 1.1vw, 14px);
@@ -1075,11 +1014,12 @@ button.pill {
 
 @media (max-width: 480px) {
   .gig-list li {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 2px;
     padding: 10px 0;
   }
   .gig-date {
+    flex: none;
     font-size: 10px;
   }
 }
@@ -1141,7 +1081,8 @@ button.pill {
 }
 
 .bio-col-inner {
-  max-width: 600px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .bio-eyebrow {
@@ -1163,7 +1104,7 @@ button.pill {
 }
 
 .bio-col-inner > p {
-  line-height: 1.9;
+  line-height: 1.75;
   color: var(--ink-soft);
   margin: 0 0 24px;
   font-size: clamp(15px, 1.3vw, 17px);
@@ -1240,9 +1181,9 @@ button.pill {
   }
 
   .bio-col-photo {
-    height: 70vw;
-    max-height: 560px;
-    min-height: 260px;
+    height: 55vh;
+    max-height: 520px;
+    min-height: 240px;
   }
 
   .bio-photo-wrap {
@@ -1697,7 +1638,8 @@ button.pill {
   position: relative;
   grid-column: span 4;
   perspective: 1400px;
-  height: 420px;
+  aspect-ratio: 1 / 1;
+  height: auto;
   transition: transform .45s var(--transition), box-shadow .45s ease;
   will-change: transform;
 }
@@ -1799,19 +1741,25 @@ button.pill {
   justify-content: flex-start;
   background: linear-gradient(155deg, rgba(9, 9, 14, 0.98), rgba(6, 6, 10, 0.9));
   color: rgba(255, 255, 255, 0.92);
+  overflow-y: auto;
 }
 
 .release-close {
   position: absolute;
-  top: 18px;
-  right: 18px;
+  top: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
   border: 1px solid var(--border);
   background: rgba(var(--surface-rgb), 0.86);
   color: rgba(var(--ink-rgb), 0.78);
-  padding: 8px 18px;
-  font-size: 11px;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
+  padding: 0;
+  font-size: 22px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   transition: background .3s ease, color .3s ease, transform .3s ease;
 }
@@ -1893,6 +1841,8 @@ button.pill {
   flex: 1;
   min-height: 0;
   margin-top: 0;
+  border: none;
+  background: transparent;
 }
 
 .release-player .audio-embed iframe,
@@ -2124,13 +2074,10 @@ button.pill {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .bio {
-    grid-template-columns: 1fr;
-  }
-
   .release-card {
     grid-column: span 6;
-    height: 400px;
+    aspect-ratio: 1 / 1;
+    height: auto;
   }
 
   .release-back {
@@ -2237,7 +2184,6 @@ button.pill {
   .nav-toggle {
     grid-column: 3;
     justify-self: end;
-    display: flex;
   }
 
   .pulse {
@@ -2299,10 +2245,6 @@ button.pill {
     bottom: -6px;
   }
 
-  .site-nav.open {
-    display: flex;
-  }
-
   .nav-cta {
     width: 100%;
     margin-top: 12px;
@@ -2326,8 +2268,8 @@ button.pill {
 
   .release-card {
     grid-column: span 12;
+    aspect-ratio: 1 / 1;
     height: auto;
-    min-height: 420px;
   }
 
   .release-back {
@@ -2384,6 +2326,78 @@ button.pill {
   .nav-bar {
     padding: 18px 0;
   }
+
+  /* ── Mobile nav: visibility-based animation ── */
+  /* Always flex on mobile — use visibility/opacity instead of display */
+  .site-nav,
+  .site-nav.open {
+    display: flex !important;
+  }
+
+  .site-nav {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+    pointer-events: none;
+    background: rgba(6, 6, 6, 0.97);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    box-shadow:
+      0 20px 50px rgba(0, 0, 0, 0.75),
+      0 0 0 1px rgba(255, 255, 255, 0.06),
+      0 0 0 1px rgba(var(--accent-rgb), 0.05);
+    border-color: rgba(255, 255, 255, 0.08);
+    transition:
+      visibility 0s .24s,
+      opacity    .24s cubic-bezier(.2,.7,.2,1),
+      transform  .24s cubic-bezier(.2,.7,.2,1);
+  }
+
+  .site-nav.open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+    transition:
+      visibility 0s 0s,
+      opacity    .24s cubic-bezier(.2,.7,.2,1),
+      transform  .24s cubic-bezier(.2,.7,.2,1);
+  }
+
+  /* Stagger nav items on open */
+  .site-nav.open > * { animation: nav-item-slide-in .22s ease both; }
+  .site-nav.open > *:nth-child(1) { animation-delay: .04s; }
+  .site-nav.open > *:nth-child(2) { animation-delay: .08s; }
+  .site-nav.open > *:nth-child(3) { animation-delay: .12s; }
+  .site-nav.open > *:nth-child(4) { animation-delay: .16s; }
+  .site-nav.open > *:nth-child(5) { animation-delay: .20s; }
+
+  @keyframes nav-item-slide-in {
+    from { opacity: 0; transform: translateX(-10px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .site-nav a { padding: 10px 0; }
+  .site-nav a + a { border-top: 1px solid rgba(255, 255, 255, 0.05); }
+
+  /* Release card player — mobile overflow fix */
+  .release-face { overflow: hidden; }
+
+  .release-back {
+    padding: 48px 16px 14px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .release-back::-webkit-scrollbar { display: none; }
+
+  .player-tab-panel .audio-embed { min-height: 110px; }
+  .player-tab-panel .audio-embed iframe { min-height: 110px; }
+
+  .release-body { gap: 8px; }
+  .release-details h3 { font-size: 18px; }
+  .release-details p  { font-size: 12px; margin: 0; }
+  .release-front__info h3 { font-size: 15px; }
 }
 
 /* ── Player Tabs (Spotify ↔ SoundCloud) ───────────── */
@@ -2922,14 +2936,6 @@ button.pill {
    ══════════════════════════════════════════════════ */
 
 /* ── 1. Hamburger → X animation ───────────────── */
-.nav-toggle {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  gap: 0;
-}
-
 .nav-toggle__bar {
   display: block;
   width: 20px;
@@ -2981,71 +2987,7 @@ button.pill {
   transition: opacity .25s ease, visibility 0s 0s;
 }
 
-/* ── 3. Mobile nav: visibility-based animation ── */
-@media (max-width: 720px) {
-  /* Always flex on mobile — use visibility/opacity instead of display */
-  .site-nav,
-  .site-nav.open {
-    display: flex !important;
-  }
-
-  .site-nav {
-    visibility: hidden;
-    opacity: 0;
-    transform: translateY(-10px) scale(0.98);
-    pointer-events: none;
-    background: rgba(6, 6, 6, 0.97);
-    backdrop-filter: blur(22px);
-    -webkit-backdrop-filter: blur(22px);
-    box-shadow:
-      0 20px 50px rgba(0, 0, 0, 0.75),
-      0 0 0 1px rgba(255, 255, 255, 0.06),
-      0 0 0 1px rgba(var(--accent-rgb), 0.05);
-    border-color: rgba(255, 255, 255, 0.08);
-    transition:
-      visibility 0s .24s,
-      opacity    .24s cubic-bezier(.2,.7,.2,1),
-      transform  .24s cubic-bezier(.2,.7,.2,1);
-  }
-
-  .site-nav.open {
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    pointer-events: auto;
-    transition:
-      visibility 0s 0s,
-      opacity    .24s cubic-bezier(.2,.7,.2,1),
-      transform  .24s cubic-bezier(.2,.7,.2,1);
-  }
-
-  /* Stagger nav items on open */
-  .site-nav.open > * {
-    animation: nav-item-slide-in .22s ease both;
-  }
-  .site-nav.open > *:nth-child(1) { animation-delay: .04s; }
-  .site-nav.open > *:nth-child(2) { animation-delay: .08s; }
-  .site-nav.open > *:nth-child(3) { animation-delay: .12s; }
-  .site-nav.open > *:nth-child(4) { animation-delay: .16s; }
-  .site-nav.open > *:nth-child(5) { animation-delay: .20s; }
-
-  @keyframes nav-item-slide-in {
-    from { opacity: 0; transform: translateX(-10px); }
-    to   { opacity: 1; transform: none; }
-  }
-
-  /* Nav link padding for bigger tap targets */
-  .site-nav a {
-    padding: 10px 0;
-  }
-
-  /* Accent separator line between nav links */
-  .site-nav a + a {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-  }
-}
-
-/* ── 4. Hero viewport height — iOS safe ────────── */
+/* ── 3. Hero viewport height — iOS safe ────────── */
 .hero {
   height: 100vh;
 }
@@ -3053,40 +2995,12 @@ button.pill {
   .hero { height: 100svh; }
 }
 
-/* ── 5. Release card player — mobile overflow fix  */
-@media (max-width: 720px) {
-  .release-face {
-    overflow: hidden;
-  }
-
-  .release-back {
-    padding: 48px 16px 14px;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  .release-back::-webkit-scrollbar { display: none; }
-
-  .player-tab-panel .audio-embed {
-    min-height: 110px;
-  }
-
-  .player-tab-panel .audio-embed iframe {
-    min-height: 110px;
-  }
-
-  .release-body { gap: 8px; }
-  .release-details h3 { font-size: 18px; }
-  .release-details p  { font-size: 12px; margin: 0; }
-  .release-front__info h3 { font-size: 15px; }
-}
-
-/* ── 6. Neon-breathing on primary CTA ────────────
+/* ── 4. Neon-breathing on primary CTA ────────────
    Very subtle — 3.8s period so it never distracts  */
 @media (prefers-reduced-motion: no-preference) {
   @keyframes neon-breathe {
-    0%, 100% { box-shadow: 0 0 20px rgba(0,245,255,0.24), 0 0 42px rgba(0,245,255,0.08); }
-    50%       { box-shadow: 0 0 36px rgba(0,245,255,0.44), 0 0 72px rgba(0,245,255,0.15); }
+    0%, 100% { box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.24), 0 0 42px rgba(var(--accent-rgb), 0.08); }
+    50%       { box-shadow: 0 0 36px rgba(var(--accent-rgb), 0.44), 0 0 72px rgba(var(--accent-rgb), 0.15); }
   }
 
   .btn.primary:not(:hover):not(:focus-visible):not(.booking-submit) {
@@ -3094,11 +3008,11 @@ button.pill {
   }
 }
 
-/* ── 7. Hero title glow pulse ─────────────────── */
+/* ── 5. Hero title glow pulse ─────────────────── */
 @media (prefers-reduced-motion: no-preference) {
   @keyframes hero-glow-pulse {
-    0%, 100% { text-shadow: 0 0 60px rgba(0,245,255,0.16), 0 0 120px rgba(0,245,255,0.06), 0 2px 6px rgba(0,0,0,0.72); }
-    50%       { text-shadow: 0 0 110px rgba(0,245,255,0.32), 0 0 220px rgba(0,245,255,0.12), 0 2px 6px rgba(0,0,0,0.72); }
+    0%, 100% { text-shadow: 0 0 60px rgba(var(--accent-rgb), 0.16), 0 0 120px rgba(var(--accent-rgb), 0.06), 0 2px 6px rgba(0,0,0,0.72); }
+    50%       { text-shadow: 0 0 110px rgba(var(--accent-rgb), 0.32), 0 0 220px rgba(var(--accent-rgb), 0.12), 0 2px 6px rgba(0,0,0,0.72); }
   }
 
   .hero__title {
@@ -3106,7 +3020,7 @@ button.pill {
   }
 }
 
-/* ── 8. Enhanced scroll reveal + stagger ─────────
+/* ── 6. Enhanced scroll reveal + stagger ─────────
    Spring curve (.16,1,.3,1) gives a fast-then-settle feel.
    scale(0.97) adds depth without causing layout.     */
 .js .reveal {
@@ -3129,11 +3043,11 @@ button.pill {
 .js .reveal[data-reveal-delay="5"] { transition-delay: 500ms; }
 .js .reveal[data-reveal-delay="6"] { transition-delay: 600ms; }
 
-/* ── 9. Brand KIZU — neon glow breath ──────────── */
+/* ── 7. Brand KIZU — neon glow breath ──────────── */
 @media (prefers-reduced-motion: no-preference) {
   @keyframes brand-glow {
-    0%, 100% { text-shadow: 0 0 6px rgba(0,245,255,0.12); }
-    50%       { text-shadow: 0 0 18px rgba(0,245,255,0.52), 0 0 36px rgba(0,245,255,0.16); }
+    0%, 100% { text-shadow: 0 0 6px rgba(var(--accent-rgb), 0.12); }
+    50%       { text-shadow: 0 0 18px rgba(var(--accent-rgb), 0.52), 0 0 36px rgba(var(--accent-rgb), 0.16); }
   }
   .brand-name {
     animation: brand-glow 4.5s ease-in-out infinite;
@@ -3146,7 +3060,7 @@ button.pill {
   text-shadow: 0 0 14px rgba(var(--accent-rgb), 0.5);
 }
 
-/* ── 10. Spotlight card hover glow ─────────────── */
+/* ── 8. Spotlight card hover glow ─────────────── */
 .spotlight-card:hover {
   box-shadow:
     0 0 0 1px rgba(var(--accent-rgb), 0.38),
@@ -3154,7 +3068,7 @@ button.pill {
     var(--shadow-hard);
 }
 
-/* ── 11. Release card front image — subtle zoom ── */
+/* ── 9. Release card front image — subtle zoom ── */
 @media (prefers-reduced-motion: no-preference) {
   .release-front img {
     transition: transform .65s cubic-bezier(.2,.8,.2,1), filter .65s ease;
@@ -3166,35 +3080,32 @@ button.pill {
   }
 }
 
-/* ── 12. Focus ring — accent glow ─────────────── */
+/* ── 10. Focus ring — accent glow ─────────────── */
 :focus-visible {
   outline: 1px solid var(--accent);
   outline-offset: 3px;
   box-shadow: 0 0 0 4px rgba(var(--accent-rgb), 0.16);
 }
 
-/* ── 13. Booking submit breathing animation ──────
+/* ── 11. Booking submit breathing animation ──────
    Specific to the big CTA on the booking page      */
 @media (prefers-reduced-motion: no-preference) {
   @keyframes submit-pulse {
-    0%, 100% { box-shadow: 0 0 28px rgba(0,245,255,0.32), 0 0 56px rgba(0,245,255,0.10); }
-    50%       { box-shadow: 0 0 48px rgba(0,245,255,0.52), 0 0 96px rgba(0,245,255,0.18); }
+    0%, 100% { box-shadow: 0 0 28px rgba(var(--accent-rgb), 0.32), 0 0 56px rgba(var(--accent-rgb), 0.10); }
+    50%       { box-shadow: 0 0 48px rgba(var(--accent-rgb), 0.52), 0 0 96px rgba(var(--accent-rgb), 0.18); }
   }
   .booking-submit:not(:hover):not(:focus-visible):not(:active) {
     animation: submit-pulse 3.2s ease-in-out infinite;
   }
 }
 
-/* ── 14. Page fade-in — smoother entrance ────────── */
+/* ── 12. Page fade-in — smoother entrance ────────── */
 @keyframes page-in {
   from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: none; }
 }
-body {
-  animation: page-in .5s cubic-bezier(.2,.7,.2,1) both;
-}
 
-/* ── 15. Small screen fixes ─────────────────────── */
+/* ── 13. Small screen fixes ─────────────────────── */
 @media (max-width: 400px) {
   .hero__title {
     font-size: clamp(88px, 26vw, 130px);
@@ -3208,14 +3119,14 @@ body {
   .hero__actions { gap: 12px; }
 }
 
-/* ── 16. Video grid — 1 column on mobile ────────── */
+/* ── 14. Video grid — 1 column on mobile ────────── */
 @media (max-width: 600px) {
   .video-grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* ── 17. Spotlight grid — 1 col below 560px ─────── */
+/* ── 15. Spotlight grid — 1 col below 560px ─────── */
 @media (max-width: 560px) {
   .spotlight-grid {
     grid-template-columns: 1fr;
