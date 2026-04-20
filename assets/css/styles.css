@@ -75,23 +75,78 @@
 }
 
 @media (prefers-color-scheme: light) {
-  /* Suppress neon glows — they look muddy on white backgrounds */
-  .bio-stat-value {
-    text-shadow: none;
-  }
-  .gig-date {
-    text-shadow: none;
-  }
-  .brand-name {
-    animation: none;
-    text-shadow: none;
-  }
+  /* ── Neon glow suppression ───────────────────────── */
+  .bio-stat-value { text-shadow: none; }
+  .gig-date       { text-shadow: none; }
+  .brand-name     { animation: none; text-shadow: none; }
+
+  /* ── Bio detail panels ───────────────────────────── */
   .bio-detail {
     background: #ffffff;
     border-color: rgba(20, 19, 31, 0.12);
   }
-  .bio-detail h2 {
-    color: #14131f;
+  .bio-detail h2 { color: #14131f; }
+
+  /* ── Release card — back face ────────────────────── */
+  /* The back face uses hardcoded dark gradient + white text;
+     both must be flipped for light mode readability.     */
+  .release-back {
+    background: #f7f7f9;
+    color: #1a1a1a;
+  }
+  .release-details h3 {
+    color: #1a1a1a;
+  }
+  .release-details p {
+    color: #4a4a55;
+  }
+  .release-close {
+    background: rgba(20, 19, 31, 0.06);
+    border-color: rgba(20, 19, 31, 0.18);
+    color: #1a1a1a;
+  }
+  .release-close:hover,
+  .release-close:focus-visible {
+    background: rgba(var(--accent-rgb), 0.1);
+    color: var(--accent);
+  }
+
+  /* ── Booking form — visible fields ──────────────── */
+  /* Base inputs are styled for dark mode with white-on-dark;
+     override every surface and border for light backgrounds. */
+  .bform-input {
+    background: #ffffff;
+    border-color: rgba(20, 19, 31, 0.2);
+    color: #1a1a1a;
+  }
+  .bform-input::placeholder {
+    color: rgba(20, 19, 31, 0.38);
+  }
+  .bform-input:hover {
+    background: #fafafa;
+    border-color: rgba(20, 19, 31, 0.35);
+  }
+  .bform-input:focus {
+    background: rgba(var(--accent-rgb), 0.03);
+    border-color: var(--accent);
+    box-shadow:
+      0 0 0 3px rgba(var(--accent-rgb), 0.14),
+      inset 0 0 0 1px rgba(var(--accent-rgb), 0.06);
+  }
+  .bform-input.touched:invalid {
+    border-color: rgba(200, 40, 40, 0.6);
+    box-shadow: 0 0 0 3px rgba(200, 40, 40, 0.1);
+  }
+  .bform-input--date {
+    color-scheme: light;
+  }
+  .bform-select option {
+    background: #ffffff;
+    color: #1a1a1a;
+  }
+  .bform-checkbox {
+    border-color: rgba(20, 19, 31, 0.25);
+    background: #ffffff;
   }
 }
 
