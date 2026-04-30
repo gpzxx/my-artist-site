@@ -58,10 +58,13 @@
         </div>
 
         <div class="hero__overlay" aria-hidden="true"></div>
+        <div class="hero__glow" aria-hidden="true"></div>
 
         <div class="hero__content reveal">
           <span class="hero__eyebrow" data-i18n="home.intro.eyebrow">DJ &amp; Producer</span>
-          <h1 class="hero__title">KIZU</h1>
+          <h1 class="hero__title" aria-label="KIZU">
+            <span class="char" style="--char-i:0" aria-hidden="true">K</span><span class="char" style="--char-i:1" aria-hidden="true">I</span><span class="char" style="--char-i:2" aria-hidden="true">Z</span><span class="char" style="--char-i:3" aria-hidden="true">U</span>
+          </h1>
           <ul class="hero__genres" aria-label="Genres" data-i18n="home.intro.tagsLabel" data-i18n-attr="aria-label">
             <li data-i18n="home.intro.tag1">Trance</li>
             <li class="sep" aria-hidden="true">·</li>
@@ -82,12 +85,19 @@
 
       </section>
 
+      <section class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Trance<i class="dot"></i><b class="ghost">Hard House</b><i class="dot"></i>Speed Garage<i class="dot"></i><b class="ghost">Acid</b><i class="dot"></i>Euphoria<i class="dot"></i><b class="ghost">Rave Loud</b><i class="dot"></i></span>
+          <span>Trance<i class="dot"></i><b class="ghost">Hard House</b><i class="dot"></i>Speed Garage<i class="dot"></i><b class="ghost">Acid</b><i class="dot"></i>Euphoria<i class="dot"></i><b class="ghost">Rave Loud</b><i class="dot"></i></span>
+        </div>
+      </section>
+
       <section class="spotlight reveal">
         <div class="container spotlight-grid">
           <a class="spotlight-card" href="../biography/">
             <div>
               <span class="spotlight-label" data-i18n="home.spotlight.story.label">Story</span>
-              <h3 data-i18n="home.spotlight.story.heading">Biography</h3>
+              <h3 data-text="Biography" data-i18n="home.spotlight.story.heading">Biography</h3>
               <p data-i18n="home.spotlight.story.copy">Origins, influences, and little stories about myself</p>
             </div>
             <span class="spotlight-link" data-i18n="home.spotlight.story.link">Explore &rarr;</span>
@@ -95,7 +105,7 @@
           <a class="spotlight-card" href="../media/">
             <div>
               <span class="spotlight-label" data-i18n="home.spotlight.visuals.label">Visuals</span>
-              <h3 data-i18n="home.spotlight.visuals.heading">Media</h3>
+              <h3 data-text="Media" data-i18n="home.spotlight.visuals.heading">Media</h3>
               <p data-i18n="home.spotlight.visuals.copy">High contrast imagery and live captures</p>
             </div>
             <span class="spotlight-link" data-i18n="home.spotlight.visuals.link">View &rarr;</span>
@@ -103,7 +113,7 @@
           <a class="spotlight-card" href="../releases/">
             <div>
               <span class="spotlight-label" data-i18n="home.spotlight.catalogue.label">Catalogue</span>
-              <h3 data-i18n="home.spotlight.catalogue.heading">Releases</h3>
+              <h3 data-text="Releases" data-i18n="home.spotlight.catalogue.heading">Releases</h3>
               <p data-i18n="home.spotlight.catalogue.copy">Singles and mixes curated for late-night momentum.</p>
             </div>
             <span class="spotlight-link" data-i18n="home.spotlight.catalogue.link">Listen &rarr;</span>

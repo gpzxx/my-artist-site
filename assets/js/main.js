@@ -166,6 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     currentLanguage = normalized;
     setStoredLanguage(normalized);
+    document.dispatchEvent(new CustomEvent('kizu:i18n-applied', { detail: { lang: normalized } }));
   };
 
   const detectInitialLanguage = () => {
@@ -884,5 +885,299 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
   } else {
     document.querySelectorAll('.reveal').forEach((element) => element.classList.add('in'));
+  }
+
+  // ── Hero cursor-following glow ────────────────────────
+  const hero = document.querySelector('.hero');
+  if (hero && !prefersReducedMotion && window.matchMedia('(pointer: fine)').matches) {
+    let targetX = 50, targetY = 50, currentX = 50, currentY = 50;
+    let rafId = null;
+    const tick = () => {
+      currentX += (targetX - currentX) * 0.12;
+      currentY += (targetY - currentY) * 0.12;
+      hero.style.setProperty('--mx', currentX + '%');
+      hero.style.setProperty('--my', currentY + '%');
+      if (Math.abs(targetX - currentX) > 0.05 || Math.abs(targetY - currentY) > 0.05) {
+        rafId = requestAnimationFrame(tick);
+      } else {
+        rafId = null;
+      }
+    };
+    hero.addEventListener('pointermove', (e) => {
+      const rect = hero.getBoundingClientRect();
+      targetX = ((e.clientX - rect.left) / rect.width) * 100;
+      targetY = ((e.clientY - rect.top) / rect.height) * 100;
+      hero.classList.add('is-pointer');
+      if (!rafId) rafId = requestAnimationFrame(tick);
+    });
+    hero.addEventListener('pointerleave', () => {
+      hero.classList.remove('is-pointer');
+    });
+  }
+
+  // ── Keep spotlight glitch layers in sync with i18n ────
+  const syncSpotlightDataText = () => {
+    document.querySelectorAll('.spotlight-card h3').forEach((h) => {
+      h.setAttribute('data-text', h.textContent.trim());
+    });
+  };
+  syncSpotlightDataText();
+  document.addEventListener('kizu:i18n-applied', syncSpotlightDataText);
+
+  // ── Magnetic 3D tilt — broadened to cards across pages ─
+  if (!prefersReducedMotion && window.matchMedia('(pointer: fine)').matches) {
+    const tiltSelectors = [
+      { sel: '.spotlight-card', strength: 1.0 },
+      { sel: '.video-card',     strength: 0.9 },
+      { sel: '.bio-photo-wrap', strength: 0.7 },
+      { sel: '.bio-quote',      strength: 0.6 },
+    ];
+    tiltSelectors.forEach(({ sel, strength }) => {
+      document.querySelectorAll(sel).forEach((card) => {
+        card.classList.add('tilt-target');
+        card.addEventListener('pointermove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const dx = (e.clientX - rect.left) / rect.width - 0.5;
+          const dy = (e.clientY - rect.top) / rect.height - 0.5;
+          card.classList.add('is-tilting');
+          const tx = dx * 10 * strength;
+          const ty = dy * 10 * strength;
+          const rx = -dy * 8 * strength;
+          const ry = dx * 8 * strength;
+          card.style.transform =
+            `translate3d(${tx}px, ${ty}px, 0) rotateX(${rx}deg) rotateY(${ry}deg)`;
+          card.style.setProperty('--tilt-mx', ((dx + 0.5) * 100) + '%');
+          card.style.setProperty('--tilt-my', ((dy + 0.5) * 100) + '%');
+        });
+        card.addEventListener('pointerleave', () => {
+          card.classList.remove('is-tilting');
+          card.style.transform = '';
+        });
+      });
+    });
+  }
+
+  // ── Kinetic split-letter headlines (i18n-aware) ───────
+  const kineticSelectors = [
+    '.page-header h1',
+    '.bio-editorial-headline',
+    '.booking-page-header h1',
+  ].join(',');
+  const splitKineticText = (el) => {
+    const text = (el.textContent || '').trim();
+    if (!text) return;
+    const hasChars = !!el.querySelector('.char');
+    if (hasChars && el.dataset.kineticSig === text) return;
+    el.dataset.kineticSig = text;
+    el.setAttribute('aria-label', text);
+    el.classList.add('kinetic-text');
+    el.innerHTML = '';
+    const words = text.split(/(\s+)/);
+    let charIndex = 0;
+    words.forEach((word) => {
+      if (!word) return;
+      if (/^\s+$/.test(word)) {
+        el.appendChild(document.createTextNode(' '));
+        return;
+      }
+      const wordEl = document.createElement('span');
+      wordEl.className = 'word';
+      wordEl.setAttribute('aria-hidden', 'true');
+      [...word].forEach((ch) => {
+        const span = document.createElement('span');
+        span.className = 'char';
+        span.style.setProperty('--char-i', charIndex++);
+        span.textContent = ch;
+        wordEl.appendChild(span);
+      });
+      el.appendChild(wordEl);
+    });
+  };
+  const splitAllKinetic = () => {
+    document.querySelectorAll(kineticSelectors).forEach(splitKineticText);
+  };
+  // Split after i18n applies so spans aren't immediately wiped by textContent
+  // assignment. The 600ms timeout is a fallback if i18n never fires.
+  document.addEventListener('kizu:i18n-applied', () => requestAnimationFrame(splitAllKinetic));
+  setTimeout(splitAllKinetic, 600);
+
+  // ── Cursor glow on page-headers and bio editorial ─────
+  if (!prefersReducedMotion && window.matchMedia('(pointer: fine)').matches) {
+    document.querySelectorAll('.page-header, .booking-page-header, .bio-editorial')
+      .forEach((el) => {
+        el.classList.add('has-cursor-glow');
+        el.addEventListener('pointermove', (e) => {
+          const rect = el.getBoundingClientRect();
+          el.style.setProperty('--mx', ((e.clientX - rect.left) / rect.width) * 100 + '%');
+          el.style.setProperty('--my', ((e.clientY - rect.top) / rect.height) * 100 + '%');
+          el.classList.add('is-pointer');
+        });
+        el.addEventListener('pointerleave', () => el.classList.remove('is-pointer'));
+      });
+  }
+
+  // ── Scroll-driven parallax on headlines ───────────────
+  if (!prefersReducedMotion) {
+    const parallaxItems = Array.from(document.querySelectorAll('[data-parallax]'));
+    // Skip .bio-editorial-headline — it's itself a .reveal target,
+    // so an inline transform here would override the entrance translate.
+    document.querySelectorAll('.page-header h1, .booking-page-header h1')
+      .forEach((el) => {
+        if (!el.hasAttribute('data-parallax')) {
+          el.setAttribute('data-parallax', '0.18');
+          parallaxItems.push(el);
+        }
+      });
+    if (parallaxItems.length) {
+      let ticking = false;
+      const update = () => {
+        const vh = window.innerHeight;
+        parallaxItems.forEach((el) => {
+          const rate = parseFloat(el.getAttribute('data-parallax')) || 0.18;
+          const rect = el.getBoundingClientRect();
+          const center = rect.top + rect.height / 2;
+          const offset = (center - vh / 2) * rate;
+          el.style.transform = `translate3d(0, ${(-offset).toFixed(1)}px, 0)`;
+        });
+        ticking = false;
+      };
+      const onScroll = () => {
+        if (!ticking) { ticking = true; requestAnimationFrame(update); }
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      update();
+    }
+  }
+
+  // ── Scroll-velocity reactive marquee ──────────────────
+  const marqueeTrack = document.querySelector('.marquee__track');
+  if (marqueeTrack && !prefersReducedMotion) {
+    let offset = 0;
+    let lastScroll = window.scrollY;
+    let scrollVel = 0;
+    const baseSpeed = 0.55;
+    let trackHalf = 0;
+    const measure = () => { trackHalf = marqueeTrack.scrollWidth / 2; };
+    measure();
+    window.addEventListener('resize', measure);
+    window.addEventListener('scroll', () => {
+      const dy = window.scrollY - lastScroll;
+      lastScroll = window.scrollY;
+      scrollVel += dy;
+    }, { passive: true });
+    let last = performance.now();
+    const tick = (now) => {
+      const dt = Math.min(now - last, 50);
+      last = now;
+      scrollVel *= 0.85;
+      const boost = Math.min(Math.abs(scrollVel) / 18, 6);
+      const dir = scrollVel >= 0 ? 1 : -1;
+      offset -= (baseSpeed * dt * 0.06) * (1 + boost);
+      // subtle direction nudge from scroll
+      offset -= dir * boost * 0.2;
+      if (trackHalf > 0) {
+        if (offset <= -trackHalf) offset += trackHalf;
+        if (offset >= 0) offset -= trackHalf;
+      }
+      marqueeTrack.style.transform = `translate3d(${offset}px, 0, 0)`;
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  } else if (marqueeTrack) {
+    marqueeTrack.parentElement.classList.add('is-fallback');
+  }
+
+  // ── Audio-reactive (procedural) bars behind hero ──────
+  const heroEl = document.querySelector('.hero');
+  if (heroEl && !prefersReducedMotion) {
+    const canvas = document.createElement('canvas');
+    canvas.className = 'hero__bars';
+    canvas.setAttribute('aria-hidden', 'true');
+    // Insert after the overlay so it stacks above it but below content
+    const overlay = heroEl.querySelector('.hero__overlay');
+    if (overlay && overlay.parentElement === heroEl) {
+      overlay.insertAdjacentElement('afterend', canvas);
+    } else {
+      heroEl.insertBefore(canvas, heroEl.firstChild);
+    }
+    const ctx = canvas.getContext('2d');
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent-rgb').trim() || '0, 245, 255';
+    const N = 80;
+    const phases = Array.from({ length: N }, () => Math.random() * Math.PI * 2);
+    const speeds = Array.from({ length: N }, () => 0.6 + Math.random() * 0.7);
+    const resize = () => {
+      const r = canvas.getBoundingClientRect();
+      canvas.width = Math.max(1, Math.floor(r.width * dpr));
+      canvas.height = Math.max(1, Math.floor(r.height * dpr));
+    };
+    resize();
+    window.addEventListener('resize', resize);
+    const draw = (t) => {
+      const w = canvas.width, h = canvas.height;
+      ctx.clearRect(0, 0, w, h);
+      const barW = w / N;
+      const grad = ctx.createLinearGradient(0, h, 0, h * 0.45);
+      grad.addColorStop(0,   `rgba(${accent}, 0.9)`);
+      grad.addColorStop(0.6, `rgba(${accent}, 0.45)`);
+      grad.addColorStop(1,   `rgba(${accent}, 0)`);
+      ctx.fillStyle = grad;
+      for (let i = 0; i < N; i++) {
+        const p = phases[i];
+        const s = speeds[i];
+        const beat = 0.5 + 0.5 * Math.sin(t * 0.0028 * s + p);
+        const sub  = 0.35 + 0.65 * Math.abs(Math.sin(t * 0.0009 + i * 0.42));
+        const edgeFade = 1 - Math.pow(Math.abs(i - N / 2) / (N / 2), 3);
+        const amp = beat * sub * edgeFade;
+        const barH = amp * h * 0.42;
+        const x = i * barW + barW * 0.18;
+        const bw = barW * 0.64;
+        ctx.fillRect(x, h - barH, bw, barH);
+      }
+      requestAnimationFrame(draw);
+    };
+    requestAnimationFrame(draw);
+  }
+
+  // ── Page-transition curtain (acid wipe) ───────────────
+  if (!prefersReducedMotion) {
+    const curtain = document.createElement('div');
+    curtain.id = 'page-curtain';
+    curtain.setAttribute('aria-hidden', 'true');
+    curtain.innerHTML = '<span class="page-curtain__mark">KIZU</span>';
+    document.body.appendChild(curtain);
+
+    // Subtle fade-in for the new page after a curtain navigation
+    if (sessionStorage.getItem('kizu-page-incoming') === '1') {
+      sessionStorage.removeItem('kizu-page-incoming');
+      document.body.classList.add('is-page-fade-in');
+      setTimeout(() => document.body.classList.remove('is-page-fade-in'), 460);
+    }
+
+    const isInternalNav = (a) => {
+      if (!a || !a.getAttribute) return false;
+      const href = a.getAttribute('href');
+      if (!href) return false;
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return false;
+      let url;
+      try { url = new URL(a.href, location.href); } catch (_) { return false; }
+      if (url.origin !== location.origin) return false;
+      if (a.target && a.target !== '_self') return false;
+      if (a.hasAttribute('download')) return false;
+      return true;
+    };
+
+    document.addEventListener('click', (e) => {
+      if (e.defaultPrevented) return;
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      if (e.button !== 0) return;
+      const a = e.target.closest && e.target.closest('a[href]');
+      if (!isInternalNav(a)) return;
+      e.preventDefault();
+      sessionStorage.setItem('kizu-page-incoming', '1');
+      curtain.classList.add('is-covering');
+      setTimeout(() => { window.location.href = a.href; }, 460);
+    });
   }
 });
