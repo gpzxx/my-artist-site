@@ -931,55 +931,75 @@ document.addEventListener('DOMContentLoaded', () => {
     marqueeTrack.parentElement.classList.add('is-fallback');
   }
 
-  // ── Audio-reactive (procedural) bars behind hero ──────
+  // ── ASCII sound bars behind hero ──────────────────────
   const heroEl = document.querySelector('.hero');
   if (heroEl && !prefersReducedMotion) {
-    const canvas = document.createElement('canvas');
-    canvas.className = 'hero__bars';
-    canvas.setAttribute('aria-hidden', 'true');
-    // Insert after the overlay so it stacks above it but below content
+    const asciiShell = document.createElement('div');
+    asciiShell.className = 'hero__ascii';
+    asciiShell.setAttribute('aria-hidden', 'true');
+
+    const asciiPre = document.createElement('pre');
+    asciiPre.className = 'hero__ascii-frame';
+    asciiShell.appendChild(asciiPre);
+
     const overlay = heroEl.querySelector('.hero__overlay');
     if (overlay && overlay.parentElement === heroEl) {
-      overlay.insertAdjacentElement('afterend', canvas);
+      overlay.insertAdjacentElement('afterend', asciiShell);
     } else {
-      heroEl.insertBefore(canvas, heroEl.firstChild);
+      heroEl.insertBefore(asciiShell, heroEl.firstChild);
     }
-    const ctx = canvas.getContext('2d');
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent-rgb').trim() || '0, 245, 255';
-    const N = 80;
-    const phases = Array.from({ length: N }, () => Math.random() * Math.PI * 2);
-    const speeds = Array.from({ length: N }, () => 0.6 + Math.random() * 0.7);
+
+    const glyphs = [' ', '.', ':', '-', '=', '+', '*', '#', '%', '@'];
+    let columns = 0;
+    let rows = 0;
+    let phases = [];
+    let speeds = [];
+    let lastFrame = 0;
+
     const resize = () => {
-      const r = canvas.getBoundingClientRect();
-      canvas.width = Math.max(1, Math.floor(r.width * dpr));
-      canvas.height = Math.max(1, Math.floor(r.height * dpr));
+      const rect = asciiShell.getBoundingClientRect();
+      const narrow = window.matchMedia('(max-width: 640px)').matches;
+      columns = Math.max(36, Math.min(narrow ? 62 : 112, Math.floor(rect.width / (narrow ? 8 : 10))));
+      rows = Math.max(16, Math.min(narrow ? 26 : 34, Math.floor(rect.height / (narrow ? 16 : 18))));
+      phases = Array.from({ length: columns }, () => Math.random() * Math.PI * 2);
+      speeds = Array.from({ length: columns }, () => 0.7 + Math.random() * 1.2);
     };
+
     resize();
     window.addEventListener('resize', resize);
+
     const draw = (t) => {
-      const w = canvas.width, h = canvas.height;
-      ctx.clearRect(0, 0, w, h);
-      const barW = w / N;
-      const grad = ctx.createLinearGradient(0, h, 0, h * 0.45);
-      grad.addColorStop(0,   `rgba(${accent}, 0.9)`);
-      grad.addColorStop(0.6, `rgba(${accent}, 0.45)`);
-      grad.addColorStop(1,   `rgba(${accent}, 0)`);
-      ctx.fillStyle = grad;
-      for (let i = 0; i < N; i++) {
-        const p = phases[i];
-        const s = speeds[i];
-        const beat = 0.5 + 0.5 * Math.sin(t * 0.0028 * s + p);
-        const sub  = 0.35 + 0.65 * Math.abs(Math.sin(t * 0.0009 + i * 0.42));
-        const edgeFade = 1 - Math.pow(Math.abs(i - N / 2) / (N / 2), 3);
-        const amp = beat * sub * edgeFade;
-        const barH = amp * h * 0.42;
-        const x = i * barW + barW * 0.18;
-        const bw = barW * 0.64;
-        ctx.fillRect(x, h - barH, bw, barH);
+      if (t - lastFrame < 58) {
+        requestAnimationFrame(draw);
+        return;
       }
+      lastFrame = t;
+
+      const barHeights = [];
+      for (let x = 0; x < columns; x++) {
+        const centerFade = 1 - Math.pow(Math.abs(x - columns / 2) / (columns / 2), 2.4);
+        const pulse = 0.5 + 0.5 * Math.sin(t * 0.0032 * speeds[x] + phases[x]);
+        const wave = 0.5 + 0.5 * Math.sin(t * 0.0012 + x * 0.34);
+        const kick = Math.pow(0.5 + 0.5 * Math.sin(t * 0.0056 + x * 0.09), 5);
+        const energy = Math.min(1, (pulse * 0.48 + wave * 0.34 + kick * 0.38) * (0.36 + centerFade));
+        barHeights.push(Math.max(1, Math.round(energy * rows)));
+      }
+
+      const frame = [];
+      for (let y = rows; y >= 1; y--) {
+        let line = '';
+        for (let x = 0; x < columns; x++) {
+          const active = barHeights[x] >= y;
+          const noise = Math.sin(t * 0.002 + x * 1.7 + y * 0.9) * 0.5 + 0.5;
+          const level = active ? Math.min(glyphs.length - 1, Math.floor((1 - y / rows) * 7 + noise * 3)) : 0;
+          line += glyphs[level];
+        }
+        frame.push(line);
+      }
+      asciiPre.textContent = frame.join('\n');
       requestAnimationFrame(draw);
     };
+
     requestAnimationFrame(draw);
   }
 

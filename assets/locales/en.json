@@ -9,7 +9,6 @@
       "alt": "Portrait"
     },
     "about": {
-      "title": "About",
       "p1": "Based in Ravensburg, Germany, Kizu channels a warm, welcoming vibe and always goes the extra mile for the music and the crowd. On stage, he delivers energetic, feel-good DJ sets that fuse fast-paced groove and trance with flashes of bliss.",
       "p2": "He began making music in late 2023 and stepped into production in late 2024, quickly shaping a confident, high-energy sound. Bookings span clubs and residencies including Hans-Bunte-Areal (Freiburg) and Club Douala (Ravensburg), with appearances at Circle (Offenburg) & //:about Blank (Berlin)",
       "p3": "Releases and signings touch labels such as Para//e/ (Berlin), SYNTHX Records (Munich), Milli Records (Berlin), and SeshDawgsUnited (Berlin)",
@@ -24,20 +23,17 @@
       "festivalModal": {
         "title": "Festival appearances",
         "intro": "Snapshots from standout festival slots.",
-        "list": "<li><span class=\"gig-date\">Hart bis Zart Festival</span><span class=\"gig-venue\">Freiburg (2024)</span></li><li><span class=\"gig-date\">Hart bis Zart Festival</span><span class=\"gig-venue\">Freiburg (2025)</span></li><li><span class=\"gig-date\">Backyard77</span><span class=\"gig-venue\">Offenburg (2025)</span></li><li><span class=\"gig-date\">Sea You Festival Aftershow</span><span class=\"gig-venue\">Freiburg (2025)</span></li>",
-        "close": "Close"
+        "list": "<li><span class=\"gig-date\">Hart bis Zart Festival</span><span class=\"gig-venue\">Freiburg (2024)</span></li><li><span class=\"gig-date\">Hart bis Zart Festival</span><span class=\"gig-venue\">Freiburg (2025)</span></li><li><span class=\"gig-date\">Backyard77</span><span class=\"gig-venue\">Offenburg (2025)</span></li><li><span class=\"gig-date\">Sea You Festival Aftershow</span><span class=\"gig-venue\">Freiburg (2025)</span></li>"
       },
       "upcomingModal": {
         "title": "Tour Dates 2026",
         "intro": "Full schedule — past shows greyed out, upcoming in neon.",
-        "list": "<li><time class=\"gig-date\" datetime=\"2026-03-06\">06 Mar 2026</time><span class=\"gig-venue\">Motke, Ravensburg</span></li><li><time class=\"gig-date\" datetime=\"2026-03-20\">20 Mar 2026</time><span class=\"gig-venue\">Gleis44, Ulm</span></li><li><time class=\"gig-date\" datetime=\"2026-04-04\">04 Apr 2026</time><span class=\"gig-venue\">Club Douala, Ravensburg</span></li><li><time class=\"gig-date\" datetime=\"2026-04-05\">05 Apr 2026</time><span class=\"gig-venue\">Easter Rave, Hans Bunte Areal</span></li><li><time class=\"gig-date\" datetime=\"2026-04-11\">11 Apr 2026</time><span class=\"gig-venue\">Pressure X, Villingen-Schwenningen</span></li><li><time class=\"gig-date\" datetime=\"2026-04-18\">18 Apr 2026</time><span class=\"gig-venue\">Destroyed, Hans Bunte Areal</span></li><li><time class=\"gig-date\" datetime=\"2026-04-25\">25 Apr 2026</time><span class=\"gig-venue\">Circle, Offenburg</span></li><li><time class=\"gig-date\" datetime=\"2026-04-30\">30 Apr 2026</time><span class=\"gig-venue\">Unite Rave, Ravensburg</span></li><li><time class=\"gig-date\" datetime=\"2026-04-30\">30 Apr 2026</time><span class=\"gig-venue\">11 Years, Hans Bunte Areal</span></li><li><time class=\"gig-date\" datetime=\"2026-05-09\">09 May 2026</time><span class=\"gig-venue\">Hans-Bunte-Areal, Freiburg</span></li><li><time class=\"gig-date\" datetime=\"2026-05-16\">16 May 2026</time><span class=\"gig-venue\">Hans-Bunte-Areal, Freiburg</span></li><li><time class=\"gig-date\" datetime=\"2026-05-30\">30 May 2026</time><span class=\"gig-venue\">AEDEN, Berlin</span></li><li><time class=\"gig-date\" datetime=\"2026-06-06\">06 Jun 2026</time><span class=\"gig-venue\">Leipzig, TBA</span></li><li><time class=\"gig-date\" datetime=\"2026-07-19\">19 Jul 2026</time><span class=\"gig-venue\">Sea You Festival, Tunisee, Freiburg</span></li>",
-        "close": "Close"
+        "list": "<li><time class=\"gig-date\" datetime=\"2026-03-06\">06 Mar 2026</time><span class=\"gig-venue\">Motke, Ravensburg</span></li><li><time class=\"gig-date\" datetime=\"2026-03-20\">20 Mar 2026</time><span class=\"gig-venue\">Gleis44, Ulm</span></li><li><time class=\"gig-date\" datetime=\"2026-04-04\">04 Apr 2026</time><span class=\"gig-venue\">Club Douala, Ravensburg</span></li><li><time class=\"gig-date\" datetime=\"2026-04-05\">05 Apr 2026</time><span class=\"gig-venue\">Easter Rave, Hans Bunte Areal</span></li><li><time class=\"gig-date\" datetime=\"2026-04-11\">11 Apr 2026</time><span class=\"gig-venue\">Pressure X, Villingen-Schwenningen</span></li><li><time class=\"gig-date\" datetime=\"2026-04-18\">18 Apr 2026</time><span class=\"gig-venue\">Destroyed, Hans Bunte Areal</span></li><li><time class=\"gig-date\" datetime=\"2026-04-25\">25 Apr 2026</time><span class=\"gig-venue\">Circle, Offenburg</span></li><li><time class=\"gig-date\" datetime=\"2026-04-30\">30 Apr 2026</time><span class=\"gig-venue\">Unite Rave, Ravensburg</span></li><li><time class=\"gig-date\" datetime=\"2026-04-30\">30 Apr 2026</time><span class=\"gig-venue\">11 Years, Hans Bunte Areal</span></li><li><time class=\"gig-date\" datetime=\"2026-05-09\">09 May 2026</time><span class=\"gig-venue\">Hans-Bunte-Areal, Freiburg</span></li><li><time class=\"gig-date\" datetime=\"2026-05-16\">16 May 2026</time><span class=\"gig-venue\">Hans-Bunte-Areal, Freiburg</span></li><li><time class=\"gig-date\" datetime=\"2026-05-30\">30 May 2026</time><span class=\"gig-venue\">AEDEN, Berlin</span></li><li><time class=\"gig-date\" datetime=\"2026-06-06\">06 Jun 2026</time><span class=\"gig-venue\">Leipzig, TBA</span></li><li><time class=\"gig-date\" datetime=\"2026-07-19\">19 Jul 2026</time><span class=\"gig-venue\">Sea You Festival, Tunisee, Freiburg</span></li>"
       },
       "pastModal": {
         "title": "Past Gigs 2026",
         "intro": "Shows already played this year.",
-        "list": "<li><time class=\"gig-date\" datetime=\"2026-02-13\">13 Feb 2026</time><span class=\"gig-venue\">Cultura 40 Charity Rave, Freiburg</span></li><li><time class=\"gig-date\" datetime=\"2026-02-07\">07 Feb 2026</time><span class=\"gig-venue\">Hans-Bunte-Areal, Freiburg</span></li><li><time class=\"gig-date\" datetime=\"2026-01-31\">31 Jan 2026</time><span class=\"gig-venue\">Hans-Bunte-Areal, Freiburg</span></li><li><time class=\"gig-date\" datetime=\"2026-01-17\">17 Jan 2026</time><span class=\"gig-venue\">Expressguthalle, Schwenningen</span></li><li><time class=\"gig-date\" datetime=\"2026-01-16\">16 Jan 2026</time><span class=\"gig-venue\">Circle, Offenburg</span></li><li><time class=\"gig-date\" datetime=\"2026-01-10\">10 Jan 2026</time><span class=\"gig-venue\">Fundbureau, Hamburg</span></li><li><time class=\"gig-date\" datetime=\"2026-01-05\">05 Jan 2026</time><span class=\"gig-venue\">Hans-Bunte-Areal, Freiburg</span></li><li><time class=\"gig-date\" datetime=\"2026-01-02\">02 Jan 2026</time><span class=\"gig-venue\">Bootshaus, Köln</span></li>",
-        "close": "Close"
+        "list": "<li><time class=\"gig-date\" datetime=\"2026-02-13\">13 Feb 2026</time><span class=\"gig-venue\">Cultura 40 Charity Rave, Freiburg</span></li><li><time class=\"gig-date\" datetime=\"2026-02-07\">07 Feb 2026</time><span class=\"gig-venue\">Hans-Bunte-Areal, Freiburg</span></li><li><time class=\"gig-date\" datetime=\"2026-01-31\">31 Jan 2026</time><span class=\"gig-venue\">Hans-Bunte-Areal, Freiburg</span></li><li><time class=\"gig-date\" datetime=\"2026-01-17\">17 Jan 2026</time><span class=\"gig-venue\">Expressguthalle, Schwenningen</span></li><li><time class=\"gig-date\" datetime=\"2026-01-16\">16 Jan 2026</time><span class=\"gig-venue\">Circle, Offenburg</span></li><li><time class=\"gig-date\" datetime=\"2026-01-10\">10 Jan 2026</time><span class=\"gig-venue\">Fundbureau, Hamburg</span></li><li><time class=\"gig-date\" datetime=\"2026-01-05\">05 Jan 2026</time><span class=\"gig-venue\">Hans-Bunte-Areal, Freiburg</span></li><li><time class=\"gig-date\" datetime=\"2026-01-02\">02 Jan 2026</time><span class=\"gig-venue\">Bootshaus, Köln</span></li>"
       }
     },
     "contact": {
@@ -54,34 +50,26 @@
       "labelClubs": "Clubs played",
       "clubsModal": {
         "title": "Clubs played",
-        "intro": "Stages I have performed at so far:",
-        "list": "<li><span class=\"gig-date\">Bootshaus</span><span class=\"gig-venue\">Köln</span></li><li><span class=\"gig-date\">Club Ost</span><span class=\"gig-venue\">Berlin</span></li><li><span class=\"gig-date\">Lokschuppen</span><span class=\"gig-venue\">Berlin</span></li><li><span class=\"gig-date\">AEDEN</span><span class=\"gig-venue\">Berlin</span></li><li><span class=\"gig-date\">//:about blank</span><span class=\"gig-venue\">Berlin</span></li><li><span class=\"gig-date\">Hans-Bunte-Areal</span><span class=\"gig-venue\">Freiburg</span></li><li><span class=\"gig-date\">Club Douala</span><span class=\"gig-venue\">Ravensburg</span></li><li><span class=\"gig-date\">Circle</span><span class=\"gig-venue\">Offenburg</span></li><li><span class=\"gig-date\">Bahnwärter Thiel</span><span class=\"gig-venue\">München</span></li><li><span class=\"gig-date\">Gleis44</span><span class=\"gig-venue\">Ulm</span></li><li><span class=\"gig-date\">TheGreatRängTäng</span><span class=\"gig-venue\">Freiburg</span></li>",
-        "close": "Close"
+        "list": "<li><span class=\"gig-date\">Bootshaus</span><span class=\"gig-venue\">Köln</span></li><li><span class=\"gig-date\">Club Ost</span><span class=\"gig-venue\">Berlin</span></li><li><span class=\"gig-date\">Lokschuppen</span><span class=\"gig-venue\">Berlin</span></li><li><span class=\"gig-date\">AEDEN</span><span class=\"gig-venue\">Berlin</span></li><li><span class=\"gig-date\">//:about blank</span><span class=\"gig-venue\">Berlin</span></li><li><span class=\"gig-date\">Hans-Bunte-Areal</span><span class=\"gig-venue\">Freiburg</span></li><li><span class=\"gig-date\">Club Douala</span><span class=\"gig-venue\">Ravensburg</span></li><li><span class=\"gig-date\">Circle</span><span class=\"gig-venue\">Offenburg</span></li><li><span class=\"gig-date\">Bahnwärter Thiel</span><span class=\"gig-venue\">München</span></li><li><span class=\"gig-date\">Gleis44</span><span class=\"gig-venue\">Ulm</span></li><li><span class=\"gig-date\">TheGreatRängTäng</span><span class=\"gig-venue\">Freiburg</span></li>"
       }
     }
   },
   "booking": {
     "metaTitle": "KIZU - Booking",
     "header": {
-      "title": "Technical & Hospitality Rider",
-      "lead": "Download or view the latest PDF rider below.",
-      "primaryCta": "Request a Booking",
+      "eyebrow": "Available for bookings",
+      "title": "Booking",
+      "lead": "Club nights, festival slots, private events - send the key details and I will get back to you as soon as possible.",
       "download": "Download Rider",
       "open": "Open in new tab"
     },
     "rider": {
-      "title": "KIZU technical rider",
-      "fallback": "PDF preview unavailable? <a href=\"../assets/docs/KIZU_Rider.pdf\">Download the rider</a>."
+      "heading": "Technical & Hospitality Rider",
+      "note": "Download the current rider as a PDF or open it directly in your browser."
     },
     "form": {
-      "title": "Contact Form",
-      "lead": "Send your request directly via the form or use the email address. After submitting, your mail app opens so you can add attachments before sending.",
       "name": "Name *",
       "email": "Email *",
-      "subject": "Subject",
-      "subjectPlaceholder": "Booking, press, general request...",
-      "message": "Message *",
-      "messagePlaceholder": "How can we help?",
       "privacy": "I have read the <a href=\"../impressum/\">legal notice</a> and agree that my details may be processed to reply to my inquiry.",
       "submit": "Send Message",
       "disclaimer": "The form opens your email program so you can review and send the message. No data is stored on this server."
@@ -110,8 +98,6 @@
     "metaDescription": "Official artist portfolio: bio, media, and bookings",
     "intro": {
       "eyebrow": "Producer & DJ",
-      "heading": "Immersive club journeys built on uplifting melodies and driving beats.",
-      "body": "Ravensburg-based artist shaping trance, speed garage, and hard house textures into high-intensity live sets and mindful listening experiences.",
       "ctaPrimary": "Request a Booking",
       "ctaSecondary": "Listen to Releases",
       "tagsLabel": "Sounds and moods",
@@ -193,11 +179,9 @@
       "lead": "Soft-focus frames that sit behind the music."
     },
     "slider": {
-      "prev": "Previous image",
       "img1": "Live show",
       "img2": "Studio session",
-      "img3": "Portrait",
-      "next": "Next image"
+      "img3": "Portrait"
     },
     "lightbox": {
       "close": "Close",
@@ -236,14 +220,9 @@
       "coverAlt": "Haunted By Your Love cover art",
       "desc": "Super melancholic summer anthem."
     },
-    "actions": {
-      "back": "Back to cover"
-    },
     "badges": {
-      "track": "Track",
       "mix": "Mixes"
     },
-    "listenLabel": "Listen",
     "outtaspace": {
       "frontLabel": "Show release details for Outta Space",
       "coverAlt": "Outta Space cover art",
@@ -273,21 +252,6 @@
       "frontLabel": "Show release details for Club Stories",
       "coverAlt": "Club Stories cover art",
       "desc": "Club Stories EP016 on Parallel HH mixes rolling trance with hypnotic percussion."
-    },
-    "newtrack4": {
-      "frontLabel": "Show release details for Track Title Placeholder",
-      "coverAlt": "Placeholder cover art for Track Title Placeholder",
-      "desc": "Update this description with details about the release."
-    },
-    "newtrack5": {
-      "frontLabel": "Show release details for Upcoming Release 1",
-      "coverAlt": "Placeholder cover art for Upcoming Release 1",
-      "desc": "Swap in the final description, links, and embed once the track is ready."
-    },
-    "newtrack6": {
-      "frontLabel": "Show release details for Upcoming Release 2",
-      "coverAlt": "Placeholder cover art for Upcoming Release 2",
-      "desc": "Replace this copy, the links, and embed with the finished release info."
     },
     "mixes": {
       "title": "Podcast Playlist",
