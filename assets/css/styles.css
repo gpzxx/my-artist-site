@@ -55,6 +55,15 @@ body {
   height: 100%;
 }
 
+html, body {
+  /* Belt-and-suspenders horizontal-scroll guard: `clip` is preferred because it
+     doesn't create a scroll container (so position:sticky on bio still works).
+     Older Safari (<16) ignores `clip` and falls back to natural overflow.
+     The actual overflow sources (page-header orb, cursor glow, marquee bleed)
+     are also fixed at the source so this is just safety net. */
+  overflow-x: clip;
+}
+
 body {
   margin: 0;
   font-family: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
@@ -3377,10 +3386,13 @@ body.is-page-fade-in {
   position: relative;
   overflow: clip;
 }
+.has-cursor-glow {
+  overflow: clip;
+}
 .has-cursor-glow::before {
   content: "";
   position: absolute;
-  inset: -10%;
+  inset: 0;
   pointer-events: none;
   opacity: 0;
   transition: opacity 600ms ease;
@@ -3433,6 +3445,7 @@ body.is-page-fade-in {
 .booking-page-header {
   position: relative;
   isolation: isolate;
+  overflow: clip;
 }
 .page-header::before,
 .booking-page-header::before {
@@ -3890,11 +3903,8 @@ body[data-page="media"] .photo-tile__caption {
   padding: 14px 0;
   margin: 56px 0;
 }
-.marquee--bleed {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-}
+/* .marquee--bleed removed — caused horizontal scroll due to 100vw including
+   scrollbar width. Place the marquee outside .container instead for full bleed. */
 
 @media (prefers-reduced-motion: reduce) {
   .hero__title,
