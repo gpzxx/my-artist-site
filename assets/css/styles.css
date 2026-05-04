@@ -1610,15 +1610,9 @@ a:focus-visible {
     0 0 96px rgba(var(--accent-rgb), 0.06);
 }
 
-.release-card:hover {
-  aspect-ratio: auto;
-  min-height: 560px;
-}
-
+/* Card stays square on hover/flip — content scrolls inside if needed. */
 .release-card.is-flipped,
 .release-card:focus-within {
-  aspect-ratio: auto;
-  min-height: clamp(420px, 60vw, 480px);
   box-shadow:
     0 34px 90px rgba(0, 0, 0, 0.72),
     0 0 0 1px rgba(var(--accent-rgb), 0.1);
@@ -2416,23 +2410,23 @@ a:focus-visible {
 
 .player-tab-panel .audio-embed iframe {
   width: 100%;
-  height: 116px;
-  min-height: 118px;
+  height: 152px;
+  min-height: 152px;
   border: 0;
   display: block;
 }
 
-/* Spotify iframe inside tab — override rounded corners */
+/* Spotify iframe inside tab — native compact height */
 .player-tab-panel[data-tab-panel="spotify"] {
   height: 152px;
   min-height: 152px;
-  background: #121212;
+  background: transparent;
 }
 
 .player-tab-panel[data-tab-panel="spotify"] iframe {
   height: 152px !important;
   min-height: 152px !important;
-  background: #121212;
+  background: transparent;
 }
 
 .player-tab-panel .audio-embed iframe[src*="spotify"] {
