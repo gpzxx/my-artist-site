@@ -53,6 +53,11 @@
   .legal ul{margin:0 0 12px;padding-left:20px}
   .legal p:last-child{margin-bottom:0}
 
+  .lang-switch{background:transparent;border:1px solid var(--line);color:var(--ink-soft);border-radius:999px;padding:7px 12px;font-family:'Courier New',monospace;font-weight:700;font-size:12px;letter-spacing:.08em;cursor:pointer;display:inline-flex;gap:4px;align-items:center;transition:border-color .2s}
+  .lang-switch:hover{border-color:var(--green)}
+  .lang-switch .lang-sep{opacity:.4}
+  html[data-lang="de"] .lang-switch .lang-de{color:var(--green)}
+  html[data-lang="en"] .lang-switch .lang-en{color:var(--green)}
   footer{text-align:center;padding:36px 0;color:var(--ink-soft);font-size:14px;border-top:1px solid var(--line);margin-top:40px}
   footer a{color:var(--green);text-decoration:none}
   .back{display:inline-flex;gap:8px;margin-top:30px;font-family:'Courier New',monospace;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);text-decoration:none}
@@ -64,115 +69,130 @@
 <header class="nav">
   <div class="nav-inner">
     <a class="brand" href="../">KIZU</a>
-    <a class="nav-cta" href="../#booking">Booking</a>
+    <button class="lang-switch" id="langSwitch" type="button" aria-label="Sprache wechseln / switch language"><span class="lang-de">DE</span><span class="lang-sep">/</span><span class="lang-en">EN</span></button>
+    <a class="nav-cta" href="../#booking" data-en="Booking">Booking</a>
   </div>
 </header>
 
 <main>
   <div class="wrap">
     <div class="page-head">
-      <span class="eyebrow">// rechtliches</span>
-      <h1>Datenschutz&shy;erklärung</h1>
-      <p>Informationen gemäß Art. 13 DSGVO zum Umgang mit personenbezogenen Daten.</p>
+      <span class="eyebrow" data-en="// legal">// rechtliches</span>
+      <h1 data-en="Privacy Policy">Datenschutz&shy;erklärung</h1>
+      <p data-en="Information in accordance with Article 13 GDPR on how we handle personal data.">Informationen gemäß Art. 13 DSGVO zum Umgang mit personenbezogenen Daten.</p>
     </div>
 
     <section class="legal">
-      <h2>1. Datenschutz auf einen Blick</h2>
-      <h3>Allgemeine Hinweise</h3>
-      <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit deinen personenbezogenen Daten passiert, wenn du diese Website besuchst. Personenbezogene Daten sind alle Daten, mit denen du persönlich identifiziert werden kannst. Ausführliche Informationen findest du in der vollständigen Datenschutzerklärung weiter unten.</p>
-      <h3>Datenerfassung auf dieser Website</h3>
-      <h4>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</h4>
-      <p>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten findest du im Abschnitt „Verantwortliche Stelle" in dieser Datenschutzerklärung.</p>
-      <h4>Wie erfassen wir deine Daten?</h4>
-      <p>Deine Daten werden zum einen dadurch erhoben, dass du sie uns mitteilst. Hierbei kann es sich z.&nbsp;B. um Daten handeln, die du in ein Kontaktformular eingibst.</p>
-      <p>Andere Daten werden automatisch oder nach deiner Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z.&nbsp;B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs).</p>
-      <h4>Wofür nutzen wir deine Daten?</h4>
-      <p>Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse deines Nutzerverhaltens verwendet werden.</p>
-      <h4>Welche Rechte hast du bezüglich deiner Daten?</h4>
-      <p>Du hast jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck deiner gespeicherten personenbezogenen Daten zu erhalten. Du hast außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn du eine Einwilligung zur Datenverarbeitung erteilt hast, kannst du diese jederzeit für die Zukunft widerrufen. Außerdem hast du das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung zu verlangen sowie ein Beschwerderecht bei der zuständigen Aufsichtsbehörde.</p>
+      <h2 data-en="1. Data protection at a glance">1. Datenschutz auf einen Blick</h2>
+      <h3 data-en="General information">Allgemeine Hinweise</h3>
+      <p data-en="The following notes provide a simple overview of what happens to your personal data when you visit this website. Personal data is any data that can be used to identify you personally. Detailed information can be found in the full privacy policy below.">Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit deinen personenbezogenen Daten passiert, wenn du diese Website besuchst. Personenbezogene Daten sind alle Daten, mit denen du persönlich identifiziert werden kannst. Ausführliche Informationen findest du in der vollständigen Datenschutzerklärung weiter unten.</p>
+      <h3 data-en="Data collection on this website">Datenerfassung auf dieser Website</h3>
+      <h4 data-en="Who is responsible for data collection on this website?">Wer ist verantwortlich für die Datenerfassung auf dieser Website?</h4>
+      <p data-en="Data processing on this website is carried out by the website operator. You can find the operator&#39;s contact details in the &quot;Responsible party&quot; section of this privacy policy.">Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten findest du im Abschnitt „Verantwortliche Stelle" in dieser Datenschutzerklärung.</p>
+      <h4 data-en="How do we collect your data?">Wie erfassen wir deine Daten?</h4>
+      <p data-en="On the one hand, your data is collected when you communicate it to us. This may, for example, be data that you enter in a contact form.">Deine Daten werden zum einen dadurch erhoben, dass du sie uns mitteilst. Hierbei kann es sich z.&nbsp;B. um Daten handeln, die du in ein Kontaktformular eingibst.</p>
+      <p data-en="Other data is collected automatically or after your consent when you visit the website. This is primarily technical data (for example the browser and operating system used or the time the page was accessed).">Andere Daten werden automatisch oder nach deiner Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z.&nbsp;B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs).</p>
+      <h4 data-en="What do we use your data for?">Wofür nutzen wir deine Daten?</h4>
+      <p data-en="Part of the data is collected to ensure error-free provision of the website. Other data may be used to analyse your user behaviour.">Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse deines Nutzerverhaltens verwendet werden.</p>
+      <h4 data-en="What rights do you have regarding your data?">Welche Rechte hast du bezüglich deiner Daten?</h4>
+      <p data-en="You have the right at any time to obtain free information about the origin, recipient and purpose of your stored personal data. You also have the right to request the rectification or erasure of this data. If you have given consent to data processing, you may withdraw that consent at any time with effect for the future. You also have the right to request restriction of processing under certain circumstances and a right to lodge a complaint with the competent supervisory authority.">Du hast jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck deiner gespeicherten personenbezogenen Daten zu erhalten. Du hast außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn du eine Einwilligung zur Datenverarbeitung erteilt hast, kannst du diese jederzeit für die Zukunft widerrufen. Außerdem hast du das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung zu verlangen sowie ein Beschwerderecht bei der zuständigen Aufsichtsbehörde.</p>
     </section>
 
     <section class="legal">
-      <h2>2. Allgemeine Hinweise und Pflichtinformationen</h2>
-      <h3>Datenschutz</h3>
-      <p>Die Betreiber dieser Seiten nehmen den Schutz deiner persönlichen Daten sehr ernst. Wir behandeln deine personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
-      <p>Wir weisen darauf hin, dass die Datenübertragung im Internet (z.&nbsp;B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.</p>
-      <h3>Verantwortliche Stelle</h3>
-      <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
+      <h2 data-en="2. General information and mandatory details">2. Allgemeine Hinweise und Pflichtinformationen</h2>
+      <h3 data-en="Data protection">Datenschutz</h3>
+      <p data-en="The operators of these pages take the protection of your personal data very seriously. We treat your personal data confidentially and in accordance with statutory data protection regulations and this privacy policy.">Die Betreiber dieser Seiten nehmen den Schutz deiner persönlichen Daten sehr ernst. Wir behandeln deine personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
+      <p data-en="We would like to point out that data transmission on the Internet (for example when communicating by email) can have security gaps. Complete protection of data against access by third parties is not possible.">Wir weisen darauf hin, dass die Datenübertragung im Internet (z.&nbsp;B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.</p>
+      <h3 data-en="Responsible party">Verantwortliche Stelle</h3>
+      <p data-en="The responsible party for data processing on this website is:">Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
       <p>KIZU Productions<br />
       Wilhelmstrasse 14<br />
       88250 Weingarten<br />
       Deutschland</p>
       <p>Telefon: <a href="tel:+4917632817822">+49 (0) 176 328 17822</a><br />
       E-Mail: <a href="mailto:info@kizuloge.com">info@kizuloge.com</a></p>
-      <h3>Speicherdauer</h3>
-      <p>Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben deine personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn du ein berechtigtes Löschersuchen geltend machst oder eine Einwilligung widerrufst, werden deine Daten gelöscht, sofern keine anderen gesetzlich zulässigen Gründe für die Speicherung vorliegen.</p>
+      <h3 data-en="Storage period">Speicherdauer</h3>
+      <p data-en="Unless a more specific storage period has been specified in this privacy policy, your personal data will remain with us until the purpose for data processing no longer applies. If you assert a legitimate request for erasure or withdraw your consent, your data will be erased unless we have other legally permissible reasons for storing it.">Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben deine personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn du ein berechtigtes Löschersuchen geltend machst oder eine Einwilligung widerrufst, werden deine Daten gelöscht, sofern keine anderen gesetzlich zulässigen Gründe für die Speicherung vorliegen.</p>
       <h3>Allgemeine Hinweise zu den Rechtsgrundlagen</h3>
-      <p>Sofern du in die Datenverarbeitung eingewilligt hast, verarbeiten wir deine Daten auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO bzw. Art. 9 Abs. 2 lit. a DSGVO. Bei Einwilligung zur Speicherung von Cookies oder zum Zugriff auf Informationen in dein Endgerät erfolgt die Verarbeitung zusätzlich auf Grundlage von § 25 Abs. 1 TDDDG. Die Einwilligung ist jederzeit widerrufbar. Sind deine Daten zur Vertragserfüllung oder zur Durchführung vorvertraglicher Maßnahmen erforderlich, verarbeiten wir deine Daten auf Grundlage des Art. 6 Abs. 1 lit. b DSGVO. Die Datenverarbeitung kann auch auf Grundlage unseres berechtigten Interesses nach Art. 6 Abs. 1 lit. f DSGVO erfolgen.</p>
-      <h3>Widerruf deiner Einwilligung zur Datenverarbeitung</h3>
-      <p>Viele Datenverarbeitungsvorgänge sind nur mit deiner ausdrücklichen Einwilligung möglich. Du kannst eine bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.</p>
-      <h3>Widerspruchsrecht (Art. 21 DSGVO)</h3>
-      <p>WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E ODER F DSGVO ERFOLGT, HAST DU JEDERZEIT DAS RECHT, AUS GRÜNDEN, DIE SICH AUS DEINER BESONDEREN SITUATION ERGEBEN, GEGEN DIE VERARBEITUNG DEINER PERSONENBEZOGENEN DATEN WIDERSPRUCH EINZULEGEN.</p>
-      <p>WERDEN DEINE PERSONENBEZOGENEN DATEN VERARBEITET, UM DIREKTWERBUNG ZU BETREIBEN, HAST DU DAS RECHT, JEDERZEIT WIDERSPRUCH GEGEN DIE VERARBEITUNG EINZULEGEN.</p>
-      <h3>Beschwerderecht bei der zuständigen Aufsichtsbehörde</h3>
-      <p>Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbehörde zu, insbesondere im Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes.</p>
-      <h3>Recht auf Datenübertragbarkeit</h3>
-      <p>Du hast das Recht, Daten, die wir auf Grundlage deiner Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an dich oder an einen Dritten in einem gängigen, maschinenlesbaren Format aushändigen zu lassen.</p>
-      <h3>SSL- bzw. TLS-Verschlüsselung</h3>
-      <p>Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennst du daran, dass die Adresszeile des Browsers von „http://" auf „https://" wechselt und am Schloss-Symbol in deiner Browserzeile.</p>
-      <h3>Auskunft, Berichtigung und Löschung</h3>
-      <p>Im Rahmen der geltenden gesetzlichen Bestimmungen hast du jederzeit das Recht auf unentgeltliche Auskunft über deine gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung oder Löschung dieser Daten.</p>
-      <h3>Recht auf Einschränkung der Verarbeitung</h3>
-      <p>Du hast das Recht, die Einschränkung der Verarbeitung deiner personenbezogenen Daten zu verlangen. Dieses Recht besteht insbesondere in folgenden Fällen:</p>
+      <p data-en="If you have consented to data processing, we process your personal data on the basis of Article 6(1)(a) GDPR or Article 9(2)(a) GDPR. If you have consented to the storage of cookies or access to information on your device, processing is additionally based on Section 25(1) TDDDG. Consent can be withdrawn at any time. If your data is required to fulfil a contract or carry out pre-contractual measures, we process it on the basis of Article 6(1)(b) GDPR. Processing may also be based on our legitimate interest pursuant to Article 6(1)(f) GDPR.">Sofern du in die Datenverarbeitung eingewilligt hast, verarbeiten wir deine Daten auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO bzw. Art. 9 Abs. 2 lit. a DSGVO. Bei Einwilligung zur Speicherung von Cookies oder zum Zugriff auf Informationen in dein Endgerät erfolgt die Verarbeitung zusätzlich auf Grundlage von § 25 Abs. 1 TDDDG. Die Einwilligung ist jederzeit widerrufbar. Sind deine Daten zur Vertragserfüllung oder zur Durchführung vorvertraglicher Maßnahmen erforderlich, verarbeiten wir deine Daten auf Grundlage des Art. 6 Abs. 1 lit. b DSGVO. Die Datenverarbeitung kann auch auf Grundlage unseres berechtigten Interesses nach Art. 6 Abs. 1 lit. f DSGVO erfolgen.</p>
+      <h3 data-en="Withdrawal of your consent to data processing">Widerruf deiner Einwilligung zur Datenverarbeitung</h3>
+      <p data-en="Many data processing operations are only possible with your explicit consent. You can withdraw consent that you have already given at any time. The lawfulness of the data processing carried out until the withdrawal remains unaffected.">Viele Datenverarbeitungsvorgänge sind nur mit deiner ausdrücklichen Einwilligung möglich. Du kannst eine bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.</p>
+      <h3 data-en="Right to object (Article 21 GDPR)">Widerspruchsrecht (Art. 21 DSGVO)</h3>
+      <p data-en="IF DATA PROCESSING IS CARRIED OUT ON THE BASIS OF ARTICLE 6(1)(E) OR (F) GDPR, YOU HAVE THE RIGHT TO OBJECT AT ANY TIME, FOR REASONS ARISING FROM YOUR PARTICULAR SITUATION, TO THE PROCESSING OF YOUR PERSONAL DATA.">WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E ODER F DSGVO ERFOLGT, HAST DU JEDERZEIT DAS RECHT, AUS GRÜNDEN, DIE SICH AUS DEINER BESONDEREN SITUATION ERGEBEN, GEGEN DIE VERARBEITUNG DEINER PERSONENBEZOGENEN DATEN WIDERSPRUCH EINZULEGEN.</p>
+      <p data-en="IF YOUR PERSONAL DATA IS PROCESSED FOR DIRECT MARKETING PURPOSES, YOU HAVE THE RIGHT TO OBJECT AT ANY TIME TO SUCH PROCESSING.">WERDEN DEINE PERSONENBEZOGENEN DATEN VERARBEITET, UM DIREKTWERBUNG ZU BETREIBEN, HAST DU DAS RECHT, JEDERZEIT WIDERSPRUCH GEGEN DIE VERARBEITUNG EINZULEGEN.</p>
+      <h3 data-en="Right to lodge a complaint with the competent supervisory authority">Beschwerderecht bei der zuständigen Aufsichtsbehörde</h3>
+      <p data-en="In the event of infringements of the GDPR, data subjects have a right to lodge a complaint with a supervisory authority, in particular in the Member State of their habitual residence, their place of work or the place of the alleged infringement.">Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbehörde zu, insbesondere im Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes.</p>
+      <h3 data-en="Right to data portability">Recht auf Datenübertragbarkeit</h3>
+      <p data-en="You have the right to have data that we process automatically on the basis of your consent or in fulfilment of a contract handed over to you or to a third party in a common, machine-readable format.">Du hast das Recht, Daten, die wir auf Grundlage deiner Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an dich oder an einen Dritten in einem gängigen, maschinenlesbaren Format aushändigen zu lassen.</p>
+      <h3 data-en="SSL or TLS encryption">SSL- bzw. TLS-Verschlüsselung</h3>
+      <p data-en="For security reasons and to protect the transmission of confidential content, this site uses SSL or TLS encryption. You can recognise an encrypted connection by the fact that the address line of the browser changes from &quot;http://&quot; to &quot;https://&quot; and by the lock symbol in your browser line.">Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennst du daran, dass die Adresszeile des Browsers von „http://" auf „https://" wechselt und am Schloss-Symbol in deiner Browserzeile.</p>
+      <h3 data-en="Information, rectification and erasure">Auskunft, Berichtigung und Löschung</h3>
+      <p data-en="Within the framework of the applicable legal provisions, you have the right to receive information free of charge at any time about your stored personal data, its origin and recipient and the purpose of the data processing and, if necessary, a right to rectify or erase this data.">Im Rahmen der geltenden gesetzlichen Bestimmungen hast du jederzeit das Recht auf unentgeltliche Auskunft über deine gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung oder Löschung dieser Daten.</p>
+      <h3 data-en="Right to restriction of processing">Recht auf Einschränkung der Verarbeitung</h3>
+      <p data-en="You have the right to request the restriction of the processing of your personal data. This right exists in particular in the following cases:">Du hast das Recht, die Einschränkung der Verarbeitung deiner personenbezogenen Daten zu verlangen. Dieses Recht besteht insbesondere in folgenden Fällen:</p>
       <ul>
-        <li>Wenn du die Richtigkeit deiner bei uns gespeicherten Daten bestreitest, benötigen wir in der Regel Zeit, um dies zu überprüfen.</li>
-        <li>Wenn die Verarbeitung deiner Daten unrechtmäßig geschah, kannst du statt der Löschung die Einschränkung der Verarbeitung verlangen.</li>
-        <li>Wenn wir deine Daten nicht mehr benötigen, du sie jedoch zur Ausübung, Verteidigung oder Geltendmachung von Rechtsansprüchen brauchst.</li>
-        <li>Wenn du Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt hast, muss eine Abwägung zwischen deinen und unseren Interessen vorgenommen werden.</li>
+        <li data-en="If you dispute the accuracy of the data stored by us, we usually need time to check this.">Wenn du die Richtigkeit deiner bei uns gespeicherten Daten bestreitest, benötigen wir in der Regel Zeit, um dies zu überprüfen.</li>
+        <li data-en="If the processing of your data was unlawful, you can request restriction of processing instead of erasure.">Wenn die Verarbeitung deiner Daten unrechtmäßig geschah, kannst du statt der Löschung die Einschränkung der Verarbeitung verlangen.</li>
+        <li data-en="If we no longer need your data, but you need it to exercise, defend or assert legal claims.">Wenn wir deine Daten nicht mehr benötigen, du sie jedoch zur Ausübung, Verteidigung oder Geltendmachung von Rechtsansprüchen brauchst.</li>
+        <li data-en="If you have lodged an objection pursuant to Article 21(1) GDPR, your interests and ours must be weighed up.">Wenn du Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt hast, muss eine Abwägung zwischen deinen und unseren Interessen vorgenommen werden.</li>
       </ul>
-      <h3>Widerspruch gegen Werbe-E-Mails</h3>
-      <p>Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit widersprochen.</p>
+      <h3 data-en="Objection to promotional emails">Widerspruch gegen Werbe-E-Mails</h3>
+      <p data-en="We hereby object to the use of contact data published within the scope of the legal notice obligation to send unsolicited advertising and information materials.">Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit widersprochen.</p>
     </section>
 
     <section class="legal">
-      <h2>3. Datenerfassung auf dieser Website</h2>
-      <h3>Cookies</h3>
-      <p>Unsere Website verwendet von sich aus keine einwilligungspflichtigen Cookies. Eingebundene Inhalte Dritter (YouTube, SoundCloud, Spotify) können unter deren jeweiliger Verantwortung und Datenschutzerklärung Cookies laden.</p>
-      <h3>Kontaktformular</h3>
-      <p>Wenn du uns per Kontaktformular Anfragen zukommen lässt, werden deine Angaben aus dem Anfrageformular inklusive der von dir dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne deine Einwilligung weiter.</p>
-      <p>Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern deine Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf deiner Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).</p>
+      <h2 data-en="3. Data collection on this website">3. Datenerfassung auf dieser Website</h2>
+      <h3 data-en="Cookies">Cookies</h3>
+      <p data-en="Our website does not use cookies that require consent on its own. Third-party embeds (YouTube, SoundCloud, Spotify) may load cookies under their respective responsibility and privacy policies.">Unsere Website verwendet von sich aus keine einwilligungspflichtigen Cookies. Eingebundene Inhalte Dritter (YouTube, SoundCloud, Spotify) können unter deren jeweiliger Verantwortung und Datenschutzerklärung Cookies laden.</p>
+      <h3 data-en="Contact form">Kontaktformular</h3>
+      <p data-en="If you send us enquiries via the contact form, your details from the enquiry form, including the contact data you provide, will be stored by us for the purpose of processing the enquiry and in case of follow-up questions. We do not share this data without your consent.">Wenn du uns per Kontaktformular Anfragen zukommen lässt, werden deine Angaben aus dem Anfrageformular inklusive der von dir dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne deine Einwilligung weiter.</p>
+      <p data-en="This data is processed on the basis of Article 6(1)(b) GDPR if your request is related to the performance of a contract or necessary for pre-contractual measures. In all other cases, processing is based on our legitimate interest in effectively handling enquiries (Article 6(1)(f) GDPR) or on your consent (Article 6(1)(a) GDPR).">Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern deine Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf deiner Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).</p>
     </section>
 
     <section class="legal">
-      <h2>4. Hosting und Content Delivery Networks (CDN)</h2>
-      <h3>Amazon CloudFront CDN</h3>
-      <p>Wir nutzen das Content Delivery Network Amazon CloudFront. Anbieter ist die Amazon Web Services EMEA SARL, 38 Avenue John F. Kennedy, L-1855 Luxemburg (nachfolgend „Amazon").</p>
-      <p>Amazon CloudFront ist ein weltweit verteiltes Content Delivery Network. Dadurch können wir die weltweite Erreichbarkeit und Leistungsfähigkeit unserer Website erhöhen. Der Einsatz erfolgt auf Grundlage unseres berechtigten Interesses an einer möglichst fehlerfreien und sicheren Bereitstellung unserer Website (Art. 6 Abs. 1 lit. f DSGVO).</p>
-      <p>Die Datenübertragung in die USA wird auf die Standardvertragsklauseln der EU-Kommission gestützt. Das Unternehmen ist unter dem EU-US Data Privacy Framework (DPF) zertifiziert. Details: <a href="https://www.dataprivacyframework.gov/participant/4452" target="_blank" rel="noopener noreferrer">dataprivacyframework.gov</a>.</p>
+      <h2 data-en="4. Hosting and content delivery networks (CDN)">4. Hosting und Content Delivery Networks (CDN)</h2>
+      <h3 data-en="Amazon CloudFront CDN">Amazon CloudFront CDN</h3>
+      <p data-en="We use the content delivery network Amazon CloudFront. The provider is Amazon Web Services EMEA SARL, 38 Avenue John F. Kennedy, L-1855 Luxembourg (&quot;Amazon&quot;).">Wir nutzen das Content Delivery Network Amazon CloudFront. Anbieter ist die Amazon Web Services EMEA SARL, 38 Avenue John F. Kennedy, L-1855 Luxemburg (nachfolgend „Amazon").</p>
+      <p data-en="Amazon CloudFront is a globally distributed content delivery network. This enables us to increase the worldwide accessibility and performance of our website. Its use is based on our legitimate interest in providing our website as error-free and secure as possible (Article 6(1)(f) GDPR).">Amazon CloudFront ist ein weltweit verteiltes Content Delivery Network. Dadurch können wir die weltweite Erreichbarkeit und Leistungsfähigkeit unserer Website erhöhen. Der Einsatz erfolgt auf Grundlage unseres berechtigten Interesses an einer möglichst fehlerfreien und sicheren Bereitstellung unserer Website (Art. 6 Abs. 1 lit. f DSGVO).</p>
+      <p data-en-html="The transfer of data to the USA is based on the EU Commission&#39;s standard contractual clauses. The company is certified under the EU-US Data Privacy Framework (DPF). Details: &lt;a href=&quot;https://www.dataprivacyframework.gov/participant/4452&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;dataprivacyframework.gov&lt;/a&gt;.">Die Datenübertragung in die USA wird auf die Standardvertragsklauseln der EU-Kommission gestützt. Das Unternehmen ist unter dem EU-US Data Privacy Framework (DPF) zertifiziert. Details: <a href="https://www.dataprivacyframework.gov/participant/4452" target="_blank" rel="noopener noreferrer">dataprivacyframework.gov</a>.</p>
     </section>
 
     <section class="legal">
-      <h2>5. Plugins und Tools</h2>
+      <h2 data-en="5. Plugins and tools">5. Plugins und Tools</h2>
       <h3>YouTube</h3>
-      <p>Diese Website bindet Videos ein, die auf YouTube gehostet werden. Betreiber ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Beim Besuch einer Seite mit eingebettetem YouTube-Inhalt wird eine Verbindung zu den YouTube-Servern hergestellt. Dabei wird dem YouTube-Server mitgeteilt, welche unserer Seiten du besucht hast.</p>
-      <p>Die Nutzung von YouTube erfolgt im Interesse einer ansprechenden Darstellung unserer Online-Angebote (Art. 6 Abs. 1 lit. f DSGVO) bzw., sofern abgefragt, auf Basis deiner Einwilligung (Art. 6 Abs. 1 lit. a DSGVO i.&nbsp;V.&nbsp;m. § 25 Abs. 1 TDDDG). Weitere Informationen: <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>.</p>
+      <p data-en="This website embeds videos hosted on YouTube. The operator is Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland. When you visit a page with embedded YouTube content, a connection to the YouTube servers is established, informing the server which of our pages you have visited.">Diese Website bindet Videos ein, die auf YouTube gehostet werden. Betreiber ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Beim Besuch einer Seite mit eingebettetem YouTube-Inhalt wird eine Verbindung zu den YouTube-Servern hergestellt. Dabei wird dem YouTube-Server mitgeteilt, welche unserer Seiten du besucht hast.</p>
+      <p data-en-html="YouTube is used in the interest of an appealing presentation of our online offerings (Article 6(1)(f) GDPR) or, where requested, on the basis of your consent (Article 6(1)(a) GDPR in conjunction with Section 25(1) TDDDG). More info: &lt;a href=&quot;https://policies.google.com/privacy?hl=en&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;policies.google.com/privacy&lt;/a&gt;.">Die Nutzung von YouTube erfolgt im Interesse einer ansprechenden Darstellung unserer Online-Angebote (Art. 6 Abs. 1 lit. f DSGVO) bzw., sofern abgefragt, auf Basis deiner Einwilligung (Art. 6 Abs. 1 lit. a DSGVO i.&nbsp;V.&nbsp;m. § 25 Abs. 1 TDDDG). Weitere Informationen: <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>.</p>
       <h3>SoundCloud</h3>
-      <p>Diese Website kann Plugins des sozialen Netzwerks SoundCloud (SoundCloud Limited, Berners House, 47-48 Berners Street, London W1T 3NF, UK) einbinden. Beim Besuch dieser Website wird nach Aktivierung des Plugins eine direkte Verbindung zwischen deinem Browser und dem SoundCloud-Server hergestellt. SoundCloud erhält dadurch die Information, dass du mit deiner IP-Adresse diese Website besucht hast.</p>
-      <p>Speicherung und Analyse erfolgen auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Weitere Informationen: <a href="https://soundcloud.com/pages/privacy" target="_blank" rel="noopener noreferrer">soundcloud.com/pages/privacy</a>.</p>
+      <p data-en="This website may embed plugins of the social network SoundCloud (SoundCloud Limited, Berners House, 47-48 Berners Street, London W1T 3NF, UK). When you visit this website, after activating the plugin a direct connection is established between your browser and the SoundCloud server. SoundCloud thereby receives the information that you have visited this website with your IP address.">Diese Website kann Plugins des sozialen Netzwerks SoundCloud (SoundCloud Limited, Berners House, 47-48 Berners Street, London W1T 3NF, UK) einbinden. Beim Besuch dieser Website wird nach Aktivierung des Plugins eine direkte Verbindung zwischen deinem Browser und dem SoundCloud-Server hergestellt. SoundCloud erhält dadurch die Information, dass du mit deiner IP-Adresse diese Website besucht hast.</p>
+      <p data-en-html="Storage and analysis are based on Article 6(1)(f) GDPR. More info: &lt;a href=&quot;https://soundcloud.com/pages/privacy&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;soundcloud.com/pages/privacy&lt;/a&gt;.">Speicherung und Analyse erfolgen auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Weitere Informationen: <a href="https://soundcloud.com/pages/privacy" target="_blank" rel="noopener noreferrer">soundcloud.com/pages/privacy</a>.</p>
       <h3>Spotify</h3>
-      <p>Diese Website bindet Funktionen des Musikdienstes Spotify ein. Anbieter ist die Spotify AB, Birger Jarlsgatan 61, 113 56 Stockholm, Schweden. Beim Besuch dieser Website über das Plugin wird eine direkte Verbindung zwischen deinem Browser und dem Spotify-Server hergestellt. Spotify erhält dadurch die Information, dass du mit deiner IP-Adresse diese Website besucht hast.</p>
-      <p>Speicherung und Analyse erfolgen auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Weitere Informationen: <a href="https://www.spotify.com/de/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">spotify.com/de/legal/privacy-policy</a>.</p>
+      <p data-en="This website embeds functions of the music service Spotify. The provider is Spotify AB, Birger Jarlsgatan 61, 113 56 Stockholm, Sweden. When you visit this website via the plugin, a direct connection is established between your browser and the Spotify server. Spotify thereby receives the information that you have visited this website with your IP address.">Diese Website bindet Funktionen des Musikdienstes Spotify ein. Anbieter ist die Spotify AB, Birger Jarlsgatan 61, 113 56 Stockholm, Schweden. Beim Besuch dieser Website über das Plugin wird eine direkte Verbindung zwischen deinem Browser und dem Spotify-Server hergestellt. Spotify erhält dadurch die Information, dass du mit deiner IP-Adresse diese Website besucht hast.</p>
+      <p data-en-html="Storage and analysis are based on Article 6(1)(f) GDPR. More info: &lt;a href=&quot;https://www.spotify.com/en/legal/privacy-policy/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;spotify.com/en/legal/privacy-policy&lt;/a&gt;.">Speicherung und Analyse erfolgen auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Weitere Informationen: <a href="https://www.spotify.com/de/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">spotify.com/de/legal/privacy-policy</a>.</p>
       <p>Quelle: <a href="https://www.e-recht24.de" target="_blank" rel="noopener noreferrer">e-recht24.de</a></p>
     </section>
 
-    <a class="back" href="../">← zurück zur Startseite</a>
+    <a class="back" href="../" data-en="← back to home">← zurück zur Startseite</a>
   </div>
 </main>
 
 <footer>
-  <p>© <span id="yr"></span> KIZU · <a href="../impressum/">Impressum</a> · <a href="./">Datenschutz</a></p>
+  <p>© <span id="yr"></span> KIZU · <a href="../impressum/" data-en="Legal Notice">Impressum</a> · <a href="./" data-en="Privacy">Datenschutz</a></p>
 </footer>
 
+<script>
+  (function(){
+    const saved=localStorage.getItem('kizu-lang');
+    const browser=(navigator.language||'de').toLowerCase().startsWith('en')?'en':'de';
+    let lang=saved||browser;
+    function apply(l){
+      lang=l; document.documentElement.setAttribute('data-lang',l); document.documentElement.setAttribute('lang',l);
+      document.querySelectorAll('[data-en]').forEach(el=>{ if(!el.__d){el.__d=el.textContent;} el.textContent=(l==='en')?el.getAttribute('data-en'):el.__d; });
+      document.querySelectorAll('[data-en-html]').forEach(el=>{ if(!el.__dh){el.__dh=el.innerHTML;} el.innerHTML=(l==='en')?el.getAttribute('data-en-html'):el.__dh; });
+    }
+    document.documentElement.setAttribute('data-lang',lang);
+    document.addEventListener('DOMContentLoaded',()=>{ apply(lang); const b=document.getElementById('langSwitch'); if(b)b.addEventListener('click',()=>{const n=lang==='en'?'de':'en';localStorage.setItem('kizu-lang',n);apply(n);}); });
+  })();
+</script>
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 </body>
 </html>

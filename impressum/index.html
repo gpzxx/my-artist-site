@@ -51,6 +51,11 @@
   .legal p:last-child,.legal address:last-child{margin-bottom:0}
   .legal address strong{color:var(--ink);font-weight:700}
 
+  .lang-switch{background:transparent;border:1px solid var(--line);color:var(--ink-soft);border-radius:999px;padding:7px 12px;font-family:'Courier New',monospace;font-weight:700;font-size:12px;letter-spacing:.08em;cursor:pointer;display:inline-flex;gap:4px;align-items:center;transition:border-color .2s}
+  .lang-switch:hover{border-color:var(--green)}
+  .lang-switch .lang-sep{opacity:.4}
+  html[data-lang="de"] .lang-switch .lang-de{color:var(--green)}
+  html[data-lang="en"] .lang-switch .lang-en{color:var(--green)}
   footer{text-align:center;padding:36px 0;color:var(--ink-soft);font-size:14px;border-top:1px solid var(--line);margin-top:40px}
   footer a{color:var(--green);text-decoration:none}
   .back{display:inline-flex;gap:8px;margin-top:30px;font-family:'Courier New',monospace;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);text-decoration:none}
@@ -62,20 +67,21 @@
 <header class="nav">
   <div class="nav-inner">
     <a class="brand" href="../">KIZU</a>
-    <a class="nav-cta" href="../#booking">Booking</a>
+    <button class="lang-switch" id="langSwitch" type="button" aria-label="Sprache wechseln / switch language"><span class="lang-de">DE</span><span class="lang-sep">/</span><span class="lang-en">EN</span></button>
+    <a class="nav-cta" href="../#booking" data-en="Booking">Booking</a>
   </div>
 </header>
 
 <main>
   <div class="wrap">
     <div class="page-head">
-      <span class="eyebrow">// rechtliches</span>
-      <h1>Impressum</h1>
-      <p>Angaben gemäß § 5 TMG und § 55 RStV.</p>
+      <span class="eyebrow" data-en="// legal">// rechtliches</span>
+      <h1 data-en="Legal Notice">Impressum</h1>
+      <p data-en="Information pursuant to Section 5 TMG and Section 55 RStV.">Angaben gemäß § 5 TMG und § 55 RStV.</p>
     </div>
 
     <section class="legal">
-      <h2>Angaben gemäß § 5 TMG</h2>
+      <h2 data-en="Information pursuant to Section 5 TMG">Angaben gemäß § 5 TMG</h2>
       <address>
         <strong>Andrei Moldovan</strong><br />
         DJ / Producer<br />
@@ -86,49 +92,64 @@
     </section>
 
     <section class="legal">
-      <h2>Kontakt</h2>
-      <p>Telefon: <a href="tel:+4917632817822">+49 (0) 176 328 17822</a><br />
+      <h2 data-en="Contact">Kontakt</h2>
+      <p><span data-en="Phone:">Telefon:</span> <a href="tel:+4917632817822">+49 (0) 176 328 17822</a><br />
       E-Mail: <a href="mailto:info@kizuloge.com">info@kizuloge.com</a></p>
-      <p>Für Anfragen kannst du auch das <a href="../#booking">Booking-Formular</a> nutzen.</p>
+      <p data-en-html="You can also use the &lt;a href=&quot;../#booking&quot;&gt;booking form&lt;/a&gt;.">Für Anfragen kannst du auch das <a href="../#booking">Booking-Formular</a> nutzen.</p>
     </section>
 
     <section class="legal">
-      <h2>Verbraucherstreitbeilegung</h2>
-      <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+      <h2 data-en="Consumer dispute resolution">Verbraucherstreitbeilegung</h2>
+      <p data-en="We are neither willing nor obliged to participate in dispute resolution proceedings before a consumer arbitration board.">Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
       <p>Quelle: <a href="https://www.e-recht24.de" rel="noopener" target="_blank">e-recht24.de</a></p>
     </section>
 
     <section class="legal">
-      <h2>Haftung für Inhalte</h2>
-      <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
-      <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+      <h2 data-en="Liability for content">Haftung für Inhalte</h2>
+      <p data-en="As a service provider we are responsible for our own content on these pages in accordance with Section 7 paragraph 1 TMG and general legislation. According to Sections 8 to 10 TMG, we are however not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate unlawful activity.">Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+      <p data-en="Obligations to remove or block the use of information under general legislation remain unaffected. Liability in this respect is however only possible from the time we become aware of a specific infringement. If we become aware of any such legal violations, we will remove the relevant content immediately.">Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
     </section>
 
     <section class="legal">
-      <h2>Haftung für Links</h2>
-      <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.</p>
-      <p>Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+      <h2 data-en="Liability for links">Haftung für Links</h2>
+      <p data-en="Our offer contains links to external third-party websites over whose content we have no influence. Therefore we cannot assume any liability for this external content. The respective provider or operator of the linked pages is always responsible for the content of the pages. Unlawful content was not recognisable at the time the link was created.">Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.</p>
+      <p data-en="Permanent monitoring of the content of the linked pages is however unreasonable without concrete evidence of a violation of the law. If we become aware of any legal infringements, we will remove such links immediately.">Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
     </section>
 
     <section class="legal">
-      <h2>Urheberrecht</h2>
-      <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
-      <p>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Solltest du trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+      <h2 data-en="Copyright">Urheberrecht</h2>
+      <p data-en="The content and works created by the site operators on these pages are subject to German copyright law. Duplication, processing, distribution and any kind of utilisation outside the limits of copyright law require the written consent of the respective author or creator. Downloads and copies of this site are only permitted for private, non-commercial use.">Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+      <p data-en="Where the content on this page was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is identified as such. Should you nevertheless become aware of a copyright infringement, please inform us accordingly. As soon as we become aware of legal violations, we will remove such content immediately.">Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Solltest du trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
     </section>
 
     <section class="legal">
-      <h2>Online-Streitbeilegung</h2>
+      <h2 data-en="Online dispute resolution">Online-Streitbeilegung</h2>
       <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" rel="noopener" target="_blank">https://ec.europa.eu/consumers/odr</a>. Unsere E-Mail-Adresse findest du oben in diesem Impressum.</p>
     </section>
 
-    <a class="back" href="../">← zurück zur Startseite</a>
+    <a class="back" href="../" data-en="← back to home">← zurück zur Startseite</a>
   </div>
 </main>
 
 <footer>
-  <p>© <span id="yr"></span> KIZU · <a href="./">Impressum</a> · <a href="../datenschutz/">Datenschutz</a></p>
+  <p>© <span id="yr"></span> KIZU · <a href="./" data-en="Legal Notice">Impressum</a> · <a href="../datenschutz/" data-en="Privacy">Datenschutz</a></p>
 </footer>
 
+<script>
+  // i18n engine
+  (function(){
+    const saved=localStorage.getItem('kizu-lang');
+    const browser=(navigator.language||'de').toLowerCase().startsWith('en')?'en':'de';
+    let lang=saved||browser;
+    function apply(l){
+      lang=l; document.documentElement.setAttribute('data-lang',l); document.documentElement.setAttribute('lang',l);
+      document.querySelectorAll('[data-en]').forEach(el=>{ if(!el.__d){el.__d=el.textContent;} el.textContent=(l==='en')?el.getAttribute('data-en'):el.__d; });
+      document.querySelectorAll('[data-en-html]').forEach(el=>{ if(!el.__dh){el.__dh=el.innerHTML;} el.innerHTML=(l==='en')?el.getAttribute('data-en-html'):el.__dh; });
+    }
+    document.documentElement.setAttribute('data-lang',lang);
+    document.addEventListener('DOMContentLoaded',()=>{ apply(lang); const b=document.getElementById('langSwitch'); if(b)b.addEventListener('click',()=>{const n=lang==='en'?'de':'en';localStorage.setItem('kizu-lang',n);apply(n);}); });
+  })();
+</script>
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 </body>
 </html>
