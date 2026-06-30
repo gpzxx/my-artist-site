@@ -4,6 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>KIZU — DJ & Producer · Trance · Hard House · Speed Garage</title>
+<link rel="icon" href="assets/icons/Kizu_Logo_1.png" type="image/png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -237,6 +238,22 @@
   .brider p{color:var(--ink-soft);font-size:14px;margin:0 0 18px}
   #booking{text-align:left}
 
+  /* ===== upcoming gigs ===== */
+  #gigs{text-align:left}
+  .gig-list{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+  .gig{display:flex;align-items:center;gap:20px;text-decoration:none;background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;transition:transform .2s,border-color .2s,box-shadow .2s}
+  .gig:hover{transform:translateY(-3px);border-color:var(--magenta);box-shadow:var(--shadow-cyan)}
+  .gig-date{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:58px;width:58px;flex:none;border-right:1px solid var(--line);padding-right:18px}
+  .gig-day{font-family:'Fraunces',serif;font-weight:900;font-size:30px;line-height:1;color:var(--magenta)}
+  .gig-mon{font-family:'Courier New',monospace;font-weight:700;font-size:12px;letter-spacing:.12em;color:var(--ink-soft);margin-top:2px}
+  .gig-main{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}
+  .gig-name{font-weight:700;font-size:17px;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .gig-venue{font-size:14px;color:var(--ink-soft)}
+  .gig-arrow{margin-left:auto;color:var(--ink-soft);font-size:18px;transition:transform .2s,color .2s;flex:none}
+  .gig:hover .gig-arrow{color:var(--magenta);transform:translate(3px,-3px)}
+  .gig-empty{color:var(--ink-soft);margin-top:24px;font-size:16px}
+  @media(max-width:560px){.gig-name{white-space:normal}}
+
   /* reveal */
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
   .reveal.in{opacity:1;transform:none}
@@ -255,6 +272,7 @@
     <nav class="nav-links">
       <a href="#about">Story</a>
       <a href="#music">Musik</a>
+      <a href="#gigs">Tour</a>
       <a href="#vibe">Vibe</a>
       <a href="#links">Links</a>
       <a href="#booking">Booking</a>
@@ -300,14 +318,17 @@
       <div class="about-grid" style="margin-top:32px">
         <div class="about-card reveal">
           <p>Kizu ist ein junger, vielseitiger Artist aus Ravensburg, dessen Mission es ist, Menschen zum Lachen zu bringen, sie emotional zu bewegen und die ekstatische Kraft elektronischer Musik auf den Dancefloor zu holen. Start Ende 2023, Produktion ab Ende 2024 — und seitdem schnell ein selbstbewusster, energiegeladener Sound.</p>
-          <p style="margin-bottom:0">Bookings &amp; Residencies u.&nbsp;a. Hans-Bunte-Areal (Freiburg), Club Douala (Ravensburg), Circle (Offenburg) und //:about&nbsp;blank (Berlin). Releases auf Para//e/, SYNTHX Records, Milli Records &amp; SeshDawgsUnited.</p>
+          <p style="margin-bottom:0">Aufgelegt u.&nbsp;a. im Bootshaus (Köln), Odonien (Köln), Club Ost (Berlin) und Lokschuppen (Berlin). Releases auf Bootshaus Music, 2much, SeshDawgs &amp; Parallel.</p>
           <div class="since">
             <span class="since-tick" aria-hidden="true"></span>
             <span class="since-text">DJ seit <strong>Januar 2024</strong> · <span data-since="2024-01-01"></span> on the decks</span>
           </div>
         </div>
         <div class="portrait reveal">
-          <span style="color:var(--ink-soft);font-weight:600;text-align:center;font-size:15px">Dein Portrait<br>kommt hier hin</span>
+          <picture>
+            <source srcset="assets/img/DSC02938.webp" type="image/webp" />
+            <img src="assets/img/DSC02938.jpg" alt="KIZU Portrait" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+          </picture>
         </div>
       </div>
     </div>
@@ -326,23 +347,49 @@
           <span class="ct-item">Odonien <em>Köln</em></span><span class="ct-sep">✦</span>
           <span class="ct-item">Club Ost <em>Berlin</em></span><span class="ct-sep">✦</span>
           <span class="ct-item">Lokschuppen <em>Berlin</em></span><span class="ct-sep">✦</span>
-          <span class="ct-item">//:about blank <em>Berlin</em></span><span class="ct-sep">✦</span>
-          <span class="ct-item">Hans-Bunte-Areal <em>Freiburg</em></span><span class="ct-sep">✦</span>
-          <span class="ct-item">Fundbureau <em>Hamburg</em></span><span class="ct-sep">✦</span>
-          <span class="ct-item">Club Douala <em>Ravensburg</em></span><span class="ct-sep">✦</span>
-          <span class="ct-item">Circle <em>Offenburg</em></span><span class="ct-sep">✦</span>
         </span>
         <span class="ct-set" aria-hidden="true">
           <span class="ct-item">Bootshaus <em>Köln</em></span><span class="ct-sep">✦</span>
           <span class="ct-item">Odonien <em>Köln</em></span><span class="ct-sep">✦</span>
           <span class="ct-item">Club Ost <em>Berlin</em></span><span class="ct-sep">✦</span>
           <span class="ct-item">Lokschuppen <em>Berlin</em></span><span class="ct-sep">✦</span>
-          <span class="ct-item">//:about blank <em>Berlin</em></span><span class="ct-sep">✦</span>
-          <span class="ct-item">Hans-Bunte-Areal <em>Freiburg</em></span><span class="ct-sep">✦</span>
-          <span class="ct-item">Fundbureau <em>Hamburg</em></span><span class="ct-sep">✦</span>
-          <span class="ct-item">Club Douala <em>Ravensburg</em></span><span class="ct-sep">✦</span>
-          <span class="ct-item">Circle <em>Offenburg</em></span><span class="ct-sep">✦</span>
         </span>
+      </div>
+    </div>
+  </section>
+
+  <div class="ascii-div reveal" aria-hidden="true">▹ ▹ ▹ &nbsp;[ T O U R&nbsp;2026 ]&nbsp; ◃ ◃ ◃</div>
+
+  <!-- UPCOMING GIGS (auto-filtered from RA data) -->
+  <section id="gigs">
+    <div class="wrap">
+      <div class="eyebrow reveal">// upcoming</div>
+      <h2 class="sec-h reveal">Tour Dates</h2>
+      <div class="gig-list reveal" id="gigList">
+        <a class="gig" href="https://ra.co/events/2470346" target="_blank" rel="noopener" data-date="2026-07-03">
+          <span class="gig-date"><span class="gig-day">03</span><span class="gig-mon">JUL</span></span>
+          <span class="gig-main"><span class="gig-name">OST Klubnacht</span><span class="gig-venue">OST · Berlin</span></span>
+          <span class="gig-arrow">↗</span>
+        </a>
+        <a class="gig" href="https://ra.co/events/2456422" target="_blank" rel="noopener" data-date="2026-07-04">
+          <span class="gig-date"><span class="gig-day">04</span><span class="gig-mon">JUL</span></span>
+          <span class="gig-main"><span class="gig-name">SYNTHX x BPM Berlin — Open Air + Club</span><span class="gig-venue">LIVE EVIL · München</span></span>
+          <span class="gig-arrow">↗</span>
+        </a>
+        <a class="gig" href="https://ra.co/events/2416757" target="_blank" rel="noopener" data-date="2026-07-17">
+          <span class="gig-date"><span class="gig-day">17</span><span class="gig-mon">JUL</span></span>
+          <span class="gig-main"><span class="gig-name">Sea You — Beach Republic 2026</span><span class="gig-venue">Tunisee · Freiburg</span></span>
+          <span class="gig-arrow">↗</span>
+        </a>
+        <a class="gig" href="https://ra.co/events/2446798" target="_blank" rel="noopener" data-date="2026-12-30">
+          <span class="gig-date"><span class="gig-day">30</span><span class="gig-mon">DEZ</span></span>
+          <span class="gig-main"><span class="gig-name">Polyamor x SESH</span><span class="gig-venue">RAW-Lokschuppen + Astra · Berlin</span></span>
+          <span class="gig-arrow">↗</span>
+        </a>
+      </div>
+      <p class="gig-empty reveal" id="gigEmpty" hidden>Aktuell keine angekündigten Termine — schau auf RA für Updates.</p>
+      <div style="margin-top:24px">
+        <a class="btn ghost" href="https://ra.co/dj/kizu/tour-dates" target="_blank" rel="noopener">Alle Tour Dates auf RA ansehen ↗</a>
       </div>
     </div>
   </section>
@@ -612,6 +659,28 @@
       if(st){ st.hidden=false; st.textContent='Deine Mail-App sollte sich öffnen. Falls nicht, schreib direkt an bookings@kizuloge.com'; }
     });
   }
+
+  // ===== auto-filter upcoming gigs (hide past, sort by date) =====
+  (function(){
+    const list=document.getElementById('gigList');
+    if(!list) return;
+    const today=new Date(); today.setHours(0,0,0,0);
+    const gigs=Array.from(list.querySelectorAll('.gig'));
+    let visible=0;
+    gigs.forEach(g=>{
+      const d=new Date(g.dataset.date+'T00:00:00');
+      if(d<today){ g.remove(); } else { visible++; }
+    });
+    // sort remaining ascending by date
+    Array.from(list.querySelectorAll('.gig'))
+      .sort((a,b)=> new Date(a.dataset.date) - new Date(b.dataset.date))
+      .forEach(g=> list.appendChild(g));
+    if(visible===0){
+      list.hidden=true;
+      const empty=document.getElementById('gigEmpty');
+      if(empty) empty.hidden=false;
+    }
+  })();
 </script>
 </body>
 </html>
