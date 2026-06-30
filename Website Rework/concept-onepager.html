@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>KIZU — Konzept (One-Pager)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    color-scheme:dark;
+    /* ---- NoirLabs-style: deep black + green glow ---- */
+    --paper:#0a0a0a;          /* page bg (near-black) */
+    --paper-2:#121312;        /* raised surface / cards */
+    --ink:#f4f5f4;            /* white text */
+    --ink-soft:#8b938b;       /* muted grey text */
+    /* ONE single accent: green. all names map to the same green for safety */
+    --magenta:#2fe07a;        /* THE green */
+    --magenta-deep:#2fe07a;
+    --cyan:#2fe07a;
+    --cyan-deep:#2fe07a;
+    --acid:#2fe07a;
+    --line:rgba(255,255,255,.10);
+    --container:1140px;
+    --r:14px;                 /* tighter, more studio/clean */
+    --shadow:0 18px 50px rgba(0,0,0,.55), 0 0 0 1px rgba(52,229,122,.06);
+    --shadow-cyan:0 18px 50px rgba(0,0,0,.55), 0 0 30px rgba(52,229,122,.12);
+    --glow:0 0 24px rgba(52,229,122,.35);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:'Space Grotesk',system-ui,sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(52,229,122,.08), transparent 60%),
+      radial-gradient(900px 500px at 0% 110%, rgba(52,229,122,.06), transparent 55%),
+      linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px),
+      var(--paper);
+    background-size:auto,auto,46px 46px,46px 46px,auto;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:900;line-height:.98;margin:0;letter-spacing:-.01em}
+  a{color:inherit}
+  .display{font-size:clamp(56px,12vw,150px);text-transform:uppercase}
+
+  /* ====== floating blobby background shapes ====== */
+  .blob{position:fixed;border-radius:50%;filter:blur(80px);opacity:.22;z-index:0;pointer-events:none}
+  .blob.a{width:480px;height:480px;background:var(--magenta);top:-120px;right:-100px;animation:float1 14s ease-in-out infinite}
+  .blob.b{width:420px;height:420px;background:var(--cyan);bottom:-140px;left:-120px;animation:float2 17s ease-in-out infinite}
+  @keyframes float1{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+  @keyframes float2{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,-30px)}}
+  @media (prefers-reduced-motion:reduce){.blob{animation:none}}
+
+  /* ====== top nav ====== */
+  header.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(10,10,10,.72);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-weight:900;font-size:24px;letter-spacing:.02em;text-decoration:none}
+  .nav-links{display:flex;gap:26px;font-weight:600;font-size:15px}
+  .nav-links a{text-decoration:none;opacity:.8;transition:opacity .2s,color .2s}
+  .nav-links a:hover{opacity:1;color:var(--magenta-deep)}
+  .nav-cta{background:var(--magenta);color:#04130a;padding:9px 18px;border-radius:999px;text-decoration:none;font-weight:700;font-size:14px;transition:transform .2s,box-shadow .2s}
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:var(--glow)}
+  @media(max-width:720px){.nav-links{display:none}}
+
+  /* ====== hero ====== */
+  .hero{position:relative;z-index:1;padding:70px 0 40px;text-align:center}
+  .tag{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;background:var(--paper-2);border:1px solid var(--line);padding:7px 16px;border-radius:999px;box-shadow:var(--shadow)}
+  .tag .dot{width:8px;height:8px;border-radius:50%;background:var(--magenta);box-shadow:0 0 0 4px rgba(47,224,122,.18)}
+  .hero h1{margin:24px 0 0}
+  .hero .gradient{background:linear-gradient(100deg,var(--magenta),var(--cyan-deep));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.lead{max-width:620px;margin:22px auto 0;font-size:19px;color:var(--ink-soft)}
+  .genres{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px}
+  .chip{font-weight:600;font-size:14px;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-2);transition:.2s;color:var(--ink)}
+  .chip:hover{background:var(--magenta);border-color:var(--magenta);color:#04130a;transform:translateY(-2px);box-shadow:var(--glow)}
+  .cta-row{display:flex;gap:14px;justify-content:center;margin-top:34px;flex-wrap:wrap}
+  .btn{padding:14px 28px;border-radius:999px;font-weight:700;text-decoration:none;font-size:16px;transition:transform .2s,box-shadow .2s;display:inline-block}
+  .btn.primary{background:var(--magenta);color:#04130a;box-shadow:var(--glow)}
+  .btn.primary:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 0 34px rgba(47,224,122,.5)}
+  .btn.ghost{background:transparent;border:1.5px solid var(--line);color:var(--ink)}
+  .btn.ghost:hover{transform:translateY(-3px);border-color:var(--magenta);box-shadow:var(--shadow-cyan)}
+
+  /* ====== marquee ====== */
+  .marquee{margin:54px 0;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;background:transparent}
+  .marquee-track{display:flex;gap:40px;white-space:nowrap;animation:scroll 18s linear infinite;font-family:'Fraunces',serif;font-weight:900;font-size:30px;text-transform:uppercase;color:var(--magenta)}
+  .marquee-track span{display:inline-flex;align-items:center;gap:40px}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){.marquee-track{animation:none}}
+
+  /* ====== sections ====== */
+  section{position:relative;z-index:1;padding:60px 0}
+  .eyebrow{font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--magenta-deep);margin-bottom:10px}
+  .sec-h{font-size:clamp(34px,6vw,64px);margin-bottom:8px}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+  @media(max-width:820px){.about-grid{grid-template-columns:1fr}}
+  .about-card{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r);padding:32px;box-shadow:var(--shadow)}
+  .about-card p{font-size:17px;color:var(--ink-soft)}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+  .stat{background:var(--paper);border-radius:16px;padding:18px;text-align:center;border:1px solid var(--line)}
+  .stat .n{font-family:'Fraunces',serif;font-weight:900;font-size:38px;line-height:1;background:linear-gradient(120deg,var(--magenta),var(--cyan-deep));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat .l{font-size:13px;color:var(--ink-soft);margin-top:6px}
+  .portrait{aspect-ratio:4/5;border-radius:var(--r);background:
+      radial-gradient(circle at 30% 18%,rgba(47,224,122,.32),transparent 55%),
+      radial-gradient(circle at 78% 82%,rgba(47,224,122,.34),transparent 55%),
+      var(--paper-2);
+      border:1px solid var(--line);
+      display:grid;place-items:center;padding:24px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+
+  /* releases */
+  .rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+  @media(max-width:820px){.rel-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.rel-grid{grid-template-columns:1fr}}
+  .rel{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .25s,box-shadow .25s;cursor:pointer}
+  .rel:hover{transform:translateY(-6px) rotate(-1deg);box-shadow:var(--shadow)}
+  .rel .cover{aspect-ratio:1;display:grid;place-items:center;font-family:'Fraunces',serif;font-weight:900;font-size:26px;color:var(--ink);text-align:center;padding:16px;
+    background:radial-gradient(circle at 50% 30%,rgba(47,224,122,.16),transparent 70%),#0e120f;border-bottom:1px solid var(--line)}
+  .rel:hover .cover{background:radial-gradient(circle at 50% 30%,rgba(47,224,122,.3),transparent 70%),#0e120f}
+  .rel .meta{padding:16px}
+  .rel .meta h3{font-family:'Space Grotesk';font-weight:700;font-size:17px}
+  .rel .meta .sub{font-size:13px;color:var(--ink-soft);margin-top:4px}
+  .rel .meta .play{margin-top:12px;font-size:13px;font-weight:600;color:var(--magenta-deep)}
+
+  /* "DJ since" dynamic line */
+  .since{display:inline-flex;align-items:center;gap:12px;margin-top:24px;padding:14px 20px;border-radius:999px;background:var(--paper-2);border:1px solid var(--line);font-size:16px;font-weight:600}
+  .since-tick{width:11px;height:11px;border-radius:50%;background:var(--magenta);box-shadow:0 0 0 5px rgba(47,224,122,.18);animation:pulse 2s ease-in-out infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 5px rgba(47,224,122,.18)}50%{box-shadow:0 0 0 9px rgba(47,224,122,.05)}}
+  @media (prefers-reduced-motion:reduce){.since-tick{animation:none}}
+  .since-text strong{color:var(--magenta-deep)}
+
+  /* clubs ticker (marquee) */
+  .club-ticker{margin-top:18px;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;background:transparent}
+  .club-ticker__track{display:flex;width:max-content;animation:ticker 32s linear infinite}
+  .club-ticker:hover .club-ticker__track{animation-play-state:paused}
+  @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){.club-ticker__track{animation:none}}
+  .ct-set{display:flex;align-items:center;flex:none}
+  .ct-item{font-family:'Fraunces',serif;font-weight:900;font-size:26px;color:var(--ink);padding:0 22px;white-space:nowrap;text-transform:uppercase;letter-spacing:.01em}
+  .ct-item em{font-style:normal;font-family:'Space Grotesk';font-weight:600;font-size:14px;color:var(--ink-soft);margin-left:8px;text-transform:none}
+  .ct-sep{color:var(--magenta);font-size:18px}
+
+  /* linktree (centered) */
+  .linktree{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:32px auto 0;max-width:680px}
+  @media(max-width:620px){.linktree{grid-template-columns:1fr;max-width:420px}}
+  .lt{display:flex;align-items:center;gap:14px;text-decoration:none;font-weight:600;font-size:16px;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;padding:15px 22px;transition:transform .2s,background .2s,color .2s,box-shadow .2s;min-width:0}
+  .lt .lt-ico{width:26px;height:26px;min-width:26px;flex:0 0 26px;display:grid;place-items:center;font-size:18px;overflow:hidden}
+  .lt img.lt-ico{max-width:26px;max-height:26px;width:auto;height:auto;object-fit:contain}
+  .lt .lt-label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+  /* last odd item spans both columns + stays centered */
+  .lt--wide{grid-column:1 / -1;justify-self:center;max-width:332px;width:100%}
+  .lt .lt-arrow{margin-left:auto;opacity:.35;transition:opacity .2s,transform .2s}
+  .lt:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--magenta)}
+  .lt:hover .lt-arrow{opacity:1;transform:translate(3px,-3px);color:var(--magenta-deep)}
+  .lt-ico--mail{background:linear-gradient(135deg,var(--magenta),var(--cyan-deep));-webkit-background-clip:text;background-clip:text;color:transparent;font-size:20px}
+
+  /* players */
+  .players{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px}
+  @media(max-width:820px){.players{grid-template-columns:1fr}}
+  .player-card{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:var(--shadow)}
+  .player-card iframe{display:block;border-radius:12px}
+  .player-head{display:flex;align-items:center;gap:9px;font-weight:600;font-size:14px;margin-bottom:12px}
+  .pc-dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+
+  /* vibe trio */
+  .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+  @media(max-width:820px){.trio{grid-template-columns:1fr}}
+  .vibe{border-radius:var(--r);padding:28px;color:var(--ink);min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;transition:transform .25s,border-color .25s,box-shadow .25s;background:var(--paper-2);border:1px solid var(--line);position:relative;overflow:hidden}
+  .vibe::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 0%,rgba(47,224,122,.14),transparent 60%);opacity:.6}
+  .vibe:hover{transform:translateY(-6px);border-color:var(--magenta);box-shadow:var(--shadow-cyan)}
+  .vibe>*{position:relative;z-index:1}
+  .vibe h3{font-family:'Space Grotesk';font-weight:700;font-size:22px;margin-bottom:8px;color:var(--magenta)}
+  .vibe p{font-size:15px;color:var(--ink-soft);margin:0}
+
+  /* booking */
+  .book{background:radial-gradient(circle at 50% 0%,rgba(47,224,122,.14),transparent 60%),var(--paper-2);border:1px solid var(--line);color:var(--ink);border-radius:24px;padding:54px 40px;text-align:center;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+  .book h2{color:var(--ink);font-size:clamp(32px,6vw,58px)}
+  .book p{color:var(--ink-soft);max-width:520px;margin:16px auto 0}
+  .book .btn.primary{margin-top:28px}
+  .book .small{margin-top:20px;font-size:14px;color:var(--ink-soft)}
+
+  footer{text-align:center;padding:40px 0;color:var(--ink-soft);font-size:14px}
+  footer a{color:var(--magenta-deep);text-decoration:none}
+
+  /* concept banner */
+  .concept-banner{background:#0d150f;color:var(--ink-soft);text-align:center;font-size:13px;padding:8px;font-weight:600;letter-spacing:.04em;border-bottom:1px solid var(--line)}
+  .concept-banner b{color:var(--magenta)}
+
+  /* ===== ASCII / terminal stuff ===== */
+  #matrix{position:fixed;inset:0;width:100%;height:100%;z-index:0;opacity:.16;pointer-events:none}
+  .ascii-logo{font-family:'Courier New',monospace;font-weight:700;line-height:1;margin:0 auto 26px;font-size:clamp(4px,1vw,8px);letter-spacing:0;white-space:pre;display:flex;justify-content:center;min-height:5.2em;
+    color:var(--magenta);text-shadow:0 0 12px rgba(47,224,122,.45);opacity:.92}
+  .term{font-family:'Courier New',monospace;font-size:17px;color:var(--ink-soft)}
+  .term-text{font-weight:500}
+  .term-cursor{display:inline-block;color:var(--magenta);font-weight:700;animation:blink 1s steps(1) infinite}
+  @keyframes blink{0%,50%{opacity:1}50.01%,100%{opacity:0}}
+  .ascii-div{text-align:center;font-family:'Courier New',monospace;font-weight:700;font-size:clamp(12px,2.4vw,18px);letter-spacing:.04em;padding:22px 0;color:var(--magenta-deep);
+    background:linear-gradient(100deg,var(--magenta),#2fe07a,var(--cyan-deep));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;position:relative;z-index:1;overflow-x:hidden;white-space:nowrap}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.term-cursor{animation:none}}
+</style>
+</head>
+<body>
+
+<div class="concept-banner"><b>KONZEPT-VORSCHAU</b> — neues Design, Platzhalter wo Fotos hinkommen.</div>
+
+<canvas id="matrix" aria-hidden="true"></canvas>
+<div class="blob a"></div>
+<div class="blob b"></div>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">KIZU</a>
+    <nav class="nav-links">
+      <a href="#about">Story</a>
+      <a href="#music">Musik</a>
+      <a href="#vibe">Vibe</a>
+      <a href="#links">Links</a>
+      <a href="#booking">Booking</a>
+    </nav>
+    <a class="nav-cta" href="#booking">Booking anfragen</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <pre class="ascii-logo" aria-label="KIZU"></pre>
+      <span class="tag"><span class="dot"></span> Ravensburg, DE · weltweit</span>
+      <h1 class="display" style="font-size:clamp(20px,4vw,34px);text-transform:uppercase;letter-spacing:.06em">DJ &amp; Producer · <span class="gradient">KIZU</span></h1>
+      <p class="lead"><span class="term"><span class="term-text"></span><span class="term-cursor">_</span></span></p>
+      <div class="genres">
+        <span class="chip">Trance</span>
+        <span class="chip">Hard House</span>
+        <span class="chip">Speed Garage</span>
+        <span class="chip">Acid</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn primary" href="#music">Musik hören</a>
+        <a class="btn ghost" href="#booking">Booking anfragen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>SPREAD LOVE ✦ RAVE LOUD ✦ ACID ✦ EUPHORIA ✦ SPREAD LOVE ✦ RAVE LOUD ✦ ACID ✦ EUPHORIA ✦&nbsp;</span>
+      <span>SPREAD LOVE ✦ RAVE LOUD ✦ ACID ✦ EUPHORIA ✦ SPREAD LOVE ✦ RAVE LOUD ✦ ACID ✦ EUPHORIA ✦&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="eyebrow reveal">Die Story</div>
+      <h2 class="sec-h reveal">Always spread love &amp; you will receive love.</h2>
+      <div class="about-grid" style="margin-top:32px">
+        <div class="about-card reveal">
+          <p>Kizu ist ein junger, vielseitiger Artist aus Ravensburg, dessen Mission es ist, Menschen zum Lachen zu bringen, sie emotional zu bewegen und die ekstatische Kraft elektronischer Musik auf den Dancefloor zu holen. Start Ende 2023, Produktion ab Ende 2024 — und seitdem schnell ein selbstbewusster, energiegeladener Sound.</p>
+          <p style="margin-bottom:0">Bookings &amp; Residencies u.&nbsp;a. Hans-Bunte-Areal (Freiburg), Club Douala (Ravensburg), Circle (Offenburg) und //:about&nbsp;blank (Berlin). Releases auf Para//e/, SYNTHX Records, Milli Records &amp; SeshDawgsUnited.</p>
+          <div class="since">
+            <span class="since-tick" aria-hidden="true"></span>
+            <span class="since-text">DJ seit <strong>Januar 2024</strong> · <span data-since="2024-01-01"></span> on the decks</span>
+          </div>
+        </div>
+        <div class="portrait reveal">
+          <span style="color:var(--ink-soft);font-weight:600;text-align:center;font-size:15px">Dein Portrait<br>kommt hier hin</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLUBS TICKER -->
+  <section id="clubs" style="padding:30px 0">
+    <div class="wrap">
+      <div class="eyebrow reveal" style="text-align:center">Played at</div>
+      <h2 class="sec-h reveal" style="text-align:center;font-size:clamp(28px,5vw,48px)">Clubs &amp; Stages</h2>
+    </div>
+    <div class="club-ticker" aria-label="Clubs played">
+      <div class="club-ticker__track">
+        <span class="ct-set">
+          <span class="ct-item">Bootshaus <em>Köln</em></span><span class="ct-sep">✦</span>
+          <span class="ct-item">Odonien <em>Köln</em></span><span class="ct-sep">✦</span>
+          <span class="ct-item">Club Ost <em>Berlin</em></span><span class="ct-sep">✦</span>
+          <span class="ct-item">Lokschuppen <em>Berlin</em></span><span class="ct-sep">✦</span>
+          <span class="ct-item">//:about blank <em>Berlin</em></span><span class="ct-sep">✦</span>
+          <span class="ct-item">Hans-Bunte-Areal <em>Freiburg</em></span><span class="ct-sep">✦</span>
+          <span class="ct-item">Fundbureau <em>Hamburg</em></span><span class="ct-sep">✦</span>
+          <span class="ct-item">Club Douala <em>Ravensburg</em></span><span class="ct-sep">✦</span>
+          <span class="ct-item">Circle <em>Offenburg</em></span><span class="ct-sep">✦</span>
+        </span>
+        <span class="ct-set" aria-hidden="true">
+          <span class="ct-item">Bootshaus <em>Köln</em></span><span class="ct-sep">✦</span>
+          <span class="ct-item">Odonien <em>Köln</em></span><span class="ct-sep">✦</span>
+          <span class="ct-item">Club Ost <em>Berlin</em></span><span class="ct-sep">✦</span>
+          <span class="ct-item">Lokschuppen <em>Berlin</em></span><span class="ct-sep">✦</span>
+          <span class="ct-item">//:about blank <em>Berlin</em></span><span class="ct-sep">✦</span>
+          <span class="ct-item">Hans-Bunte-Areal <em>Freiburg</em></span><span class="ct-sep">✦</span>
+          <span class="ct-item">Fundbureau <em>Hamburg</em></span><span class="ct-sep">✦</span>
+          <span class="ct-item">Club Douala <em>Ravensburg</em></span><span class="ct-sep">✦</span>
+          <span class="ct-item">Circle <em>Offenburg</em></span><span class="ct-sep">✦</span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <div class="ascii-div reveal" aria-hidden="true">&gt;&gt;&gt;&gt;&gt; ::: ▚▚▚ &nbsp;//&nbsp; S O U N D &nbsp;//&nbsp; ▚▚▚ ::: &lt;&lt;&lt;&lt;&lt;</div>
+
+  <!-- MUSIC / RELEASES -->
+  <section id="music">
+    <div class="wrap">
+      <div class="eyebrow reveal">Catalogue · aktualisiert sich automatisch</div>
+      <h2 class="sec-h reveal">Releases</h2>
+      <p class="reveal" style="color:var(--ink-soft);max-width:600px;margin-top:8px">Ein Player, der lebt: lädt KIZU direkt von SoundCloud &amp; Spotify. Neuer Upload? Erscheint hier automatisch — ohne dass an der Website etwas geändert werden muss.</p>
+      <div class="players">
+        <div class="player-card reveal">
+          <div class="player-head"><span class="pc-dot" style="background:#2fe07a"></span> SoundCloud · alle Tracks</div>
+          <iframe title="KIZU auf SoundCloud" width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/kizuloge&color=%232fe07a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+        </div>
+        <div class="player-card reveal">
+          <div class="player-head"><span class="pc-dot" style="background:#2fe07a"></span> Spotify · Artist-Profil</div>
+          <iframe title="KIZU auf Spotify" style="border-radius:16px" src="https://open.spotify.com/embed/artist/2xyVS681aStt1edfMGddLY?utm_source=generator&theme=0"
+            width="100%" height="450" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ascii-div reveal" aria-hidden="true">▶ ▷ ▶ ▷ &nbsp;[ V I B E ]&nbsp; ◁ ◀ ◁ ◀</div>
+
+  <!-- VIBE -->
+  <section id="vibe">
+    <div class="wrap">
+      <div class="eyebrow reveal">Signature</div>
+      <h2 class="sec-h reveal">Der Vibe</h2>
+      <div class="trio">
+        <div class="vibe reveal"><h3>Sound</h3><p>Speed garage, trance, hard house &amp; acid lines — gebaut für Gänsehaut.</p></div>
+        <div class="vibe reveal"><h3>Energy</h3><p>High-energy rave, warme Übergänge und tiefe Melodien, die dich überraschen.</p></div>
+        <div class="vibe reveal"><h3>Mission</h3><p>Eine Community schaffen. Auf dem Dancefloor — und im Wohnzimmer.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ascii-div reveal" aria-hidden="true">○─○─○ &nbsp;&lt; C O N N E C T /&gt;&nbsp; ○─○─○</div>
+
+  <!-- LINKTREE -->
+  <section id="links">
+    <div class="wrap">
+      <div class="eyebrow reveal" style="text-align:center">Alle Links · ein Ort</div>
+      <h2 class="sec-h reveal" style="text-align:center">Find me everywhere</h2>
+      <div class="linktree">
+        <a class="lt" href="https://open.spotify.com/intl-de/artist/2xyVS681aStt1edfMGddLY" target="_blank" rel="noopener"><img class="lt-ico" src="assets/icons/spotify.svg" alt=""> <span class="lt-label">Spotify</span> <span class="lt-arrow">↗</span></a>
+        <a class="lt" href="https://soundcloud.com/kizuloge" target="_blank" rel="noopener"><img class="lt-ico" src="assets/icons/soundcloud-mark.svg" alt=""> <span class="lt-label">SoundCloud</span> <span class="lt-arrow">↗</span></a>
+        <a class="lt" href="https://www.instagram.com/lc.kizu" target="_blank" rel="noopener"><img class="lt-ico" src="assets/icons/instagram.svg" alt=""> <span class="lt-label">Instagram · @lc.kizu</span> <span class="lt-arrow">↗</span></a>
+        <a class="lt" href="https://de.ra.co/dj/kizu" target="_blank" rel="noopener"><img class="lt-ico" src="assets/icons/ra.png" alt=""> <span class="lt-label">Resident Advisor</span> <span class="lt-arrow">↗</span></a>
+        <a class="lt" href="https://www.youtube.com/" target="_blank" rel="noopener"><img class="lt-ico" src="assets/icons/youtube.svg" alt=""> <span class="lt-label">YouTube</span> <span class="lt-arrow">↗</span></a>
+        <a class="lt" href="https://www.tiktok.com/" target="_blank" rel="noopener"><img class="lt-ico" src="assets/icons/tiktok.svg" alt=""> <span class="lt-label">TikTok</span> <span class="lt-arrow">↗</span></a>
+        <a class="lt lt-mail lt--wide" href="mailto:bookings@kizuloge.com"><span class="lt-ico lt-ico--mail">✦</span> <span class="lt-label">Booking · bookings@kizuloge.com</span> <span class="lt-arrow">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="booking">
+    <div class="wrap">
+      <div class="book reveal">
+        <h2>Let's rave together.</h2>
+        <p>Club nights, Festival-Slots, private Events — schreib mir und ich melde mich innerhalb von 48 Stunden.</p>
+        <a class="btn primary" href="mailto:bookings@kizuloge.com">bookings@kizuloge.com</a>
+        <div class="small">Ravensburg, DE &amp; worldwide · Trance · Hard House · Speed Garage</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Rave safe, rave loud. © KIZU · <a href="#">Impressum</a> · <a href="#">Datenschutz</a></p>
+</footer>
+
+<script>
+  // scroll reveal
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{ el.style.transitionDelay=(i%4*0.06)+'s'; obs.observe(el); });
+
+  // dynamic "years DJing" since Jan 2024 — updates itself forever
+  document.querySelectorAll('[data-since]').forEach(el=>{
+    const start=new Date(el.dataset.since);
+    const now=new Date();
+    let years=now.getFullYear()-start.getFullYear();
+    const m=now.getMonth()-start.getMonth();
+    if(m<0||(m===0&&now.getDate()<start.getDate())) years--;
+    const months=(now.getFullYear()-start.getFullYear())*12+(now.getMonth()-start.getMonth());
+    el.textContent = years>=1
+      ? years+(years===1?' Jahr':' Jahre')
+      : Math.max(months,1)+' Monate';
+  });
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ===== ASCII "KIZU" logo, typed in =====
+  const ascii = [
+    "██╗  ██╗██╗███████╗██╗   ██╗",
+    "██║ ██╔╝██║╚══███╔╝██║   ██║",
+    "█████╔╝ ██║  ███╔╝ ██║   ██║",
+    "██╔═██╗ ██║ ███╔╝  ██║   ██║",
+    "██║  ██╗██║███████╗╚██████╔╝",
+    "╚═╝  ╚═╝╚═╝╚══════╝ ╚═════╝ "
+  ].join("\n");
+  const logoEl = document.querySelector('.ascii-logo');
+  if(logoEl){
+    if(reduce){ logoEl.textContent = ascii; }
+    else{
+      let i=0;
+      (function typeLogo(){
+        logoEl.textContent = ascii.slice(0,i);
+        i += 6;
+        if(i <= ascii.length) requestAnimationFrame(()=>setTimeout(typeLogo,12));
+        else logoEl.textContent = ascii;
+      })();
+    }
+  }
+
+  // ===== terminal typing loop =====
+  const phrases = [
+    "> club energy with heart_",
+    "> trance · hard house · speed garage_",
+    "> spread love & you will receive love_",
+    "> rave safe, rave loud_"
+  ];
+  const tEl = document.querySelector('.term-text');
+  if(tEl){
+    if(reduce){ tEl.textContent = phrases[0].slice(2,-1); }
+    else{
+      let pi=0, ci=0, deleting=false;
+      (function tick(){
+        const full = phrases[pi];
+        tEl.textContent = full.slice(0, ci);
+        if(!deleting){
+          ci++;
+          if(ci>full.length){ deleting=true; return setTimeout(tick, 1600); }
+        } else {
+          ci--;
+          if(ci<=0){ deleting=false; pi=(pi+1)%phrases.length; }
+        }
+        setTimeout(tick, deleting?28:55);
+      })();
+    }
+  }
+
+  // ===== matrix code rain =====
+  const cv = document.getElementById('matrix');
+  if(cv && !reduce){
+    const ctx = cv.getContext('2d');
+    const glyphs = "01░▒▓<>/{}[]#*+=KIZU♪♫✦".split("");
+    let cols, drops, fs=16;
+    function resize(){
+      cv.width = innerWidth; cv.height = innerHeight;
+      cols = Math.floor(cv.width / fs);
+      drops = Array(cols).fill(0).map(()=>Math.random()*-50);
+    }
+    resize(); addEventListener('resize', resize);
+    function draw(){
+      ctx.fillStyle = 'rgba(251,247,242,0.10)';
+      ctx.fillRect(0,0,cv.width,cv.height);
+      ctx.font = fs+"px 'Courier New', monospace";
+      for(let i=0;i<cols;i++){
+        ctx.fillStyle = i%2 ? '#2fe07a' : '#1aa85a';
+        const ch = glyphs[Math.floor(Math.random()*glyphs.length)];
+        ctx.fillText(ch, i*fs, drops[i]*fs);
+        if(drops[i]*fs > cv.height && Math.random()>0.975) drops[i]=0;
+        drops[i] += 0.5;
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  // ===== subtle parallax on blobs =====
+  if(!reduce){
+    const blobA=document.querySelector('.blob.a'), blobB=document.querySelector('.blob.b');
+    addEventListener('scroll', ()=>{
+      const y=scrollY;
+      if(blobA) blobA.style.transform=`translateY(${y*0.12}px)`;
+      if(blobB) blobB.style.transform=`translateY(${y*-0.08}px)`;
+    }, {passive:true});
+  }
+</script>
+</body>
+</html>
